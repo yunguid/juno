@@ -1,0 +1,140 @@
+"""Audio capture and streaming from M8X USB audio"""
+import asyncio
+import threading
+import numpy as np
+from dataclasses import dataclass
+from typing import Callable
+import struct
+
+try:
+    import sounddevice as sd
+    AUDIO_AVAILABLE = True
+except ImportError:
+    AUDIO_AVAILABLE = False
+    sd = None
+
+
+@dataclass
+class AudioConfig:
+    """Audio capture configuration"""
+    device_name: str = "MONTAGE M"  # Part of device name to match
+    sample_rate: int = 44100
+    channels: int = 2
+    chunk_size: int = 1024  # Samples per chunk
+
+
+class AudioCapture:
+    """Captures audio from M8X USB audio interface"""
+
+    def __init__(self, config: AudioConfig | None = None):
+        self.config = config or AudioConfig()
+        self._stream: sd.InputStream | None = None
+        self._capturing = False
+        self._callbacks: list[Callable[[bytes], None]] = []
+        self._device_id: int | None = None
+
+    def find_device(self) -> int | None:
+        """Find the M8X audio device"""
+        if not AUDIO_AVAILABLE:
+            return None
+
+        devices = sd.query_devices()
+        for i, device in enumerate(devices):
+            if self.config.device_name.lower() in device['name'].lower():
+                if device['max_input_channels'] >= self.config.channels:
+                    return i
+        return None
+
+    def list_devices(self) -> list[dict]:
+        """List available audio input devices"""
+        if not AUDIO_AVAILABLE:
+            return []
+
+        devices = []
+        for i, device in enumerate(sd.query_devices()):
+            if device['max_input_channels'] > 0:
+                devices.append({
+                    'id': i,
+                    'name': device['name'],
+                    'channels': device['max_input_channels'],
+                    'sample_rate': device['default_samplerate']
+                })
+        return devices
+
+    def add_callback(self, callback: Callable[[bytes], None]):
+        """Add a callback to receive audio data"""
+        self._callbacks.append(callback)
+
+    def remove_callback(self, callback: Callable[[bytes], None]):
+        """Remove a callback"""
+        if callback in self._callbacks:
+            self._callbacks.remove(callback)
+
+    def _audio_callback(self, indata, frames, time_info, status):
+        """Called for each audio chunk"""
+        if status:
+            print(f"Audio status: {status}")
+
+        # Convert float32 numpy array to bytes (16-bit PCM for streaming)
+        # Clamp values and convert to int16
+        audio_int16 = (indata * 32767).astype(np.int16)
+        audio_bytes = audio_int16.tobytes()
+
+        for callback in self._callbacks:
+            try:
+                callback(audio_bytes)
+            except Exception as e:
+                print(f"Audio callback error: {e}")
+
+    def start(self) -> bool:
+        """Start audio capture"""
+        if not AUDIO_AVAILABLE:
+            print("sounddevice not installed. Run: pip install sounddevice")
+            return False
+
+        self._device_id = self.find_device()
+        if self._device_id is None:
+            print(f"Could not find audio device matching '{self.config.device_name}'")
+            print("Available devices:", [d['name'] for d in self.list_devices()])
+            return False
+
+        try:
+            self._stream = sd.InputStream(
+                device=self._device_id,
+                samplerate=self.config.sample_rate,
+                channels=self.config.channels,
+                blocksize=self.config.chunk_size,
+                callback=self._audio_callback,
+                dtype=np.float32
+            )
+            self._stream.start()
+            self._capturing = True
+            print(f"Audio capture started from device {self._device_id}")
+            return True
+        except Exception as e:
+            print(f"Failed to start audio capture: {e}")
+            return False
+
+    def stop(self):
+        """Stop audio capture"""
+        self._capturing = False
+        if self._stream:
+            self._stream.stop()
+            self._stream.close()
+            self._stream = None
+
+    def is_capturing(self) -> bool:
+        """Check if currently capturing"""
+        return self._capturing
+
+
+# Singleton instance
+_audio_capture: AudioCapture | None = None
+
+
+def get_audio_capture() -> AudioCapture:
+    """Get the global audio capture instance"""
+    global _audio_capture
+    if _audio_capture is None:
+        _audio_capture = AudioCapture()
+    return _audio_capture
