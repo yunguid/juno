@@ -34,12 +34,16 @@ class Layer(BaseModel):
     notes: list[Note]                 # The notes in this layer
     muted: bool = False               # Whether layer is muted
     volume: int = Field(default=100, ge=0, le=127)  # Layer volume (CC7)
+    portamento: bool = False          # Enable glide between notes (CC65)
+    portamento_time: int = Field(default=40, ge=0, le=127)  # Glide speed (CC5)
 
 
 class Sample(BaseModel):
     """Complete sample definition"""
     id: str                           # Unique identifier
     name: str                         # User-facing name
+    prompt: str = ""                  # Original user prompt
+    key: str = "C minor"              # Musical key
     bpm: int = Field(default=90, ge=40, le=200)
     time_signature: tuple[int, int] = (4, 4)
     bars: int = Field(default=4, ge=1, le=32)
@@ -61,6 +65,19 @@ class GenerateRequest(BaseModel):
     prompt: str
     bpm: int | None = None
     bars: int | None = None
+
+
+class StartSessionRequest(BaseModel):
+    """Request to start a new step-by-step session"""
+    prompt: str
+    key: str = "C minor"
+    bpm: int = 90
+    bars: int = 4
+
+
+class GenerateLayerRequest(BaseModel):
+    """Request to generate a specific layer"""
+    sound: SoundType
 
 
 class LayerEditRequest(BaseModel):

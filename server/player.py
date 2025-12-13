@@ -5,6 +5,9 @@ import threading
 from dataclasses import dataclass
 from typing import Callable
 from .models import Sample, Layer, Note, SoundType, SOUND_CHANNELS, note_to_midi
+from .logger import get_logger
+
+log = get_logger("player")
 
 
 @dataclass
@@ -28,10 +31,12 @@ class SamplePlayer:
     def connect(self) -> bool:
         """Connect to the MIDI port"""
         try:
+            log.debug(f"Attempting to connect to MIDI port: {self.port_name}")
             self.port = mido.open_output(self.port_name)
+            log.info(f"MIDI connected: {self.port_name}")
             return True
         except Exception as e:
-            print(f"Failed to connect to {self.port_name}: {e}")
+            log.error(f"Failed to connect to {self.port_name}: {e}")
             return False
 
     def disconnect(self):
@@ -50,12 +55,19 @@ class SamplePlayer:
         return mido.get_output_names()
 
     def panic(self):
-        """Kill all notes on all channels"""
+        """Kill all notes on all channels immediately"""
         if not self.port:
             return
+        log.debug("MIDI panic: killing all notes")
         for ch in range(16):
+            # CC 120: All Sound Off - immediately silences (ignores release)
+            self.port.send(mido.Message('control_change', control=120, value=0, channel=ch))
+            # CC 123: All Notes Off - stops notes (respects release)
             self.port.send(mido.Message('control_change', control=123, value=0, channel=ch))
+            # CC 121: Reset All Controllers
             self.port.send(mido.Message('control_change', control=121, value=0, channel=ch))
+            # CC 64: Sustain Pedal Off
+            self.port.send(mido.Message('control_change', control=64, value=0, channel=ch))
 
     def _compile_sample(self, sample: Sample) -> list[ScheduledEvent]:
         """Convert a Sample to a list of scheduled MIDI events"""
@@ -78,6 +90,27 @@ class SamplePlayer:
                     channel=channel
                 )
             ))
+
+            # Set portamento (glide) settings
+            events.append(ScheduledEvent(
+                time=0.0,
+                message=mido.Message(
+                    'control_change',
+                    control=65,  # Portamento On/Off
+                    value=127 if layer.portamento else 0,
+                    channel=channel
+                )
+            ))
+            if layer.portamento:
+                events.append(ScheduledEvent(
+                    time=0.0,
+                    message=mido.Message(
+                        'control_change',
+                        control=5,  # Portamento Time
+                        value=layer.portamento_time,
+                        channel=channel
+                    )
+                ))
 
             for note in layer.notes:
                 start_time = note.start * beat_duration
@@ -129,8 +162,11 @@ class SamplePlayer:
         events = self._compile_sample(sample)
         total_duration = sample.duration_seconds
 
+        log.info(f"Starting playback: {len(events)} MIDI events, {total_duration:.1f}s duration")
+
         def play_thread():
             start_time = time.perf_counter()
+            events_sent = 0
 
             event_index = 0
             while self._playing and event_index < len(events):
@@ -140,7 +176,14 @@ class SamplePlayer:
                 # Send all events that should have occurred by now
                 while event_index < len(events) and events[event_index].time <= current_time:
                     if self._playing and self.port:
-                        self.port.send(events[event_index].message)
+                        msg = events[event_index].message
+                        self.port.send(msg)
+                        events_sent += 1
+                        if msg.type == 'note_on' and msg.velocity > 0:
+                            log.debug(f"MIDI: note_on ch={msg.channel} note={msg.note} vel={msg.velocity}")
+                        elif msg.type == 'control_change' and msg.control in (5, 65):
+                            cc_name = "portamento_time" if msg.control == 5 else "portamento_on"
+                            log.debug(f"MIDI: {cc_name} ch={msg.channel} value={msg.value}")
                     event_index += 1
 
                 # Small sleep to prevent busy-waiting
@@ -153,6 +196,7 @@ class SamplePlayer:
 
             self._playing = False
             self._current_position = 0.0
+            log.info(f"Playback finished: sent {events_sent} events")
 
             if self._on_playback_complete:
                 self._on_playback_complete()
@@ -168,6 +212,8 @@ class SamplePlayer:
 
     def stop(self):
         """Stop playback"""
+        if self._playing:
+            log.info("Stopping playback")
         self._playing = False
         if self._play_thread:
             self._play_thread.join(timeout=0.5)

@@ -2,9 +2,10 @@
 import asyncio
 import threading
 import numpy as np
+import io
+import wave
 from dataclasses import dataclass
 from typing import Callable
-import struct
 
 try:
     import sounddevice as sd
@@ -126,6 +127,58 @@ class AudioCapture:
     def is_capturing(self) -> bool:
         """Check if currently capturing"""
         return self._capturing
+
+    def record(self, duration: float, extra_time: float = 0.5) -> bytes | None:
+        """Record audio for a specified duration and return as WAV bytes.
+
+        Args:
+            duration: Recording duration in seconds
+            extra_time: Extra time to capture release/reverb tails
+
+        Returns:
+            WAV file as bytes, or None if recording failed
+        """
+        if not AUDIO_AVAILABLE:
+            print("sounddevice not installed")
+            return None
+
+        device_id = self.find_device()
+        if device_id is None:
+            print(f"Could not find audio device matching '{self.config.device_name}'")
+            return None
+
+        total_duration = duration + extra_time
+
+        try:
+            # Record audio
+            print(f"Recording {total_duration:.1f}s from device {device_id}...")
+            recording = sd.rec(
+                int(total_duration * self.config.sample_rate),
+                samplerate=self.config.sample_rate,
+                channels=self.config.channels,
+                device=device_id,
+                dtype=np.float32
+            )
+            sd.wait()  # Wait for recording to complete
+            print(f"Recording complete: {len(recording)} samples")
+
+            # Convert to 16-bit PCM
+            audio_int16 = (recording * 32767).astype(np.int16)
+
+            # Write to WAV in memory
+            wav_buffer = io.BytesIO()
+            with wave.open(wav_buffer, 'wb') as wav_file:
+                wav_file.setnchannels(self.config.channels)
+                wav_file.setsampwidth(2)  # 16-bit = 2 bytes
+                wav_file.setframerate(self.config.sample_rate)
+                wav_file.writeframes(audio_int16.tobytes())
+
+            wav_buffer.seek(0)
+            return wav_buffer.read()
+
+        except Exception as e:
+            print(f"Recording failed: {e}")
+            return None
 
 
 # Singleton instance
