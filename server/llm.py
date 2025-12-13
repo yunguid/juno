@@ -57,74 +57,106 @@ Be creative but musically coherent. Make it sound good!"""
 
 LAYER_GUIDELINES = {
     SoundType.PAD: """PAD LAYER GUIDELINES:
-- Use octaves 3-5 (C3 to B5)
+- Octaves 3-5 (C3 to B5)
 
-CHORD QUALITY - Be creative!
-- Use extended chords: maj7, min7, min9, add9, sus2, sus4
-- Try unexpected movements: bVI, bVII, borrowed chords, modal interchange
-- Inversions create smooth voice leading (e.g., C/E, Am/C)
+RICH EMOTIONAL CHORDS:
+- Use 4-5 note voicings: 9ths, maj9, min9, add9, 11ths
+- Example Cmin9: ["C3", "Eb4", "G4", "Bb4", "D5"]
+- Example Fmaj9: ["F3", "A4", "C5", "E5", "G5"]
+- Spread voicings across octaves for lush sound
 
-TIMING - VARY THE RHYTHM! Don't make every chord the same length!
-- Mix durations: some chords 2 beats, some 3 beats, some 4 beats, some 1 beat
-- Create rhythmic interest with syncopation (start chords on beat 2 or the "and")
-- Example rhythm pattern: | 3 beats | 1 beat | 2 beats | 2 beats | 4 beats | 4 beats |
-- Let some chords breathe longer, others move quickly
-- Avoid the boring pattern of 4 equal chords of 4 beats each!
+EMOTIONAL PROGRESSIONS:
+- i - VI - III - VII (minor epic)
+- I - V - vi - IV (emotional pop)
+- ii - V - I - vi (jazz emotional)
+- Use chromatic mediants: C to Ab, C to E major
+- Borrow from parallel minor/major for color
 
-VOICING - Vary the texture!
-- Some chords: 3 notes (triads)
-- Some chords: 4 notes (7ths, add notes)
-- Some chords: 2 notes (open fifths, octaves for drama)
-- Change the spacing: close voicing vs open voicing
-- Move inner voices while bass stays static sometimes
-
-DYNAMICS - Use velocity variation!
-- Build intensity: start softer (vel 60-70), crescendo to louder (vel 85-100)
-- Or start strong and get intimate
-- Accent important chord changes with higher velocity
-
-Think: cinematic film scores, Vangelis, Hans Zimmer - dynamic, evolving, emotional""",
+MOVEMENT AND FEEL:
+- Let chords breathe - long sustains (2-4 beats)
+- Smooth voice leading between chords
+- Build emotional arc: tension -> release -> tension
+- End on unresolved chord for longing feel""",
 
     SoundType.LEAD: """LEAD MELODY GUIDELINES:
-- Use octaves 4-6 (C4 to B6)
-- Create a memorable, singable melodic line
-- Use LEGATO phrasing - notes that connect smoothly (portamento/glide is enabled)
-- Stepwise motion (2nds, 3rds) sounds great with glide, use larger intervals sparingly
-- Mix sustained notes with shorter rhythmic passages
-- The melody should complement the existing chords
-- Think: expressive synth leads, soaring Vangelis-style melodies with smooth glides""",
+- Octaves 4-6 (C4 to B6)
+
+OCCASIONAL GRACE NOTES (USE SPARINGLY):
+- Only 1-2 grace notes per 4 bars MAX
+- Place on downbeats of new phrases only (beat 1 or 5 or 9)
+- Grace note must be a half-step or whole-step from target
+- Duration: exactly 0.125 beats, velocity: 50
+- Example: one D5 grace note at 0.875 -> C5 at 1.0
+- DO NOT put grace notes on every note - ruins the feel
+
+ARPEGGIATED PATTERNS:
+- Break chords into flowing arpeggios
+- Example: instead of one note, play C5->E5->G5->E5 as 16ths
+- Mix arp directions: up, down, up-down, random
+- Weave arpeggios around the chord tones
+
+VARY NOTE LENGTHS - CRITICAL!
+- Mix: 16th notes (0.25), 8ths (0.5), quarters (1), half (2)
+- Example rhythm: 0.25, 0.25, 0.5, 1, 0.25, 0.25, 0.25, 0.5
+- NEVER make all notes the same duration
+- Quick runs followed by held notes
+
+DYNAMICS - NOT SO LOUD:
+- Velocity range: 50-90 (NOT 100-127)
+- Soft arps: 50-65
+- Melodic peaks: 80-90
+- Grace notes should be softer (40-60)
+- Vary EVERY note's velocity slightly
+
+PHRASING:
+- 2-bar phrases with space between
+- Rise and fall in pitch
+- End phrases on chord tones""",
 
     SoundType.BASS: """BASS LAYER GUIDELINES:
-- Use octaves 1-3 (C1 to B3)
-- Keep it simple and rhythmic
-- Lock with the harmonic rhythm of the chords
-- Root notes work great, occasional fifths
-- Think: deep sub bass, rhythmic foundation"""
+- Octaves 1-3 (C1 to B3)
+
+SUPPORTIVE FOUNDATION:
+- Keep it SIMPLE - bass supports, doesn't show off
+- Mostly root notes on strong beats
+- Occasional 5th or octave for variety
+- Let the chords and melody shine
+
+STEADY AND GROUNDED:
+- Long notes: half notes (2 beats) or whole notes (4 beats)
+- Lock to the kick drum feel: beats 1 and 3
+- Don't move around too much - stay on roots
+- One or two notes per bar is often enough
+
+SIMPLE PATTERNS:
+- Root on beat 1, hold
+- Root on 1, fifth on 3
+- Root on 1, octave on 3
+- Pedal on one note while chords change above
+
+WHEN TO MOVE:
+- Only move to a new note when chord changes
+- Use passing tones sparingly (one per 2 bars max)
+- Keep velocity consistent: 70-85"""
 }
 
-SINGLE_LAYER_SYSTEM = """You are a music production AI. Generate a SINGLE musical layer.
+SINGLE_LAYER_SYSTEM = """You are a music production AI creating emotional, expressive music.
 
-Output ONLY valid JSON for ONE layer (no markdown, no explanation):
-{{
-  "id": "unique-id",
-  "name": "layer description",
-  "sound": "{sound_type}",
-  "notes": [
-    {{"pitch": ["C4", "Eb4", "G4", "Bb4"], "start": 0, "duration": 3, "velocity": 65}},
-    {{"pitch": ["Ab3", "C4", "Eb4"], "start": 3, "duration": 1, "velocity": 70}},
-    {{"pitch": ["Bb3", "D4", "F4"], "start": 4, "duration": 2.5, "velocity": 75}},
-    {{"pitch": ["G3", "Bb3", "D4", "F4"], "start": 6.5, "duration": 1.5, "velocity": 80}},
-    {{"pitch": ["Ab3", "C4", "Eb4", "G4"], "start": 8, "duration": 4, "velocity": 85}}
-  ]
-}}
+Output ONLY valid JSON (no markdown):
+{{"id": "id", "name": "description", "sound": "{sound_type}", "notes": [{{"pitch": "C4", "start": 0, "duration": 2, "velocity": 70}}]}}
 
-Rules:
-- start: beat number (0 = first beat, can use decimals like 2.5 for offbeats)
-- duration: length in beats (VARY THIS - use 1, 1.5, 2, 2.5, 3, 4 - not all the same!)
-- pitch: single note "C4" or chord array ["C4", "E4", "G4"]
-- velocity: 1-127 (VARY THIS for dynamics - build intensity or create movement)
+Note format:
+- pitch: "C4" for single notes, ["C4", "E4", "G4", "Bb4", "D5"] for rich chords
+- start: beat number (0, 0.25, 0.5, 1, 1.5, 2.5, etc)
+- duration: VARY THIS! Use 0.25, 0.5, 1, 2, 4 - mix short and long
+- velocity: 50-90 range (NOT too loud, leave headroom)
 
-IMPORTANT: Create variety! Don't use the same duration for every note. Mix up rhythms, chord sizes, and velocities.
+CRITICAL RULES:
+- For LEAD: use arpeggios, vary note lengths (0.25 to 2), keep velocity 50-85
+- For PAD: use 4-5 note chords (9ths, 11ths), emotional progressions
+- For BASS: keep it simple and supportive, mostly roots, long notes
+- NEVER make all notes the same duration - this sounds robotic
+- VARY velocity note-to-note for human feel
 
 {layer_guidelines}"""
 
@@ -173,14 +205,16 @@ def build_layer_context(existing_layers: list[Layer]) -> str:
     if not existing_layers:
         return ""
 
-    context = "\n\nEXISTING LAYERS (complement these):\n"
+    context = "\n\nEXISTING LAYERS - create COUNTERPOINT, don't copy their rhythm:\n"
     for layer in existing_layers:
-        notes_preview = layer.notes[:4]
+        # Show timing info to help create independence
+        timings = [f"{n.start}" for n in layer.notes[:6]]
         pitches = [
             n.pitch if isinstance(n.pitch, str) else "+".join(n.pitch)
-            for n in notes_preview
+            for n in layer.notes[:4]
         ]
-        context += f"- {layer.sound.value}: {', '.join(pitches)}...\n"
+        context += f"- {layer.sound.value}: notes at beats [{', '.join(timings)}...], pitches: {', '.join(pitches)}...\n"
+    context += "\nPlay BETWEEN their notes, not ON them. Create rhythmic contrast!\n"
     return context
 
 
