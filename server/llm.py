@@ -353,3 +353,131 @@ The new layer should complement the existing layers. Output ONLY the new layer J
         bars=sample.bars,
         layers=sample.layers + [new_layer]
     )
+
+
+IMPROVE_SYSTEM_PROMPT = """You are a music production AI. Improve musical layers based on user feedback.
+
+Output ONLY valid JSON - no markdown, no explanation, no extra text.
+
+Format:
+{"layers": [{"id": "xxx", "name": "description", "sound": "pad", "notes": [{"pitch": "C4", "start": 0, "duration": 2, "velocity": 80}]}]}
+
+Rules for notes:
+- pitch: string "C4" OR array ["C4", "E4", "G4"] for chords
+- start: beat number (0, 1, 2.5, etc)
+- duration: beats (0.5, 1, 2, 4, etc)
+- velocity: 1-127
+
+Important:
+- Keep the exact same layer IDs from the input
+- Only include layers that have feedback (not "No changes requested")
+- Ensure all layers work together musically"""
+
+
+def repair_truncated_json(json_str: str) -> str:
+    """Attempt to repair truncated JSON by closing open brackets"""
+    # Count brackets
+    open_braces = json_str.count('{') - json_str.count('}')
+    open_brackets = json_str.count('[') - json_str.count(']')
+
+    # If we're inside a string, try to close it
+    if json_str.rstrip().endswith('"') is False and '"' in json_str:
+        # Check if we have an unclosed string
+        quote_count = json_str.count('"')
+        if quote_count % 2 == 1:
+            json_str = json_str.rstrip()
+            if not json_str.endswith('"'):
+                json_str += '"'
+
+    # Remove trailing comma if present
+    json_str = json_str.rstrip().rstrip(',')
+
+    # Close brackets and braces
+    json_str += ']' * open_brackets
+    json_str += '}' * open_braces
+
+    return json_str
+
+
+def improve_layers(
+    sample: Sample,
+    feedback: dict[str, str],
+    config: LLMConfig | None = None,
+) -> Sample:
+    """Improve layers based on user feedback for each layer"""
+    log.info(f"Improving layers based on feedback...")
+    start_time = time.time()
+
+    # Build compact context - only include layers with feedback
+    layers_context = []
+    for layer in sample.layers:
+        layer_feedback = feedback.get(layer.sound.value, "").strip()
+        if layer_feedback:
+            # Include simplified note info
+            layers_context.append({
+                "id": layer.id,
+                "sound": layer.sound.value,
+                "name": layer.name,
+                "note_count": len(layer.notes),
+                "feedback": layer_feedback
+            })
+
+    if not layers_context:
+        log.info("No feedback provided, returning original sample")
+        return sample
+
+    user_prompt = f"""Key: {sample.key}, BPM: {sample.bpm}, Bars: {sample.bars}
+
+Layers to improve:
+{json.dumps(layers_context, indent=2)}
+
+Generate improved layers based on feedback. Keep it musical and coherent."""
+
+    # Use higher max_tokens for improvements
+    from copy import copy
+    improve_config = copy(config) if config else LLMConfig()
+    improve_config.max_tokens = 4096
+
+    response = complete(IMPROVE_SYSTEM_PROMPT, user_prompt, improve_config)
+
+    elapsed = time.time() - start_time
+    log.info(f"LLM responded in {elapsed:.1f}s (model: {response.model})")
+
+    json_str = extract_json(response.content)
+
+    try:
+        data = json.loads(json_str)
+    except json.JSONDecodeError as e:
+        log.warning(f"JSON parse error: {e}, attempting repair...")
+        try:
+            repaired = repair_truncated_json(json_str)
+            data = json.loads(repaired)
+            log.info("JSON repair successful")
+        except json.JSONDecodeError:
+            log.error(f"JSON repair failed. Original: {json_str[:500]}")
+            raise
+
+    # Update layers that were improved
+    improved_layers = {ld["id"]: ld for ld in data.get("layers", [])}
+
+    new_layers = []
+    for layer in sample.layers:
+        if layer.id in improved_layers:
+            improved_data = improved_layers[layer.id]
+            new_layer = parse_layer(improved_data, sound_override=layer.sound)
+            new_layer.id = layer.id  # Preserve ID
+            new_layers.append(new_layer)
+            log.info(f"Improved {layer.sound.value}: '{new_layer.name}'")
+        else:
+            new_layers.append(layer)
+            log.info(f"Kept {layer.sound.value} unchanged")
+
+    return Sample(
+        id=sample.id,
+        name=sample.name,
+        prompt=sample.prompt,
+        key=sample.key,
+        bpm=sample.bpm,
+        bars=sample.bars,
+        layers=new_layers
+    )

@@ -67,6 +67,8 @@ function App() {
   const [error, setError] = useState<string | null>(null)
   const [showSettings, setShowSettings] = useState(false)
   const [llmConfig, setLlmConfig] = useState<LLMConfig | null>(null)
+  const [feedback, setFeedback] = useState<Record<string, string>>({ pad: '', lead: '', bass: '' })
+  const [improving, setImproving] = useState(false)
   const wsRef = useRef<WebSocket | null>(null)
 
   // Fetch LLM config on mount
@@ -230,6 +232,36 @@ function App() {
       setError(e instanceof Error ? e.message : 'Audio export failed')
     } finally {
       setExporting(false)
+    }
+  }
+
+  const improveLayers = async () => {
+    // Check if any feedback provided
+    const hasFeedback = Object.values(feedback).some(f => f.trim())
+    if (!hasFeedback) {
+      setError('Please provide feedback for at least one layer')
+      return
+    }
+
+    if (playing) await stop()
+
+    setImproving(true)
+    setError(null)
+    try {
+      const res = await fetch(`${API_URL}/api/session/improve`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ feedback })
+      })
+      if (!res.ok) throw new Error((await res.json()).detail)
+      const data = await res.json()
+      setSample(data.sample)
+      setFeedback({ pad: '', lead: '', bass: '' }) // Clear feedback after success
+    } catch (e) {
+      console.error('Improve failed:', e)
+      setError(e instanceof Error ? e.message : 'Failed to improve')
+    } finally {
+      setImproving(false)
     }
   }
 
@@ -465,20 +497,49 @@ function App() {
           </div>
 
           <div className="final-controls">
-            <button onClick={() => play()} disabled={playing || exporting} className="big-btn play">
+            <button onClick={() => play()} disabled={playing || exporting || improving} className="big-btn play">
               {playing ? 'Playing...' : '▶ Play All'}
             </button>
             <button onClick={stop} disabled={!playing} className="big-btn stop">■ Stop</button>
           </div>
 
-          <div className="final-controls">
-            <button onClick={exportAudio} disabled={exporting || playing} className="big-btn export">
-              {exporting ? 'Recording...' : '↓ Export WAV'}
+          {/* Improve Section */}
+          <div className="improve-section">
+            <h3>Improve with AI</h3>
+            <p className="improve-hint">Give feedback on each layer and let AI iterate on the patterns</p>
+
+            <div className="feedback-inputs">
+              {sample.layers.map(layer => (
+                <div key={layer.id} className="feedback-row">
+                  <label>{layer.sound.toUpperCase()}</label>
+                  <input
+                    type="text"
+                    placeholder={`e.g., "make it more ${layer.sound === 'pad' ? 'dramatic' : layer.sound === 'lead' ? 'melodic' : 'groovy'}"`}
+                    value={feedback[layer.sound] || ''}
+                    onChange={(e) => setFeedback(prev => ({ ...prev, [layer.sound]: e.target.value }))}
+                    disabled={improving}
+                  />
+                </div>
+              ))}
+            </div>
+
+            <button
+              onClick={improveLayers}
+              disabled={improving || playing || !Object.values(feedback).some(f => f.trim())}
+              className="improve-btn"
+            >
+              {improving ? 'Improving...' : 'Improve'}
             </button>
-            <button onClick={exportMidi} disabled={exporting} className="big-btn export">↓ Export MIDI</button>
           </div>
 
-          <button onClick={() => { setSample(null); setStep('setup'); setPrompt(''); }} className="restart-btn">
+          <div className="final-controls">
+            <button onClick={exportAudio} disabled={exporting || playing || improving} className="big-btn export">
+              {exporting ? 'Recording...' : '↓ Export WAV'}
+            </button>
+            <button onClick={exportMidi} disabled={exporting || improving} className="big-btn export">↓ Export MIDI</button>
+          </div>
+
+          <button onClick={() => { setSample(null); setStep('setup'); setPrompt(''); setFeedback({ pad: '', lead: '', bass: '' }); }} className="restart-btn">
             Start Over
           </button>
         </section>

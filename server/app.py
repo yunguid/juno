@@ -12,7 +12,7 @@ import mido
 
 from .models import Sample, Layer, SoundType, GenerateRequest, LayerEditRequest, AddLayerRequest, StartSessionRequest, GenerateLayerRequest
 from .player import get_player, SamplePlayer
-from .llm import generate_sample, edit_layer, add_layer, generate_single_layer
+from .llm import generate_sample, edit_layer, add_layer, generate_single_layer, improve_layers
 from .llm_providers import get_config, set_config, Provider, DEFAULT_MODELS, AVAILABLE_MODELS
 from .audio import get_audio_capture
 from .export import sample_to_midi_file
@@ -468,6 +468,41 @@ async def api_generate_layer(request: GenerateLayerRequest):
 async def api_regenerate_layer(request: GenerateLayerRequest):
     """Regenerate a layer (delete and create new)"""
     return await api_generate_layer(request)
+
+
+class ImproveRequest(BaseModel):
+    feedback: dict[str, str]  # {"pad": "make it more dramatic", "lead": "...", "bass": "..."}
+
+
+@app.post("/api/session/improve")
+async def api_improve_layers(request: ImproveRequest):
+    """Improve layers based on user feedback"""
+    global current_sample
+
+    if current_sample is None:
+        raise HTTPException(status_code=400, detail="No session started")
+
+    if not current_sample.layers:
+        raise HTTPException(status_code=400, detail="No layers to improve")
+
+    # Check if any feedback was provided
+    has_feedback = any(f.strip() for f in request.feedback.values())
+    if not has_feedback:
+        raise HTTPException(status_code=400, detail="No feedback provided")
+
+    log.info(f"Improving layers with feedback: {request.feedback}")
+
+    try:
+        updated_sample = improve_layers(current_sample, request.feedback)
+        current_sample = updated_sample
+
+        log.info(f"Layers improved successfully")
+        await broadcast({"type": "sample_updated", "sample": current_sample.model_dump()})
+        return {"sample": current_sample.model_dump()}
+
+    except Exception as e:
+        log.error(f"Layer improvement failed: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 # --- WebSocket for real-time communication ---

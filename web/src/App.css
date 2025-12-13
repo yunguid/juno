@@ -717,6 +717,97 @@ header h1 {
   cursor: not-allowed;
 }
 
+/* Improve Section */
+.improve-section {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.improve-section h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.improve-hint {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 0 1rem 0;
+}
+
+.feedback-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.feedback-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.feedback-row label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.4);
+  min-width: 45px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.feedback-row input {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
+  transition: border-color 0.15s;
+}
+
+.feedback-row input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.feedback-row input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.feedback-row input:disabled {
+  opacity: 0.5;
+}
+
+.improve-btn {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.improve-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.improve-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
 /* Restart */
 .restart-btn {
   padding: 0.65rem 1.25rem;
