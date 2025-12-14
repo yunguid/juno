@@ -59,19 +59,23 @@ function useAudioStream(wsUrl: string) {
             sampleRate: config.sample_rate,
             channels: config.channels
           }
-          console.log('Audio config:', audioConfigRef.current)
+          console.log('Audio config:', audioConfigRef.current, 'AudioContext sampleRate:', audioContext.sampleRate)
         }
       } else {
         // Binary PCM data
-        console.log('Audio data received:', event.data.byteLength, 'bytes')
         const config = audioConfigRef.current
-        if (!config) return
+        if (!config) {
+          console.log('No audio config yet, skipping data')
+          return
+        }
 
         // Convert Int16 PCM to Float32
         const int16Data = new Int16Array(event.data)
         const float32Data = new Float32Array(int16Data.length)
+        let maxSample = 0
         for (let i = 0; i < int16Data.length; i++) {
           float32Data[i] = int16Data[i] / 32768
+          maxSample = Math.max(maxSample, Math.abs(float32Data[i]))
         }
 
         // Create audio buffer
@@ -109,6 +113,7 @@ function useAudioStream(wsUrl: string) {
           // First buffer or we've fallen behind - start with small delay
           nextStartTimeRef.current = currentTime + 0.05
           isPlayingRef.current = true
+          console.log('Audio playback started, peak level:', maxSample.toFixed(3), 'ctx state:', audioContext.state)
         }
 
         source.start(nextStartTimeRef.current)
