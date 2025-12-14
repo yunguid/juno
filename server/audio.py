@@ -18,32 +18,48 @@ except ImportError:
 @dataclass
 class AudioConfig:
     """Audio capture configuration"""
-    device_name: str = "MONTAGE M"  # Part of device name to match
+    device_names: tuple[str, ...] = ("MONTAGE M", "MONTAGE", "hw:2,0", "hw:M,0")
     sample_rate: int = 44100
     channels: int = 2
     chunk_size: int = 1024  # Samples per chunk
 
 
 class AudioCapture:
-    """Captures audio from M8X USB audio interface"""
+    """Captures audio from Montage M USB audio interface"""
 
     def __init__(self, config: AudioConfig | None = None):
         self.config = config or AudioConfig()
         self._stream: sd.InputStream | None = None
         self._capturing = False
         self._callbacks: list[Callable[[bytes], None]] = []
-        self._device_id: int | None = None
+        self._device_id: int | str | None = None
 
-    def find_device(self) -> int | None:
-        """Find the M8X audio device"""
+    def find_device(self) -> int | str | None:
+        """Find the Montage audio device (supports Generic USB mode)"""
         if not AUDIO_AVAILABLE:
             return None
 
         devices = sd.query_devices()
-        for i, device in enumerate(devices):
-            if self.config.device_name.lower() in device['name'].lower():
-                if device['max_input_channels'] >= self.config.channels:
-                    return i
+        
+        # Try each device name pattern
+        for name_pattern in self.config.device_names:
+            # Check if it's an ALSA device string (hw:X,Y)
+            if name_pattern.startswith("hw:"):
+                # Try using it directly - sounddevice accepts ALSA device strings
+                try:
+                    # Verify the device exists by querying it
+                    info = sd.query_devices(name_pattern)
+                    if info and info.get('max_input_channels', 0) >= self.config.channels:
+                        return name_pattern
+                except Exception:
+                    continue
+            else:
+                # Search by name substring
+                for i, device in enumerate(devices):
+                    if name_pattern.lower() in device['name'].lower():
+                        if device['max_input_channels'] >= self.config.channels:
+                            return i
+        
         return None
 
     def list_devices(self) -> list[dict]:
@@ -95,7 +111,7 @@ class AudioCapture:
 
         self._device_id = self.find_device()
         if self._device_id is None:
-            print(f"Could not find audio device matching '{self.config.device_name}'")
+            print(f"Could not find audio device matching any of: {self.config.device_names}")
             print("Available devices:", [d['name'] for d in self.list_devices()])
             return False
 
@@ -144,7 +160,7 @@ class AudioCapture:
 
         device_id = self.find_device()
         if device_id is None:
-            print(f"Could not find audio device matching '{self.config.device_name}'")
+            print(f"Could not find audio device matching any of: {self.config.device_names}")
             return None
 
         total_duration = duration + extra_time

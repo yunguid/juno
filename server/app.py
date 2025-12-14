@@ -196,11 +196,22 @@ async def api_play(layers: list[str] | None = None):
 
     log.info(f"  Duration: {play_sample.duration_seconds:.1f}s")
 
+    # Start audio capture for streaming
+    audio = get_audio_capture()
+    if not audio.is_capturing():
+        if audio.start():
+            log.info("Audio capture started for playback")
+        else:
+            log.warning("Audio capture failed to start - streaming won't work")
+
     # Capture the running event loop from this async context
     loop = asyncio.get_running_loop()
 
     def on_complete():
         log.info("Playback complete")
+        # Stop audio capture when playback ends
+        audio.stop()
+        log.info("Audio capture stopped")
         # Schedule broadcast on the captured event loop (called from thread)
         loop.call_soon_threadsafe(
             lambda: asyncio.create_task(broadcast({"type": "playback_complete"}))
@@ -217,6 +228,11 @@ async def api_stop():
     log.info("Stopping playback")
     player = get_player()
     player.stop()
+    # Stop audio capture
+    audio = get_audio_capture()
+    if audio.is_capturing():
+        audio.stop()
+        log.info("Audio capture stopped")
     await broadcast({"type": "playback_stopped"})
     return {"status": "stopped"}
 

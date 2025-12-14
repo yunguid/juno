@@ -1,5 +1,141 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import './App.css'
+
+// Audio streaming hook - connects to WebSocket and plays PCM audio through Web Audio API
+function useAudioStream(wsUrl: string) {
+  const audioContextRef = useRef<AudioContext | null>(null)
+  const wsRef = useRef<WebSocket | null>(null)
+  const isStreamingRef = useRef(false)
+  const audioConfigRef = useRef<{ sampleRate: number; channels: number } | null>(null)
+  const audioQueueRef = useRef<Float32Array[]>([])
+  const isPlayingRef = useRef(false)
+  const nextStartTimeRef = useRef(0)
+
+  const initAudioContext = useCallback(() => {
+    if (!audioContextRef.current) {
+      audioContextRef.current = new AudioContext({ sampleRate: 44100 })
+    }
+    if (audioContextRef.current.state === 'suspended') {
+      audioContextRef.current.resume()
+    }
+    return audioContextRef.current
+  }, [])
+
+  const startStreaming = useCallback(() => {
+    if (isStreamingRef.current) return
+    
+    const audioContext = initAudioContext()
+    isStreamingRef.current = true
+    audioQueueRef.current = []
+    nextStartTimeRef.current = 0
+    isPlayingRef.current = false
+
+    const ws = new WebSocket(`${wsUrl}/ws/audio`)
+    ws.binaryType = 'arraybuffer'
+    
+    ws.onopen = () => {
+      console.log('Audio stream connected')
+    }
+
+    ws.onmessage = (event) => {
+      if (typeof event.data === 'string') {
+        // JSON config message
+        const config = JSON.parse(event.data)
+        if (config.type === 'audio_config') {
+          audioConfigRef.current = {
+            sampleRate: config.sample_rate,
+            channels: config.channels
+          }
+          console.log('Audio config:', audioConfigRef.current)
+        }
+      } else {
+        // Binary PCM data
+        const config = audioConfigRef.current
+        if (!config) return
+
+        // Convert Int16 PCM to Float32
+        const int16Data = new Int16Array(event.data)
+        const float32Data = new Float32Array(int16Data.length)
+        for (let i = 0; i < int16Data.length; i++) {
+          float32Data[i] = int16Data[i] / 32768
+        }
+
+        // Create audio buffer
+        const samplesPerChannel = float32Data.length / config.channels
+        const audioBuffer = audioContext.createBuffer(
+          config.channels,
+          samplesPerChannel,
+          config.sampleRate
+        )
+
+        // Deinterleave channels
+        for (let ch = 0; ch < config.channels; ch++) {
+          const channelData = audioBuffer.getChannelData(ch)
+          for (let i = 0; i < samplesPerChannel; i++) {
+            channelData[i] = float32Data[i * config.channels + ch]
+          }
+        }
+
+        // Schedule playback
+        const source = audioContext.createBufferSource()
+        source.buffer = audioBuffer
+
+        // Handle sample rate mismatch with playback rate adjustment
+        if (config.sampleRate !== audioContext.sampleRate) {
+          source.playbackRate.value = config.sampleRate / audioContext.sampleRate
+        }
+
+        source.connect(audioContext.destination)
+
+        // Calculate when to start this buffer
+        const currentTime = audioContext.currentTime
+        const bufferDuration = samplesPerChannel / config.sampleRate
+
+        if (!isPlayingRef.current || nextStartTimeRef.current < currentTime) {
+          // First buffer or we've fallen behind - start with small delay
+          nextStartTimeRef.current = currentTime + 0.05
+          isPlayingRef.current = true
+        }
+
+        source.start(nextStartTimeRef.current)
+        nextStartTimeRef.current += bufferDuration
+      }
+    }
+
+    ws.onclose = () => {
+      console.log('Audio stream disconnected')
+      isStreamingRef.current = false
+    }
+
+    ws.onerror = (err) => {
+      console.error('Audio stream error:', err)
+    }
+
+    wsRef.current = ws
+  }, [wsUrl, initAudioContext])
+
+  const stopStreaming = useCallback(() => {
+    if (wsRef.current) {
+      wsRef.current.close()
+      wsRef.current = null
+    }
+    isStreamingRef.current = false
+    isPlayingRef.current = false
+    audioQueueRef.current = []
+  }, [])
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      stopStreaming()
+      if (audioContextRef.current) {
+        audioContextRef.current.close()
+      }
+    }
+  }, [stopStreaming])
+
+  return { startStreaming, stopStreaming, initAudioContext }
+}
 
 interface Note {
   pitch: string | string[]
@@ -71,6 +207,9 @@ function App() {
   const [feedback, setFeedback] = useState<Record<string, string>>({ pad: '', lead: '', bass: '' })
   const [improving, setImproving] = useState(false)
   const wsRef = useRef<WebSocket | null>(null)
+  
+  // Audio streaming for real-time playback from Montage
+  const { startStreaming, stopStreaming, initAudioContext } = useAudioStream(WS_URL)
 
   // Fetch LLM config on mount
   useEffect(() => {
@@ -111,6 +250,8 @@ function App() {
         setPlaying(true)
       } else if (data.type === 'playback_complete' || data.type === 'playback_stopped') {
         setPlaying(false)
+        // Stop audio streaming when playback ends
+        stopStreaming()
       }
     }
     ws.onclose = () => {
@@ -124,7 +265,7 @@ function App() {
       wsRef.current = null
       ws.close()
     }
-  }, [])
+  }, [stopStreaming])
 
   const startSession = async () => {
     if (!prompt.trim()) return
@@ -172,6 +313,10 @@ function App() {
 
   const play = async (layers?: string[]) => {
     try {
+      // Initialize audio context on user interaction (required by browsers)
+      initAudioContext()
+      // Start audio streaming before sending play request
+      startStreaming()
       await fetch(`${API_URL}/api/play`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -179,12 +324,14 @@ function App() {
       })
     } catch (e) {
       console.error('Play failed:', e)
+      stopStreaming()
     }
   }
 
   const stop = async () => {
     try {
       await fetch(`${API_URL}/api/stop`, { method: 'POST' })
+      stopStreaming()
     } catch (e) {
       console.error('Stop failed:', e)
     }
