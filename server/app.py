@@ -42,7 +42,7 @@ async def lifespan(app: FastAPI):
         log.info(f"Available MIDI ports: {player.list_ports()}")
 
     audio = get_audio_capture()
-    log.info(f"Available audio devices: {[d['name'] for d in audio.list_devices()]}")
+    log.info(f"Available audio devices: {audio.list_devices()}")
 
     log.info("Server ready! Waiting for connections...")
     log.info("=" * 50)
@@ -95,7 +95,7 @@ async def health():
         "status": "ok",
         "midi_connected": player.is_connected(),
         "midi_ports": player.list_ports(),
-        "audio_devices": get_audio_capture().list_devices()
+        "audio_device": get_audio_capture().config.alsa_device
     }
 
 
