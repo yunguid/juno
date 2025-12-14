@@ -1,15 +1,20 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import './App.css'
 
-// Audio streaming hook - connects to WebSocket and plays PCM audio through Web Audio API
+// Audio streaming hook with jitter buffer for smooth playback over network
 function useAudioStream(wsUrl: string) {
   const audioContextRef = useRef<AudioContext | null>(null)
   const wsRef = useRef<WebSocket | null>(null)
   const isStreamingRef = useRef(false)
   const audioConfigRef = useRef<{ sampleRate: number; channels: number } | null>(null)
-  const audioQueueRef = useRef<Float32Array[]>([])
+  const audioQueueRef = useRef<ArrayBuffer[]>([])  // Jitter buffer
   const isPlayingRef = useRef(false)
   const nextStartTimeRef = useRef(0)
+  const playbackIntervalRef = useRef<number | null>(null)
+  
+  // Jitter buffer settings
+  const BUFFER_TARGET = 8  // Start playing when we have this many chunks buffered
+  const BUFFER_MIN = 3     // If buffer drops below this, pause to refill
 
   const initAudioContext = useCallback(async () => {
     if (!audioContextRef.current) {
@@ -50,6 +55,72 @@ function useAudioStream(wsUrl: string) {
       setTimeout(() => reject(new Error('Audio stream connection timeout')), 5000)
     })
 
+    // Function to play one chunk from the buffer
+    const playNextChunk = () => {
+      const config = audioConfigRef.current
+      if (!config || audioQueueRef.current.length === 0) return
+      
+      const audioContext = audioContextRef.current
+      if (!audioContext) return
+
+      // Check if buffer is too low - pause playback to refill
+      if (audioQueueRef.current.length < BUFFER_MIN && isPlayingRef.current) {
+        console.log('Buffer low, waiting to refill...', audioQueueRef.current.length)
+        isPlayingRef.current = false
+        return
+      }
+
+      // Check if we have enough buffer to start/resume
+      if (!isPlayingRef.current && audioQueueRef.current.length < BUFFER_TARGET) {
+        return  // Wait for more data
+      }
+
+      const data = audioQueueRef.current.shift()!
+      
+      // Convert Int16 PCM to Float32
+      const int16Data = new Int16Array(data)
+      const float32Data = new Float32Array(int16Data.length)
+      for (let i = 0; i < int16Data.length; i++) {
+        float32Data[i] = int16Data[i] / 32768
+      }
+
+      // Create audio buffer
+      const samplesPerChannel = float32Data.length / config.channels
+      const audioBuffer = audioContext.createBuffer(
+        config.channels,
+        samplesPerChannel,
+        config.sampleRate
+      )
+
+      // Deinterleave channels
+      for (let ch = 0; ch < config.channels; ch++) {
+        const channelData = audioBuffer.getChannelData(ch)
+        for (let i = 0; i < samplesPerChannel; i++) {
+          channelData[i] = float32Data[i * config.channels + ch]
+        }
+      }
+
+      // Schedule playback
+      const source = audioContext.createBufferSource()
+      source.buffer = audioBuffer
+      source.connect(audioContext.destination)
+
+      const currentTime = audioContext.currentTime
+      const bufferDuration = samplesPerChannel / config.sampleRate
+
+      if (!isPlayingRef.current || nextStartTimeRef.current < currentTime) {
+        nextStartTimeRef.current = currentTime + 0.1
+        isPlayingRef.current = true
+        console.log('Audio playback started, buffer:', audioQueueRef.current.length)
+      }
+
+      source.start(nextStartTimeRef.current)
+      nextStartTimeRef.current += bufferDuration
+    }
+
+    // Start playback loop
+    playbackIntervalRef.current = window.setInterval(playNextChunk, 20)
+
     ws.onmessage = (event) => {
       if (typeof event.data === 'string') {
         // JSON config message
@@ -62,62 +133,13 @@ function useAudioStream(wsUrl: string) {
           console.log('Audio config:', audioConfigRef.current, 'AudioContext sampleRate:', audioContext.sampleRate)
         }
       } else {
-        // Binary PCM data
-        const config = audioConfigRef.current
-        if (!config) {
-          console.log('No audio config yet, skipping data')
-          return
+        // Binary PCM data - add to jitter buffer
+        audioQueueRef.current.push(event.data)
+        
+        // Log buffer status periodically
+        if (audioQueueRef.current.length % 20 === 0) {
+          console.log('Audio buffer:', audioQueueRef.current.length, 'chunks')
         }
-
-        // Convert Int16 PCM to Float32
-        const int16Data = new Int16Array(event.data)
-        const float32Data = new Float32Array(int16Data.length)
-        let maxSample = 0
-        for (let i = 0; i < int16Data.length; i++) {
-          float32Data[i] = int16Data[i] / 32768
-          maxSample = Math.max(maxSample, Math.abs(float32Data[i]))
-        }
-
-        // Create audio buffer
-        const samplesPerChannel = float32Data.length / config.channels
-        const audioBuffer = audioContext.createBuffer(
-          config.channels,
-          samplesPerChannel,
-          config.sampleRate
-        )
-
-        // Deinterleave channels
-        for (let ch = 0; ch < config.channels; ch++) {
-          const channelData = audioBuffer.getChannelData(ch)
-          for (let i = 0; i < samplesPerChannel; i++) {
-            channelData[i] = float32Data[i * config.channels + ch]
-          }
-        }
-
-        // Schedule playback
-        const source = audioContext.createBufferSource()
-        source.buffer = audioBuffer
-
-        // Handle sample rate mismatch with playback rate adjustment
-        if (config.sampleRate !== audioContext.sampleRate) {
-          source.playbackRate.value = config.sampleRate / audioContext.sampleRate
-        }
-
-        source.connect(audioContext.destination)
-
-        // Calculate when to start this buffer
-        const currentTime = audioContext.currentTime
-        const bufferDuration = samplesPerChannel / config.sampleRate
-
-        if (!isPlayingRef.current || nextStartTimeRef.current < currentTime) {
-          // First buffer or we've fallen behind - start with larger delay for buffer
-          nextStartTimeRef.current = currentTime + 0.2  // 200ms buffer for network latency
-          isPlayingRef.current = true
-          console.log('Audio playback started, peak level:', maxSample.toFixed(3), 'ctx state:', audioContext.state)
-        }
-
-        source.start(nextStartTimeRef.current)
-        nextStartTimeRef.current += bufferDuration
       }
     }
 
@@ -130,6 +152,10 @@ function useAudioStream(wsUrl: string) {
   }, [wsUrl, initAudioContext])
 
   const stopStreaming = useCallback(() => {
+    if (playbackIntervalRef.current) {
+      clearInterval(playbackIntervalRef.current)
+      playbackIntervalRef.current = null
+    }
     if (wsRef.current) {
       wsRef.current.close()
       wsRef.current = null
