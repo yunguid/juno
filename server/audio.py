@@ -90,46 +90,43 @@ class AudioCapture:
             self._callbacks.remove(callback)
 
     def _capture_loop(self):
-        """Thread loop that reads audio and dispatches to callbacks"""
-        print(f"[AUDIO] Capture thread started")
+        """Thread loop using sd.rec() which is known to work"""
+        print(f"[AUDIO] Capture thread started (using sd.rec method)")
+        
+        chunk_duration = self.config.chunk_size / self.config.sample_rate  # ~23ms per chunk
         
         try:
-            with sd.InputStream(
-                device=self._device_id,
-                samplerate=self.config.sample_rate,
-                channels=self.config.capture_channels,
-                blocksize=self.config.chunk_size,
-                dtype=np.float32
-            ) as stream:
-                print(f"[AUDIO] Stream opened: {stream.samplerate}Hz, {stream.channels}ch")
+            while self._capturing:
+                # Use sd.rec() which worked in the test script
+                indata = sd.rec(
+                    self.config.chunk_size,
+                    samplerate=self.config.sample_rate,
+                    channels=self.config.capture_channels,
+                    device=self._device_id,
+                    dtype=np.float32
+                )
+                sd.wait()  # Block until recording complete
                 
-                while self._capturing:
-                    # Read audio data (blocking)
-                    indata, overflowed = stream.read(self.config.chunk_size)
-                    
-                    if overflowed:
-                        print(f"[AUDIO] Buffer overflow!")
-                    
-                    self._chunk_count += 1
-                    
-                    # Debug: log raw input levels periodically
-                    raw_peak = np.max(np.abs(indata))
-                    if self._chunk_count % 50 == 1:
-                        print(f"[AUDIO] raw peak: {raw_peak:.6f}, shape: {indata.shape}, callbacks: {len(self._callbacks)}")
-                    
-                    # Extract stereo (first 2 channels)
-                    stereo_data = indata[:, :self.config.output_channels]
-                    
-                    # Convert to 16-bit PCM
-                    audio_int16 = (stereo_data * 32767).astype(np.int16)
-                    audio_bytes = audio_int16.tobytes()
-                    
-                    # Dispatch to callbacks
-                    for callback in self._callbacks:
-                        try:
-                            callback(audio_bytes)
-                        except Exception as e:
-                            print(f"[AUDIO] Callback error: {e}")
+                self._chunk_count += 1
+                
+                # Debug: log raw input levels periodically
+                raw_peak = np.max(np.abs(indata))
+                if self._chunk_count % 50 == 1:
+                    print(f"[AUDIO] raw peak: {raw_peak:.6f}, shape: {indata.shape}, callbacks: {len(self._callbacks)}")
+                
+                # Extract stereo (first 2 channels)
+                stereo_data = indata[:, :self.config.output_channels]
+                
+                # Convert to 16-bit PCM
+                audio_int16 = (stereo_data * 32767).astype(np.int16)
+                audio_bytes = audio_int16.tobytes()
+                
+                # Dispatch to callbacks
+                for callback in self._callbacks:
+                    try:
+                        callback(audio_bytes)
+                    except Exception as e:
+                        print(f"[AUDIO] Callback error: {e}")
                             
         except Exception as e:
             print(f"[AUDIO] Capture thread error: {e}")
