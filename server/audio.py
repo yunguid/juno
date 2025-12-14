@@ -110,18 +110,27 @@ class AudioCapture:
                     
                     self._chunk_count += 1
                     
+                    # Debug: log raw bytes
+                    if self._chunk_count <= 3:
+                        print(f"[AUDIO] raw_data len: {len(raw_data)}, first 64 bytes: {raw_data[:64].hex()}")
+                    
                     # Convert S32_LE to float32
                     num_samples = len(raw_data) // bytes_per_sample
                     int32_data = struct.unpack(f'<{num_samples}i', raw_data)
+                    
+                    # Debug: check int32 values
+                    if self._chunk_count <= 3:
+                        max_int32 = max(abs(v) for v in int32_data[:100])
+                        print(f"[AUDIO] num_samples: {num_samples}, max int32 (first 100): {max_int32}")
                     
                     frames = num_samples // self.config.capture_channels
                     audio_data = np.array(int32_data, dtype=np.float32).reshape(frames, self.config.capture_channels)
                     audio_data /= 2147483648.0  # Normalize S32 to -1.0 to 1.0
                     
-                    # Debug: log levels periodically
+                    # Debug: log levels periodically  
                     raw_peak = np.max(np.abs(audio_data))
-                    if self._chunk_count % 50 == 1:
-                        print(f"[AUDIO] raw peak: {raw_peak:.6f}, shape: {audio_data.shape}, callbacks: {len(self._callbacks)}")
+                    if self._chunk_count % 50 == 1 or self._chunk_count <= 5:
+                        print(f"[AUDIO] chunk {self._chunk_count}: peak: {raw_peak:.6f}, shape: {audio_data.shape}")
                     
                     # Extract stereo (first 2 channels)
                     stereo_data = audio_data[:, :self.config.output_channels]
