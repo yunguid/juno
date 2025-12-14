@@ -1,14 +1,16 @@
-"""Audio capture and streaming from M8X USB audio via subprocess
+"""Audio capture and streaming from M8X USB audio via multiprocessing
 
-Uses arecord subprocess to capture audio because sounddevice doesn't work
+Uses a separate process for audio capture because sounddevice/arecord don't work
 properly inside uvicorn's async event loop context.
 """
 import subprocess
 import threading
+import multiprocessing
 import numpy as np
 import io
 import wave
 import struct
+import queue
 from dataclasses import dataclass
 from typing import Callable
 
@@ -18,6 +20,63 @@ try:
 except ImportError:
     AUDIO_AVAILABLE = False
     sd = None
+
+
+def _audio_capture_process(alsa_device: str, sample_rate: int, channels: int, audio_queue: multiprocessing.Queue, stop_event: multiprocessing.Event):
+    """Runs in a separate process to capture audio"""
+    import sounddevice as sd
+    import numpy as np
+    
+    print(f"[AUDIO PROC] Starting capture process on {alsa_device}")
+    
+    try:
+        # Find the device
+        devices = sd.query_devices()
+        device_id = None
+        for i, d in enumerate(devices):
+            if 'MONTAGE' in d['name'].upper():
+                device_id = i
+                break
+        
+        if device_id is None:
+            print(f"[AUDIO PROC] Montage not found! Available: {[d['name'] for d in devices]}")
+            return
+        
+        print(f"[AUDIO PROC] Using device {device_id}: {devices[device_id]['name']}")
+        
+        chunk_size = 1024
+        chunk_count = 0
+        
+        while not stop_event.is_set():
+            # Use sd.rec() which we know works in standalone Python
+            recording = sd.rec(
+                chunk_size,
+                samplerate=sample_rate,
+                channels=channels,
+                device=device_id,
+                dtype=np.float32
+            )
+            sd.wait()
+            
+            chunk_count += 1
+            peak = np.max(np.abs(recording))
+            
+            if chunk_count % 50 == 1:
+                print(f"[AUDIO PROC] chunk {chunk_count}: peak {peak:.6f}")
+            
+            # Put audio data in queue (extract first 2 channels, convert to int16)
+            stereo = recording[:, :2]
+            audio_int16 = (stereo * 32767).astype(np.int16)
+            
+            try:
+                audio_queue.put_nowait(audio_int16.tobytes())
+            except:
+                pass  # Queue full, drop frame
+                
+    except Exception as e:
+        print(f"[AUDIO PROC] Error: {e}")
+    
+    print(f"[AUDIO PROC] Capture process stopped")
 
 
 @dataclass
@@ -31,14 +90,16 @@ class AudioConfig:
 
 
 class AudioCapture:
-    """Captures audio from Montage M USB audio interface using arecord subprocess"""
+    """Captures audio from Montage M USB audio interface using multiprocessing"""
 
     def __init__(self, config: AudioConfig | None = None):
         self.config = config or AudioConfig()
-        self._process: subprocess.Popen | None = None
         self._capturing = False
         self._callbacks: list[Callable[[bytes], None]] = []
-        self._capture_thread: threading.Thread | None = None
+        self._capture_process: multiprocessing.Process | None = None
+        self._audio_queue: multiprocessing.Queue | None = None
+        self._stop_event: multiprocessing.Event | None = None
+        self._reader_thread: threading.Thread | None = None
         self._chunk_count = 0
 
     def list_devices(self) -> list[str]:
@@ -68,107 +129,66 @@ class AudioCapture:
         if callback in self._callbacks:
             self._callbacks.remove(callback)
 
-    def _capture_loop(self):
-        """Thread loop that reads from arecord via FIFO"""
-        import os
-        import tempfile
+    def _reader_loop(self):
+        """Thread that reads from the audio queue and dispatches to callbacks"""
+        print(f"[AUDIO] Reader thread started")
         
-        print(f"[AUDIO] Capture thread started (using FIFO)")
-        
-        # Create a named pipe (FIFO)
-        fifo_path = "/tmp/juno_audio_fifo"
-        try:
-            os.unlink(fifo_path)
-        except FileNotFoundError:
-            pass
-        os.mkfifo(fifo_path)
-        
-        # Start arecord writing to the FIFO
-        cmd = f"arecord -D {self.config.alsa_device} -f S32_LE -r {self.config.sample_rate} -c {self.config.capture_channels} -t raw > {fifo_path}"
-        print(f"[AUDIO] Starting: {cmd}")
-        
-        self._process = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
-        
-        bytes_per_sample = 4  # S32_LE
-        frame_size = self.config.capture_channels * bytes_per_sample  # 32 bytes per frame
-        bytes_to_read = 1024 * frame_size  # Read 1024 frames at a time
-        
-        try:
-            # Open FIFO for reading (this blocks until arecord starts writing)
-            with open(fifo_path, 'rb') as fifo:
-                print(f"[AUDIO] FIFO opened, reading audio...")
-                
-                while self._capturing:
-                    raw_data = fifo.read(bytes_to_read)
-                    if not raw_data:
-                        # Check if process died
-                        if self._process.poll() is not None:
-                            stderr = self._process.stderr.read().decode() if self._process.stderr else ""
-                            print(f"[AUDIO] arecord exited: {self._process.returncode}, stderr: {stderr}")
-                            break
-                        continue
-                    
-                    self._chunk_count += 1
-                    
-                    # Debug: log raw bytes
-                    if self._chunk_count <= 3:
-                        print(f"[AUDIO] raw_data len: {len(raw_data)}, first 64 bytes: {raw_data[:64].hex()}")
-                    
-                    # Convert S32_LE to float32
-                    num_samples = len(raw_data) // bytes_per_sample
-                    int32_data = struct.unpack(f'<{num_samples}i', raw_data)
-                    
-                    # Debug: check int32 values
-                    if self._chunk_count <= 3:
-                        max_int32 = max(abs(v) for v in int32_data[:100])
-                        print(f"[AUDIO] num_samples: {num_samples}, max int32 (first 100): {max_int32}")
-                    
-                    frames = num_samples // self.config.capture_channels
-                    audio_data = np.array(int32_data, dtype=np.float32).reshape(frames, self.config.capture_channels)
-                    audio_data /= 2147483648.0  # Normalize S32 to -1.0 to 1.0
-                    
-                    # Debug: log levels periodically  
-                    raw_peak = np.max(np.abs(audio_data))
-                    if self._chunk_count % 50 == 1 or self._chunk_count <= 5:
-                        print(f"[AUDIO] chunk {self._chunk_count}: peak: {raw_peak:.6f}, shape: {audio_data.shape}")
-                    
-                    # Extract stereo (first 2 channels)
-                    stereo_data = audio_data[:, :self.config.output_channels]
-                    
-                    # Convert to 16-bit PCM for streaming
-                    audio_int16 = (stereo_data * 32767).astype(np.int16)
-                    audio_bytes = audio_int16.tobytes()
-                    
-                    # Dispatch to callbacks
-                    for callback in self._callbacks:
-                        try:
-                            callback(audio_bytes)
-                        except Exception as e:
-                            print(f"[AUDIO] Callback error: {e}")
-                            
-        except Exception as e:
-            print(f"[AUDIO] Capture thread error: {e}")
-        finally:
+        while self._capturing:
             try:
-                os.unlink(fifo_path)
+                # Get audio data from the queue (blocks with timeout)
+                audio_bytes = self._audio_queue.get(timeout=0.1)
+                self._chunk_count += 1
+                
+                if self._chunk_count % 50 == 1:
+                    # Calculate peak for debugging
+                    audio_int16 = np.frombuffer(audio_bytes, dtype=np.int16)
+                    peak = np.max(np.abs(audio_int16)) / 32767.0
+                    print(f"[AUDIO] chunk {self._chunk_count}: peak {peak:.6f}, callbacks: {len(self._callbacks)}")
+                
+                # Dispatch to callbacks
+                for callback in self._callbacks:
+                    try:
+                        callback(audio_bytes)
+                    except Exception as e:
+                        print(f"[AUDIO] Callback error: {e}")
+                        
             except:
-                pass
+                continue  # Timeout, check if still capturing
         
-        print(f"[AUDIO] Capture thread stopped")
+        print(f"[AUDIO] Reader thread stopped")
 
     def start(self) -> bool:
-        """Start audio capture using arecord via FIFO"""
+        """Start audio capture using multiprocessing"""
         if self._capturing:
             print("[AUDIO] Already capturing")
             return True
 
         try:
+            # Create IPC primitives
+            self._audio_queue = multiprocessing.Queue(maxsize=100)
+            self._stop_event = multiprocessing.Event()
+            
+            # Start capture process
+            self._capture_process = multiprocessing.Process(
+                target=_audio_capture_process,
+                args=(
+                    self.config.alsa_device,
+                    self.config.sample_rate,
+                    self.config.capture_channels,
+                    self._audio_queue,
+                    self._stop_event
+                ),
+                daemon=True
+            )
+            self._capture_process.start()
+            
+            # Start reader thread
             self._capturing = True
             self._chunk_count = 0
-            self._capture_thread = threading.Thread(target=self._capture_loop, daemon=True)
-            self._capture_thread.start()
+            self._reader_thread = threading.Thread(target=self._reader_loop, daemon=True)
+            self._reader_thread.start()
             
-            print(f"[AUDIO] Capture starting on {self.config.alsa_device}")
+            print(f"[AUDIO] Capture started (multiprocessing) on {self.config.alsa_device}")
             return True
             
         except Exception as e:
@@ -180,17 +200,28 @@ class AudioCapture:
         """Stop audio capture"""
         self._capturing = False
         
-        if self._process:
-            self._process.terminate()
-            try:
-                self._process.wait(timeout=2.0)
-            except subprocess.TimeoutExpired:
-                self._process.kill()
-            self._process = None
+        # Signal the capture process to stop
+        if self._stop_event:
+            self._stop_event.set()
+        
+        # Wait for capture process
+        if self._capture_process:
+            self._capture_process.join(timeout=2.0)
+            if self._capture_process.is_alive():
+                self._capture_process.terminate()
+            self._capture_process = None
             
-        if self._capture_thread:
-            self._capture_thread.join(timeout=2.0)
-            self._capture_thread = None
+        # Wait for reader thread
+        if self._reader_thread:
+            self._reader_thread.join(timeout=2.0)
+            self._reader_thread = None
+        
+        # Clean up queue
+        if self._audio_queue:
+            self._audio_queue.close()
+            self._audio_queue = None
+            
+        self._stop_event = None
             
         print("[AUDIO] Capture stopped")
 
@@ -199,34 +230,76 @@ class AudioCapture:
         return self._capturing
 
     def record(self, duration: float, extra_time: float = 0.5) -> bytes | None:
-        """Record audio for a specified duration and return as WAV bytes."""
+        """Record audio for a specified duration and return as WAV bytes.
+        
+        Uses multiprocessing to run sounddevice in a separate process.
+        """
         total_duration = duration + extra_time
 
+        def _record_process(duration_sec, sample_rate, channels, result_queue):
+            import sounddevice as sd
+            import numpy as np
+            import io
+            import wave
+            
+            try:
+                # Find device
+                device_id = None
+                for i, d in enumerate(sd.query_devices()):
+                    if 'MONTAGE' in d['name'].upper():
+                        device_id = i
+                        break
+                
+                if device_id is None:
+                    result_queue.put(None)
+                    return
+                
+                print(f"[RECORD] Recording {duration_sec:.1f}s from device {device_id}...")
+                recording = sd.rec(
+                    int(duration_sec * sample_rate),
+                    samplerate=sample_rate,
+                    channels=channels,
+                    device=device_id,
+                    dtype=np.float32
+                )
+                sd.wait()
+                
+                peak = np.max(np.abs(recording))
+                print(f"[RECORD] Complete: {len(recording)} samples, peak: {peak:.6f}")
+                
+                # Extract stereo, convert to 16-bit
+                stereo = recording[:, :2]
+                audio_int16 = (stereo * 32767).astype(np.int16)
+                
+                # Write to WAV
+                wav_buffer = io.BytesIO()
+                with wave.open(wav_buffer, 'wb') as wav_file:
+                    wav_file.setnchannels(2)
+                    wav_file.setsampwidth(2)
+                    wav_file.setframerate(sample_rate)
+                    wav_file.writeframes(audio_int16.tobytes())
+                
+                wav_buffer.seek(0)
+                result_queue.put(wav_buffer.read())
+                
+            except Exception as e:
+                print(f"[RECORD] Error: {e}")
+                result_queue.put(None)
+
         try:
-            # Use arecord to record to a temporary WAV
-            cmd = [
-                "arecord",
-                "-D", self.config.alsa_device,
-                "-f", "S32_LE",
-                "-r", str(self.config.sample_rate),
-                "-c", str(self.config.capture_channels),
-                "-d", str(int(total_duration + 1)),  # Duration in seconds
-                "-t", "wav",
-                "-q",
-            ]
+            result_queue = multiprocessing.Queue()
+            proc = multiprocessing.Process(
+                target=_record_process,
+                args=(total_duration, self.config.sample_rate, self.config.capture_channels, result_queue)
+            )
+            proc.start()
+            proc.join(timeout=total_duration + 10)
             
-            print(f"[AUDIO] Recording {total_duration:.1f}s...")
-            result = subprocess.run(cmd, capture_output=True, timeout=total_duration + 10)
-            
-            if result.returncode != 0:
-                print(f"[AUDIO] arecord failed: {result.stderr.decode()}")
+            if proc.is_alive():
+                proc.terminate()
                 return None
             
-            # result.stdout contains WAV data
-            # Need to convert from 8ch S32_LE to 2ch S16_LE
-            # For now, just return raw - can process later if needed
-            print(f"[AUDIO] Recording complete: {len(result.stdout)} bytes")
-            return result.stdout
+            return result_queue.get_nowait() if not result_queue.empty() else None
 
         except Exception as e:
             print(f"Recording failed: {e}")
