@@ -116,28 +116,27 @@ PHRASING:
     SoundType.BASS: """BASS LAYER GUIDELINES:
 - Octaves 1-3 (C1 to B3)
 
-SUPPORTIVE FOUNDATION:
-- Keep it SIMPLE - bass supports, doesn't show off
-- Mostly root notes on strong beats
-- Occasional 5th or octave for variety
-- Let the chords and melody shine
+FOLLOW THE CHORDS - BE SUPPORTIVE:
+- Play the ROOT note of whatever chord the pad is playing
+- When pad plays Cmin9, bass plays C. When pad plays Fmaj, bass plays F.
+- Bass exists to SUPPORT the harmony, not to be interesting
+- NO fancy patterns, NO showing off, NO melodic movement
 
-STEADY AND GROUNDED:
-- Long notes: half notes (2 beats) or whole notes (4 beats)
-- Lock to the kick drum feel: beats 1 and 3
-- Don't move around too much - stay on roots
-- One or two notes per bar is often enough
+SIMPLE AND SLOW:
+- One note per chord change (often one note per bar or two)
+- Use whole notes (4 beats) or half notes (2 beats) ONLY
+- NO eighth notes, NO sixteenth notes, NO syncopation
+- Just the root, held long
 
-SIMPLE PATTERNS:
-- Root on beat 1, hold
-- Root on 1, fifth on 3
-- Root on 1, octave on 3
-- Pedal on one note while chords change above
+EXAMPLE FOR 4 BARS:
+- Bar 1: C2 whole note (4 beats)
+- Bar 2: Ab1 whole note (4 beats)
+- Bar 3: Eb2 whole note (4 beats)
+- Bar 4: Bb1 whole note (4 beats)
 
-WHEN TO MOVE:
-- Only move to a new note when chord changes
-- Use passing tones sparingly (one per 2 bars max)
-- Keep velocity consistent: 70-85"""
+VELOCITY:
+- Keep consistent: 75-85
+- No variation needed - steady foundation"""
 }
 
 SINGLE_LAYER_SYSTEM = """You are a music production AI creating emotional, expressive music.

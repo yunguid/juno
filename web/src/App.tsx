@@ -52,7 +52,8 @@ const KEYS = [
   'Bb major', 'Bb minor', 'Eb major', 'Eb minor',
 ]
 
-const API_URL = 'http://localhost:8000'
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+const WS_URL = import.meta.env.VITE_WS_URL || 'ws://localhost:8000'
 
 function App() {
   const [step, setStep] = useState<Step>('setup')
@@ -96,7 +97,7 @@ function App() {
   }
 
   useEffect(() => {
-    const ws = new WebSocket(`ws://localhost:8000/ws`)
+    const ws = new WebSocket(`${WS_URL}/ws`)
     ws.onopen = () => {
       console.log('Connected to server')
       setError(null) // Clear any previous connection errors

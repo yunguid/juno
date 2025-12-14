@@ -2,11 +2,18 @@
 import mido
 import time
 
-PORT_NAME = "MONTAGE M 2 Port1"
+PORT_NAMES = [
+    "MONTAGE M 2 Port1",           # macOS
+    "MONTAGE M:MONTAGE M MIDI 1 24:0",  # Linux/Pi
+]
 
 def get_port():
     """Open and return the MIDI output port"""
-    return mido.open_output(PORT_NAME)
+    available = mido.get_output_names()
+    for name in PORT_NAMES:
+        if name in available:
+            return mido.open_output(name)
+    raise IOError(f"No MONTAGE found. Available ports: {available}")
 
 def list_ports():
     """List available MIDI ports"""
