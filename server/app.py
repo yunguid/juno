@@ -2,6 +2,8 @@
 import asyncio
 import json
 import base64
+import os
+import sys
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -33,6 +35,14 @@ async def lifespan(app: FastAPI):
     log.info("=" * 50)
     log.info("JUNO SERVER STARTING")
     log.info("=" * 50)
+    log.info(f"PID: {os.getpid()} Python: {sys.executable} ({sys.version.split()[0]})")
+
+    try:
+        import sounddevice as sd
+
+        log.info(f"sounddevice: {sd.__version__}")
+    except Exception as e:
+        log.warning(f"sounddevice unavailable: {e}")
 
     player = get_player()
     if player.connect():
