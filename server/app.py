@@ -605,11 +605,11 @@ async def audio_websocket(websocket: WebSocket):
             log.warning("Failed to start audio capture")
 
     try:
-        # Send audio config
+        # Send audio config (output channels, not capture channels)
         await websocket.send_json({
             "type": "audio_config",
             "sample_rate": audio.config.sample_rate,
-            "channels": audio.config.channels
+            "channels": audio.config.output_channels
         })
 
         while True:

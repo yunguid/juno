@@ -20,8 +20,9 @@ class AudioConfig:
     """Audio capture configuration"""
     device_names: tuple[str, ...] = ("MONTAGE M", "MONTAGE", "hw:2,0", "hw:M,0")
     sample_rate: int = 44100
-    channels: int = 2
-    chunk_size: int = 1024  # Samples per chunk
+    capture_channels: int = 8  # Montage Generic USB exposes 8 channels
+    output_channels: int = 2   # We only stream first 2 (Main L/R)
+    chunk_size: int = 1024     # Samples per chunk
 
 
 class AudioCapture:
@@ -49,7 +50,7 @@ class AudioCapture:
                 try:
                     # Verify the device exists by querying it
                     info = sd.query_devices(name_pattern)
-                    if info and info.get('max_input_channels', 0) >= self.config.channels:
+                    if info and info.get('max_input_channels', 0) >= self.config.capture_channels:
                         return name_pattern
                 except Exception:
                     continue
@@ -57,7 +58,7 @@ class AudioCapture:
                 # Search by name substring
                 for i, device in enumerate(devices):
                     if name_pattern.lower() in device['name'].lower():
-                        if device['max_input_channels'] >= self.config.channels:
+                        if device['max_input_channels'] >= self.config.capture_channels:
                             return i
         
         return None
@@ -92,9 +93,13 @@ class AudioCapture:
         if status:
             print(f"Audio status: {status}")
 
+        # Extract only the first N output channels (Main L/R) from the 8-channel input
+        # indata shape is (frames, capture_channels)
+        stereo_data = indata[:, :self.config.output_channels]
+        
         # Convert float32 numpy array to bytes (16-bit PCM for streaming)
         # Clamp values and convert to int16
-        audio_int16 = (indata * 32767).astype(np.int16)
+        audio_int16 = (stereo_data * 32767).astype(np.int16)
         audio_bytes = audio_int16.tobytes()
 
         for callback in self._callbacks:
@@ -119,14 +124,14 @@ class AudioCapture:
             self._stream = sd.InputStream(
                 device=self._device_id,
                 samplerate=self.config.sample_rate,
-                channels=self.config.channels,
+                channels=self.config.capture_channels,  # Capture all 8 channels from Montage
                 blocksize=self.config.chunk_size,
                 callback=self._audio_callback,
                 dtype=np.float32
             )
             self._stream.start()
             self._capturing = True
-            print(f"Audio capture started from device {self._device_id}")
+            print(f"Audio capture started from device {self._device_id} ({self.config.capture_channels} channels)")
             return True
         except Exception as e:
             print(f"Failed to start audio capture: {e}")
@@ -166,25 +171,28 @@ class AudioCapture:
         total_duration = duration + extra_time
 
         try:
-            # Record audio
-            print(f"Recording {total_duration:.1f}s from device {device_id}...")
+            # Record audio (all 8 channels from Montage)
+            print(f"Recording {total_duration:.1f}s from device {device_id} ({self.config.capture_channels} channels)...")
             recording = sd.rec(
                 int(total_duration * self.config.sample_rate),
                 samplerate=self.config.sample_rate,
-                channels=self.config.channels,
+                channels=self.config.capture_channels,
                 device=device_id,
                 dtype=np.float32
             )
             sd.wait()  # Wait for recording to complete
             print(f"Recording complete: {len(recording)} samples")
 
+            # Extract only first N channels (Main L/R)
+            stereo_recording = recording[:, :self.config.output_channels]
+
             # Convert to 16-bit PCM
-            audio_int16 = (recording * 32767).astype(np.int16)
+            audio_int16 = (stereo_recording * 32767).astype(np.int16)
 
             # Write to WAV in memory
             wav_buffer = io.BytesIO()
             with wave.open(wav_buffer, 'wb') as wav_file:
-                wav_file.setnchannels(self.config.channels)
+                wav_file.setnchannels(self.config.output_channels)
                 wav_file.setsampwidth(2)  # 16-bit = 2 bytes
                 wav_file.setframerate(self.config.sample_rate)
                 wav_file.writeframes(audio_int16.tobytes())
