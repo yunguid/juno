@@ -9,6 +9,12 @@ from .logger import get_logger
 
 log = get_logger("player")
 
+# Port names for different platforms
+MIDI_PORT_NAMES = [
+    "MONTAGE M 2 Port1",              # macOS
+    "MONTAGE M:MONTAGE M MIDI 1 24:0",  # Linux/Pi
+]
+
 
 @dataclass
 class ScheduledEvent:
@@ -20,7 +26,7 @@ class ScheduledEvent:
 class SamplePlayer:
     """Plays samples on the Yamaha M8X"""
 
-    def __init__(self, port_name: str = "MONTAGE M 2 Port1"):
+    def __init__(self, port_name: str | None = None):
         self.port_name = port_name
         self.port: mido.ports.BaseOutput | None = None
         self._playing = False
@@ -29,15 +35,34 @@ class SamplePlayer:
         self._current_position: float = 0.0  # Current playback position in seconds
 
     def connect(self) -> bool:
-        """Connect to the MIDI port"""
-        try:
-            log.debug(f"Attempting to connect to MIDI port: {self.port_name}")
-            self.port = mido.open_output(self.port_name)
-            log.info(f"MIDI connected: {self.port_name}")
-            return True
-        except Exception as e:
-            log.error(f"Failed to connect to {self.port_name}: {e}")
-            return False
+        """Connect to the MIDI port (auto-detect if not specified)"""
+        available = mido.get_output_names()
+        
+        # If port specified, try that
+        if self.port_name:
+            try:
+                log.debug(f"Attempting to connect to MIDI port: {self.port_name}")
+                self.port = mido.open_output(self.port_name)
+                log.info(f"MIDI connected: {self.port_name}")
+                return True
+            except Exception as e:
+                log.error(f"Failed to connect to {self.port_name}: {e}")
+                return False
+        
+        # Auto-detect from known port names
+        for name in MIDI_PORT_NAMES:
+            if name in available:
+                try:
+                    log.debug(f"Attempting to connect to MIDI port: {name}")
+                    self.port = mido.open_output(name)
+                    self.port_name = name
+                    log.info(f"MIDI connected: {name}")
+                    return True
+                except Exception as e:
+                    log.error(f"Failed to connect to {name}: {e}")
+        
+        log.error(f"No MONTAGE found. Available ports: {available}")
+        return False
 
     def disconnect(self):
         """Disconnect from the MIDI port"""
