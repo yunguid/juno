@@ -69,95 +69,97 @@ class AudioCapture:
             self._callbacks.remove(callback)
 
     def _capture_loop(self):
-        """Thread loop that reads from arecord subprocess"""
-        print(f"[AUDIO] Capture thread started (using arecord subprocess)")
+        """Thread loop that reads from arecord via FIFO"""
+        import os
+        import tempfile
         
-        # arecord outputs 32-bit signed LE, 8 channels
-        # We need to convert to 16-bit stereo for streaming
+        print(f"[AUDIO] Capture thread started (using FIFO)")
+        
+        # Create a named pipe (FIFO)
+        fifo_path = "/tmp/juno_audio_fifo"
+        try:
+            os.unlink(fifo_path)
+        except FileNotFoundError:
+            pass
+        os.mkfifo(fifo_path)
+        
+        # Start arecord writing to the FIFO
+        cmd = f"arecord -D {self.config.alsa_device} -f S32_LE -r {self.config.sample_rate} -c {self.config.capture_channels} -t raw > {fifo_path}"
+        print(f"[AUDIO] Starting: {cmd}")
+        
+        self._process = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE)
+        
         bytes_per_sample = 4  # S32_LE
-        samples_per_chunk = self.config.chunk_bytes // (bytes_per_sample * self.config.capture_channels)
+        frame_size = self.config.capture_channels * bytes_per_sample  # 32 bytes per frame
+        bytes_to_read = 1024 * frame_size  # Read 1024 frames at a time
         
         try:
-            while self._capturing and self._process and self._process.poll() is None:
-                # Read raw audio data from arecord stdout
-                # Each frame is 8 channels * 4 bytes = 32 bytes
-                frame_size = self.config.capture_channels * bytes_per_sample
-                bytes_to_read = samples_per_chunk * frame_size
+            # Open FIFO for reading (this blocks until arecord starts writing)
+            with open(fifo_path, 'rb') as fifo:
+                print(f"[AUDIO] FIFO opened, reading audio...")
                 
-                raw_data = self._process.stdout.read(bytes_to_read)
-                if not raw_data:
-                    continue
-                
-                self._chunk_count += 1
-                
-                # Convert S32_LE to float32 for processing
-                # Unpack as 32-bit signed integers
-                num_samples = len(raw_data) // bytes_per_sample
-                int32_data = struct.unpack(f'<{num_samples}i', raw_data)
-                
-                # Reshape to (frames, channels)
-                frames = num_samples // self.config.capture_channels
-                audio_data = np.array(int32_data, dtype=np.float32).reshape(frames, self.config.capture_channels)
-                audio_data /= 2147483648.0  # Normalize S32 to -1.0 to 1.0
-                
-                # Debug: log raw input levels periodically
-                raw_peak = np.max(np.abs(audio_data))
-                if self._chunk_count % 50 == 1:
-                    print(f"[AUDIO] raw peak: {raw_peak:.6f}, shape: {audio_data.shape}, callbacks: {len(self._callbacks)}")
-                
-                # Extract stereo (first 2 channels)
-                stereo_data = audio_data[:, :self.config.output_channels]
-                
-                # Convert to 16-bit PCM for streaming
-                audio_int16 = (stereo_data * 32767).astype(np.int16)
-                audio_bytes = audio_int16.tobytes()
-                
-                # Dispatch to callbacks
-                for callback in self._callbacks:
-                    try:
-                        callback(audio_bytes)
-                    except Exception as e:
-                        print(f"[AUDIO] Callback error: {e}")
+                while self._capturing:
+                    raw_data = fifo.read(bytes_to_read)
+                    if not raw_data:
+                        # Check if process died
+                        if self._process.poll() is not None:
+                            stderr = self._process.stderr.read().decode() if self._process.stderr else ""
+                            print(f"[AUDIO] arecord exited: {self._process.returncode}, stderr: {stderr}")
+                            break
+                        continue
+                    
+                    self._chunk_count += 1
+                    
+                    # Convert S32_LE to float32
+                    num_samples = len(raw_data) // bytes_per_sample
+                    int32_data = struct.unpack(f'<{num_samples}i', raw_data)
+                    
+                    frames = num_samples // self.config.capture_channels
+                    audio_data = np.array(int32_data, dtype=np.float32).reshape(frames, self.config.capture_channels)
+                    audio_data /= 2147483648.0  # Normalize S32 to -1.0 to 1.0
+                    
+                    # Debug: log levels periodically
+                    raw_peak = np.max(np.abs(audio_data))
+                    if self._chunk_count % 50 == 1:
+                        print(f"[AUDIO] raw peak: {raw_peak:.6f}, shape: {audio_data.shape}, callbacks: {len(self._callbacks)}")
+                    
+                    # Extract stereo (first 2 channels)
+                    stereo_data = audio_data[:, :self.config.output_channels]
+                    
+                    # Convert to 16-bit PCM for streaming
+                    audio_int16 = (stereo_data * 32767).astype(np.int16)
+                    audio_bytes = audio_int16.tobytes()
+                    
+                    # Dispatch to callbacks
+                    for callback in self._callbacks:
+                        try:
+                            callback(audio_bytes)
+                        except Exception as e:
+                            print(f"[AUDIO] Callback error: {e}")
                             
         except Exception as e:
             print(f"[AUDIO] Capture thread error: {e}")
+        finally:
+            try:
+                os.unlink(fifo_path)
+            except:
+                pass
         
         print(f"[AUDIO] Capture thread stopped")
 
     def start(self) -> bool:
-        """Start audio capture using arecord subprocess"""
+        """Start audio capture using arecord via FIFO"""
         if self._capturing:
             print("[AUDIO] Already capturing")
             return True
 
         try:
-            # Start arecord as a subprocess
-            # -D: device, -f: format, -r: rate, -c: channels, -t: type (raw)
-            cmd = [
-                "arecord",
-                "-D", self.config.alsa_device,
-                "-f", "S32_LE",
-                "-r", str(self.config.sample_rate),
-                "-c", str(self.config.capture_channels),
-                "-t", "raw",  # Output raw PCM, no WAV header
-                "-q",  # Quiet mode
-            ]
-            
-            print(f"[AUDIO] Starting: {' '.join(cmd)}")
-            
-            self._process = subprocess.Popen(
-                cmd,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                bufsize=0  # Unbuffered
-            )
-            
             self._capturing = True
             self._chunk_count = 0
             self._capture_thread = threading.Thread(target=self._capture_loop, daemon=True)
             self._capture_thread.start()
             
-            print(f"[AUDIO] Capture started via arecord on {self.config.alsa_device}")
+            print(f"[AUDIO] Capture starting on {self.config.alsa_device}")
             return True
             
         except Exception as e:
