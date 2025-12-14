@@ -110,8 +110,8 @@ function useAudioStream(wsUrl: string) {
         const bufferDuration = samplesPerChannel / config.sampleRate
 
         if (!isPlayingRef.current || nextStartTimeRef.current < currentTime) {
-          // First buffer or we've fallen behind - start with small delay
-          nextStartTimeRef.current = currentTime + 0.05
+          // First buffer or we've fallen behind - start with larger delay for buffer
+          nextStartTimeRef.current = currentTime + 0.2  // 200ms buffer for network latency
           isPlayingRef.current = true
           console.log('Audio playback started, peak level:', maxSample.toFixed(3), 'ctx state:', audioContext.state)
         }
