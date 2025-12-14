@@ -4,6 +4,7 @@ import threading
 import numpy as np
 import io
 import wave
+import time
 from dataclasses import dataclass
 from typing import Callable
 
@@ -26,7 +27,7 @@ class AudioConfig:
 
 
 class AudioCapture:
-    """Captures audio from Montage M USB audio interface"""
+    """Captures audio from Montage M USB audio interface using thread-based polling"""
 
     def __init__(self, config: AudioConfig | None = None):
         self.config = config or AudioConfig()
@@ -34,6 +35,8 @@ class AudioCapture:
         self._capturing = False
         self._callbacks: list[Callable[[bytes], None]] = []
         self._device_id: int | str | None = None
+        self._capture_thread: threading.Thread | None = None
+        self._chunk_count = 0
 
     def find_device(self) -> int | str | None:
         """Find the Montage audio device (supports Generic USB mode)"""
@@ -46,9 +49,7 @@ class AudioCapture:
         for name_pattern in self.config.device_names:
             # Check if it's an ALSA device string (hw:X,Y)
             if name_pattern.startswith("hw:"):
-                # Try using it directly - sounddevice accepts ALSA device strings
                 try:
-                    # Verify the device exists by querying it
                     info = sd.query_devices(name_pattern)
                     if info and info.get('max_input_channels', 0) >= self.config.capture_channels:
                         return name_pattern
@@ -88,47 +89,62 @@ class AudioCapture:
         if callback in self._callbacks:
             self._callbacks.remove(callback)
 
-    def _audio_callback(self, indata, frames, time_info, status):
-        """Called for each audio chunk"""
-        if status:
-            print(f"Audio status: {status}")
-
-        # Debug: log raw input levels periodically
-        self._callback_count = getattr(self, '_callback_count', 0) + 1
-        raw_peak = np.max(np.abs(indata))
-        if self._callback_count % 50 == 1:  # Log every 50 chunks (~1 second)
-            print(f"[AUDIO DEBUG] raw peak (all 8ch): {raw_peak:.6f}, shape: {indata.shape}")
-
-        # Extract only the first N output channels (Main L/R) from the 8-channel input
-        # indata shape is (frames, capture_channels)
-        stereo_data = indata[:, :self.config.output_channels]
+    def _capture_loop(self):
+        """Thread loop that reads audio and dispatches to callbacks"""
+        print(f"[AUDIO] Capture thread started")
         
-        # Debug: log stereo levels
-        stereo_peak = np.max(np.abs(stereo_data))
-        if self._callback_count % 50 == 1:
-            print(f"[AUDIO DEBUG] stereo peak (ch 0-1): {stereo_peak:.6f}")
+        try:
+            with sd.InputStream(
+                device=self._device_id,
+                samplerate=self.config.sample_rate,
+                channels=self.config.capture_channels,
+                blocksize=self.config.chunk_size,
+                dtype=np.float32
+            ) as stream:
+                print(f"[AUDIO] Stream opened: {stream.samplerate}Hz, {stream.channels}ch")
+                
+                while self._capturing:
+                    # Read audio data (blocking)
+                    indata, overflowed = stream.read(self.config.chunk_size)
+                    
+                    if overflowed:
+                        print(f"[AUDIO] Buffer overflow!")
+                    
+                    self._chunk_count += 1
+                    
+                    # Debug: log raw input levels periodically
+                    raw_peak = np.max(np.abs(indata))
+                    if self._chunk_count % 50 == 1:
+                        print(f"[AUDIO] raw peak: {raw_peak:.6f}, shape: {indata.shape}, callbacks: {len(self._callbacks)}")
+                    
+                    # Extract stereo (first 2 channels)
+                    stereo_data = indata[:, :self.config.output_channels]
+                    
+                    # Convert to 16-bit PCM
+                    audio_int16 = (stereo_data * 32767).astype(np.int16)
+                    audio_bytes = audio_int16.tobytes()
+                    
+                    # Dispatch to callbacks
+                    for callback in self._callbacks:
+                        try:
+                            callback(audio_bytes)
+                        except Exception as e:
+                            print(f"[AUDIO] Callback error: {e}")
+                            
+        except Exception as e:
+            print(f"[AUDIO] Capture thread error: {e}")
         
-        # Convert float32 numpy array to bytes (16-bit PCM for streaming)
-        # Clamp values and convert to int16
-        audio_int16 = (stereo_data * 32767).astype(np.int16)
-        audio_bytes = audio_int16.tobytes()
-        
-        # Debug: verify bytes have content
-        if self._callback_count % 50 == 1:
-            int16_peak = np.max(np.abs(audio_int16))
-            print(f"[AUDIO DEBUG] int16 peak: {int16_peak}, bytes len: {len(audio_bytes)}, callbacks: {len(self._callbacks)}")
-
-        for callback in self._callbacks:
-            try:
-                callback(audio_bytes)
-            except Exception as e:
-                print(f"Audio callback error: {e}")
+        print(f"[AUDIO] Capture thread stopped")
 
     def start(self) -> bool:
-        """Start audio capture"""
+        """Start audio capture in a background thread"""
         if not AUDIO_AVAILABLE:
             print("sounddevice not installed. Run: pip install sounddevice")
             return False
+
+        if self._capturing:
+            print("[AUDIO] Already capturing")
+            return True
 
         self._device_id = self.find_device()
         if self._device_id is None:
@@ -137,44 +153,31 @@ class AudioCapture:
             return False
 
         try:
-            self._stream = sd.InputStream(
-                device=self._device_id,
-                samplerate=self.config.sample_rate,
-                channels=self.config.capture_channels,  # Capture all 8 channels from Montage
-                blocksize=self.config.chunk_size,
-                callback=self._audio_callback,
-                dtype=np.float32
-            )
-            self._stream.start()
             self._capturing = True
-            print(f"Audio capture started from device {self._device_id} ({self.config.capture_channels} channels)")
+            self._chunk_count = 0
+            self._capture_thread = threading.Thread(target=self._capture_loop, daemon=True)
+            self._capture_thread.start()
+            print(f"[AUDIO] Capture started on device {self._device_id} ({self.config.capture_channels} channels)")
             return True
         except Exception as e:
-            print(f"Failed to start audio capture: {e}")
+            print(f"[AUDIO] Failed to start capture: {e}")
+            self._capturing = False
             return False
 
     def stop(self):
         """Stop audio capture"""
         self._capturing = False
-        if self._stream:
-            self._stream.stop()
-            self._stream.close()
-            self._stream = None
+        if self._capture_thread:
+            self._capture_thread.join(timeout=2.0)
+            self._capture_thread = None
+        print("[AUDIO] Capture stopped")
 
     def is_capturing(self) -> bool:
         """Check if currently capturing"""
         return self._capturing
 
     def record(self, duration: float, extra_time: float = 0.5) -> bytes | None:
-        """Record audio for a specified duration and return as WAV bytes.
-
-        Args:
-            duration: Recording duration in seconds
-            extra_time: Extra time to capture release/reverb tails
-
-        Returns:
-            WAV file as bytes, or None if recording failed
-        """
+        """Record audio for a specified duration and return as WAV bytes."""
         if not AUDIO_AVAILABLE:
             print("sounddevice not installed")
             return None
@@ -187,7 +190,6 @@ class AudioCapture:
         total_duration = duration + extra_time
 
         try:
-            # Record audio (all 8 channels from Montage)
             print(f"Recording {total_duration:.1f}s from device {device_id} ({self.config.capture_channels} channels)...")
             recording = sd.rec(
                 int(total_duration * self.config.sample_rate),
@@ -196,20 +198,20 @@ class AudioCapture:
                 device=device_id,
                 dtype=np.float32
             )
-            sd.wait()  # Wait for recording to complete
-            print(f"Recording complete: {len(recording)} samples")
+            sd.wait()
+            print(f"Recording complete: {len(recording)} samples, peak: {np.max(np.abs(recording)):.6f}")
 
-            # Extract only first N channels (Main L/R)
+            # Extract stereo
             stereo_recording = recording[:, :self.config.output_channels]
 
             # Convert to 16-bit PCM
             audio_int16 = (stereo_recording * 32767).astype(np.int16)
 
-            # Write to WAV in memory
+            # Write to WAV
             wav_buffer = io.BytesIO()
             with wave.open(wav_buffer, 'wb') as wav_file:
                 wav_file.setnchannels(self.config.output_channels)
-                wav_file.setsampwidth(2)  # 16-bit = 2 bytes
+                wav_file.setsampwidth(2)
                 wav_file.setframerate(self.config.sample_rate)
                 wav_file.writeframes(audio_int16.tobytes())
 
