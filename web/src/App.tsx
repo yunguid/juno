@@ -11,20 +11,23 @@ function useAudioStream(wsUrl: string) {
   const isPlayingRef = useRef(false)
   const nextStartTimeRef = useRef(0)
 
-  const initAudioContext = useCallback(() => {
+  const initAudioContext = useCallback(async () => {
     if (!audioContextRef.current) {
       audioContextRef.current = new AudioContext({ sampleRate: 44100 })
+      console.log('AudioContext created, state:', audioContextRef.current.state)
     }
     if (audioContextRef.current.state === 'suspended') {
-      audioContextRef.current.resume()
+      console.log('Resuming AudioContext...')
+      await audioContextRef.current.resume()
+      console.log('AudioContext resumed, state:', audioContextRef.current.state)
     }
     return audioContextRef.current
   }, [])
 
-  const startStreaming = useCallback(() => {
+  const startStreaming = useCallback(async () => {
     if (isStreamingRef.current) return
     
-    const audioContext = initAudioContext()
+    const audioContext = await initAudioContext()
     isStreamingRef.current = true
     audioQueueRef.current = []
     nextStartTimeRef.current = 0
@@ -33,9 +36,19 @@ function useAudioStream(wsUrl: string) {
     const ws = new WebSocket(`${wsUrl}/ws/audio`)
     ws.binaryType = 'arraybuffer'
     
-    ws.onopen = () => {
-      console.log('Audio stream connected')
-    }
+    // Wait for WebSocket to connect before returning
+    await new Promise<void>((resolve, reject) => {
+      ws.onopen = () => {
+        console.log('Audio stream connected')
+        resolve()
+      }
+      ws.onerror = (err) => {
+        console.error('Audio stream connection error:', err)
+        reject(err)
+      }
+      // Timeout after 5 seconds
+      setTimeout(() => reject(new Error('Audio stream connection timeout')), 5000)
+    })
 
     ws.onmessage = (event) => {
       if (typeof event.data === 'string') {
@@ -50,6 +63,7 @@ function useAudioStream(wsUrl: string) {
         }
       } else {
         // Binary PCM data
+        console.log('Audio data received:', event.data.byteLength, 'bytes')
         const config = audioConfigRef.current
         if (!config) return
 
@@ -107,10 +121,6 @@ function useAudioStream(wsUrl: string) {
       isStreamingRef.current = false
     }
 
-    ws.onerror = (err) => {
-      console.error('Audio stream error:', err)
-    }
-
     wsRef.current = ws
   }, [wsUrl, initAudioContext])
 
@@ -134,7 +144,7 @@ function useAudioStream(wsUrl: string) {
     }
   }, [stopStreaming])
 
-  return { startStreaming, stopStreaming, initAudioContext }
+  return { startStreaming, stopStreaming }
 }
 
 interface Note {
@@ -209,7 +219,7 @@ function App() {
   const wsRef = useRef<WebSocket | null>(null)
   
   // Audio streaming for real-time playback from Montage
-  const { startStreaming, stopStreaming, initAudioContext } = useAudioStream(WS_URL)
+  const { startStreaming, stopStreaming } = useAudioStream(WS_URL)
 
   // Fetch LLM config on mount
   useEffect(() => {
@@ -313,10 +323,8 @@ function App() {
 
   const play = async (layers?: string[]) => {
     try {
-      // Initialize audio context on user interaction (required by browsers)
-      initAudioContext()
-      // Start audio streaming before sending play request
-      startStreaming()
+      // Initialize audio context and start streaming before sending play request
+      await startStreaming()
       await fetch(`${API_URL}/api/play`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
