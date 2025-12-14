@@ -1,20 +1,14 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import './App.css'
 
-// Audio streaming hook with jitter buffer for smooth playback over network
+// Audio streaming hook with AudioWorklet for smooth PCM playback
 function useAudioStream(wsUrl: string) {
   const audioContextRef = useRef<AudioContext | null>(null)
+  const workletNodeRef = useRef<AudioWorkletNode | null>(null)
   const wsRef = useRef<WebSocket | null>(null)
   const isStreamingRef = useRef(false)
   const audioConfigRef = useRef<{ sampleRate: number; channels: number } | null>(null)
-  const audioQueueRef = useRef<ArrayBuffer[]>([])  // Jitter buffer
-  const isPlayingRef = useRef(false)
-  const nextStartTimeRef = useRef(0)
-  const playbackIntervalRef = useRef<number | null>(null)
-  
-  // Jitter buffer settings
-  const BUFFER_TARGET = 8  // Start playing when we have this many chunks buffered
-  const BUFFER_MIN = 3     // If buffer drops below this, pause to refill
+  const workletReadyRef = useRef(false)
 
   const initAudioContext = useCallback(async () => {
     if (!audioContextRef.current) {
@@ -29,140 +23,138 @@ function useAudioStream(wsUrl: string) {
     return audioContextRef.current
   }, [])
 
+  const initAudioWorklet = useCallback(async (audioContext: AudioContext) => {
+    if (workletNodeRef.current) {
+      return workletNodeRef.current
+    }
+
+    try {
+      // Load AudioWorklet processor
+      await audioContext.audioWorklet.addModule('/audio-processor.js')
+      console.log('AudioWorklet module loaded')
+
+      // Create AudioWorkletNode
+      const workletNode = new AudioWorkletNode(audioContext, 'pcm-processor', {
+        numberOfInputs: 0,
+        numberOfOutputs: 1,
+        outputChannelCount: [2], // Stereo output
+      })
+
+      // Handle status messages from worklet
+      workletNode.port.onmessage = (event) => {
+        const { type, bufferMs, underruns } = event.data
+        if (type === 'status') {
+          if (underruns > 0) {
+            console.warn(`[AudioStream] Buffer: ${bufferMs.toFixed(1)}ms, Underruns: ${underruns}`)
+          } else {
+            console.log(`[AudioStream] Buffer: ${bufferMs.toFixed(1)}ms`)
+          }
+        }
+      }
+
+      // Connect to audio output
+      workletNode.connect(audioContext.destination)
+      workletNodeRef.current = workletNode
+      workletReadyRef.current = true
+      console.log('AudioWorklet node created and connected')
+
+      return workletNodeRef.current
+    } catch (error) {
+      console.error('Failed to initialize AudioWorklet:', error)
+      throw error
+    }
+  }, [])
+
   const startStreaming = useCallback(async () => {
     if (isStreamingRef.current) return
     
-    const audioContext = await initAudioContext()
-    isStreamingRef.current = true
-    audioQueueRef.current = []
-    nextStartTimeRef.current = 0
-    isPlayingRef.current = false
-
-    const ws = new WebSocket(`${wsUrl}/ws/audio`)
-    ws.binaryType = 'arraybuffer'
-    
-    // Wait for WebSocket to connect before returning
-    await new Promise<void>((resolve, reject) => {
-      ws.onopen = () => {
-        console.log('Audio stream connected')
-        resolve()
-      }
-      ws.onerror = (err) => {
-        console.error('Audio stream connection error:', err)
-        reject(err)
-      }
-      // Timeout after 5 seconds
-      setTimeout(() => reject(new Error('Audio stream connection timeout')), 5000)
-    })
-
-    // Function to play one chunk from the buffer
-    const playNextChunk = () => {
-      const config = audioConfigRef.current
-      if (!config || audioQueueRef.current.length === 0) return
+    try {
+      const audioContext = await initAudioContext()
+      await initAudioWorklet(audioContext)
       
-      const audioContext = audioContextRef.current
-      if (!audioContext) return
+      isStreamingRef.current = true
+      audioConfigRef.current = null
 
-      // Check if buffer is too low - pause playback to refill
-      if (audioQueueRef.current.length < BUFFER_MIN && isPlayingRef.current) {
-        console.log('Buffer low, waiting to refill...', audioQueueRef.current.length)
-        isPlayingRef.current = false
-        return
-      }
-
-      // Check if we have enough buffer to start/resume
-      if (!isPlayingRef.current && audioQueueRef.current.length < BUFFER_TARGET) {
-        return  // Wait for more data
-      }
-
-      const data = audioQueueRef.current.shift()!
+      const ws = new WebSocket(`${wsUrl}/ws/audio`)
+      ws.binaryType = 'arraybuffer'
       
-      // Convert Int16 PCM to Float32
-      const int16Data = new Int16Array(data)
-      const float32Data = new Float32Array(int16Data.length)
-      for (let i = 0; i < int16Data.length; i++) {
-        float32Data[i] = int16Data[i] / 32768
-      }
-
-      // Create audio buffer
-      const samplesPerChannel = float32Data.length / config.channels
-      const audioBuffer = audioContext.createBuffer(
-        config.channels,
-        samplesPerChannel,
-        config.sampleRate
-      )
-
-      // Deinterleave channels
-      for (let ch = 0; ch < config.channels; ch++) {
-        const channelData = audioBuffer.getChannelData(ch)
-        for (let i = 0; i < samplesPerChannel; i++) {
-          channelData[i] = float32Data[i * config.channels + ch]
+      // Wait for WebSocket to connect
+      await new Promise<void>((resolve, reject) => {
+        ws.onopen = () => {
+          console.log('Audio stream connected')
+          resolve()
         }
-      }
+        ws.onerror = (err) => {
+          console.error('Audio stream connection error:', err)
+          reject(err)
+        }
+        setTimeout(() => reject(new Error('Audio stream connection timeout')), 5000)
+      })
 
-      // Schedule playback
-      const source = audioContext.createBufferSource()
-      source.buffer = audioBuffer
-      source.connect(audioContext.destination)
-
-      const currentTime = audioContext.currentTime
-      const bufferDuration = samplesPerChannel / config.sampleRate
-
-      if (!isPlayingRef.current || nextStartTimeRef.current < currentTime) {
-        nextStartTimeRef.current = currentTime + 0.1
-        isPlayingRef.current = true
-        console.log('Audio playback started, buffer:', audioQueueRef.current.length)
-      }
-
-      source.start(nextStartTimeRef.current)
-      nextStartTimeRef.current += bufferDuration
-    }
-
-    // Start playback loop
-    playbackIntervalRef.current = window.setInterval(playNextChunk, 20)
-
-    ws.onmessage = (event) => {
-      if (typeof event.data === 'string') {
-        // JSON config message
-        const config = JSON.parse(event.data)
-        if (config.type === 'audio_config') {
-          audioConfigRef.current = {
-            sampleRate: config.sample_rate,
-            channels: config.channels
+      ws.onmessage = (event) => {
+        if (typeof event.data === 'string') {
+          // JSON config message
+          const config = JSON.parse(event.data)
+          if (config.type === 'audio_config') {
+            audioConfigRef.current = {
+              sampleRate: config.sample_rate,
+              channels: config.channels
+            }
+            console.log('Audio config:', audioConfigRef.current)
+            
+            // Send config to worklet
+            if (workletNodeRef.current) {
+              workletNodeRef.current.port.postMessage({
+                type: 'config',
+                data: {
+                  sampleRate: config.sample_rate,
+                  channels: config.channels
+                }
+              })
+            }
           }
-          console.log('Audio config:', audioConfigRef.current, 'AudioContext sampleRate:', audioContext.sampleRate)
-        }
-      } else {
-        // Binary PCM data - add to jitter buffer
-        audioQueueRef.current.push(event.data)
-        
-        // Log buffer status periodically
-        if (audioQueueRef.current.length % 20 === 0) {
-          console.log('Audio buffer:', audioQueueRef.current.length, 'chunks')
+        } else {
+          // Binary PCM data - send directly to worklet
+          if (workletNodeRef.current && audioConfigRef.current) {
+            workletNodeRef.current.port.postMessage({
+              type: 'pcm',
+              data: event.data
+            }, [event.data])
+          }
         }
       }
-    }
 
-    ws.onclose = () => {
-      console.log('Audio stream disconnected')
+      ws.onclose = () => {
+        console.log('Audio stream disconnected')
+        isStreamingRef.current = false
+        
+        // Reset worklet buffer
+        if (workletNodeRef.current) {
+          workletNodeRef.current.port.postMessage({ type: 'reset' })
+        }
+      }
+
+      wsRef.current = ws
+    } catch (error) {
+      console.error('Failed to start audio streaming:', error)
       isStreamingRef.current = false
+      throw error
     }
-
-    wsRef.current = ws
-  }, [wsUrl, initAudioContext])
+  }, [wsUrl, initAudioContext, initAudioWorklet])
 
   const stopStreaming = useCallback(() => {
-    if (playbackIntervalRef.current) {
-      clearInterval(playbackIntervalRef.current)
-      playbackIntervalRef.current = null
-    }
     if (wsRef.current) {
       wsRef.current.close()
       wsRef.current = null
     }
+    
+    // Reset worklet buffer
+    if (workletNodeRef.current) {
+      workletNodeRef.current.port.postMessage({ type: 'reset' })
+    }
+    
     isStreamingRef.current = false
-    isPlayingRef.current = false
-    audioQueueRef.current = []
+    audioConfigRef.current = null
   }, [])
 
   // Cleanup on unmount

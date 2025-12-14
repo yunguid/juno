@@ -235,7 +235,7 @@ class AudioConfig:
     sample_rate: int = 44100
     capture_channels: int = 8
     output_channels: int = 2
-    chunk_frames: int = 2048  # Larger chunks = less overhead, smoother playback
+    chunk_frames: int = 4096  # Larger chunks = less overhead, smoother playback (~93ms at 44100Hz)
 
 
 class AudioCapture:
