@@ -93,14 +93,30 @@ class AudioCapture:
         if status:
             print(f"Audio status: {status}")
 
+        # Debug: log raw input levels periodically
+        self._callback_count = getattr(self, '_callback_count', 0) + 1
+        raw_peak = np.max(np.abs(indata))
+        if self._callback_count % 50 == 1:  # Log every 50 chunks (~1 second)
+            print(f"[AUDIO DEBUG] raw peak (all 8ch): {raw_peak:.6f}, shape: {indata.shape}")
+
         # Extract only the first N output channels (Main L/R) from the 8-channel input
         # indata shape is (frames, capture_channels)
         stereo_data = indata[:, :self.config.output_channels]
+        
+        # Debug: log stereo levels
+        stereo_peak = np.max(np.abs(stereo_data))
+        if self._callback_count % 50 == 1:
+            print(f"[AUDIO DEBUG] stereo peak (ch 0-1): {stereo_peak:.6f}")
         
         # Convert float32 numpy array to bytes (16-bit PCM for streaming)
         # Clamp values and convert to int16
         audio_int16 = (stereo_data * 32767).astype(np.int16)
         audio_bytes = audio_int16.tobytes()
+        
+        # Debug: verify bytes have content
+        if self._callback_count % 50 == 1:
+            int16_peak = np.max(np.abs(audio_int16))
+            print(f"[AUDIO DEBUG] int16 peak: {int16_peak}, bytes len: {len(audio_bytes)}, callbacks: {len(self._callbacks)}")
 
         for callback in self._callbacks:
             try:
