@@ -24,8 +24,13 @@ except ImportError:
 
 def _audio_capture_process(alsa_device: str, sample_rate: int, channels: int, audio_queue: multiprocessing.Queue, stop_event: multiprocessing.Event):
     """Runs in a separate process to capture audio"""
+    # Import fresh in the new process
     import sounddevice as sd
     import numpy as np
+    
+    # Reinitialize sounddevice in this fresh process
+    sd._terminate()
+    sd._initialize()
     
     print(f"[AUDIO PROC] Starting capture process on {alsa_device}")
     
@@ -164,12 +169,13 @@ class AudioCapture:
             return True
 
         try:
-            # Create IPC primitives
-            self._audio_queue = multiprocessing.Queue(maxsize=100)
-            self._stop_event = multiprocessing.Event()
+            # Use 'spawn' to get a completely fresh process (not fork)
+            # This avoids inheriting any sounddevice/PortAudio state from parent
+            ctx = multiprocessing.get_context('spawn')
+            self._audio_queue = ctx.Queue(maxsize=100)
+            self._stop_event = ctx.Event()
             
-            # Start capture process
-            self._capture_process = multiprocessing.Process(
+            self._capture_process = ctx.Process(
                 target=_audio_capture_process,
                 args=(
                     self.config.alsa_device,
