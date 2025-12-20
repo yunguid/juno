@@ -119,6 +119,38 @@ class SelectPatchRequest(BaseModel):
     patch_id: str
 
 
+class SaveToLibraryRequest(BaseModel):
+    """Request to save current sample to library"""
+    device_id: str
+
+
+class LibrarySample(BaseModel):
+    """A sample stored in the library"""
+    id: str
+    name: str
+    prompt: str | None = None
+    key: str | None = None
+    bpm: int | None = None
+    bars: int | None = None
+    duration_seconds: float | None = None
+    audio_url: str
+    layers: list[dict] | None = None
+    created_at: str
+
+
+class LibraryListResponse(BaseModel):
+    """Response for listing library samples"""
+    samples: list[LibrarySample]
+    total: int
+
+
+class SaveToLibraryResponse(BaseModel):
+    """Response after saving to library"""
+    id: str
+    audio_url: str
+    created_at: str
+
+
 # Note name to MIDI number conversion
 NOTE_TO_MIDI = {}
 for octave in range(-1, 10):

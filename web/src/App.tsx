@@ -252,8 +252,9 @@ const KEYS = [
   'Bb major', 'Bb minor', 'Eb major', 'Eb minor',
 ]
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
-const WS_URL = import.meta.env.VITE_WS_URL || 'ws://localhost:8000'
+// Use relative URLs when served from same origin (Pi), otherwise use env vars
+const API_URL = import.meta.env.VITE_API_URL || ''
+const WS_URL = import.meta.env.VITE_WS_URL || `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}`
 
 function App() {
   const [step, setStep] = useState<Step>('setup')

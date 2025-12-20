@@ -10,7 +10,7 @@ from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-from .models import Sample, Layer, SoundType, GenerateRequest, LayerEditRequest, AddLayerRequest, StartSessionRequest, GenerateLayerRequest, SelectPatchRequest, Patch
+from .models import Sample, Layer, SoundType, GenerateRequest, LayerEditRequest, AddLayerRequest, StartSessionRequest, GenerateLayerRequest, SelectPatchRequest, Patch, SaveToLibraryRequest, LibrarySample, LibraryListResponse, SaveToLibraryResponse
 from .player import get_player
 from .llm import generate_sample, edit_layer, add_layer, generate_single_layer, improve_layers
 from .llm_providers import get_config, set_config, Provider, DEFAULT_MODELS, AVAILABLE_MODELS
@@ -424,6 +424,149 @@ async def api_export_audio():
         "filename": filename,
         "data": b64
     }
+
+
+# --- Library endpoints ---
+
+@app.post("/api/library/save", response_model=SaveToLibraryResponse)
+async def api_library_save(request: SaveToLibraryRequest):
+    """Save current sample to library (exports audio and uploads to Supabase)"""
+    global current_sample
+    import uuid
+    import threading
+    import time
+
+    if current_sample is None:
+        raise HTTPException(status_code=400, detail="No sample loaded")
+
+    player = get_player()
+    if not player.is_connected():
+        raise HTTPException(status_code=500, detail="MIDI not connected")
+
+    # Import supabase helpers
+    try:
+        from .supabase import upload_audio, save_sample_metadata
+    except RuntimeError as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+    audio = get_audio_capture()
+    duration = current_sample.duration_seconds
+    sample_id = str(uuid.uuid4())
+
+    log.info(f"Saving to library: '{current_sample.name}' ({duration:.1f}s)")
+
+    # Record audio (same logic as export)
+    playback_started = threading.Event()
+
+    def play_and_signal():
+        playback_started.set()
+        player.play_sync(current_sample)
+
+    play_thread = threading.Thread(target=play_and_signal, daemon=True)
+    play_thread.start()
+
+    playback_started.wait(timeout=1.0)
+    time.sleep(0.05)
+
+    wav_bytes = audio.record(duration, extra_time=1.0)
+
+    if wav_bytes is None:
+        raise HTTPException(status_code=500, detail="Audio recording failed")
+
+    play_thread.join(timeout=duration + 2.0)
+
+    # Upload to Supabase Storage
+    try:
+        audio_url = upload_audio(request.device_id, sample_id, wav_bytes)
+    except Exception as e:
+        log.error(f"Failed to upload audio: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to upload audio: {e}")
+
+    # Save metadata to database
+    layers_json = [
+        {"sound": layer.sound.value, "name": layer.name, "patch_name": layer.patch_name}
+        for layer in current_sample.layers
+    ]
+
+    metadata = {
+        "id": sample_id,
+        "device_id": request.device_id,
+        "name": current_sample.name,
+        "prompt": current_sample.prompt,
+        "key": current_sample.key,
+        "bpm": current_sample.bpm,
+        "bars": current_sample.bars,
+        "duration_seconds": current_sample.duration_seconds,
+        "audio_url": audio_url,
+        "layers_json": layers_json,
+    }
+
+    try:
+        result = save_sample_metadata(metadata)
+        log.info(f"Saved to library: {sample_id}")
+    except Exception as e:
+        log.error(f"Failed to save metadata: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to save metadata: {e}")
+
+    return SaveToLibraryResponse(
+        id=result["id"],
+        audio_url=result["audio_url"],
+        created_at=result["created_at"]
+    )
+
+
+@app.get("/api/library", response_model=LibraryListResponse)
+async def api_library_list(device_id: str, limit: int = 20, offset: int = 0):
+    """List samples in library for a device"""
+    try:
+        from .supabase import get_samples
+    except RuntimeError as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+    try:
+        samples_data, total = get_samples(device_id, limit, offset)
+    except Exception as e:
+        log.error(f"Failed to fetch library: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to fetch library: {e}")
+
+    samples = [
+        LibrarySample(
+            id=s["id"],
+            name=s["name"],
+            prompt=s.get("prompt"),
+            key=s.get("key"),
+            bpm=s.get("bpm"),
+            bars=s.get("bars"),
+            duration_seconds=s.get("duration_seconds"),
+            audio_url=s["audio_url"],
+            layers=s.get("layers_json"),
+            created_at=s["created_at"]
+        )
+        for s in samples_data
+    ]
+
+    return LibraryListResponse(samples=samples, total=total)
+
+
+@app.delete("/api/library/{sample_id}")
+async def api_library_delete(sample_id: str, device_id: str):
+    """Delete a sample from library"""
+    try:
+        from .supabase import delete_sample
+    except RuntimeError as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+    try:
+        success = delete_sample(sample_id, device_id)
+    except Exception as e:
+        log.error(f"Failed to delete sample: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to delete: {e}")
+
+    if not success:
+        raise HTTPException(status_code=404, detail="Sample not found or not owned by you")
+
+    log.info(f"Deleted from library: {sample_id}")
+    return {"success": True}
 
 
 # --- Step-by-step generation endpoints ---
