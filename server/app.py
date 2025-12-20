@@ -8,17 +8,15 @@ import threading
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
 from pydantic import BaseModel
-import mido
 
-from .models import Sample, Layer, SoundType, GenerateRequest, LayerEditRequest, AddLayerRequest, StartSessionRequest, GenerateLayerRequest
-from .player import get_player, SamplePlayer
+from .models import Sample, Layer, SoundType, GenerateRequest, LayerEditRequest, AddLayerRequest, StartSessionRequest, GenerateLayerRequest, SelectPatchRequest, Patch
+from .player import get_player
 from .llm import generate_sample, edit_layer, add_layer, generate_single_layer, improve_layers
 from .llm_providers import get_config, set_config, Provider, DEFAULT_MODELS, AVAILABLE_MODELS
 from .audio import get_audio_capture
 from .export import sample_to_midi_file
+from .patches import get_patches, get_patch_by_id, get_categories
 from .logger import setup_logging, get_logger
 
 # Set up logging
@@ -28,6 +26,9 @@ log = get_logger("app")
 # Store current sample in memory (would use DB in production)
 current_sample: Sample | None = None
 connected_clients: list[WebSocket] = []
+
+# Track current patch selections per channel
+current_patches: dict[str, Patch] = {}  # {"bass": Patch, "pad": Patch, "lead": Patch}
 
 
 @asynccontextmanager
@@ -539,6 +540,151 @@ async def api_improve_layers(request: ImproveRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 
+# --- Patch/Sound Selection Endpoints ---
+
+@app.get("/api/patches")
+async def api_get_patches(
+    category: str | None = None,
+    search: str | None = None,
+    sound_type: str | None = None,
+    limit: int = 50,
+    offset: int = 0
+):
+    """Get available patches with optional filtering"""
+    log.debug(f"Get patches: category={category}, search={search}, sound_type={sound_type}")
+
+    # Convert sound_type string to enum if provided
+    sound_type_enum = None
+    if sound_type:
+        try:
+            sound_type_enum = SoundType(sound_type)
+        except ValueError:
+            pass
+
+    patches, total = get_patches(
+        category=category,
+        search=search,
+        sound_type=sound_type_enum,
+        limit=limit,
+        offset=offset
+    )
+
+    categories = get_categories()
+
+    return {
+        "patches": [p.model_dump() for p in patches],
+        "total": total,
+        "categories": [c.model_dump() for c in categories]
+    }
+
+
+@app.get("/api/patches/categories")
+async def api_get_patch_categories():
+    """Get all patch categories with counts"""
+    categories = get_categories()
+    return {"categories": [c.model_dump() for c in categories]}
+
+
+@app.post("/api/sound/{channel}/select")
+async def api_select_sound(channel: str, request: SelectPatchRequest):
+    """Select a patch for a channel (bass, pad, lead)"""
+    global current_patches, current_sample
+
+    # Validate channel
+    try:
+        sound_type = SoundType(channel)
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid channel: {channel}. Must be bass, pad, or lead")
+
+    # Get the patch
+    patch = get_patch_by_id(request.patch_id)
+    if not patch:
+        raise HTTPException(status_code=404, detail=f"Patch not found: {request.patch_id}")
+
+    log.info(f"Selecting {channel} patch: {patch.name} (id={patch.id})")
+
+    # Send MIDI program change
+    player = get_player()
+    if player.is_connected():
+        player.select_patch(sound_type, patch)
+
+    # Store current selection
+    current_patches[channel] = patch
+
+    # Update current sample's layer if it exists
+    if current_sample:
+        new_layers = []
+        for layer in current_sample.layers:
+            if layer.sound == sound_type:
+                # Update this layer with the new patch
+                new_layers.append(Layer(
+                    id=layer.id,
+                    name=layer.name,
+                    sound=layer.sound,
+                    notes=layer.notes,
+                    muted=layer.muted,
+                    volume=layer.volume,
+                    portamento=layer.portamento,
+                    portamento_time=layer.portamento_time,
+                    patch_id=patch.id,
+                    patch_name=patch.name
+                ))
+            else:
+                new_layers.append(layer)
+
+        current_sample = Sample(
+            id=current_sample.id,
+            name=current_sample.name,
+            prompt=current_sample.prompt,
+            key=current_sample.key,
+            bpm=current_sample.bpm,
+            bars=current_sample.bars,
+            layers=new_layers
+        )
+        await broadcast({"type": "sample_updated", "sample": current_sample.model_dump()})
+
+    await broadcast({"type": "patch_selected", "channel": channel, "patch": patch.model_dump()})
+    return {"patch": patch.model_dump()}
+
+
+@app.post("/api/sound/{channel}/preview")
+async def api_preview_sound(channel: str, request: SelectPatchRequest):
+    """Preview a patch by sending program change and playing a test note"""
+    # Validate channel
+    try:
+        sound_type = SoundType(channel)
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid channel: {channel}. Must be bass, pad, or lead")
+
+    # Get the patch
+    patch = get_patch_by_id(request.patch_id)
+    if not patch:
+        raise HTTPException(status_code=404, detail=f"Patch not found: {request.patch_id}")
+
+    log.info(f"Previewing {channel} patch: {patch.name}")
+
+    player = get_player()
+    if not player.is_connected():
+        raise HTTPException(status_code=500, detail="MIDI not connected")
+
+    # Preview runs synchronously and plays test notes
+    player.preview_patch(sound_type, patch)
+
+    return {"status": "previewed", "patch": patch.model_dump()}
+
+
+@app.get("/api/sounds/current")
+async def api_get_current_sounds():
+    """Get currently selected sounds for all channels"""
+    global current_patches
+
+    return {
+        "bass": current_patches.get("bass").model_dump() if current_patches.get("bass") else None,
+        "pad": current_patches.get("pad").model_dump() if current_patches.get("pad") else None,
+        "lead": current_patches.get("lead").model_dump() if current_patches.get("lead") else None
+    }
+
+
 # --- WebSocket for real-time communication ---
 
 @app.websocket("/ws")
@@ -690,7 +836,11 @@ async def audio_websocket(websocket: WebSocket):
             data = await audio_queue.get()
             if throttle_event.is_set():
                 continue
-            await websocket.send_bytes(data)
+            try:
+                await websocket.send_bytes(data)
+            except Exception:
+                # WebSocket closed or error - exit send loop gracefully
+                break
 
     except WebSocketDisconnect:
         log.info("Audio WebSocket client disconnected")
