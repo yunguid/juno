@@ -227,6 +227,19 @@ interface Sample {
   layers: Layer[]
 }
 
+interface LibrarySample {
+  id: string
+  name: string
+  prompt: string | null
+  key: string | null
+  bpm: number | null
+  bars: number | null
+  duration_seconds: number | null
+  audio_url: string
+  layers: { sound: string; name: string; patch_name?: string }[] | null
+  created_at: string
+}
+
 interface LLMConfig {
   provider: string
   model: string
