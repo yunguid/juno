@@ -125,7 +125,7 @@ def _audio_capture_process(
             samplerate=sample_rate,
             channels=channels,
             device=device_id,
-            dtype="float32",
+            dtype="int16",
             blocksize=chunk_frames,
         ) as stream:
             while not stop_event.is_set():
@@ -133,7 +133,10 @@ def _audio_capture_process(
                 chunk_count += 1
 
                 if chunk_count % 200 == 1:
-                    peak = float(np.max(np.abs(data))) if len(data) else 0.0
+                    peak = 0.0
+                    if len(data):
+                        peak_i16 = int(np.max(np.abs(data.astype(np.int32))))
+                        peak = float(peak_i16) / 32767.0
                     print(f"[AUDIO PROC] chunk {chunk_count}: peak {peak:.6f}, overflow={overflowed}", flush=True)
 
                 if data.shape[1] >= 2:
@@ -141,11 +144,8 @@ def _audio_capture_process(
                 else:
                     stereo = np.repeat(data, 2, axis=1)
 
-                stereo = np.clip(stereo, -1.0, 1.0)
-                audio_int16 = (stereo * 32767.0).astype(np.int16)
-
                 try:
-                    audio_queue.put_nowait(audio_int16.tobytes())
+                    audio_queue.put_nowait(np.ascontiguousarray(stereo).tobytes())
                 except Exception:
                     pass
 
@@ -235,7 +235,7 @@ class AudioConfig:
     sample_rate: int = 44100
     capture_channels: int = 8
     output_channels: int = 2
-    chunk_frames: int = 4096  # Larger chunks = less overhead, smoother playback (~93ms at 44100Hz)
+    chunk_frames: int = 1024  # Smaller chunks reduce latency (~23ms at 44100Hz)
 
 
 class AudioCapture:
@@ -302,10 +302,23 @@ class AudioCapture:
             except Exception:
                 continue
 
+            # If capture got ahead (e.g., event loop pause), discard backlog and keep most recent.
+            try:
+                while True:
+                    audio_bytes = self._audio_queue.get_nowait()
+            except queue.Empty:
+                pass
+            except Exception:
+                pass
+
             self._chunk_count += 1
             if self._chunk_count % 200 == 1:
                 audio_int16 = np.frombuffer(audio_bytes, dtype=np.int16)
-                peak = float(np.max(np.abs(audio_int16))) / 32767.0 if len(audio_int16) else 0.0
+                peak = (
+                    float(np.max(np.abs(audio_int16.astype(np.int32)))) / 32767.0
+                    if len(audio_int16)
+                    else 0.0
+                )
                 print(f"[AUDIO] chunk {self._chunk_count}: peak {peak:.6f}, callbacks={len(self._callbacks)}")
 
             for callback in self._callbacks:
@@ -322,7 +335,7 @@ class AudioCapture:
 
         try:
             ctx = multiprocessing.get_context("spawn")
-            self._audio_queue = ctx.Queue(maxsize=500)  # Larger buffer for smoother playback
+            self._audio_queue = ctx.Queue(maxsize=32)
             self._stop_event = ctx.Event()
 
             self._capture_process = ctx.Process(

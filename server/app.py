@@ -4,6 +4,7 @@ import json
 import base64
 import os
 import sys
+import threading
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -598,13 +599,39 @@ async def audio_websocket(websocket: WebSocket):
     log.info("Audio WebSocket client connected")
 
     audio = get_audio_capture()
-    audio_queue: asyncio.Queue[bytes] = asyncio.Queue(maxsize=100)
+    loop = asyncio.get_running_loop()
+    audio_queue: asyncio.Queue[bytes] = asyncio.Queue(maxsize=4)
+    throttle_event = threading.Event()
+    client_buffer_ms: float = 0.0
+    recv_task: asyncio.Task | None = None
 
-    def audio_callback(data: bytes):
+    # When client buffer grows too large, stop sending to avoid runaway latency.
+    # The worklet continues consuming buffered audio, reducing latency until we resume.
+    low_water_ms = 250.0
+    high_water_ms = 500.0
+
+    def _enqueue_audio(data: bytes):
+        if throttle_event.is_set():
+            return
+
+        if audio_queue.full():
+            # Prefer dropping oldest audio to keep latency bounded.
+            try:
+                audio_queue.get_nowait()
+            except asyncio.QueueEmpty:
+                return
+
         try:
             audio_queue.put_nowait(data)
         except asyncio.QueueFull:
-            pass  # Drop frames if client is slow
+            pass
+
+    def audio_callback(data: bytes):
+        try:
+            loop.call_soon_threadsafe(_enqueue_audio, data)
+        except RuntimeError:
+            # Event loop may be closed during shutdown.
+            pass
 
     audio.add_callback(audio_callback)
 
@@ -622,12 +649,56 @@ async def audio_websocket(websocket: WebSocket):
             "channels": audio.config.output_channels
         })
 
+        async def receive_control():
+            nonlocal client_buffer_ms, low_water_ms, high_water_ms
+            try:
+                while True:
+                    msg = await websocket.receive_json()
+                    if not isinstance(msg, dict):
+                        continue
+                    if msg.get("type") != "buffer_status":
+                        continue
+
+                    try:
+                        client_buffer_ms = float(msg.get("buffer_ms", 0.0) or 0.0)
+                    except (TypeError, ValueError):
+                        continue
+
+                    try:
+                        target_ms = float(msg.get("target_ms", 0.0) or 0.0)
+                    except (TypeError, ValueError):
+                        target_ms = 0.0
+
+                    # Track client-provided target to keep latency low while giving some hysteresis.
+                    if target_ms > 0:
+                        low_water_ms = max(50.0, target_ms - 20.0)
+                        high_water_ms = max(low_water_ms + 40.0, target_ms + 80.0)
+
+                    if client_buffer_ms > high_water_ms:
+                        throttle_event.set()
+                    elif client_buffer_ms < low_water_ms:
+                        throttle_event.clear()
+            except WebSocketDisconnect:
+                pass
+            except Exception:
+                pass
+
+        recv_task = asyncio.create_task(receive_control())
+
         while True:
             # Get audio data and send
             data = await audio_queue.get()
+            if throttle_event.is_set():
+                continue
             await websocket.send_bytes(data)
 
     except WebSocketDisconnect:
         log.info("Audio WebSocket client disconnected")
     finally:
+        if recv_task is not None:
+            try:
+                recv_task.cancel()
+                await recv_task
+            except Exception:
+                pass
         audio.remove_callback(audio_callback)

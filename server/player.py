@@ -9,10 +9,9 @@ from .logger import get_logger
 
 log = get_logger("player")
 
-# Port names for different platforms
-MIDI_PORT_NAMES = [
-    "MONTAGE M 2 Port1",              # macOS
-    "MONTAGE M:MONTAGE M MIDI 1 24:0",  # Linux/Pi
+# Port name patterns for different platforms (matched with 'in' check)
+MIDI_PORT_PATTERNS = [
+    "MONTAGE M",  # Matches any MONTAGE M port
 ]
 
 
@@ -49,17 +48,18 @@ class SamplePlayer:
                 log.error(f"Failed to connect to {self.port_name}: {e}")
                 return False
         
-        # Auto-detect from known port names
-        for name in MIDI_PORT_NAMES:
-            if name in available:
-                try:
-                    log.debug(f"Attempting to connect to MIDI port: {name}")
-                    self.port = mido.open_output(name)
-                    self.port_name = name
-                    log.info(f"MIDI connected: {name}")
-                    return True
-                except Exception as e:
-                    log.error(f"Failed to connect to {name}: {e}")
+        # Auto-detect by matching port name patterns
+        for pattern in MIDI_PORT_PATTERNS:
+            for port_name in available:
+                if pattern in port_name and "MIDI 1" in port_name:
+                    try:
+                        log.debug(f"Attempting to connect to MIDI port: {port_name}")
+                        self.port = mido.open_output(port_name)
+                        self.port_name = port_name
+                        log.info(f"MIDI connected: {port_name}")
+                        return True
+                    except Exception as e:
+                        log.error(f"Failed to connect to {port_name}: {e}")
         
         log.error(f"No MONTAGE found. Available ports: {available}")
         return False

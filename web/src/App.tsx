@@ -9,10 +9,13 @@ function useAudioStream(wsUrl: string) {
   const isStreamingRef = useRef(false)
   const audioConfigRef = useRef<{ sampleRate: number; channels: number } | null>(null)
   const workletReadyRef = useRef(false)
+  const lastStatusLogMsRef = useRef(0)
+  const lastUnderrunsRef = useRef(0)
+  const initialTargetBufferMs = 120
 
   const initAudioContext = useCallback(async () => {
     if (!audioContextRef.current) {
-      audioContextRef.current = new AudioContext({ sampleRate: 44100 })
+      audioContextRef.current = new AudioContext({ sampleRate: 44100, latencyHint: 'interactive' })
       console.log('AudioContext created, state:', audioContextRef.current.state)
     }
     if (audioContextRef.current.state === 'suspended') {
@@ -42,12 +45,27 @@ function useAudioStream(wsUrl: string) {
 
       // Handle status messages from worklet
       workletNode.port.onmessage = (event) => {
-        const { type, bufferMs, underruns } = event.data
+        const { type, bufferMs, targetMs, underruns, droppedSamples } = event.data
         if (type === 'status') {
-          if (underruns > 0) {
-            console.warn(`[AudioStream] Buffer: ${bufferMs.toFixed(1)}ms, Underruns: ${underruns}`)
-          } else {
-            console.log(`[AudioStream] Buffer: ${bufferMs.toFixed(1)}ms`)
+          const now = performance.now()
+          const shouldLog = underruns > lastUnderrunsRef.current || now - lastStatusLogMsRef.current > 2000
+          if (shouldLog) {
+            lastStatusLogMsRef.current = now
+            lastUnderrunsRef.current = underruns
+
+            const targetStr = typeof targetMs === 'number' ? ` (target ${targetMs.toFixed(0)}ms)` : ''
+            const droppedStr = typeof droppedSamples === 'number' && droppedSamples > 0 ? ` dropped=${droppedSamples}` : ''
+            if (underruns > 0) {
+              console.warn(`[AudioStream] Buffer: ${bufferMs.toFixed(0)}ms${targetStr}, underruns=${underruns}${droppedStr}`)
+            } else {
+              console.log(`[AudioStream] Buffer: ${bufferMs.toFixed(0)}ms${targetStr}${droppedStr}`)
+            }
+          }
+
+          // Feed buffer status back to server for backpressure.
+          const ws = wsRef.current
+          if (ws && ws.readyState === WebSocket.OPEN && typeof bufferMs === 'number') {
+            ws.send(JSON.stringify({ type: 'buffer_status', buffer_ms: bufferMs, target_ms: targetMs, underruns }))
           }
         }
       }
@@ -108,7 +126,8 @@ function useAudioStream(wsUrl: string) {
                 type: 'config',
                 data: {
                   sampleRate: config.sample_rate,
-                  channels: config.channels
+                  channels: config.channels,
+                  targetBufferMs: initialTargetBufferMs,
                 }
               })
             }
