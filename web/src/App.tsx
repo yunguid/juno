@@ -203,6 +203,18 @@ interface Layer {
   notes: Note[]
   muted: boolean
   volume: number
+  patch_id?: string
+  patch_name?: string
+}
+
+interface Patch {
+  id: string
+  name: string
+  category: string
+  bank_msb: number
+  bank_lsb: number
+  program: number
+  tags: string[]
 }
 
 interface Sample {
@@ -213,6 +225,19 @@ interface Sample {
   bpm: number
   bars: number
   layers: Layer[]
+}
+
+interface LibrarySample {
+  id: string
+  name: string
+  prompt: string | null
+  key: string | null
+  bpm: number | null
+  bars: number | null
+  duration_seconds: number | null
+  audio_url: string
+  layers: { sound: string; name: string; patch_name?: string }[] | null
+  created_at: string
 }
 
 interface LLMConfig {
@@ -258,6 +283,9 @@ function App() {
   const [llmConfig, setLlmConfig] = useState<LLMConfig | null>(null)
   const [feedback, setFeedback] = useState<Record<string, string>>({ pad: '', lead: '', bass: '' })
   const [improving, setImproving] = useState(false)
+  const [showSoundPicker, setShowSoundPicker] = useState<'bass' | 'pad' | 'lead' | null>(null)
+  const [patches, setPatches] = useState<Patch[]>([])
+  const [currentSounds, setCurrentSounds] = useState<Record<string, Patch | null>>({ bass: null, pad: null, lead: null })
   const wsRef = useRef<WebSocket | null>(null)
   
   // Audio streaming for real-time playback from Montage
@@ -465,6 +493,45 @@ function App() {
 
   const getLayer = (sound: string) => sample?.layers.find(l => l.sound === sound)
 
+  // Sound selection functions
+  const fetchPatches = useCallback(async (soundType: string) => {
+    try {
+      const res = await fetch(`${API_URL}/api/patches?sound_type=${soundType}`)
+      const data = await res.json()
+      setPatches(data.patches)
+    } catch (e) {
+      console.error('Failed to fetch patches:', e)
+    }
+  }, [])
+
+  const openSoundPicker = useCallback((soundType: 'bass' | 'pad' | 'lead') => {
+    setShowSoundPicker(soundType)
+    fetchPatches(soundType)
+  }, [fetchPatches])
+
+  const selectPatch = async (patch: Patch) => {
+    if (!showSoundPicker) return
+    try {
+      await fetch(`${API_URL}/api/sound/${showSoundPicker}/select`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ patch_id: patch.id })
+      })
+      setCurrentSounds(prev => ({ ...prev, [showSoundPicker]: patch }))
+      setShowSoundPicker(null)
+    } catch (e) {
+      console.error('Select failed:', e)
+    }
+  }
+
+  // Fetch current sounds on mount
+  useEffect(() => {
+    fetch(`${API_URL}/api/sounds/current`)
+      .then(res => res.json())
+      .then(data => setCurrentSounds({ bass: data.bass, pad: data.pad, lead: data.lead }))
+      .catch(console.error)
+  }, [])
+
   const currentStepInfo = STEPS.find(s => s.id === step)
   const currentSound = currentStepInfo?.sound
 
@@ -623,6 +690,13 @@ function App() {
                 <div key={layer.id} className={`layer-chip ${layer.sound === currentSound ? 'current' : ''}`}>
                   <span className="chip-sound">{layer.sound}</span>
                   <span className="chip-name">{layer.name}</span>
+                  <button
+                    onClick={() => openSoundPicker(layer.sound)}
+                    className="chip-patch"
+                    title="Change sound"
+                  >
+                    {layer.patch_name || currentSounds[layer.sound]?.name || 'Default'}
+                  </button>
                   <button onClick={() => play([layer.sound])} disabled={playing} className="chip-play">▶</button>
                 </div>
               ))}
@@ -644,6 +718,12 @@ function App() {
                     <span className="layer-name">{getLayer(currentSound)?.name}</span>
                     <span className="layer-notes">{getLayer(currentSound)?.notes.length} notes</span>
                   </div>
+                  <button
+                    onClick={() => openSoundPicker(currentSound)}
+                    className="sound-select-btn"
+                  >
+                    Sound: {getLayer(currentSound)?.patch_name || currentSounds[currentSound]?.name || 'Default'}
+                  </button>
                   <div className="layer-actions">
                     <button onClick={() => play([currentSound])} disabled={playing || loading} className="action-btn play">
                       {playing ? '...' : '▶ Play'}
@@ -689,6 +769,12 @@ function App() {
               <div key={layer.id} className="final-layer">
                 <span className="fl-sound">{layer.sound.toUpperCase()}</span>
                 <span className="fl-name">{layer.name}</span>
+                <button
+                  onClick={() => openSoundPicker(layer.sound)}
+                  className="fl-patch"
+                >
+                  {layer.patch_name || currentSounds[layer.sound]?.name || 'Default'}
+                </button>
                 <button onClick={() => play([layer.sound])} disabled={playing} className="fl-play">▶</button>
               </div>
             ))}
@@ -741,6 +827,29 @@ function App() {
             Start Over
           </button>
         </section>
+      )}
+
+      {/* Sound Picker */}
+      {showSoundPicker && (
+        <div className="sound-picker-overlay" onClick={() => setShowSoundPicker(null)}>
+          <div className="sound-picker" onClick={e => e.stopPropagation()}>
+            <div className="sound-picker-header">
+              <span>{showSoundPicker.toUpperCase()} Sound</span>
+              <button onClick={() => setShowSoundPicker(null)}>×</button>
+            </div>
+            <div className="sound-picker-list">
+              {patches.map(patch => (
+                <button
+                  key={patch.id}
+                  className={`sound-option ${currentSounds[showSoundPicker]?.id === patch.id ? 'selected' : ''}`}
+                  onClick={() => selectPatch(patch)}
+                >
+                  {patch.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
       )}
     </div>
   )

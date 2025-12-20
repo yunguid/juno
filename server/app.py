@@ -8,17 +8,15 @@ import threading
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
 from pydantic import BaseModel
-import mido
 
-from .models import Sample, Layer, SoundType, GenerateRequest, LayerEditRequest, AddLayerRequest, StartSessionRequest, GenerateLayerRequest
-from .player import get_player, SamplePlayer
+from .models import Sample, Layer, SoundType, GenerateRequest, LayerEditRequest, AddLayerRequest, StartSessionRequest, GenerateLayerRequest, SelectPatchRequest, Patch, SaveToLibraryRequest, LibrarySample, LibraryListResponse, SaveToLibraryResponse
+from .player import get_player
 from .llm import generate_sample, edit_layer, add_layer, generate_single_layer, improve_layers
 from .llm_providers import get_config, set_config, Provider, DEFAULT_MODELS, AVAILABLE_MODELS
 from .audio import get_audio_capture
 from .export import sample_to_midi_file
+from .patches import get_patches, get_patch_by_id, get_categories
 from .logger import setup_logging, get_logger
 
 # Set up logging
@@ -28,6 +26,9 @@ log = get_logger("app")
 # Store current sample in memory (would use DB in production)
 current_sample: Sample | None = None
 connected_clients: list[WebSocket] = []
+
+# Track current patch selections per channel
+current_patches: dict[str, Patch] = {}  # {"bass": Patch, "pad": Patch, "lead": Patch}
 
 
 @asynccontextmanager
@@ -425,6 +426,149 @@ async def api_export_audio():
     }
 
 
+# --- Library endpoints ---
+
+@app.post("/api/library/save", response_model=SaveToLibraryResponse)
+async def api_library_save(request: SaveToLibraryRequest):
+    """Save current sample to library (exports audio and uploads to Supabase)"""
+    global current_sample
+    import uuid
+    import threading
+    import time
+
+    if current_sample is None:
+        raise HTTPException(status_code=400, detail="No sample loaded")
+
+    player = get_player()
+    if not player.is_connected():
+        raise HTTPException(status_code=500, detail="MIDI not connected")
+
+    # Import supabase helpers
+    try:
+        from .supabase import upload_audio, save_sample_metadata
+    except RuntimeError as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+    audio = get_audio_capture()
+    duration = current_sample.duration_seconds
+    sample_id = str(uuid.uuid4())
+
+    log.info(f"Saving to library: '{current_sample.name}' ({duration:.1f}s)")
+
+    # Record audio (same logic as export)
+    playback_started = threading.Event()
+
+    def play_and_signal():
+        playback_started.set()
+        player.play_sync(current_sample)
+
+    play_thread = threading.Thread(target=play_and_signal, daemon=True)
+    play_thread.start()
+
+    playback_started.wait(timeout=1.0)
+    time.sleep(0.05)
+
+    wav_bytes = audio.record(duration, extra_time=1.0)
+
+    if wav_bytes is None:
+        raise HTTPException(status_code=500, detail="Audio recording failed")
+
+    play_thread.join(timeout=duration + 2.0)
+
+    # Upload to Supabase Storage
+    try:
+        audio_url = upload_audio(request.device_id, sample_id, wav_bytes)
+    except Exception as e:
+        log.error(f"Failed to upload audio: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to upload audio: {e}")
+
+    # Save metadata to database
+    layers_json = [
+        {"sound": layer.sound.value, "name": layer.name, "patch_name": layer.patch_name}
+        for layer in current_sample.layers
+    ]
+
+    metadata = {
+        "id": sample_id,
+        "device_id": request.device_id,
+        "name": current_sample.name,
+        "prompt": current_sample.prompt,
+        "key": current_sample.key,
+        "bpm": current_sample.bpm,
+        "bars": current_sample.bars,
+        "duration_seconds": current_sample.duration_seconds,
+        "audio_url": audio_url,
+        "layers_json": layers_json,
+    }
+
+    try:
+        result = save_sample_metadata(metadata)
+        log.info(f"Saved to library: {sample_id}")
+    except Exception as e:
+        log.error(f"Failed to save metadata: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to save metadata: {e}")
+
+    return SaveToLibraryResponse(
+        id=result["id"],
+        audio_url=result["audio_url"],
+        created_at=result["created_at"]
+    )
+
+
+@app.get("/api/library", response_model=LibraryListResponse)
+async def api_library_list(device_id: str, limit: int = 20, offset: int = 0):
+    """List samples in library for a device"""
+    try:
+        from .supabase import get_samples
+    except RuntimeError as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+    try:
+        samples_data, total = get_samples(device_id, limit, offset)
+    except Exception as e:
+        log.error(f"Failed to fetch library: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to fetch library: {e}")
+
+    samples = [
+        LibrarySample(
+            id=s["id"],
+            name=s["name"],
+            prompt=s.get("prompt"),
+            key=s.get("key"),
+            bpm=s.get("bpm"),
+            bars=s.get("bars"),
+            duration_seconds=s.get("duration_seconds"),
+            audio_url=s["audio_url"],
+            layers=s.get("layers_json"),
+            created_at=s["created_at"]
+        )
+        for s in samples_data
+    ]
+
+    return LibraryListResponse(samples=samples, total=total)
+
+
+@app.delete("/api/library/{sample_id}")
+async def api_library_delete(sample_id: str, device_id: str):
+    """Delete a sample from library"""
+    try:
+        from .supabase import delete_sample
+    except RuntimeError as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+    try:
+        success = delete_sample(sample_id, device_id)
+    except Exception as e:
+        log.error(f"Failed to delete sample: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to delete: {e}")
+
+    if not success:
+        raise HTTPException(status_code=404, detail="Sample not found or not owned by you")
+
+    log.info(f"Deleted from library: {sample_id}")
+    return {"success": True}
+
+
 # --- Step-by-step generation endpoints ---
 
 @app.post("/api/session/start")
@@ -537,6 +681,151 @@ async def api_improve_layers(request: ImproveRequest):
     except Exception as e:
         log.error(f"Layer improvement failed: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
+
+# --- Patch/Sound Selection Endpoints ---
+
+@app.get("/api/patches")
+async def api_get_patches(
+    category: str | None = None,
+    search: str | None = None,
+    sound_type: str | None = None,
+    limit: int = 50,
+    offset: int = 0
+):
+    """Get available patches with optional filtering"""
+    log.debug(f"Get patches: category={category}, search={search}, sound_type={sound_type}")
+
+    # Convert sound_type string to enum if provided
+    sound_type_enum = None
+    if sound_type:
+        try:
+            sound_type_enum = SoundType(sound_type)
+        except ValueError:
+            pass
+
+    patches, total = get_patches(
+        category=category,
+        search=search,
+        sound_type=sound_type_enum,
+        limit=limit,
+        offset=offset
+    )
+
+    categories = get_categories()
+
+    return {
+        "patches": [p.model_dump() for p in patches],
+        "total": total,
+        "categories": [c.model_dump() for c in categories]
+    }
+
+
+@app.get("/api/patches/categories")
+async def api_get_patch_categories():
+    """Get all patch categories with counts"""
+    categories = get_categories()
+    return {"categories": [c.model_dump() for c in categories]}
+
+
+@app.post("/api/sound/{channel}/select")
+async def api_select_sound(channel: str, request: SelectPatchRequest):
+    """Select a patch for a channel (bass, pad, lead)"""
+    global current_patches, current_sample
+
+    # Validate channel
+    try:
+        sound_type = SoundType(channel)
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid channel: {channel}. Must be bass, pad, or lead")
+
+    # Get the patch
+    patch = get_patch_by_id(request.patch_id)
+    if not patch:
+        raise HTTPException(status_code=404, detail=f"Patch not found: {request.patch_id}")
+
+    log.info(f"Selecting {channel} patch: {patch.name} (id={patch.id})")
+
+    # Send MIDI program change
+    player = get_player()
+    if player.is_connected():
+        player.select_patch(sound_type, patch)
+
+    # Store current selection
+    current_patches[channel] = patch
+
+    # Update current sample's layer if it exists
+    if current_sample:
+        new_layers = []
+        for layer in current_sample.layers:
+            if layer.sound == sound_type:
+                # Update this layer with the new patch
+                new_layers.append(Layer(
+                    id=layer.id,
+                    name=layer.name,
+                    sound=layer.sound,
+                    notes=layer.notes,
+                    muted=layer.muted,
+                    volume=layer.volume,
+                    portamento=layer.portamento,
+                    portamento_time=layer.portamento_time,
+                    patch_id=patch.id,
+                    patch_name=patch.name
+                ))
+            else:
+                new_layers.append(layer)
+
+        current_sample = Sample(
+            id=current_sample.id,
+            name=current_sample.name,
+            prompt=current_sample.prompt,
+            key=current_sample.key,
+            bpm=current_sample.bpm,
+            bars=current_sample.bars,
+            layers=new_layers
+        )
+        await broadcast({"type": "sample_updated", "sample": current_sample.model_dump()})
+
+    await broadcast({"type": "patch_selected", "channel": channel, "patch": patch.model_dump()})
+    return {"patch": patch.model_dump()}
+
+
+@app.post("/api/sound/{channel}/preview")
+async def api_preview_sound(channel: str, request: SelectPatchRequest):
+    """Preview a patch by sending program change and playing a test note"""
+    # Validate channel
+    try:
+        sound_type = SoundType(channel)
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid channel: {channel}. Must be bass, pad, or lead")
+
+    # Get the patch
+    patch = get_patch_by_id(request.patch_id)
+    if not patch:
+        raise HTTPException(status_code=404, detail=f"Patch not found: {request.patch_id}")
+
+    log.info(f"Previewing {channel} patch: {patch.name}")
+
+    player = get_player()
+    if not player.is_connected():
+        raise HTTPException(status_code=500, detail="MIDI not connected")
+
+    # Preview runs synchronously and plays test notes
+    player.preview_patch(sound_type, patch)
+
+    return {"status": "previewed", "patch": patch.model_dump()}
+
+
+@app.get("/api/sounds/current")
+async def api_get_current_sounds():
+    """Get currently selected sounds for all channels"""
+    global current_patches
+
+    return {
+        "bass": current_patches.get("bass").model_dump() if current_patches.get("bass") else None,
+        "pad": current_patches.get("pad").model_dump() if current_patches.get("pad") else None,
+        "lead": current_patches.get("lead").model_dump() if current_patches.get("lead") else None
+    }
 
 
 # --- WebSocket for real-time communication ---
@@ -690,7 +979,11 @@ async def audio_websocket(websocket: WebSocket):
             data = await audio_queue.get()
             if throttle_event.is_set():
                 continue
-            await websocket.send_bytes(data)
+            try:
+                await websocket.send_bytes(data)
+            except Exception:
+                # WebSocket closed or error - exit send loop gracefully
+                break
 
     except WebSocketDisconnect:
         log.info("Audio WebSocket client disconnected")

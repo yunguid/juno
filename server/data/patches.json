@@ -1,0 +1,219 @@
+{
+  "patches": [
+    {
+      "id": "bass-001",
+      "name": "Deep Sub Bass",
+      "category": "Synth Bass",
+      "bank_msb": 63,
+      "bank_lsb": 0,
+      "program": 0,
+      "tags": ["sub", "deep", "808"]
+    },
+    {
+      "id": "bass-002",
+      "name": "Analog Bass",
+      "category": "Synth Bass",
+      "bank_msb": 63,
+      "bank_lsb": 0,
+      "program": 1,
+      "tags": ["analog", "warm", "moog"]
+    },
+    {
+      "id": "bass-003",
+      "name": "FM Bass",
+      "category": "Synth Bass",
+      "bank_msb": 63,
+      "bank_lsb": 0,
+      "program": 2,
+      "tags": ["fm", "punchy", "digital"]
+    },
+    {
+      "id": "bass-004",
+      "name": "Wobble Bass",
+      "category": "Synth Bass",
+      "bank_msb": 63,
+      "bank_lsb": 0,
+      "program": 3,
+      "tags": ["wobble", "dubstep", "lfo"]
+    },
+    {
+      "id": "bass-005",
+      "name": "Reese Bass",
+      "category": "Synth Bass",
+      "bank_msb": 63,
+      "bank_lsb": 0,
+      "program": 4,
+      "tags": ["reese", "dnb", "dark"]
+    },
+    {
+      "id": "bass-006",
+      "name": "Upright Bass",
+      "category": "Acoustic Bass",
+      "bank_msb": 63,
+      "bank_lsb": 0,
+      "program": 5,
+      "tags": ["upright", "acoustic", "jazz"]
+    },
+    {
+      "id": "pad-001",
+      "name": "Warm Pad",
+      "category": "Pad",
+      "bank_msb": 63,
+      "bank_lsb": 1,
+      "program": 0,
+      "tags": ["warm", "analog", "lush"]
+    },
+    {
+      "id": "pad-002",
+      "name": "String Ensemble",
+      "category": "Strings",
+      "bank_msb": 63,
+      "bank_lsb": 1,
+      "program": 1,
+      "tags": ["strings", "orchestra", "cinematic"]
+    },
+    {
+      "id": "pad-003",
+      "name": "Ambient Pad",
+      "category": "Pad",
+      "bank_msb": 63,
+      "bank_lsb": 1,
+      "program": 2,
+      "tags": ["ambient", "atmospheric", "evolving"]
+    },
+    {
+      "id": "pad-004",
+      "name": "Brass Section",
+      "category": "Brass",
+      "bank_msb": 63,
+      "bank_lsb": 1,
+      "program": 3,
+      "tags": ["brass", "horns", "big"]
+    },
+    {
+      "id": "pad-005",
+      "name": "Choir Pad",
+      "category": "Choir",
+      "bank_msb": 63,
+      "bank_lsb": 1,
+      "program": 4,
+      "tags": ["choir", "vocal", "ethereal"]
+    },
+    {
+      "id": "pad-006",
+      "name": "Analog Strings",
+      "category": "Strings",
+      "bank_msb": 63,
+      "bank_lsb": 1,
+      "program": 5,
+      "tags": ["strings", "analog", "solina"]
+    },
+    {
+      "id": "pad-007",
+      "name": "Glass Pad",
+      "category": "Pad",
+      "bank_msb": 63,
+      "bank_lsb": 1,
+      "program": 6,
+      "tags": ["glass", "crystal", "bright"]
+    },
+    {
+      "id": "pad-008",
+      "name": "Dark Pad",
+      "category": "Pad",
+      "bank_msb": 63,
+      "bank_lsb": 1,
+      "program": 7,
+      "tags": ["dark", "moody", "cinematic"]
+    },
+    {
+      "id": "lead-001",
+      "name": "Saw Lead",
+      "category": "Synth Lead",
+      "bank_msb": 63,
+      "bank_lsb": 2,
+      "program": 0,
+      "tags": ["saw", "bright", "cutting"]
+    },
+    {
+      "id": "lead-002",
+      "name": "Square Lead",
+      "category": "Synth Lead",
+      "bank_msb": 63,
+      "bank_lsb": 2,
+      "program": 1,
+      "tags": ["square", "hollow", "retro"]
+    },
+    {
+      "id": "lead-003",
+      "name": "FM Lead",
+      "category": "Synth Lead",
+      "bank_msb": 63,
+      "bank_lsb": 2,
+      "program": 2,
+      "tags": ["fm", "dx7", "bell"]
+    },
+    {
+      "id": "lead-004",
+      "name": "Trance Lead",
+      "category": "Synth Lead",
+      "bank_msb": 63,
+      "bank_lsb": 2,
+      "program": 3,
+      "tags": ["trance", "supersaw", "big"]
+    },
+    {
+      "id": "lead-005",
+      "name": "Electric Piano",
+      "category": "Keys",
+      "bank_msb": 63,
+      "bank_lsb": 2,
+      "program": 4,
+      "tags": ["ep", "rhodes", "warm"]
+    },
+    {
+      "id": "lead-006",
+      "name": "Organ",
+      "category": "Organ",
+      "bank_msb": 63,
+      "bank_lsb": 2,
+      "program": 5,
+      "tags": ["organ", "b3", "drawbar"]
+    },
+    {
+      "id": "lead-007",
+      "name": "Pluck Synth",
+      "category": "Pluck",
+      "bank_msb": 63,
+      "bank_lsb": 2,
+      "program": 6,
+      "tags": ["pluck", "stab", "short"]
+    },
+    {
+      "id": "lead-008",
+      "name": "Arp Lead",
+      "category": "Synth Lead",
+      "bank_msb": 63,
+      "bank_lsb": 2,
+      "program": 7,
+      "tags": ["arp", "sequence", "pulsing"]
+    }
+  ],
+  "categories": [
+    {"id": "synth-bass", "name": "Synth Bass"},
+    {"id": "acoustic-bass", "name": "Acoustic Bass"},
+    {"id": "pad", "name": "Pad"},
+    {"id": "strings", "name": "Strings"},
+    {"id": "brass", "name": "Brass"},
+    {"id": "choir", "name": "Choir"},
+    {"id": "synth-lead", "name": "Synth Lead"},
+    {"id": "keys", "name": "Keys"},
+    {"id": "organ", "name": "Organ"},
+    {"id": "pluck", "name": "Pluck"}
+  ],
+  "defaults": {
+    "bass": "bass-001",
+    "pad": "pad-001",
+    "lead": "lead-001"
+  }
+}

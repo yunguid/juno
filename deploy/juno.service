@@ -1,0 +1,25 @@
+[Unit]
+Description=Juno Music Generation API
+After=network.target sound.target
+
+[Service]
+Type=simple
+User=luke
+WorkingDirectory=/home/luke/juno
+Environment="PATH=/home/luke/juno/env/bin:/usr/local/bin:/usr/bin:/bin"
+EnvironmentFile=/home/luke/juno/.env
+ExecStart=/home/luke/juno/env/bin/uvicorn server.app:app --host 0.0.0.0 --port 8000
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+# Security hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/luke/juno
+
+[Install]
+WantedBy=multi-user.target
+

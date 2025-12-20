@@ -235,7 +235,7 @@ class AudioConfig:
     sample_rate: int = 44100
     capture_channels: int = 8
     output_channels: int = 2
-    chunk_frames: int = 1024  # Smaller chunks reduce latency (~23ms at 44100Hz)
+    chunk_frames: int = 4096  # Larger chunks for network streaming (~93ms at 44100Hz)
 
 
 class AudioCapture:

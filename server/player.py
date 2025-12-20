@@ -3,9 +3,12 @@ import mido
 import time
 import threading
 from dataclasses import dataclass
-from typing import Callable
-from .models import Sample, Layer, Note, SoundType, SOUND_CHANNELS, note_to_midi
+from typing import Callable, TYPE_CHECKING
+from .models import Sample, Layer, Note, SoundType, SOUND_CHANNELS, note_to_midi, Patch
 from .logger import get_logger
+
+if TYPE_CHECKING:
+    from .patches import get_patch_by_id
 
 log = get_logger("player")
 
@@ -36,18 +39,19 @@ class SamplePlayer:
     def connect(self) -> bool:
         """Connect to the MIDI port (auto-detect if not specified)"""
         available = mido.get_output_names()
-        
+
         # If port specified, try that
         if self.port_name:
             try:
                 log.debug(f"Attempting to connect to MIDI port: {self.port_name}")
                 self.port = mido.open_output(self.port_name)
                 log.info(f"MIDI connected: {self.port_name}")
+                self._init_parts()
                 return True
             except Exception as e:
                 log.error(f"Failed to connect to {self.port_name}: {e}")
                 return False
-        
+
         # Auto-detect by matching port name patterns
         for pattern in MIDI_PORT_PATTERNS:
             for port_name in available:
@@ -57,12 +61,19 @@ class SamplePlayer:
                         self.port = mido.open_output(port_name)
                         self.port_name = port_name
                         log.info(f"MIDI connected: {port_name}")
+                        self._init_parts()
                         return True
                     except Exception as e:
                         log.error(f"Failed to connect to {port_name}: {e}")
-        
+
         log.error(f"No MONTAGE found. Available ports: {available}")
         return False
+
+    def _init_parts(self) -> None:
+        """Initialize parts on connection - disable Kbd Ctrl for channels 0-2"""
+        for part in range(3):  # Parts 1-3 (Bass, Pad, Lead)
+            self._disable_kbd_ctrl(part)
+        log.info("Disabled Kbd Ctrl for parts 1-3")
 
     def disconnect(self):
         """Disconnect from the MIDI port"""
@@ -94,8 +105,111 @@ class SamplePlayer:
             # CC 64: Sustain Pedal Off
             self.port.send(mido.Message('control_change', control=64, value=0, channel=ch))
 
+    def send_program_change(self, channel: int, bank_msb: int, bank_lsb: int, program: int) -> bool:
+        """Send bank select and program change to a channel"""
+        if not self.port:
+            return False
+
+        log.info(f"Program change: ch={channel} bank={bank_msb}/{bank_lsb} prog={program}")
+
+        # Bank Select MSB (CC0)
+        self.port.send(mido.Message('control_change', control=0, value=bank_msb, channel=channel))
+        # Bank Select LSB (CC32)
+        self.port.send(mido.Message('control_change', control=32, value=bank_lsb, channel=channel))
+        # Program Change
+        self.port.send(mido.Message('program_change', program=program, channel=channel))
+
+        # Disable Keyboard Control for this part to prevent routing issues
+        # This fixes the issue where Kbd Ctrl gets enabled after program change
+        self._disable_kbd_ctrl(channel)
+
+        return True
+
+    def _disable_kbd_ctrl(self, part: int) -> None:
+        """
+        Disable Keyboard Control for a part via SysEx.
+        When Kbd Ctrl is ON, the part receives MIDI from the local keyboard
+        which can interfere with external MIDI control.
+
+        SysEx format (MODX/Montage): F0 43 10 7F 1C 07 31 0p 17 00 F7
+        - 43 = Yamaha
+        - 10 = Device number
+        - 7F 1C 07 = Model ID
+        - 31 = Part parameter high address
+        - 0p = Part number (0-7 for parts 1-8)
+        - 17 = Keyboard Control Switch address
+        - 00 = OFF
+
+        Note: Montage M may use different addresses (4-byte vs 3-byte).
+        If this doesn't work, check the Montage M Data List PDF.
+        """
+        if not self.port or part > 7:
+            return
+
+        # MODX/Montage classic format
+        sysex_data = [
+            0x43,  # Yamaha
+            0x10,  # Device number
+            0x7F,  # Model ID byte 1
+            0x1C,  # Model ID byte 2
+            0x07,  # Model ID byte 3
+            0x31,  # High address (Part parameters)
+            part,  # Mid address (Part number 0-7)
+            0x17,  # Low address (Keyboard Control Switch)
+            0x00,  # Data: OFF
+        ]
+
+        try:
+            self.port.send(mido.Message('sysex', data=sysex_data))
+            log.debug(f"Disabled Kbd Ctrl for part {part + 1}")
+        except Exception as e:
+            log.warning(f"Failed to send Kbd Ctrl SysEx for part {part}: {e}")
+
+    def select_patch(self, sound_type: SoundType, patch: Patch) -> bool:
+        """Select a patch for a sound type channel"""
+        channel = SOUND_CHANNELS[sound_type]
+        return self.send_program_change(
+            channel,
+            patch.bank_msb,
+            patch.bank_lsb,
+            patch.program
+        )
+
+    def preview_patch(self, sound_type: SoundType, patch: Patch) -> None:
+        """Preview a patch by selecting it and playing a test phrase"""
+        if not self.select_patch(sound_type, patch):
+            return
+
+        channel = SOUND_CHANNELS[sound_type]
+
+        # Small delay after program change to let synth switch
+        time.sleep(0.05)
+
+        # Play a test phrase appropriate for the sound type
+        if sound_type == SoundType.BASS:
+            notes = [(36, 0.3), (40, 0.3), (43, 0.3)]  # C2, E2, G2
+        elif sound_type == SoundType.PAD:
+            # Play a chord
+            chord = [60, 64, 67]  # C4 major chord
+            for note in chord:
+                self.port.send(mido.Message('note_on', note=note, velocity=80, channel=channel))
+            time.sleep(1.0)
+            for note in chord:
+                self.port.send(mido.Message('note_off', note=note, velocity=0, channel=channel))
+            return
+        else:  # LEAD
+            notes = [(72, 0.15), (76, 0.15), (79, 0.15), (84, 0.3)]  # C5, E5, G5, C6
+
+        for midi_note, duration in notes:
+            self.port.send(mido.Message('note_on', note=midi_note, velocity=80, channel=channel))
+            time.sleep(duration)
+            self.port.send(mido.Message('note_off', note=midi_note, velocity=0, channel=channel))
+
     def _compile_sample(self, sample: Sample) -> list[ScheduledEvent]:
         """Convert a Sample to a list of scheduled MIDI events"""
+        # Import here to avoid circular imports
+        from .patches import get_patch_by_id
+
         events: list[ScheduledEvent] = []
         beat_duration = 60.0 / sample.bpm
 
@@ -104,6 +218,40 @@ class SamplePlayer:
                 continue
 
             channel = SOUND_CHANNELS[layer.sound]
+
+            # Send program change if patch is specified
+            if layer.patch_id:
+                patch = get_patch_by_id(layer.patch_id)
+                if patch:
+                    # Bank Select MSB
+                    events.append(ScheduledEvent(
+                        time=0.0,
+                        message=mido.Message(
+                            'control_change',
+                            control=0,
+                            value=patch.bank_msb,
+                            channel=channel
+                        )
+                    ))
+                    # Bank Select LSB
+                    events.append(ScheduledEvent(
+                        time=0.0,
+                        message=mido.Message(
+                            'control_change',
+                            control=32,
+                            value=patch.bank_lsb,
+                            channel=channel
+                        )
+                    ))
+                    # Program Change
+                    events.append(ScheduledEvent(
+                        time=0.0,
+                        message=mido.Message(
+                            'program_change',
+                            program=patch.program,
+                            channel=channel
+                        )
+                    ))
 
             # Set layer volume
             events.append(ScheduledEvent(

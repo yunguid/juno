@@ -4,6 +4,24 @@ from typing import Literal
 from enum import Enum
 
 
+class Patch(BaseModel):
+    """A synth patch/preset on the MONTAGE M"""
+    id: str                 # Unique identifier (e.g., "preset-063-000-001")
+    name: str               # Display name (e.g., "Warm Pad")
+    category: str           # Category (e.g., "Pad", "Synth Lead", "Synth Bass")
+    bank_msb: int           # Bank Select MSB (0-127)
+    bank_lsb: int           # Bank Select LSB (0-127)
+    program: int            # Program Change number (0-127)
+    tags: list[str] = []    # Search tags
+
+
+class PatchCategory(BaseModel):
+    """Category for organizing patches"""
+    id: str
+    name: str
+    count: int = 0
+
+
 class SoundType(str, Enum):
     BASS = "bass"
     PAD = "pad"
@@ -36,6 +54,8 @@ class Layer(BaseModel):
     volume: int = Field(default=100, ge=0, le=127)  # Layer volume (CC7)
     portamento: bool = False          # Enable glide between notes (CC65)
     portamento_time: int = Field(default=40, ge=0, le=127)  # Glide speed (CC5)
+    patch_id: str | None = None       # Reference to selected patch
+    patch_name: str | None = None     # Cached patch name for display
 
 
 class Sample(BaseModel):
@@ -92,6 +112,43 @@ class AddLayerRequest(BaseModel):
     sample_id: str
     prompt: str
     sound: SoundType
+
+
+class SelectPatchRequest(BaseModel):
+    """Request to select a patch for a channel"""
+    patch_id: str
+
+
+class SaveToLibraryRequest(BaseModel):
+    """Request to save current sample to library"""
+    device_id: str
+
+
+class LibrarySample(BaseModel):
+    """A sample stored in the library"""
+    id: str
+    name: str
+    prompt: str | None = None
+    key: str | None = None
+    bpm: int | None = None
+    bars: int | None = None
+    duration_seconds: float | None = None
+    audio_url: str
+    layers: list[dict] | None = None
+    created_at: str
+
+
+class LibraryListResponse(BaseModel):
+    """Response for listing library samples"""
+    samples: list[LibrarySample]
+    total: int
+
+
+class SaveToLibraryResponse(BaseModel):
+    """Response after saving to library"""
+    id: str
+    audio_url: str
+    created_at: str
 
 
 # Note name to MIDI number conversion
