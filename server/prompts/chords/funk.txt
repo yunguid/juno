@@ -1,0 +1,276 @@
+# Funk Chord Progressions
+# Characteristics: 9th chords, 13th chords, chromatic movement,
+# syncopated rhythm, dominant 7ths, tight voicings
+
+FUNK PROGRESSION 1 - Classic (E minor)
+Beat 0: Em9 = ["E3", "G3", "B3", "D4", "F#4"]
+Beat 4: A13 = ["A3", "C#4", "G4", "B4", "F#5"]
+Beat 8: Em9 = ["E3", "G3", "B3", "D4", "F#4"]
+Beat 12: B7#9 = ["B3", "D#4", "A4", "C#5"]
+
+Classic funk vamp.
+Hendrix chord on V.
+
+---
+
+FUNK PROGRESSION 2 - Slap Bass (G minor)
+Beat 0: Gm9 = ["G3", "Bb3", "D4", "F4", "A4"]
+Beat 4: C9 = ["C3", "E3", "Bb4", "D5", "G5"]
+Beat 8: Gm9 = ["G3", "Bb3", "D4", "F4", "A4"]
+Beat 12: D7#9 = ["D3", "F#3", "C4", "E#4"]
+
+Room for slap bass.
+Punchy and tight.
+
+---
+
+FUNK PROGRESSION 3 - P-Funk (Eb major)
+Beat 0: Eb9 = ["Eb3", "G3", "Db4", "F4", "Bb4"]
+Beat 4: Ab13 = ["Ab3", "C4", "Gb4", "Bb4", "F5"]
+Beat 8: Eb9 = ["Eb3", "G3", "Db4", "F4", "Bb4"]
+Beat 12: Bb9 = ["Bb3", "D4", "Ab4", "C5", "F5"]
+
+George Clinton vibes.
+Spaceship landing.
+
+---
+
+FUNK PROGRESSION 4 - Disco Funk (C major)
+Beat 0: C9 = ["C3", "E3", "Bb4", "D5", "G5"]
+Beat 4: F13 = ["F3", "A3", "Eb4", "G4", "D5"]
+Beat 8: Dm9 = ["D3", "F3", "C4", "E4", "A4"]
+Beat 12: G13 = ["G3", "B3", "F4", "A4", "E5"]
+
+Disco-funk crossover.
+Dance floor ready.
+
+---
+
+FUNK PROGRESSION 5 - Soul Funk (D minor)
+Beat 0: Dm9 = ["D3", "F3", "C4", "E4", "A4"]
+Beat 4: G13 = ["G3", "B3", "F4", "A4", "E5"]
+Beat 8: Em9 = ["E3", "G3", "D4", "F#4", "B4"]
+Beat 12: A13 = ["A3", "C#4", "G4", "B4", "F#5"]
+
+Soulful and smooth.
+Extended dominants.
+
+---
+
+FUNK PROGRESSION 6 - Electro Funk (A minor)
+Beat 0: Am9 = ["A3", "C4", "G4", "B4", "E5"]
+Beat 4: Dm9 = ["D3", "F3", "C4", "E4", "A4"]
+Beat 8: E7#9 = ["E3", "G#3", "D4", "F##4"]
+Beat 12: Am9 = ["A3", "C4", "G4", "B4", "E5"]
+
+Synth funk energy.
+Electronic influence.
+
+---
+
+FUNK PROGRESSION 7 - Jazz Funk (F major)
+Beat 0: Fmaj9 = ["F3", "A3", "E4", "G4", "C5"]
+Beat 4: Bb13 = ["Bb3", "D4", "Ab4", "C5", "G5"]
+Beat 8: Am9 = ["A3", "C4", "G4", "B4", "E5"]
+Beat 12: D7#9 = ["D3", "F#3", "C4", "E#4"]
+
+Jazz-funk fusion.
+Herbie Hancock style.
+
+---
+
+FUNK PROGRESSION 8 - Clavinet (G major)
+Beat 0: G9 = ["G3", "B3", "F4", "A4", "D5"]
+Beat 4: C9 = ["C3", "E3", "Bb4", "D5", "G5"]
+Beat 8: D9 = ["D3", "F#3", "C4", "E4", "A4"]
+Beat 12: G9 = ["G3", "B3", "F4", "A4", "D5"]
+
+Clavinet heaven.
+Stevie Wonder vibes.
+
+---
+
+FUNK PROGRESSION 9 - Horns (Bb major)
+Beat 0: Bb9 = ["Bb3", "D4", "Ab4", "C5", "F5"]
+Beat 4: Eb13 = ["Eb3", "G3", "Db4", "F4", "C5"]
+Beat 8: F9 = ["F3", "A3", "Eb4", "G4", "C5"]
+Beat 12: Bb9 = ["Bb3", "D4", "Ab4", "C5", "F5"]
+
+Horn section ready.
+Tower of Power style.
+
+---
+
+FUNK PROGRESSION 10 - Groove (E minor)
+Beat 0: Em7 = ["E3", "G3", "D4", "B4"]
+Beat 4: A9 = ["A3", "C#4", "G4", "B4", "E5"]
+Beat 8: D9 = ["D3", "F#3", "C4", "E4", "A4"]
+Beat 12: G9 = ["G3", "B3", "F4", "A4", "D5"]
+
+Deep groove.
+Pocket player.
+
+---
+
+FUNK PROGRESSION 11 - Synth (F# minor)
+Beat 0: F#m9 = ["F#3", "A3", "E4", "G#4", "C#5"]
+Beat 4: B13 = ["B3", "D#4", "A4", "C#5", "G#5"]
+Beat 8: C#9 = ["C#3", "E#3", "B4", "D#5", "G#5"]
+Beat 12: F#m9 = ["F#3", "A3", "E4", "G#4", "C#5"]
+
+Synthesizer funk.
+80s boogie.
+
+---
+
+FUNK PROGRESSION 12 - Street (D major)
+Beat 0: D9 = ["D3", "F#3", "C4", "E4", "A4"]
+Beat 4: G13 = ["G3", "B3", "F4", "A4", "E5"]
+Beat 8: A9 = ["A3", "C#4", "G4", "B4", "E5"]
+Beat 12: D9 = ["D3", "F#3", "C4", "E4", "A4"]
+
+Street corner.
+Urban groove.
+
+---
+
+FUNK PROGRESSION 13 - Chromatic (C minor)
+Beat 0: Cm9 = ["C3", "Eb3", "Bb4", "D5", "G5"]
+Beat 4: Db9 = ["Db3", "F3", "Cb4", "Eb4", "Ab4"]
+Beat 8: Cm9 = ["C3", "Eb3", "Bb4", "D5", "G5"]
+Beat 12: G7#9 = ["G3", "B3", "F4", "A#4"]
+
+Chromatic movement.
+Half-step tension.
+
+---
+
+FUNK PROGRESSION 14 - Bass Line (Ab major)
+Beat 0: Ab9 = ["Ab3", "C4", "Gb4", "Bb4", "Eb5"]
+Beat 4: Db13 = ["Db3", "F3", "Cb4", "Eb4", "Bb4"]
+Beat 8: Eb9 = ["Eb3", "G3", "Db4", "F4", "Bb4"]
+Beat 12: Ab9 = ["Ab3", "C4", "Gb4", "Bb4", "Eb5"]
+
+Walking bass friendly.
+Smooth transitions.
+
+---
+
+FUNK PROGRESSION 15 - Tight Pocket (B minor)
+Beat 0: Bm9 = ["B3", "D4", "A4", "C#5", "F#5"]
+Beat 4: E13 = ["E3", "G#3", "D4", "F#4", "C#5"]
+Beat 8: F#9 = ["F#3", "A#3", "E4", "G#4", "C#5"]
+Beat 12: Bm9 = ["B3", "D4", "A4", "C#5", "F#5"]
+
+Tight as a snare.
+Precision funk.
+
+---
+
+FUNK PROGRESSION 16 - Dance Floor (G minor)
+Beat 0: Gm7 = ["G3", "Bb3", "F4", "D5"]
+Beat 4: C9 = ["C3", "E3", "Bb4", "D5", "G5"]
+Beat 8: F9 = ["F3", "A3", "Eb4", "G4", "C5"]
+Beat 12: Gm7 = ["G3", "Bb3", "F4", "D5"]
+
+Dance floor filler.
+Party starter.
+
+---
+
+FUNK PROGRESSION 17 - Wah Wah (E major)
+Beat 0: E9 = ["E3", "G#3", "D4", "F#4", "B4"]
+Beat 4: A13 = ["A3", "C#4", "G4", "B4", "F#5"]
+Beat 8: B9 = ["B3", "D#4", "A4", "C#5", "F#5"]
+Beat 12: E9 = ["E3", "G#3", "D4", "F#4", "B4"]
+
+Wah pedal territory.
+Psychedelic funk.
+
+---
+
+FUNK PROGRESSION 18 - New Orleans (F major)
+Beat 0: F9 = ["F3", "A3", "Eb4", "G4", "C5"]
+Beat 4: Bb9 = ["Bb3", "D4", "Ab4", "C5", "F5"]
+Beat 8: C9 = ["C3", "E3", "Bb4", "D5", "G5"]
+Beat 12: F9 = ["F3", "A3", "Eb4", "G4", "C5"]
+
+Second line funk.
+Big Easy groove.
+
+---
+
+FUNK PROGRESSION 19 - Parliament (C# minor)
+Beat 0: C#m9 = ["C#3", "E3", "B4", "D#5", "G#5"]
+Beat 4: F#13 = ["F#3", "A#3", "E4", "G#4", "D#5"]
+Beat 8: C#m9 = ["C#3", "E3", "B4", "D#5", "G#5"]
+Beat 12: G#7#9 = ["G#3", "B#3", "F#4", "A##4"]
+
+Mothership connection.
+Spacey funk.
+
+---
+
+FUNK PROGRESSION 20 - Chicken Grease (Bb minor)
+Beat 0: Bbm9 = ["Bb3", "Db4", "Ab4", "C5", "F5"]
+Beat 4: Eb13 = ["Eb3", "G3", "Db4", "F4", "C5"]
+Beat 8: Ab9 = ["Ab3", "C4", "Gb4", "Bb4", "Eb5"]
+Beat 12: Bbm9 = ["Bb3", "Db4", "Ab4", "C5", "F5"]
+
+D'Angelo style.
+Greasy pocket.
+
+---
+
+FUNK PROGRESSION 21 - Uptight (D minor)
+Beat 0: Dm7 = ["D3", "F3", "C4", "A4"]
+Beat 4: G9 = ["G3", "B3", "F4", "A4", "D5"]
+Beat 8: Dm7 = ["D3", "F3", "C4", "A4"]
+Beat 12: A7#9 = ["A3", "C#4", "G4", "B#4"]
+
+Everything's alright.
+Uptight groove.
+
+---
+
+FUNK PROGRESSION 22 - Superstition (Eb minor)
+Beat 0: Ebm9 = ["Eb3", "Gb3", "Db4", "F4", "Bb4"]
+Beat 4: Ab13 = ["Ab3", "C4", "Gb4", "Bb4", "F5"]
+Beat 8: Ebm9 = ["Eb3", "Gb3", "Db4", "F4", "Bb4"]
+Beat 12: Bb7#9 = ["Bb3", "D4", "Ab4", "C#5"]
+
+Very superstitious.
+Clavinet classic.
+
+---
+
+FUNK PROGRESSION 23 - Get Down (A minor)
+Beat 0: Am7 = ["A3", "C4", "G4", "E5"]
+Beat 4: D9 = ["D3", "F#3", "C4", "E4", "A4"]
+Beat 8: G9 = ["G3", "B3", "F4", "A4", "D5"]
+Beat 12: Am7 = ["A3", "C4", "G4", "E5"]
+
+Get down on it.
+Kool and the Gang.
+
+---
+
+FUNK PROGRESSION 24 - Cold Sweat (G minor)
+Beat 0: Gm7 = ["G3", "Bb3", "F4", "D5"]
+Beat 8: Gm7 = ["G3", "D4", "F4", "Bb4"]
+
+James Brown one-chord vamp.
+Pure groove.
+
+---
+
+FUNK PROGRESSION 25 - Flash Light (F minor)
+Beat 0: Fm9 = ["F3", "Ab3", "Eb4", "G4", "C5"]
+Beat 4: Bbm9 = ["Bb3", "Db4", "Ab4", "C5", "F5"]
+Beat 8: Fm9 = ["F3", "Ab3", "Eb4", "G4", "C5"]
+Beat 12: C7#9 = ["C3", "E3", "Bb4", "D#5"]
+
+Spotlight on the funk.
+Parliament funk.
+
+

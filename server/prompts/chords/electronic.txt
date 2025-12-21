@@ -1,0 +1,279 @@
+# Electronic / EDM Chord Progressions
+# Characteristics: Simple but effective, build and drop,
+# minor key energy, driving rhythm, synth-friendly voicings
+
+ELECTRONIC PROGRESSION 1 - Driving (A minor)
+Beat 0: Am = ["A3", "C4", "E4", "A4"]
+Beat 4: F = ["F3", "A3", "C4", "F4"]
+Beat 8: C = ["C3", "E3", "G3", "C4"]
+Beat 12: G = ["G3", "B3", "D4", "G4"]
+
+vi-IV-I-V, clean and punchy.
+The EDM workhorse.
+
+---
+
+ELECTRONIC PROGRESSION 2 - Euphoric (F major)
+Beat 0: F = ["F3", "A3", "C4", "F4"]
+Beat 4: Am = ["A3", "C4", "E4", "A4"]
+Beat 8: Dm = ["D3", "F3", "A3", "D4"]
+Beat 12: Bb = ["Bb3", "D4", "F4", "Bb4"]
+
+Major key, uplifting energy.
+Festival anthem.
+
+---
+
+ELECTRONIC PROGRESSION 3 - Trance (E minor)
+Beat 0: Em = ["E3", "B3", "E4", "G4"]
+Beat 4: C = ["C3", "E3", "G3", "C4"]
+Beat 8: D = ["D3", "F#3", "A3", "D4"]
+Beat 12: B = ["B3", "D#4", "F#4", "B4"]
+
+i-bVI-bVII-V, driving trance feel.
+Classic trance pattern.
+
+---
+
+ELECTRONIC PROGRESSION 4 - Bass House (G minor)
+Beat 0: Gm = ["G3", "Bb3", "D4"]
+Beat 4: Eb = ["Eb3", "G3", "Bb3"]
+Beat 8: F = ["F3", "A3", "C4"]
+Beat 12: Dm = ["D3", "F3", "A3"]
+
+Minimal voicings for bass room.
+Tight and punchy.
+
+---
+
+ELECTRONIC PROGRESSION 5 - Future Bass (Db major)
+Beat 0: Dbmaj7 = ["Db3", "F4", "Ab4", "C5"]
+Beat 4: Bbm7 = ["Bb3", "Db4", "F4", "Ab4"]
+Beat 8: Gbmaj7 = ["Gb3", "Bb3", "Db4", "F4"]
+Beat 12: Ab7 = ["Ab3", "C4", "Eb4", "Gb4"]
+
+Lush 7th chords.
+Supersawed sound.
+
+---
+
+ELECTRONIC PROGRESSION 6 - Deep House (C minor)
+Beat 0: Cm7 = ["C3", "Eb3", "G3", "Bb3"]
+Beat 4: Fm7 = ["F3", "Ab3", "C4", "Eb4"]
+Beat 8: Abmaj7 = ["Ab3", "C4", "Eb4", "G4"]
+Beat 12: G7 = ["G3", "B3", "D4", "F4"]
+
+Smooth 7ths.
+Loopy and hypnotic.
+
+---
+
+ELECTRONIC PROGRESSION 7 - Progressive (A minor)
+Beat 0: Am = ["A3", "C4", "E4"]
+Beat 4: G = ["G3", "B3", "D4"]
+Beat 8: F = ["F3", "A3", "C4"]
+Beat 12: E = ["E3", "G#3", "B3"]
+
+Andalusian influence.
+Building tension.
+
+---
+
+ELECTRONIC PROGRESSION 8 - Big Room (D minor)
+Beat 0: Dm = ["D3", "F3", "A3"]
+Beat 4: Bb = ["Bb3", "D4", "F4"]
+Beat 8: C = ["C3", "E3", "G3"]
+Beat 12: A = ["A3", "C#4", "E4"]
+
+Simple triads.
+Room for big kicks.
+
+---
+
+ELECTRONIC PROGRESSION 9 - Melodic Techno (Bb minor)
+Beat 0: Bbm = ["Bb3", "Db4", "F4"]
+Beat 4: Gb = ["Gb3", "Bb3", "Db4"]
+Beat 8: Ab = ["Ab3", "C4", "Eb4"]
+Beat 12: Ebm = ["Eb3", "Gb3", "Bb3"]
+
+Dark and driving.
+Hypnotic pattern.
+
+---
+
+ELECTRONIC PROGRESSION 10 - Tech House (E minor)
+Beat 0: Em = ["E3", "G3", "B3"]
+Beat 4: Am = ["A3", "C4", "E4"]
+Beat 8: D = ["D3", "F#3", "A3"]
+Beat 12: G = ["G3", "B3", "D4"]
+
+Minimal chords.
+Groove-focused.
+
+---
+
+ELECTRONIC PROGRESSION 11 - Hardstyle (C# minor)
+Beat 0: C#m = ["C#3", "E3", "G#3"]
+Beat 4: A = ["A3", "C#4", "E4"]
+Beat 8: B = ["B3", "D#4", "F#4"]
+Beat 12: G# = ["G#3", "B#3", "D#4"]
+
+Hard and aggressive.
+Kick-focused.
+
+---
+
+ELECTRONIC PROGRESSION 12 - Dubstep (F minor)
+Beat 0: Fm = ["F3", "Ab3", "C4"]
+Beat 4: Db = ["Db3", "F3", "Ab3"]
+Beat 8: Eb = ["Eb3", "G3", "Bb3"]
+Beat 12: C = ["C3", "E3", "G3"]
+
+Dark and heavy.
+Drop incoming.
+
+---
+
+ELECTRONIC PROGRESSION 13 - Tropical (G major)
+Beat 0: G = ["G3", "B3", "D4"]
+Beat 4: Em = ["E3", "G3", "B3"]
+Beat 8: C = ["C3", "E3", "G3"]
+Beat 12: D = ["D3", "F#3", "A3"]
+
+Bright and sunny.
+Beach vibes.
+
+---
+
+ELECTRONIC PROGRESSION 14 - Electro (B minor)
+Beat 0: Bm = ["B3", "D4", "F#4"]
+Beat 4: G = ["G3", "B3", "D4"]
+Beat 8: A = ["A3", "C#4", "E4"]
+Beat 12: F# = ["F#3", "A#3", "C#4"]
+
+Aggressive energy.
+Synth-driven.
+
+---
+
+ELECTRONIC PROGRESSION 15 - Breaks (D minor)
+Beat 0: Dm7 = ["D3", "F3", "A3", "C4"]
+Beat 4: Am7 = ["A3", "C4", "E4", "G4"]
+Beat 8: Bbmaj7 = ["Bb3", "D4", "F4", "A4"]
+Beat 12: A7 = ["A3", "C#4", "E4", "G4"]
+
+Funky and broken.
+7th chord flavor.
+
+---
+
+ELECTRONIC PROGRESSION 16 - Garage (F minor)
+Beat 0: Fm9 = ["F3", "Ab3", "C4", "Eb4", "G4"]
+Beat 4: Bbm9 = ["Bb3", "Db4", "F4", "Ab4", "C5"]
+Beat 8: Ebmaj7 = ["Eb3", "G3", "Bb4", "D5"]
+Beat 12: C7 = ["C3", "E3", "Bb4", "D5"]
+
+UK garage style.
+2-step rhythm.
+
+---
+
+ELECTRONIC PROGRESSION 17 - Ambient Techno (A minor)
+Beat 0: Am9 = ["A3", "C4", "E4", "G4", "B4"]
+Beat 8: Fmaj9 = ["F3", "A3", "C4", "E4", "G4"]
+
+Long sustains.
+Minimal movement.
+
+---
+
+ELECTRONIC PROGRESSION 18 - Acid (E phrygian)
+Beat 0: Em = ["E3", "G3", "B3"]
+Beat 4: F = ["F3", "A3", "C4"]
+Beat 8: G = ["G3", "B3", "D4"]
+Beat 12: Em = ["E3", "G3", "B3"]
+
+303 bassline territory.
+Phrygian darkness.
+
+---
+
+ELECTRONIC PROGRESSION 19 - Disco House (Ab major)
+Beat 0: Ab = ["Ab3", "C4", "Eb4"]
+Beat 4: Fm7 = ["F3", "Ab3", "C4", "Eb4"]
+Beat 8: Bbm7 = ["Bb3", "Db4", "F4", "Ab4"]
+Beat 12: Eb7 = ["Eb3", "G3", "Db4", "F4"]
+
+Disco roots.
+Funky chords.
+
+---
+
+ELECTRONIC PROGRESSION 20 - Synthwave (F# minor)
+Beat 0: F#m = ["F#3", "A3", "C#4"]
+Beat 4: D = ["D3", "F#3", "A3"]
+Beat 8: A = ["A3", "C#4", "E4"]
+Beat 12: E = ["E3", "G#3", "B3"]
+
+80s retro vibes.
+Neon aesthetic.
+
+---
+
+ELECTRONIC PROGRESSION 21 - Complextro (C minor)
+Beat 0: Cm = ["C3", "Eb3", "G3"]
+Beat 2: Ab = ["Ab3", "C4", "Eb4"]
+Beat 4: Eb = ["Eb3", "G3", "Bb3"]
+Beat 6: Bb = ["Bb3", "D4", "F4"]
+Beat 8: Fm = ["F3", "Ab3", "C4"]
+Beat 10: G = ["G3", "B3", "D4"]
+Beat 12: Cm = ["C3", "Eb3", "G3"]
+
+Fast harmonic rhythm.
+Glitchy energy.
+
+---
+
+ELECTRONIC PROGRESSION 22 - Midtempo (G# minor)
+Beat 0: G#m = ["G#3", "B3", "D#4"]
+Beat 4: E = ["E3", "G#3", "B3"]
+Beat 8: F# = ["F#3", "A#3", "C#4"]
+Beat 12: D# = ["D#3", "F##3", "A#3"]
+
+Dark and heavy.
+Bass music vibes.
+
+---
+
+ELECTRONIC PROGRESSION 23 - Drum & Bass (D minor)
+Beat 0: Dm = ["D3", "F3", "A3"]
+Beat 4: Bb = ["Bb3", "D4", "F4"]
+Beat 8: Am = ["A3", "C4", "E4"]
+Beat 12: Gm = ["G3", "Bb3", "D4"]
+
+Fast and energetic.
+Jungle roots.
+
+---
+
+ELECTRONIC PROGRESSION 24 - Psytrance (A minor)
+Beat 0: Am = ["A3", "C4", "E4"]
+Beat 4: E = ["E3", "G#3", "B3"]
+Beat 8: Dm = ["D3", "F3", "A3"]
+Beat 12: Am = ["A3", "C4", "E4"]
+
+Psychedelic energy.
+Driving bassline.
+
+---
+
+ELECTRONIC PROGRESSION 25 - House Classic (C major)
+Beat 0: Cmaj7 = ["C3", "E3", "G3", "B3"]
+Beat 4: Am7 = ["A3", "C4", "E4", "G4"]
+Beat 8: Dm7 = ["D3", "F3", "A3", "C4"]
+Beat 12: G7 = ["G3", "B3", "D4", "F4"]
+
+Classic house pattern.
+Four on the floor.
+
+

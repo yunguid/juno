@@ -1,0 +1,278 @@
+# Emotional / Cinematic Chord Progressions
+# Characteristics: Lush extended chords, dramatic dynamics, wide voicings,
+# tension and release, minor key beauty, epic builds
+
+EMOTIONAL PROGRESSION 1 - Yearning (C minor)
+Beat 0: Cm9 = ["C3", "G3", "Bb4", "D5", "Eb5"]
+Beat 4: Abmaj7 = ["Ab3", "C4", "Eb4", "G4"]
+Beat 8: Ebmaj7 = ["Eb3", "G3", "Bb4", "D5"]
+Beat 12: Bb(add9) = ["Bb3", "D4", "F4", "C5"]
+
+Lush extensions, smooth voice leading.
+The C5 in the final chord creates longing.
+
+---
+
+EMOTIONAL PROGRESSION 2 - Melancholy (D minor)
+Beat 0: Dm9 = ["D3", "A3", "C4", "E4", "F4"]
+Beat 4: Bbmaj9 = ["Bb3", "D4", "F4", "A4", "C5"]
+Beat 8: Gm7 = ["G3", "Bb3", "D4", "F4"]
+Beat 12: A7sus4 = ["A3", "D4", "E4", "G4"]
+
+Suspended resolution creates longing.
+The sus4 doesn't resolve, leaving space.
+
+---
+
+EMOTIONAL PROGRESSION 3 - Hope (G major)
+Beat 0: Gmaj9 = ["G3", "B3", "D4", "F#4", "A4"]
+Beat 4: Em9 = ["E3", "G3", "B4", "D5", "F#5"]
+Beat 8: Cmaj7 = ["C3", "E3", "G4", "B4"]
+Beat 12: D7sus4 = ["D3", "G3", "A3", "C4"]
+
+Major key warmth, gentle resolution.
+The 9ths add emotional depth.
+
+---
+
+EMOTIONAL PROGRESSION 4 - Bittersweet (A minor)
+Beat 0: Am9 = ["A3", "E4", "G4", "B4", "C5"]
+Beat 4: Fmaj9 = ["F3", "A3", "C4", "E4", "G4"]
+Beat 8: Dm9 = ["D3", "A3", "C4", "E4", "F4"]
+Beat 12: E7b9 = ["E3", "G#3", "D4", "F4"]
+
+Minor key with jazzy tension.
+b9 on dominant creates pull.
+
+---
+
+EMOTIONAL PROGRESSION 5 - Sunrise (Eb major)
+Beat 0: Ebmaj9 = ["Eb3", "G3", "Bb4", "D5", "F5"]
+Beat 4: Cm9 = ["C3", "G3", "Bb4", "D5", "Eb5"]
+Beat 8: Abmaj7 = ["Ab3", "C4", "Eb4", "G4"]
+Beat 12: Bb7sus4 = ["Bb3", "Eb4", "F4", "Ab4"]
+
+Bright and hopeful.
+Suspended chord keeps it floating.
+
+---
+
+EMOTIONAL PROGRESSION 6 - Moonlight (F minor)
+Beat 0: Fm9 = ["F3", "C4", "Eb4", "G4", "Ab4"]
+Beat 4: Dbmaj9 = ["Db3", "F4", "Ab4", "C5", "Eb5"]
+Beat 8: Bbm9 = ["Bb3", "Db4", "F4", "Ab4", "C5"]
+Beat 12: C7alt = ["C3", "E4", "Bb4", "Db5"]
+
+Dark romantic progression.
+Altered dominant for maximum tension.
+
+---
+
+EMOTIONAL PROGRESSION 7 - Farewell (E minor)
+Beat 0: Em9 = ["E3", "B3", "D4", "F#4", "G4"]
+Beat 4: Cmaj9 = ["C3", "E3", "G4", "B4", "D5"]
+Beat 8: Am9 = ["A3", "E4", "G4", "B4", "C5"]
+Beat 12: B7sus4 = ["B3", "E4", "F#4", "A4"]
+
+Goodbye song feel.
+Voice leading through common tones.
+
+---
+
+EMOTIONAL PROGRESSION 8 - Reunion (Bb major)
+Beat 0: Bbmaj9 = ["Bb3", "D4", "F4", "A4", "C5"]
+Beat 4: Gm9 = ["G3", "D4", "F4", "A4", "Bb4"]
+Beat 8: Ebmaj9 = ["Eb3", "G3", "Bb4", "D5", "F5"]
+Beat 12: F13 = ["F3", "A3", "Eb4", "G4", "D5"]
+
+Warm major progression.
+Extended 13th chord resolution.
+
+---
+
+EMOTIONAL PROGRESSION 9 - Heartbreak (B minor)
+Beat 0: Bm9 = ["B3", "F#4", "A4", "C#5", "D5"]
+Beat 4: Gmaj9 = ["G3", "B3", "D4", "F#4", "A4"]
+Beat 8: Em9 = ["E3", "B3", "D4", "F#4", "G4"]
+Beat 12: F#7b9 = ["F#3", "A#3", "E4", "G4"]
+
+Minor key devastation.
+b9 tension before resolution.
+
+---
+
+EMOTIONAL PROGRESSION 10 - First Light (D major)
+Beat 0: Dmaj9 = ["D3", "F#3", "A4", "C#5", "E5"]
+Beat 4: Bm9 = ["B3", "F#4", "A4", "C#5", "D5"]
+Beat 8: Gmaj9 = ["G3", "B3", "D4", "F#4", "A4"]
+Beat 12: A9sus4 = ["A3", "D4", "E4", "G4", "B4"]
+
+Dawn breaking through.
+Wide voicings create space.
+
+---
+
+EMOTIONAL PROGRESSION 11 - Tears (Db major)
+Beat 0: Dbmaj9 = ["Db3", "F4", "Ab4", "C5", "Eb5"]
+Beat 4: Bbm9 = ["Bb3", "Db4", "F4", "Ab4", "C5"]
+Beat 8: Gbmaj9 = ["Gb3", "Bb3", "Db4", "F4", "Ab4"]
+Beat 12: Ab13 = ["Ab3", "C4", "Eb4", "Gb4", "F5"]
+
+Rich flat key warmth.
+13th chord adds complexity.
+
+---
+
+EMOTIONAL PROGRESSION 12 - Solitude (G# minor)
+Beat 0: G#m9 = ["G#3", "D#4", "F#4", "A#4", "B4"]
+Beat 4: Emaj9 = ["E3", "G#3", "B4", "D#5", "F#5"]
+Beat 8: C#m9 = ["C#3", "G#3", "B4", "D#5", "E5"]
+Beat 12: D#7sus4 = ["D#3", "G#3", "A#3", "C#4"]
+
+Isolated beauty.
+Suspended resolution.
+
+---
+
+EMOTIONAL PROGRESSION 13 - Remembrance (F major)
+Beat 0: Fmaj9 = ["F3", "A3", "C4", "E4", "G4"]
+Beat 4: Dm9 = ["D3", "A3", "C4", "E4", "F4"]
+Beat 8: Bbmaj9 = ["Bb3", "D4", "F4", "A4", "C5"]
+Beat 12: C9sus4 = ["C3", "F3", "G3", "Bb3", "D4"]
+
+Nostalgic warmth.
+IV-ii-bVII-V pattern.
+
+---
+
+EMOTIONAL PROGRESSION 14 - Lost Love (C# minor)
+Beat 0: C#m9 = ["C#3", "G#3", "B4", "D#5", "E5"]
+Beat 4: Amaj9 = ["A3", "C#4", "E4", "G#4", "B4"]
+Beat 8: F#m9 = ["F#3", "C#4", "E4", "G#4", "A4"]
+Beat 12: G#7alt = ["G#3", "B#3", "F#4", "A4"]
+
+Dark romantic passion.
+Altered dominant tension.
+
+---
+
+EMOTIONAL PROGRESSION 15 - New Beginning (A major)
+Beat 0: Amaj9 = ["A3", "C#4", "E4", "G#4", "B4"]
+Beat 4: F#m9 = ["F#3", "C#4", "E4", "G#4", "A4"]
+Beat 8: Dmaj9 = ["D3", "F#3", "A4", "C#5", "E5"]
+Beat 12: E9sus4 = ["E3", "A3", "B3", "D4", "F#4"]
+
+Fresh start feeling.
+Bright major progression.
+
+---
+
+EMOTIONAL PROGRESSION 16 - Midnight (Ab minor)
+Beat 0: Abm9 = ["Ab3", "Eb4", "Gb4", "Bb4", "Cb5"]
+Beat 4: Emaj9 = ["E3", "G#3", "B4", "D#5", "F#5"]
+Beat 8: C#m9 = ["C#3", "G#3", "B4", "D#5", "E5"]
+Beat 12: Eb7alt = ["Eb3", "G3", "Db4", "F4"]
+
+Dark night progression.
+Key center ambiguity.
+
+---
+
+EMOTIONAL PROGRESSION 17 - Innocence (C major)
+Beat 0: Cmaj9 = ["C3", "E3", "G4", "B4", "D5"]
+Beat 4: Am9 = ["A3", "C4", "E4", "G4", "B4"]
+Beat 8: Fmaj9 = ["F3", "A3", "C4", "E4", "G4"]
+Beat 12: G9sus4 = ["G3", "C4", "D4", "F4", "A4"]
+
+Pure and simple.
+Major key openness.
+
+---
+
+EMOTIONAL PROGRESSION 18 - Courage (E major)
+Beat 0: Emaj9 = ["E3", "G#3", "B4", "D#5", "F#5"]
+Beat 4: C#m9 = ["C#3", "G#3", "B4", "D#5", "E5"]
+Beat 8: Amaj9 = ["A3", "C#4", "E4", "G#4", "B4"]
+Beat 12: B9sus4 = ["B3", "E4", "F#4", "A4", "C#5"]
+
+Brave and uplifting.
+Strong major resolution.
+
+---
+
+EMOTIONAL PROGRESSION 19 - Sorrow (F# minor)
+Beat 0: F#m9 = ["F#3", "C#4", "E4", "G#4", "A4"]
+Beat 4: Dmaj9 = ["D3", "F#3", "A4", "C#5", "E5"]
+Beat 8: Bm9 = ["B3", "F#4", "A4", "C#5", "D5"]
+Beat 12: C#7b9 = ["C#3", "E#3", "B4", "D5"]
+
+Deep sadness.
+b9 tension creates ache.
+
+---
+
+EMOTIONAL PROGRESSION 20 - Peace (Bb major)
+Beat 0: Bbmaj9 = ["Bb3", "D4", "F4", "A4", "C5"]
+Beat 4: Gm9 = ["G3", "D4", "F4", "A4", "Bb4"]
+Beat 8: Ebmaj9 = ["Eb3", "G3", "Bb4", "D5", "F5"]
+Beat 12: F9sus4 = ["F3", "Bb3", "C4", "Eb4", "G4"]
+
+Tranquil and serene.
+Suspended chord floats.
+
+---
+
+EMOTIONAL PROGRESSION 21 - Storm (D# minor)
+Beat 0: D#m9 = ["D#3", "A#3", "C#4", "F#4", "G#4"]
+Beat 4: Bmaj9 = ["B3", "D#4", "F#4", "A#4", "C#5"]
+Beat 8: G#m9 = ["G#3", "D#4", "F#4", "A#4", "B4"]
+Beat 12: A#7alt = ["A#3", "C##3", "G#4", "B4"]
+
+Turbulent emotion.
+Altered dominant drama.
+
+---
+
+EMOTIONAL PROGRESSION 22 - Calm (G major)
+Beat 0: Gmaj9 = ["G3", "B3", "D4", "F#4", "A4"]
+Beat 4: Em9 = ["E3", "G3", "B4", "D5", "F#5"]
+Beat 8: Am9 = ["A3", "E4", "G4", "B4", "C5"]
+Beat 12: D9sus4 = ["D3", "G3", "A3", "C4", "E4"]
+
+After the storm.
+Gentle resolution.
+
+---
+
+EMOTIONAL PROGRESSION 23 - Epic (Eb minor)
+Beat 0: Ebm = ["Eb3", "Bb3", "Eb4", "Gb4", "Bb4"]
+Beat 4: Cb = ["Cb3", "Eb3", "Gb4", "Cb5"]
+Beat 8: Gb = ["Gb3", "Bb3", "Db4", "Gb4"]
+Beat 12: Db = ["Db3", "F3", "Ab4", "Db5"]
+
+Cinematic grandeur.
+Simple triads, wide voicings.
+
+---
+
+EMOTIONAL PROGRESSION 24 - Intimate (B major)
+Beat 0: Bmaj9 = ["B3", "D#4", "F#4", "A#4", "C#5"]
+Beat 4: G#m9 = ["G#3", "D#4", "F#4", "A#4", "B4"]
+Beat 8: Emaj9 = ["E3", "G#3", "B4", "D#5", "F#5"]
+Beat 12: F#9sus4 = ["F#3", "B3", "C#4", "E4", "G#4"]
+
+Close and personal.
+Rich extended chords.
+
+---
+
+EMOTIONAL PROGRESSION 25 - Transcendent (Ab major)
+Beat 0: Abmaj9 = ["Ab3", "C4", "Eb4", "G4", "Bb4"]
+Beat 4: Fm9 = ["F3", "C4", "Eb4", "G4", "Ab4"]
+Beat 8: Dbmaj9 = ["Db3", "F4", "Ab4", "C5", "Eb5"]
+Beat 12: Eb9sus4 = ["Eb3", "Ab3", "Bb3", "Db4", "F4"]
+
+Rising above.
+Lush flat key beauty.
+
+

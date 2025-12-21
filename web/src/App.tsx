@@ -1,193 +1,6 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import './App.css'
-
-// Audio streaming hook with AudioWorklet for smooth PCM playback
-function useAudioStream(wsUrl: string) {
-  const audioContextRef = useRef<AudioContext | null>(null)
-  const workletNodeRef = useRef<AudioWorkletNode | null>(null)
-  const wsRef = useRef<WebSocket | null>(null)
-  const isStreamingRef = useRef(false)
-  const audioConfigRef = useRef<{ sampleRate: number; channels: number } | null>(null)
-  const workletReadyRef = useRef(false)
-  const lastStatusLogMsRef = useRef(0)
-  const lastUnderrunsRef = useRef(0)
-  const initialTargetBufferMs = 120
-
-  const initAudioContext = useCallback(async () => {
-    if (!audioContextRef.current) {
-      audioContextRef.current = new AudioContext({ sampleRate: 44100, latencyHint: 'interactive' })
-      console.log('AudioContext created, state:', audioContextRef.current.state)
-    }
-    if (audioContextRef.current.state === 'suspended') {
-      console.log('Resuming AudioContext...')
-      await audioContextRef.current.resume()
-      console.log('AudioContext resumed, state:', audioContextRef.current.state)
-    }
-    return audioContextRef.current
-  }, [])
-
-  const initAudioWorklet = useCallback(async (audioContext: AudioContext) => {
-    if (workletNodeRef.current) {
-      return workletNodeRef.current
-    }
-
-    try {
-      // Load AudioWorklet processor
-      await audioContext.audioWorklet.addModule('/audio-processor.js')
-      console.log('AudioWorklet module loaded')
-
-      // Create AudioWorkletNode
-      const workletNode = new AudioWorkletNode(audioContext, 'pcm-processor', {
-        numberOfInputs: 0,
-        numberOfOutputs: 1,
-        outputChannelCount: [2], // Stereo output
-      })
-
-      // Handle status messages from worklet
-      workletNode.port.onmessage = (event) => {
-        const { type, bufferMs, targetMs, underruns, droppedSamples } = event.data
-        if (type === 'status') {
-          const now = performance.now()
-          const shouldLog = underruns > lastUnderrunsRef.current || now - lastStatusLogMsRef.current > 2000
-          if (shouldLog) {
-            lastStatusLogMsRef.current = now
-            lastUnderrunsRef.current = underruns
-
-            const targetStr = typeof targetMs === 'number' ? ` (target ${targetMs.toFixed(0)}ms)` : ''
-            const droppedStr = typeof droppedSamples === 'number' && droppedSamples > 0 ? ` dropped=${droppedSamples}` : ''
-            if (underruns > 0) {
-              console.warn(`[AudioStream] Buffer: ${bufferMs.toFixed(0)}ms${targetStr}, underruns=${underruns}${droppedStr}`)
-            } else {
-              console.log(`[AudioStream] Buffer: ${bufferMs.toFixed(0)}ms${targetStr}${droppedStr}`)
-            }
-          }
-
-          // Feed buffer status back to server for backpressure.
-          const ws = wsRef.current
-          if (ws && ws.readyState === WebSocket.OPEN && typeof bufferMs === 'number') {
-            ws.send(JSON.stringify({ type: 'buffer_status', buffer_ms: bufferMs, target_ms: targetMs, underruns }))
-          }
-        }
-      }
-
-      // Connect to audio output
-      workletNode.connect(audioContext.destination)
-      workletNodeRef.current = workletNode
-      workletReadyRef.current = true
-      console.log('AudioWorklet node created and connected')
-
-      return workletNodeRef.current
-    } catch (error) {
-      console.error('Failed to initialize AudioWorklet:', error)
-      throw error
-    }
-  }, [])
-
-  const startStreaming = useCallback(async () => {
-    if (isStreamingRef.current) return
-    
-    try {
-      const audioContext = await initAudioContext()
-      await initAudioWorklet(audioContext)
-      
-      isStreamingRef.current = true
-      audioConfigRef.current = null
-
-      const ws = new WebSocket(`${wsUrl}/ws/audio`)
-      ws.binaryType = 'arraybuffer'
-      
-      // Wait for WebSocket to connect
-      await new Promise<void>((resolve, reject) => {
-        ws.onopen = () => {
-          console.log('Audio stream connected')
-          resolve()
-        }
-        ws.onerror = (err) => {
-          console.error('Audio stream connection error:', err)
-          reject(err)
-        }
-        setTimeout(() => reject(new Error('Audio stream connection timeout')), 5000)
-      })
-
-      ws.onmessage = (event) => {
-        if (typeof event.data === 'string') {
-          // JSON config message
-          const config = JSON.parse(event.data)
-          if (config.type === 'audio_config') {
-            audioConfigRef.current = {
-              sampleRate: config.sample_rate,
-              channels: config.channels
-            }
-            console.log('Audio config:', audioConfigRef.current)
-            
-            // Send config to worklet
-            if (workletNodeRef.current) {
-              workletNodeRef.current.port.postMessage({
-                type: 'config',
-                data: {
-                  sampleRate: config.sample_rate,
-                  channels: config.channels,
-                  targetBufferMs: initialTargetBufferMs,
-                }
-              })
-            }
-          }
-        } else {
-          // Binary PCM data - send directly to worklet
-          if (workletNodeRef.current && audioConfigRef.current) {
-            workletNodeRef.current.port.postMessage({
-              type: 'pcm',
-              data: event.data
-            }, [event.data])
-          }
-        }
-      }
-
-      ws.onclose = () => {
-        console.log('Audio stream disconnected')
-        isStreamingRef.current = false
-        
-        // Reset worklet buffer
-        if (workletNodeRef.current) {
-          workletNodeRef.current.port.postMessage({ type: 'reset' })
-        }
-      }
-
-      wsRef.current = ws
-    } catch (error) {
-      console.error('Failed to start audio streaming:', error)
-      isStreamingRef.current = false
-      throw error
-    }
-  }, [wsUrl, initAudioContext, initAudioWorklet])
-
-  const stopStreaming = useCallback(() => {
-    if (wsRef.current) {
-      wsRef.current.close()
-      wsRef.current = null
-    }
-    
-    // Reset worklet buffer
-    if (workletNodeRef.current) {
-      workletNodeRef.current.port.postMessage({ type: 'reset' })
-    }
-    
-    isStreamingRef.current = false
-    audioConfigRef.current = null
-  }, [])
-
-  // Cleanup on unmount
-  useEffect(() => {
-    return () => {
-      stopStreaming()
-      if (audioContextRef.current) {
-        audioContextRef.current.close()
-      }
-    }
-  }, [stopStreaming])
-
-  return { startStreaming, stopStreaming }
-}
+import { useAudioStream } from './hooks/useAudioStream'
 
 interface Note {
   pitch: string | string[]
@@ -260,8 +73,27 @@ const KEYS = [
 ]
 
 // Use relative URLs when served from same origin (Pi), otherwise use env vars
-const API_URL = import.meta.env.VITE_API_URL || ''
-const WS_URL = import.meta.env.VITE_WS_URL || `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}`
+const API_URL = (() => {
+  if (import.meta.env.VITE_API_URL) return import.meta.env.VITE_API_URL
+  const { hostname, port, protocol } = window.location
+  if (port === '5173' || port === '3000') {
+    return `${protocol}//${hostname}:8000`
+  }
+  return ''
+})()
+const WS_URL = (() => {
+  if (import.meta.env.VITE_WS_URL) return import.meta.env.VITE_WS_URL
+  if (API_URL) {
+    try {
+      const api = new URL(API_URL, window.location.origin)
+      const wsProto = api.protocol === 'https:' ? 'wss:' : 'ws:'
+      return `${wsProto}//${api.host}`
+    } catch {
+      // Fall through to same-origin
+    }
+  }
+  return `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}`
+})()
 
 function App() {
   const [step, setStep] = useState<Step>('setup')
@@ -288,11 +120,17 @@ function App() {
   const [patchSubCategory, setPatchSubCategory] = useState('')
   const [patchOffset, setPatchOffset] = useState(0)
   const [patchLoading, setPatchLoading] = useState(false)
-  const [focusedPatchIndex, setFocusedPatchIndex] = useState(-1)
   const [showAllSounds, setShowAllSounds] = useState(true)
+  const [favoritePatchIds, setFavoritePatchIds] = useState<string[]>([])
+  const [recentPatchIds, setRecentPatchIds] = useState<string[]>([])
+  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false)
+  const [showRecentOnly, setShowRecentOnly] = useState(false)
+  const [sortMode, setSortMode] = useState<'az' | 'category'>('az')
   const patchLimit = 60
   const [currentSounds, setCurrentSounds] = useState<Record<string, Patch | null>>({ bass: null, pad: null, lead: null })
   const soundPickerListRef = useRef<HTMLDivElement | null>(null)
+  const FAVORITES_KEY = 'juno-favorite-patches'
+  const RECENTS_KEY = 'juno-recent-patches'
   const wsRef = useRef<WebSocket | null>(null)
   
   // Audio streaming for real-time playback from Montage
@@ -305,6 +143,33 @@ function App() {
       .then(setLlmConfig)
       .catch(console.error)
   }, [])
+
+  useEffect(() => {
+    try {
+      const favRaw = localStorage.getItem(FAVORITES_KEY)
+      if (favRaw) setFavoritePatchIds(JSON.parse(favRaw))
+      const recentRaw = localStorage.getItem(RECENTS_KEY)
+      if (recentRaw) setRecentPatchIds(JSON.parse(recentRaw))
+    } catch {
+      // Ignore storage errors
+    }
+  }, [])
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(FAVORITES_KEY, JSON.stringify(favoritePatchIds))
+    } catch {
+      // Ignore storage errors
+    }
+  }, [favoritePatchIds])
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(RECENTS_KEY, JSON.stringify(recentPatchIds))
+    } catch {
+      // Ignore storage errors
+    }
+  }, [recentPatchIds])
 
   const updateLlmConfig = async (provider?: string, model?: string) => {
     try {
@@ -323,12 +188,15 @@ function App() {
   }
 
   useEffect(() => {
+    let isMounted = true
     const ws = new WebSocket(`${WS_URL}/ws`)
     ws.onopen = () => {
+      if (!isMounted) return
       console.log('Connected to server')
       setError(null) // Clear any previous connection errors
     }
     ws.onmessage = (event) => {
+      if (!isMounted) return
       const data = JSON.parse(event.data)
       if (data.type === 'sample_updated') {
         setSample(data.sample)
@@ -343,12 +211,13 @@ function App() {
     }
     ws.onclose = () => {
       // Only show error if we're not intentionally closing
-      if (wsRef.current === ws) {
+      if (isMounted && wsRef.current === ws) {
         setError('Disconnected from server')
       }
     }
     wsRef.current = ws
     return () => {
+      isMounted = false
       wsRef.current = null
       ws.close()
     }
@@ -400,6 +269,9 @@ function App() {
 
   const play = async (layers?: string[]) => {
     try {
+      // Start audio streaming BEFORE playback so we don't miss any audio
+      await startStreaming()
+      
       await fetch(`${API_URL}/api/play`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -535,7 +407,6 @@ function App() {
     if (!showSoundPicker) return
     const timeout = setTimeout(() => {
       setPatchOffset(0)
-      setFocusedPatchIndex(-1)
       fetchPatches(showSoundPicker, false)
     }, 200)
     return () => clearTimeout(timeout)
@@ -557,9 +428,59 @@ function App() {
         body: JSON.stringify({ patch_id: patch.id })
       })
       setCurrentSounds(prev => ({ ...prev, [showSoundPicker]: patch }))
+      setRecentPatchIds(prev => {
+        const next = [patch.id, ...prev.filter(id => id !== patch.id)].slice(0, 24)
+        return next
+      })
       setShowSoundPicker(null)
     } catch (e) {
       console.error('Select failed:', e)
+    }
+  }
+
+  const toggleFavorite = (patchId: string) => {
+    setFavoritePatchIds(prev => {
+      if (prev.includes(patchId)) {
+        return prev.filter(id => id !== patchId)
+      }
+      return [patchId, ...prev].slice(0, 200)
+    })
+  }
+
+  const visiblePatches = useMemo(() => {
+    let list = patches
+    if (showFavoritesOnly) {
+      list = list.filter(p => favoritePatchIds.includes(p.id))
+    }
+    if (showRecentOnly) {
+      list = list.filter(p => recentPatchIds.includes(p.id))
+    }
+    if (sortMode === 'az') {
+      list = [...list].sort((a, b) => a.name.localeCompare(b.name))
+    } else {
+      list = [...list].sort((a, b) => {
+        const cat = a.category.localeCompare(b.category)
+        if (cat !== 0) return cat
+        return a.name.localeCompare(b.name)
+      })
+    }
+    return list
+  }, [patches, favoritePatchIds, recentPatchIds, showFavoritesOnly, showRecentOnly, sortMode])
+
+  const letterIndex = useMemo(() => {
+    const letters = new Set<string>()
+    for (const patch of visiblePatches) {
+      const letter = patch.name.trim().charAt(0).toUpperCase()
+      if (letter) letters.add(letter)
+    }
+    return Array.from(letters).sort()
+  }, [visiblePatches])
+
+  const jumpToLetter = (letter: string) => {
+    if (!soundPickerListRef.current) return
+    const target = soundPickerListRef.current.querySelector(`[data-letter="${letter}"]`)
+    if (target instanceof HTMLElement) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }
 
@@ -876,7 +797,11 @@ function App() {
               <div className="sound-picker-title">
                 <span>{showSoundPicker.toUpperCase()} Sound</span>
                 <span className="sound-picker-count">
-                  {patchTotal ? `${patches.length} of ${patchTotal}` : `${patches.length} sounds`}
+                  {showFavoritesOnly || showRecentOnly
+                    ? `${visiblePatches.length} sounds`
+                    : patchTotal
+                      ? `${patches.length} of ${patchTotal}`
+                      : `${patches.length} sounds`}
                 </span>
               </div>
               <button onClick={() => setShowSoundPicker(null)}>×</button>
@@ -895,6 +820,20 @@ function App() {
                 )}
               </div>
               <div className="sound-picker-filters">
+                <div className="sound-picker-chips">
+                  {patchCategories.slice(0, 8).map(cat => (
+                    <button
+                      key={cat.id}
+                      className={`sound-chip ${patchCategory === cat.name ? 'active' : ''}`}
+                      onClick={() => {
+                        setPatchCategory(prev => (prev === cat.name ? '' : cat.name))
+                        setPatchSubCategory('')
+                      }}
+                    >
+                      {cat.name}
+                    </button>
+                  ))}
+                </div>
                 <select
                   value={patchCategory}
                   onChange={(e) => {
@@ -923,36 +862,100 @@ function App() {
                     setPatchSearch('')
                     setPatchCategory('')
                     setPatchSubCategory('')
+                    setShowFavoritesOnly(false)
+                    setShowRecentOnly(false)
                     setShowAllSounds(true)
                   }}
                 >
                   Reset
                 </button>
               </div>
-              <label className="sound-picker-toggle">
-                <input
-                  type="checkbox"
-                  checked={showAllSounds}
-                  onChange={(e) => setShowAllSounds(e.target.checked)}
-                />
-                Show all categories
-              </label>
+              <div className="sound-picker-toggles">
+                <label className="sound-picker-toggle">
+                  <input
+                    type="checkbox"
+                    checked={showAllSounds}
+                    onChange={(e) => setShowAllSounds(e.target.checked)}
+                  />
+                  Show all categories
+                </label>
+                <label className="sound-picker-toggle">
+                  <input
+                    type="checkbox"
+                    checked={showFavoritesOnly}
+                    onChange={(e) => {
+                      setShowFavoritesOnly(e.target.checked)
+                      if (e.target.checked) setShowRecentOnly(false)
+                    }}
+                  />
+                  Favorites
+                </label>
+                <label className="sound-picker-toggle">
+                  <input
+                    type="checkbox"
+                    checked={showRecentOnly}
+                    onChange={(e) => {
+                      setShowRecentOnly(e.target.checked)
+                      if (e.target.checked) setShowFavoritesOnly(false)
+                    }}
+                  />
+                  Recent
+                </label>
+                <select
+                  className="sound-picker-sort"
+                  value={sortMode}
+                  onChange={(e) => setSortMode(e.target.value as 'az' | 'category')}
+                >
+                  <option value="az">Sort A-Z</option>
+                  <option value="category">Sort by Category</option>
+                </select>
+              </div>
             </div>
+            {letterIndex.length > 0 && (
+              <div className="sound-picker-letterbar">
+                {letterIndex.map(letter => (
+                  <button key={letter} onClick={() => jumpToLetter(letter)}>
+                    {letter}
+                  </button>
+                ))}
+              </div>
+            )}
             <div className="sound-picker-list" ref={soundPickerListRef}>
-              {patches.length === 0 && !patchLoading && (
+              {visiblePatches.length === 0 && !patchLoading && (
                 <div className="sound-picker-empty">No sounds found. Try a broader search.</div>
               )}
-              {patches.map(patch => (
-                <button
+              {visiblePatches.map((patch) => (
+                <div
                   key={patch.id}
                   className={`sound-option ${currentSounds[showSoundPicker]?.id === patch.id ? 'selected' : ''}`}
+                  role="button"
+                  tabIndex={0}
                   onClick={() => selectPatch(patch)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      selectPatch(patch)
+                    }
+                  }}
+                  data-letter={patch.name.trim().charAt(0).toUpperCase()}
                 >
-                  <span className="sound-option-name">{patch.name}</span>
+                  <span className="sound-option-name">
+                    {patch.name}
+                    <button
+                      className={`sound-favorite ${favoritePatchIds.includes(patch.id) ? 'active' : ''}`}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        toggleFavorite(patch.id)
+                      }}
+                      aria-label="Favorite"
+                    >
+                      ★
+                    </button>
+                  </span>
                   <span className="sound-option-meta">
                     {patch.category}{patch.sub_category ? ` - ${patch.sub_category}` : ''}
                   </span>
-                </button>
+                </div>
               ))}
             </div>
             <div className="sound-picker-footer">

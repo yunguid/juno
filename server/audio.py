@@ -235,8 +235,8 @@ class AudioConfig:
     sample_rate: int = 44100
     capture_channels: int = 8
     output_channels: int = 2
-    chunk_frames: int = 1024  # ~23ms at 44100Hz for lower latency
-    max_backlog_chunks: int = 4  # Fewer chunks = lower latency, slight jitter risk
+    chunk_frames: int = 512  # ~12ms at 44100Hz for lower latency
+    max_backlog_chunks: int = 2  # Fewer chunks = lower latency, slight jitter risk
 
     def __post_init__(self) -> None:
         env_chunk = _env_int("JUNO_AUDIO_CHUNK_FRAMES")
@@ -391,11 +391,12 @@ class AudioCapture:
         if self._stop_event:
             self._stop_event.set()
 
-        if self._capture_process:
-            self._capture_process.join(timeout=2.0)
-            if self._capture_process.is_alive():
-                self._capture_process.terminate()
-            self._capture_process = None
+        proc = self._capture_process
+        self._capture_process = None
+        if proc is not None:
+            proc.join(timeout=2.0)
+            if proc.is_alive():
+                proc.terminate()
 
         if self._reader_thread:
             self._reader_thread.join(timeout=2.0)

@@ -1,0 +1,305 @@
+# Jazz Chord Progressions
+# Characteristics: ii-V-I patterns, altered dominants, tritone substitutions,
+# chromatic movement, bebop vocabulary, modal interchange
+
+JAZZ PROGRESSION 1 - Classic ii-V-I (C major)
+Beat 0: Dm9 = ["D3", "A3", "C4", "E4", "F4"]
+Beat 2: G13 = ["G3", "B3", "F4", "A4", "E5"]
+Beat 4: Cmaj9 = ["C3", "E3", "B4", "D5", "G5"]
+Beat 8: A7alt = ["A3", "C#4", "G4", "Bb4"]
+Beat 12: Dm9 = ["D3", "F4", "A4", "C5", "E5"]
+Beat 14: G7b9 = ["G3", "B3", "Db4", "F4", "Ab4"]
+
+Classic jazz turnaround with alterations.
+A7alt creates tension before returning to ii.
+
+---
+
+JAZZ PROGRESSION 2 - Modal (D dorian)
+Beat 0: Dm7 = ["D3", "A3", "C4", "F4"]
+Beat 4: Em7 = ["E3", "B3", "D4", "G4"]
+Beat 8: Fmaj7 = ["F3", "C4", "E4", "A4"]
+Beat 12: G7sus = ["G3", "C4", "D4", "F4"]
+
+Quartal voicings, open sound, modal.
+No leading tones - pure dorian color.
+
+---
+
+JAZZ PROGRESSION 3 - Coltrane Changes (Bb major)
+Beat 0: Bbmaj7 = ["Bb3", "D4", "F4", "A4"]
+Beat 2: D7 = ["D3", "F#4", "A4", "C5"]
+Beat 4: Gbmaj7 = ["Gb3", "Bb3", "Db4", "F4"]
+Beat 6: A7 = ["A3", "C#4", "E4", "G4"]
+Beat 8: Dmaj7 = ["D3", "F#3", "A4", "C#5"]
+Beat 12: F7 = ["F3", "A3", "C4", "Eb4"]
+
+Giant steps pattern, chromatic key centers.
+Major 3rd root movement creates unique tension.
+
+---
+
+JAZZ PROGRESSION 4 - Blues Changes (F major)
+Beat 0: F7 = ["F3", "A3", "C4", "Eb4"]
+Beat 4: Bb7 = ["Bb3", "D4", "F4", "Ab4"]
+Beat 8: F7 = ["F3", "A3", "C4", "Eb4"]
+Beat 12: C7 = ["C3", "E3", "Bb4", "D5"]
+
+Basic jazz blues with 7th chords.
+Simple but essential vocabulary.
+
+---
+
+JAZZ PROGRESSION 5 - Bird Changes (Bb major)
+Beat 0: Bbmaj7 = ["Bb3", "D4", "F4", "A4"]
+Beat 2: G7 = ["G3", "B3", "D4", "F4"]
+Beat 4: Cm7 = ["C3", "G3", "Bb4", "Eb5"]
+Beat 6: F7 = ["F3", "A3", "Eb4", "G4"]
+Beat 8: Dm7 = ["D3", "A3", "C4", "F4"]
+Beat 10: G7 = ["G3", "B3", "F4", "A4"]
+Beat 12: Cm7 = ["C3", "Eb3", "Bb4", "D5"]
+Beat 14: F7 = ["F3", "A3", "C4", "Eb4"]
+
+Rhythm changes bridge pattern.
+Circle of fifths movement.
+
+---
+
+JAZZ PROGRESSION 6 - Minor ii-V-i (A minor)
+Beat 0: Bm7b5 = ["B3", "D4", "F4", "A4"]
+Beat 4: E7b9 = ["E3", "G#3", "D4", "F4"]
+Beat 8: Am9 = ["A3", "E4", "G4", "B4", "C5"]
+Beat 12: Am9 = ["A3", "C4", "E4", "G4", "B4"]
+
+Minor key ii-V-i with half-diminished.
+E7b9 creates strong pull to Am.
+
+---
+
+JAZZ PROGRESSION 7 - Tritone Substitution (G major)
+Beat 0: Am7 = ["A3", "E4", "G4", "C5"]
+Beat 4: Ab7 = ["Ab3", "C4", "Eb4", "Gb4"]
+Beat 8: Gmaj9 = ["G3", "B3", "D4", "F#4", "A4"]
+Beat 12: Gmaj9 = ["G3", "B3", "F#4", "A4", "D5"]
+
+Ab7 is tritone sub for D7.
+Creates chromatic bass movement: A - Ab - G.
+
+---
+
+JAZZ PROGRESSION 8 - Stella Pattern (Bb major)
+Beat 0: Bbmaj7 = ["Bb3", "D4", "F4", "A4"]
+Beat 4: Cm7 = ["C3", "G3", "Bb4", "Eb5"]
+Beat 6: Dm7 = ["D3", "A3", "C4", "F4"]
+Beat 8: Ebmaj7 = ["Eb3", "G3", "Bb4", "D5"]
+Beat 12: Ab7#11 = ["Ab3", "C4", "Eb4", "Gb4", "D5"]
+
+Chromatic ascending motion in bass.
+Ab7#11 as passing chord.
+
+---
+
+JAZZ PROGRESSION 9 - Autumn Leaves (G minor)
+Beat 0: Cm7 = ["C3", "G3", "Bb4", "Eb5"]
+Beat 4: F7 = ["F3", "A3", "Eb4", "G4"]
+Beat 8: Bbmaj7 = ["Bb3", "D4", "F4", "A4"]
+Beat 12: Ebmaj7 = ["Eb3", "G3", "Bb4", "D5"]
+
+Classic jazz standard progression.
+Descending circle of fifths.
+
+---
+
+JAZZ PROGRESSION 10 - So What (D dorian)
+Beat 0: Dm11 = ["D3", "G3", "C4", "F4", "A4"]
+Beat 8: Ebm11 = ["Eb3", "Ab3", "Db4", "Gb4", "Bb4"]
+
+Modal jazz, two chord vamp.
+Quartal voicings (stacked 4ths).
+
+---
+
+JAZZ PROGRESSION 11 - Take Five (Eb minor)
+Beat 0: Ebm = ["Eb3", "Gb3", "Bb4", "Eb5"]
+Beat 4: Bbm7 = ["Bb3", "Db4", "F4", "Ab4"]
+Beat 8: Ebm = ["Eb3", "Bb3", "Eb4", "Gb4"]
+Beat 12: Abm7 = ["Ab3", "Cb4", "Eb4", "Gb4"]
+
+Minor key modal vamp.
+Simple but iconic progression.
+
+---
+
+JAZZ PROGRESSION 12 - Backdoor ii-V (C major)
+Beat 0: Fm7 = ["F3", "C4", "Eb4", "Ab4"]
+Beat 4: Bb7 = ["Bb3", "D4", "F4", "Ab4"]
+Beat 8: Cmaj9 = ["C3", "E3", "B4", "D5", "G5"]
+Beat 12: Cmaj9 = ["C3", "G3", "B4", "D5", "E5"]
+
+"Backdoor" resolution from bVII to I.
+Unexpected but smooth resolution.
+
+---
+
+JAZZ PROGRESSION 13 - Confirmation (F major)
+Beat 0: Fmaj7 = ["F3", "A3", "C4", "E4"]
+Beat 2: Em7b5 = ["E3", "Bb3", "D4", "G4"]
+Beat 4: A7b9 = ["A3", "C#4", "G4", "Bb4"]
+Beat 6: Dm7 = ["D3", "A3", "C4", "F4"]
+Beat 8: G7 = ["G3", "B3", "F4", "A4"]
+Beat 10: Cm7 = ["C3", "G3", "Bb4", "Eb5"]
+Beat 12: F7 = ["F3", "A3", "Eb4", "G4"]
+Beat 14: Bbmaj7 = ["Bb3", "D4", "F4", "A4"]
+
+Bebop standard changes.
+Multiple ii-V patterns.
+
+---
+
+JAZZ PROGRESSION 14 - All The Things (Ab major)
+Beat 0: Fm7 = ["F3", "C4", "Eb4", "Ab4"]
+Beat 4: Bbm7 = ["Bb3", "Db4", "F4", "Ab4"]
+Beat 6: Eb7 = ["Eb3", "G3", "Db4", "F4"]
+Beat 8: Abmaj7 = ["Ab3", "C4", "Eb4", "G4"]
+Beat 12: Dbmaj7 = ["Db3", "F4", "Ab4", "C5"]
+
+Standard progression with passing ii-V.
+
+---
+
+JAZZ PROGRESSION 15 - Moment's Notice (Eb major)
+Beat 0: Ebmaj7 = ["Eb3", "G3", "Bb4", "D5"]
+Beat 2: Fm7 = ["F3", "C4", "Eb4", "Ab4"]
+Beat 4: Bb7 = ["Bb3", "D4", "F4", "Ab4"]
+Beat 6: Abm7 = ["Ab3", "Cb4", "Eb4", "Gb4"]
+Beat 8: Db7 = ["Db3", "F3", "Cb4", "Eb4"]
+Beat 10: Gbmaj7 = ["Gb3", "Bb3", "Db4", "F4"]
+Beat 12: Fm7 = ["F3", "Ab3", "C4", "Eb4"]
+Beat 14: Bb7 = ["Bb3", "D4", "Ab4", "C5"]
+
+Coltrane-influenced rapid key changes.
+
+---
+
+JAZZ PROGRESSION 16 - Blue in Green (Bb minor)
+Beat 0: Bbm(maj7) = ["Bb3", "Db4", "F4", "A4"]
+Beat 4: A7#11 = ["A3", "C#4", "Eb4", "G4"]
+Beat 8: Dm9 = ["D3", "A3", "C4", "E4", "F4"]
+Beat 12: Db7#11 = ["Db3", "F3", "B3", "Eb4"]
+
+Minor major 7 creates haunting color.
+Tritone motion in bass.
+
+---
+
+JAZZ PROGRESSION 17 - Impressions (D dorian)
+Beat 0: Dm7 = ["D3", "A3", "C4", "F4", "G4"]
+Beat 4: Dm7 = ["D3", "G3", "C4", "F4", "A4"]
+Beat 8: Dm7 = ["D3", "A3", "C4", "E4", "G4"]
+Beat 12: Dm7 = ["D3", "F3", "C4", "E4", "A4"]
+
+Single chord modal vamp with voicing variations.
+Creates movement through reharmonization.
+
+---
+
+JAZZ PROGRESSION 18 - Naima (Eb major)
+Beat 0: Ebmaj7#11 = ["Eb3", "G3", "Bb4", "D5", "A5"]
+Beat 4: Dbmaj7/Eb = ["Eb3", "Db4", "F4", "Ab4"]
+Beat 8: Ebmaj7#11 = ["Eb3", "Bb3", "D4", "G4", "A4"]
+Beat 12: Bmaj7/Eb = ["Eb3", "B3", "D#4", "F#4", "A#4"]
+
+Pedal bass with shifting upper structures.
+Tritone-related majors over pedal.
+
+---
+
+JAZZ PROGRESSION 19 - Tune Up (D major)
+Beat 0: Em7 = ["E3", "B3", "D4", "G4"]
+Beat 2: A7 = ["A3", "C#4", "E4", "G4"]
+Beat 4: Dmaj7 = ["D3", "F#3", "A4", "C#5"]
+Beat 8: Dm7 = ["D3", "A3", "C4", "F4"]
+Beat 10: G7 = ["G3", "B3", "F4", "A4"]
+Beat 12: Cmaj7 = ["C3", "E3", "G4", "B4"]
+
+Descending ii-V-Is in major 2nds.
+
+---
+
+JAZZ PROGRESSION 20 - Nardis (E phrygian)
+Beat 0: Em = ["E3", "B3", "E4", "G4"]
+Beat 4: Fmaj7 = ["F3", "C4", "E4", "A4"]
+Beat 8: B7 = ["B3", "D#4", "F#4", "A4"]
+Beat 12: Em = ["E3", "G3", "B4", "E5"]
+
+Phrygian mode with bII chord.
+Dark, Spanish-influenced sound.
+
+---
+
+JAZZ PROGRESSION 21 - Footprints (C minor)
+Beat 0: Cm7 = ["C3", "G3", "Bb4", "Eb5"]
+Beat 4: Cm7 = ["C3", "Eb3", "Bb4", "D5"]
+Beat 8: Fm7 = ["F3", "C4", "Eb4", "Ab4"]
+Beat 12: F#m7 = ["F#3", "C#4", "E4", "A4"]
+
+Minor blues with chromatic passing chord.
+Half-step motion from Fm7 to F#m7.
+
+---
+
+JAZZ PROGRESSION 22 - Giant Steps Turnaround
+Beat 0: Bmaj7 = ["B3", "D#4", "F#4", "A#4"]
+Beat 2: D7 = ["D3", "F#3", "C4", "E4"]
+Beat 4: Gmaj7 = ["G3", "B3", "D4", "F#4"]
+Beat 6: Bb7 = ["Bb3", "D4", "F4", "Ab4"]
+Beat 8: Ebmaj7 = ["Eb3", "G3", "Bb4", "D5"]
+Beat 10: F#7 = ["F#3", "A#3", "E4", "G#4"]
+Beat 12: Bmaj7 = ["B3", "D#4", "F#4", "A#4"]
+
+Full Coltrane cycle.
+Major thirds apart.
+
+---
+
+JAZZ PROGRESSION 23 - Cherokee (Bb major)
+Beat 0: Bbmaj7 = ["Bb3", "D4", "F4", "A4"]
+Beat 2: Fm7 = ["F3", "C4", "Eb4", "Ab4"]
+Beat 4: Bb7 = ["Bb3", "D4", "Ab4", "C5"]
+Beat 6: Ebmaj7 = ["Eb3", "G3", "Bb4", "D5"]
+Beat 8: Ab7 = ["Ab3", "C4", "Eb4", "Gb4"]
+Beat 10: Dbmaj7 = ["Db3", "F3", "Ab4", "C5"]
+Beat 12: Gb7 = ["Gb3", "Bb3", "Db4", "Fb4"]
+Beat 14: Fmaj7 = ["F3", "A3", "C4", "E4"]
+
+Rapid harmonic rhythm.
+Descending chromatic bass.
+
+---
+
+JAZZ PROGRESSION 24 - Donna Lee (Ab major)
+Beat 0: Abmaj7 = ["Ab3", "C4", "Eb4", "G4"]
+Beat 2: F7 = ["F3", "A3", "Eb4", "G4"]
+Beat 4: Bbm7 = ["Bb3", "Db4", "F4", "Ab4"]
+Beat 6: Eb7 = ["Eb3", "G3", "Db4", "F4"]
+Beat 8: Abmaj7 = ["Ab3", "C4", "Eb4", "G4"]
+Beat 10: Db7 = ["Db3", "F3", "B3", "Eb4"]
+Beat 12: Cm7 = ["C3", "G3", "Bb4", "Eb5"]
+Beat 14: Bdim7 = ["B3", "D4", "F4", "Ab4"]
+
+Bebop standard with diminished passing chord.
+
+---
+
+JAZZ PROGRESSION 25 - Lady Bird (C major)
+Beat 0: Cmaj7 = ["C3", "E3", "G4", "B4"]
+Beat 4: Fm7 = ["F3", "C4", "Eb4", "Ab4"]
+Beat 6: Bb7 = ["Bb3", "D4", "F4", "Ab4"]
+Beat 8: Cmaj7 = ["C3", "G3", "B4", "E5"]
+Beat 12: Bbm7 = ["Bb3", "Db4", "F4", "Ab4"]
+Beat 14: Eb7 = ["Eb3", "G3", "Db4", "F4"]
+
+Tadd Dameron's famous progression.
+bVII-IV cadence instead of ii-V.
+
+

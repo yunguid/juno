@@ -1,0 +1,327 @@
+# Gospel / Soulful Chord Progressions
+# Characteristics: IV to iv movement, rich extensions, church organ feel,
+# passing chords, chromatic bass movement, uplifting spirit
+
+GOSPEL PROGRESSION 1 - Classic (C major)
+Beat 0: C = ["C3", "E4", "G4", "C5"]
+Beat 2: C/E = ["E3", "G3", "C4", "E4"]
+Beat 4: F = ["F3", "A3", "C4", "F4"]
+Beat 6: Fm = ["F3", "Ab3", "C4", "F4"]
+Beat 8: C/G = ["G3", "C4", "E4", "G4"]
+Beat 12: G7 = ["G3", "B3", "D4", "F4"]
+
+IV to iv movement, classic church sound.
+The most gospel progression.
+
+---
+
+GOSPEL PROGRESSION 2 - Soulful (Db major)
+Beat 0: Dbmaj9 = ["Db3", "F4", "Ab4", "C5", "Eb5"]
+Beat 4: Bbm11 = ["Bb3", "Db4", "F4", "Ab4", "Eb5"]
+Beat 8: Gbmaj9 = ["Gb3", "Bb3", "Db4", "F4", "Ab4"]
+Beat 12: Ab13 = ["Ab3", "C4", "Eb4", "Gb4", "F5"]
+
+Rich extensions, soulful movement.
+Modern gospel feel.
+
+---
+
+GOSPEL PROGRESSION 3 - Praise (G major)
+Beat 0: G = ["G3", "B3", "D4", "G4"]
+Beat 2: G/B = ["B3", "D4", "G4", "B4"]
+Beat 4: C = ["C3", "E4", "G4", "C5"]
+Beat 6: Cm = ["C3", "Eb4", "G4", "C5"]
+Beat 8: G/D = ["D3", "G3", "B4", "D5"]
+Beat 12: D = ["D3", "F#3", "A4", "D5"]
+
+Walking bass, borrowed iv chord.
+Praise and worship style.
+
+---
+
+GOSPEL PROGRESSION 4 - Choir (Eb major)
+Beat 0: Eb = ["Eb3", "G3", "Bb4", "Eb5"]
+Beat 4: Cm7 = ["C3", "Eb3", "G4", "Bb4"]
+Beat 8: Ab = ["Ab3", "C4", "Eb4", "Ab4"]
+Beat 10: Abm = ["Ab3", "Cb4", "Eb4", "Ab4"]
+Beat 12: Eb/Bb = ["Bb3", "Eb4", "G4", "Bb4"]
+Beat 14: Bb7 = ["Bb3", "D4", "F4", "Ab4"]
+
+Choir swells on IV to iv.
+Full sound.
+
+---
+
+GOSPEL PROGRESSION 5 - Traditional (F major)
+Beat 0: F = ["F3", "A3", "C4", "F4"]
+Beat 2: F/A = ["A3", "C4", "F4", "A4"]
+Beat 4: Bb = ["Bb3", "D4", "F4", "Bb4"]
+Beat 6: Bbm = ["Bb3", "Db4", "F4", "Bb4"]
+Beat 8: F/C = ["C3", "F3", "A4", "C5"]
+Beat 12: C7 = ["C3", "E3", "Bb4", "D5"]
+
+I-I6-IV-iv-I64-V7.
+Traditional hymn style.
+
+---
+
+GOSPEL PROGRESSION 6 - Shouting (Bb major)
+Beat 0: Bb = ["Bb3", "D4", "F4", "Bb4"]
+Beat 4: Eb = ["Eb3", "G3", "Bb4", "Eb5"]
+Beat 6: Ebm = ["Eb3", "Gb3", "Bb4", "Eb5"]
+Beat 8: Bb/F = ["F3", "Bb3", "D4", "F4"]
+Beat 12: F = ["F3", "A3", "C4", "F4"]
+
+High energy, shouting music.
+Church celebration.
+
+---
+
+GOSPEL PROGRESSION 7 - Testimony (Ab major)
+Beat 0: Abmaj9 = ["Ab3", "C4", "Eb4", "G4", "Bb4"]
+Beat 4: Fm9 = ["F3", "Ab3", "C4", "Eb4", "G4"]
+Beat 8: Dbmaj9 = ["Db3", "F3", "Ab4", "C5", "Eb5"]
+Beat 10: Dbm9 = ["Db3", "Fb3", "Ab4", "C5", "Eb5"]
+Beat 12: Ab/Eb = ["Eb3", "Ab3", "C4", "Eb4"]
+Beat 14: Eb7 = ["Eb3", "G3", "Db4", "F4"]
+
+Telling your story.
+Emotional journey.
+
+---
+
+GOSPEL PROGRESSION 8 - Deliverance (D major)
+Beat 0: D = ["D3", "F#3", "A4", "D5"]
+Beat 2: D/F# = ["F#3", "A3", "D4", "F#4"]
+Beat 4: G = ["G3", "B3", "D4", "G4"]
+Beat 6: Gm = ["G3", "Bb3", "D4", "G4"]
+Beat 8: D/A = ["A3", "D4", "F#4", "A4"]
+Beat 12: A7 = ["A3", "C#4", "G4", "E5"]
+
+Freedom and release.
+Walking bass progression.
+
+---
+
+GOSPEL PROGRESSION 9 - Worship (B major)
+Beat 0: B = ["B3", "D#4", "F#4", "B4"]
+Beat 4: E = ["E3", "G#3", "B4", "E5"]
+Beat 6: Em = ["E3", "G3", "B4", "E5"]
+Beat 8: B/F# = ["F#3", "B3", "D#4", "F#4"]
+Beat 12: F#7 = ["F#3", "A#3", "E4", "C#5"]
+
+Deep worship moment.
+IV to iv magic.
+
+---
+
+GOSPEL PROGRESSION 10 - Revival (E major)
+Beat 0: Emaj9 = ["E3", "G#3", "B4", "D#5", "F#5"]
+Beat 4: C#m9 = ["C#3", "G#3", "B4", "D#5", "E5"]
+Beat 8: Amaj9 = ["A3", "C#4", "E4", "G#4", "B4"]
+Beat 10: Am9 = ["A3", "C4", "E4", "G4", "B4"]
+Beat 12: E/B = ["B3", "E4", "G#4", "B4"]
+Beat 14: B7 = ["B3", "D#4", "A4", "F#5"]
+
+Church revival energy.
+Extended harmonies.
+
+---
+
+GOSPEL PROGRESSION 11 - Grace (C major)
+Beat 0: Cmaj9 = ["C3", "E3", "G4", "B4", "D5"]
+Beat 4: Am9 = ["A3", "C4", "E4", "G4", "B4"]
+Beat 8: Dm9 = ["D3", "A3", "C4", "E4", "F4"]
+Beat 10: Dm9/G = ["G3", "A3", "C4", "E4", "F4"]
+Beat 12: Cmaj9 = ["C3", "G3", "B4", "D5", "E5"]
+
+Amazing grace feel.
+Smooth and flowing.
+
+---
+
+GOSPEL PROGRESSION 12 - Power (F# major)
+Beat 0: F# = ["F#3", "A#3", "C#4", "F#4"]
+Beat 2: F#/A# = ["A#3", "C#4", "F#4", "A#4"]
+Beat 4: B = ["B3", "D#4", "F#4", "B4"]
+Beat 6: Bm = ["B3", "D4", "F#4", "B4"]
+Beat 8: F#/C# = ["C#3", "F#3", "A#4", "C#5"]
+Beat 12: C#7 = ["C#3", "E#3", "B4", "G#5"]
+
+Powerful and strong.
+Walking bass motion.
+
+---
+
+GOSPEL PROGRESSION 13 - Sanctuary (A major)
+Beat 0: A = ["A3", "C#4", "E4", "A4"]
+Beat 4: D = ["D3", "F#3", "A4", "D5"]
+Beat 6: Dm = ["D3", "F3", "A4", "D5"]
+Beat 8: A/E = ["E3", "A3", "C#4", "E4"]
+Beat 12: E7 = ["E3", "G#3", "D4", "B4"]
+
+Holy place.
+Sacred atmosphere.
+
+---
+
+GOSPEL PROGRESSION 14 - Breakthrough (Gb major)
+Beat 0: Gbmaj9 = ["Gb3", "Bb3", "Db4", "F4", "Ab4"]
+Beat 4: Ebm9 = ["Eb3", "Bb3", "Db4", "F4", "Gb4"]
+Beat 8: Cbmaj9 = ["Cb3", "Eb3", "Gb4", "Bb4", "Db5"]
+Beat 10: Cbm9 = ["Cb3", "Ebb3", "Gb4", "Bb4", "Db5"]
+Beat 12: Gb/Db = ["Db3", "Gb3", "Bb4", "Db5"]
+Beat 14: Db7 = ["Db3", "F3", "Cb4", "Ab4"]
+
+Breaking through.
+Triumphant resolution.
+
+---
+
+GOSPEL PROGRESSION 15 - Hallelujah (Bb major)
+Beat 0: Bbmaj9 = ["Bb3", "D4", "F4", "A4", "C5"]
+Beat 4: Gm9 = ["G3", "Bb3", "D4", "F4", "A4"]
+Beat 8: Ebmaj9 = ["Eb3", "G3", "Bb4", "D5", "F5"]
+Beat 10: Ebm9 = ["Eb3", "Gb3", "Bb4", "D5", "F5"]
+Beat 12: Bb/F = ["F3", "Bb3", "D4", "F4"]
+Beat 14: F7 = ["F3", "A3", "Eb4", "C5"]
+
+Praising the Lord.
+Joyful celebration.
+
+---
+
+GOSPEL PROGRESSION 16 - Faith (D major)
+Beat 0: Dmaj9 = ["D3", "F#3", "A4", "C#5", "E5"]
+Beat 4: Bm9 = ["B3", "F#4", "A4", "C#5", "D5"]
+Beat 8: Gmaj9 = ["G3", "B3", "D4", "F#4", "A4"]
+Beat 10: Gm9 = ["G3", "Bb3", "D4", "F4", "A4"]
+Beat 12: D/A = ["A3", "D4", "F#4", "A4"]
+Beat 14: A7 = ["A3", "C#4", "G4", "E5"]
+
+Walking by faith.
+Trusting progression.
+
+---
+
+GOSPEL PROGRESSION 17 - Mercy (Eb major)
+Beat 0: Eb = ["Eb3", "G3", "Bb4", "Eb5"]
+Beat 2: Eb/G = ["G3", "Bb3", "Eb4", "G4"]
+Beat 4: Ab = ["Ab3", "C4", "Eb4", "Ab4"]
+Beat 6: Abm = ["Ab3", "Cb4", "Eb4", "Ab4"]
+Beat 8: Eb/Bb = ["Bb3", "Eb4", "G4", "Bb4"]
+Beat 10: Bb/D = ["D3", "Bb3", "D4", "F4"]
+Beat 12: Eb = ["Eb3", "G3", "Bb4", "Eb5"]
+
+God's mercy.
+Tender progression.
+
+---
+
+GOSPEL PROGRESSION 18 - Joy (G major)
+Beat 0: G = ["G3", "B3", "D4", "G4"]
+Beat 4: C = ["C3", "E3", "G4", "C5"]
+Beat 6: Cm = ["C3", "Eb3", "G4", "C5"]
+Beat 8: G/D = ["D3", "G3", "B4", "D5"]
+Beat 10: D/F# = ["F#3", "A3", "D4", "F#4"]
+Beat 12: Em = ["E3", "G3", "B4", "E5"]
+Beat 14: D7 = ["D3", "F#3", "C4", "A4"]
+
+Joy of the Lord.
+Uplifting energy.
+
+---
+
+GOSPEL PROGRESSION 19 - Healing (Ab major)
+Beat 0: Ab = ["Ab3", "C4", "Eb4", "Ab4"]
+Beat 2: Ab/C = ["C3", "Eb3", "Ab4", "C5"]
+Beat 4: Db = ["Db3", "F3", "Ab4", "Db5"]
+Beat 6: Dbm = ["Db3", "Fb3", "Ab4", "Db5"]
+Beat 8: Ab/Eb = ["Eb3", "Ab3", "C4", "Eb4"]
+Beat 12: Eb7 = ["Eb3", "G3", "Db4", "Bb4"]
+
+Healing touch.
+Comforting harmony.
+
+---
+
+GOSPEL PROGRESSION 20 - Promise (B major)
+Beat 0: Bmaj9 = ["B3", "D#4", "F#4", "A#4", "C#5"]
+Beat 4: G#m9 = ["G#3", "D#4", "F#4", "A#4", "B4"]
+Beat 8: Emaj9 = ["E3", "G#3", "B4", "D#5", "F#5"]
+Beat 10: Em9 = ["E3", "G3", "B4", "D5", "F#5"]
+Beat 12: B/F# = ["F#3", "B3", "D#4", "F#4"]
+Beat 14: F#7 = ["F#3", "A#3", "E4", "C#5"]
+
+God's promises.
+Hopeful resolution.
+
+---
+
+GOSPEL PROGRESSION 21 - Spirit (F major)
+Beat 0: Fmaj9 = ["F3", "A3", "C4", "E4", "G4"]
+Beat 4: Dm9 = ["D3", "A3", "C4", "E4", "F4"]
+Beat 8: Bbmaj9 = ["Bb3", "D4", "F4", "A4", "C5"]
+Beat 10: Bbm9 = ["Bb3", "Db4", "F4", "Ab4", "C5"]
+Beat 12: F/C = ["C3", "F3", "A4", "C5"]
+Beat 14: C7 = ["C3", "E3", "Bb4", "D5"]
+
+Holy Spirit moving.
+Gentle power.
+
+---
+
+GOSPEL PROGRESSION 22 - Restoration (C# major)
+Beat 0: C# = ["C#3", "E#3", "G#4", "C#5"]
+Beat 2: C#/E# = ["E#3", "G#3", "C#4", "E#4"]
+Beat 4: F# = ["F#3", "A#3", "C#4", "F#4"]
+Beat 6: F#m = ["F#3", "A3", "C#4", "F#4"]
+Beat 8: C#/G# = ["G#3", "C#4", "E#4", "G#4"]
+Beat 12: G#7 = ["G#3", "B#3", "F#4", "D#5"]
+
+Being restored.
+From broken to whole.
+
+---
+
+GOSPEL PROGRESSION 23 - Anointing (E major)
+Beat 0: E = ["E3", "G#3", "B4", "E5"]
+Beat 4: A = ["A3", "C#4", "E4", "A4"]
+Beat 6: Am = ["A3", "C4", "E4", "A4"]
+Beat 8: E/B = ["B3", "E4", "G#4", "B4"]
+Beat 12: B7 = ["B3", "D#4", "A4", "F#5"]
+
+Oil flowing.
+Sacred moment.
+
+---
+
+GOSPEL PROGRESSION 24 - Praise Break (Ab major)
+Beat 0: Ab = ["Ab3", "C4", "Eb4", "Ab4"]
+Beat 2: Ab/C = ["C3", "Eb3", "Ab4", "C5"]
+Beat 4: Db = ["Db3", "F3", "Ab4", "Db5"]
+Beat 5: Dbm = ["Db3", "Fb3", "Ab4", "Db5"]
+Beat 6: Ab/Eb = ["Eb3", "Ab3", "C4", "Eb4"]
+Beat 8: Eb = ["Eb3", "G3", "Bb4", "Eb5"]
+Beat 10: Ab = ["Ab3", "C4", "Eb4", "Ab4"]
+Beat 12: Eb7 = ["Eb3", "G3", "Db4", "Bb4"]
+Beat 14: Ab = ["Ab3", "C4", "Eb4", "Ab4"]
+
+Dancing in church.
+High energy celebration.
+
+---
+
+GOSPEL PROGRESSION 25 - Altar Call (D major)
+Beat 0: D = ["D3", "F#3", "A4", "D5"]
+Beat 4: G = ["G3", "B3", "D4", "G4"]
+Beat 6: Gm = ["G3", "Bb3", "D4", "G4"]
+Beat 8: D/A = ["A3", "D4", "F#4", "A4"]
+Beat 10: A/C# = ["C#3", "E3", "A4", "C#5"]
+Beat 12: Bm = ["B3", "D4", "F#4", "B4"]
+Beat 14: A7 = ["A3", "C#4", "G4", "E5"]
+
+Coming to the altar.
+Invitation moment.
+
+

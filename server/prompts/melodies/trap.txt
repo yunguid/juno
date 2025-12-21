@@ -1,0 +1,102 @@
+# Trap Melody Examples
+# Characteristics: Repetitive hooks, short phrases, catchy patterns,
+# minor key darkness, space for 808s, hard-hitting
+
+TRAP MELODY 1 - Dark Hook (C minor)
+Bar 1: G4 (beat 0, dur 0.5), Eb5 (beat 0.5, dur 1), D5 (beat 1.5, dur 0.5), C5 (beat 2, dur 1.5)
+Bar 2: G4 (beat 4, dur 0.5), Eb5 (beat 4.5, dur 1), D5 (beat 5.5, dur 0.5), C5 (beat 6, dur 2)
+Bar 3: G4 (beat 8, dur 0.5), Eb5 (beat 8.5, dur 1), D5 (beat 9.5, dur 0.5), C5 (beat 10, dur 2)
+Bar 4: Eb5 (beat 12, dur 0.5), D5 (beat 12.5, dur 0.5), C5 (beat 13, dur 3)
+
+Repetitive, catchy hook.
+
+---
+
+TRAP MELODY 2 - Minimal (A minor)
+Bar 1: E5 (beat 0, dur 0.5), C5 (beat 0.5, dur 1.5)
+Bar 2: B4 (beat 4, dur 0.5), A4 (beat 4.5, dur 1.5), rest
+Bar 3: E5 (beat 8, dur 0.5), C5 (beat 8.5, dur 0.5), B4 (beat 9, dur 0.5), A4 (beat 9.5, dur 0.5), G4 (beat 10, dur 2)
+Bar 4: A4 (beat 12, dur 2), rest
+
+Minimal with space.
+
+---
+
+TRAP MELODY 3 - Eerie (F minor)
+Bar 1: C5 (beat 0, dur 1), Db5 (beat 1, dur 0.5), C5 (beat 1.5, dur 0.5), Ab4 (beat 2, dur 2)
+Bar 2: G4 (beat 4, dur 0.5), Ab4 (beat 4.5, dur 0.5), C5 (beat 5, dur 2.5)
+Bar 3: Db5 (beat 8, dur 0.5), C5 (beat 8.5, dur 0.5), Ab4 (beat 9, dur 1.5), F4 (beat 10.5, dur 1.5)
+Bar 4: Ab4 (beat 12, dur 2), rest
+
+Haunting and dark.
+
+---
+
+TRAP MELODY 4 - Street (G minor)
+Bar 1: D5 (beat 0, dur 0.5), Bb4 (beat 0.5, dur 1.5)
+Bar 2: A4 (beat 4, dur 0.5), G4 (beat 4.5, dur 1.5), rest
+Bar 3: D5 (beat 8, dur 0.5), C5 (beat 8.5, dur 0.5), Bb4 (beat 9, dur 1), A4 (beat 10, dur 2)
+Bar 4: G4 (beat 12, dur 2), rest
+
+Hard street vibes.
+
+---
+
+TRAP MELODY 5 - Bounce (E minor)
+Bar 1: B4 (beat 0, dur 0.5), G4 (beat 0.5, dur 1), B4 (beat 1.5, dur 0.5), D5 (beat 2, dur 2)
+Bar 2: E5 (beat 4, dur 0.5), D5 (beat 4.5, dur 0.5), B4 (beat 5, dur 2.5)
+Bar 3: G4 (beat 8, dur 0.5), B4 (beat 8.5, dur 0.5), D5 (beat 9, dur 0.5), E5 (beat 9.5, dur 0.5), D5 (beat 10, dur 2)
+Bar 4: B4 (beat 12, dur 2), rest
+
+Bouncy energy.
+
+---
+
+TRAP MELODY 6 - Drill (Bb minor)
+Bar 1: Db5 (beat 0, dur 0.5), Bb4 (beat 0.5, dur 1.5)
+Bar 2: Ab4 (beat 4, dur 0.5), Gb4 (beat 4.5, dur 0.5), F4 (beat 5, dur 2.5)
+Bar 3: Db5 (beat 8, dur 0.5), Cb5 (beat 8.5, dur 0.5), Bb4 (beat 9, dur 1), Ab4 (beat 10, dur 2)
+Bar 4: Bb4 (beat 12, dur 2), rest
+
+UK drill style.
+
+---
+
+TRAP MELODY 7 - Ice (D minor)
+Bar 1: A4 (beat 0, dur 0.5), F4 (beat 0.5, dur 1), A4 (beat 1.5, dur 0.5), D5 (beat 2, dur 2)
+Bar 2: C5 (beat 4, dur 0.5), Bb4 (beat 4.5, dur 0.5), A4 (beat 5, dur 2.5)
+Bar 3: F4 (beat 8, dur 0.5), A4 (beat 8.5, dur 0.5), D5 (beat 9, dur 1), C5 (beat 10, dur 2)
+Bar 4: A4 (beat 12, dur 2), rest
+
+Cold and hard.
+
+---
+
+TRAP MELODY 8 - Flex (C# minor)
+Bar 1: E4 (beat 0, dur 0.5), G#4 (beat 0.5, dur 1), C#5 (beat 1.5, dur 0.5), B4 (beat 2, dur 2)
+Bar 2: A4 (beat 4, dur 0.5), G#4 (beat 4.5, dur 0.5), E4 (beat 5, dur 2.5)
+Bar 3: G#4 (beat 8, dur 0.5), B4 (beat 8.5, dur 0.5), C#5 (beat 9, dur 1), B4 (beat 10, dur 2)
+Bar 4: G#4 (beat 12, dur 2), rest
+
+Showing off.
+
+---
+
+TRAP MELODY 9 - Night (Ab minor)
+Bar 1: Cb5 (beat 0, dur 0.5), Ab4 (beat 0.5, dur 1.5)
+Bar 2: Gb4 (beat 4, dur 0.5), Eb4 (beat 4.5, dur 1.5), rest
+Bar 3: Cb5 (beat 8, dur 0.5), Bb4 (beat 8.5, dur 0.5), Ab4 (beat 9, dur 1), Gb4 (beat 10, dur 2)
+Bar 4: Ab4 (beat 12, dur 2), rest
+
+Late night vibes.
+
+---
+
+TRAP MELODY 10 - Money (F# minor)
+Bar 1: A4 (beat 0, dur 0.5), C#5 (beat 0.5, dur 1), F#5 (beat 1.5, dur 0.5), E5 (beat 2, dur 2)
+Bar 2: D5 (beat 4, dur 0.5), C#5 (beat 4.5, dur 0.5), A4 (beat 5, dur 2.5)
+Bar 3: C#5 (beat 8, dur 0.5), E5 (beat 8.5, dur 0.5), F#5 (beat 9, dur 1), E5 (beat 10, dur 2)
+Bar 4: C#5 (beat 12, dur 2), rest
+
+Getting paid.
+

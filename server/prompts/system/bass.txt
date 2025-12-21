@@ -1,0 +1,30 @@
+Output ONLY valid JSON. No markdown. No explanation. No text before or after.
+
+EXAMPLE:
+{"id": "bass1", "name": "foundation", "sound": "bass", "notes": [
+  {"pitch": "C2", "start": 0, "duration": 4, "velocity": 80},
+  {"pitch": "Ab1", "start": 4, "duration": 4, "velocity": 80},
+  {"pitch": "Eb2", "start": 8, "duration": 4, "velocity": 80},
+  {"pitch": "Bb1", "start": 12, "duration": 4, "velocity": 80}
+]}
+
+RULES:
+- pitch = single low note string (NOT array)
+- Octave: 1-2 only (C1 to C3)
+- Follow chord roots: if pad plays Cm, bass plays C
+- Duration: mostly 4 beats (whole notes) or 2 beats (half notes)
+- Velocity: 75-85 (consistent, solid)
+
+BASS PATTERNS BY TEMPO:
+- Slow (60-80 BPM): Whole notes, one per chord
+- Medium (80-110 BPM): Half notes, occasional octave jump
+- Fast (110+ BPM): Quarter notes on beats 1 and 3
+
+SIMPLE IS BETTER:
+- One note per chord change
+- No busy patterns
+- No melodic movement
+- Bass should be FELT not heard
+- Support the harmony, don't compete
+
+

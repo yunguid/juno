@@ -1,0 +1,284 @@
+# Blues Chord Progressions
+# Characteristics: 7th chords, 12-bar form, dominant feel,
+# shuffle rhythm, turnarounds, bent notes feel
+
+BLUES PROGRESSION 1 - 12 Bar Basic (G major)
+Beat 0: G7 = ["G3", "B3", "D4", "F4"]
+Beat 4: G7 = ["G3", "B3", "D4", "F4"]
+Beat 8: C7 = ["C3", "E3", "Bb4", "D5"]
+Beat 12: G7 = ["G3", "B3", "D4", "F4"]
+
+First 4 bars of 12-bar blues.
+I-I-IV-I.
+
+---
+
+BLUES PROGRESSION 2 - 12 Bar Middle (G major)
+Beat 0: C7 = ["C3", "E3", "Bb4", "D5"]
+Beat 4: C7 = ["C3", "E3", "Bb4", "D5"]
+Beat 8: G7 = ["G3", "B3", "D4", "F4"]
+Beat 12: G7 = ["G3", "B3", "D4", "F4"]
+
+Bars 5-8 of 12-bar blues.
+IV-IV-I-I.
+
+---
+
+BLUES PROGRESSION 3 - 12 Bar End (G major)
+Beat 0: D7 = ["D3", "F#3", "C4", "A4"]
+Beat 4: C7 = ["C3", "E3", "Bb4", "D5"]
+Beat 8: G7 = ["G3", "B3", "D4", "F4"]
+Beat 12: D7 = ["D3", "F#3", "C4", "A4"]
+
+Last 4 bars with turnaround.
+V-IV-I-V.
+
+---
+
+BLUES PROGRESSION 4 - Quick Change (E major)
+Beat 0: E7 = ["E3", "G#3", "D4", "B4"]
+Beat 4: A7 = ["A3", "C#4", "G4", "E5"]
+Beat 8: E7 = ["E3", "G#3", "D4", "B4"]
+Beat 12: E7 = ["E3", "G#3", "D4", "B4"]
+
+Quick change to IV in bar 2.
+Blues shuffle.
+
+---
+
+BLUES PROGRESSION 5 - Minor Blues (A minor)
+Beat 0: Am7 = ["A3", "C4", "G4", "E5"]
+Beat 4: Dm7 = ["D3", "F3", "C4", "A4"]
+Beat 8: Am7 = ["A3", "C4", "G4", "E5"]
+Beat 12: E7 = ["E3", "G#3", "D4", "B4"]
+
+Minor key blues.
+Dark and moody.
+
+---
+
+BLUES PROGRESSION 6 - Jazz Blues (Bb major)
+Beat 0: Bb7 = ["Bb3", "D4", "Ab4", "F5"]
+Beat 2: Eb7 = ["Eb3", "G3", "Db4", "Bb4"]
+Beat 4: Bb7 = ["Bb3", "D4", "Ab4", "F5"]
+Beat 6: Bb7/D = ["D3", "Bb3", "D4", "Ab4"]
+Beat 8: Eb7 = ["Eb3", "G3", "Db4", "Bb4"]
+Beat 10: Edim7 = ["E3", "G3", "Bb3", "Db4"]
+Beat 12: Bb7/F = ["F3", "Bb3", "D4", "Ab4"]
+Beat 14: F7 = ["F3", "A3", "Eb4", "C5"]
+
+Jazz-blues changes.
+More harmonic movement.
+
+---
+
+BLUES PROGRESSION 7 - Stormy Monday (G major)
+Beat 0: G9 = ["G3", "B3", "F4", "A4", "D5"]
+Beat 4: C9 = ["C3", "E3", "Bb4", "D5", "G5"]
+Beat 8: G9 = ["G3", "B3", "F4", "A4", "D5"]
+Beat 12: G9 = ["G3", "B3", "F4", "A4", "D5"]
+
+T-Bone Walker style.
+9th chord sophistication.
+
+---
+
+BLUES PROGRESSION 8 - Chicago (E major)
+Beat 0: E7 = ["E3", "G#3", "D4", "B4"]
+Beat 4: E7 = ["E3", "G#3", "D4", "B4"]
+Beat 8: A7 = ["A3", "C#4", "G4", "E5"]
+Beat 12: E7 = ["E3", "G#3", "D4", "B4"]
+
+Muddy Waters territory.
+Electric blues.
+
+---
+
+BLUES PROGRESSION 9 - Slow Blues (C major)
+Beat 0: C9 = ["C3", "E3", "Bb4", "D5", "G5"]
+Beat 8: F9 = ["F3", "A3", "Eb4", "G4", "C5"]
+Beat 12: C9 = ["C3", "E3", "Bb4", "D5", "G5"]
+
+Slow 6/8 feel.
+Crying guitar.
+
+---
+
+BLUES PROGRESSION 10 - Texas (A major)
+Beat 0: A7 = ["A3", "C#4", "G4", "E5"]
+Beat 4: D7 = ["D3", "F#3", "C4", "A4"]
+Beat 8: A7 = ["A3", "C#4", "G4", "E5"]
+Beat 12: E7 = ["E3", "G#3", "D4", "B4"]
+
+Stevie Ray territory.
+Texas shuffle.
+
+---
+
+BLUES PROGRESSION 11 - Delta (D major)
+Beat 0: D7 = ["D3", "F#3", "C4", "A4"]
+Beat 4: D7 = ["D3", "F#3", "C4", "A4"]
+Beat 8: G7 = ["G3", "B3", "D4", "F4"]
+Beat 12: D7 = ["D3", "F#3", "C4", "A4"]
+
+Robert Johnson style.
+Acoustic delta.
+
+---
+
+BLUES PROGRESSION 12 - Shuffle (F major)
+Beat 0: F7 = ["F3", "A3", "Eb4", "C5"]
+Beat 4: Bb7 = ["Bb3", "D4", "Ab4", "F5"]
+Beat 8: F7 = ["F3", "A3", "Eb4", "C5"]
+Beat 12: C7 = ["C3", "E3", "Bb4", "D5"]
+
+Classic shuffle pattern.
+Dance blues.
+
+---
+
+BLUES PROGRESSION 13 - Boogie Woogie (C major)
+Beat 0: C = ["C3", "E3", "G3", "C4"]
+Beat 4: C7 = ["C3", "E3", "Bb4", "C5"]
+Beat 8: F = ["F3", "A3", "C4", "F4"]
+Beat 12: C = ["C3", "E3", "G3", "C4"]
+
+Piano boogie style.
+Rolling bass.
+
+---
+
+BLUES PROGRESSION 14 - West Coast (Bb major)
+Beat 0: Bb9 = ["Bb3", "D4", "Ab4", "C5", "F5"]
+Beat 4: Eb9 = ["Eb3", "G3", "Db4", "F4", "Bb4"]
+Beat 8: Bb9 = ["Bb3", "D4", "Ab4", "C5", "F5"]
+Beat 12: F9 = ["F3", "A3", "Eb4", "G4", "C5"]
+
+B.B. King sophistication.
+Smooth 9ths.
+
+---
+
+BLUES PROGRESSION 15 - Jump Blues (Ab major)
+Beat 0: Ab7 = ["Ab3", "C4", "Gb4", "Eb5"]
+Beat 4: Db7 = ["Db3", "F3", "Cb4", "Ab4"]
+Beat 8: Ab7 = ["Ab3", "C4", "Gb4", "Eb5"]
+Beat 12: Eb7 = ["Eb3", "G3", "Db4", "Bb4"]
+
+Louis Jordan swing.
+Jump and jive.
+
+---
+
+BLUES PROGRESSION 16 - Soul Blues (D minor)
+Beat 0: Dm9 = ["D3", "F3", "C4", "E4", "A4"]
+Beat 4: Gm9 = ["G3", "Bb3", "F4", "A4", "D5"]
+Beat 8: Dm9 = ["D3", "F3", "C4", "E4", "A4"]
+Beat 12: A7#9 = ["A3", "C#4", "G4", "B#4"]
+
+Bobby Blue Bland style.
+Soulful minor.
+
+---
+
+BLUES PROGRESSION 17 - Rock Blues (E major)
+Beat 0: E5 = ["E3", "B3", "E4"]
+Beat 4: A5 = ["A3", "E4", "A4"]
+Beat 8: E5 = ["E3", "B3", "E4"]
+Beat 12: B5 = ["B3", "F#4", "B4"]
+
+Power chord blues-rock.
+Guitar driven.
+
+---
+
+BLUES PROGRESSION 18 - Piedmont (C major)
+Beat 0: C = ["C3", "E3", "G3", "C4"]
+Beat 2: C/E = ["E3", "G3", "C4", "E4"]
+Beat 4: F = ["F3", "A3", "C4", "F4"]
+Beat 6: F#dim = ["F#3", "A3", "C4", "Eb4"]
+Beat 8: C/G = ["G3", "C4", "E4", "G4"]
+Beat 12: G7 = ["G3", "B3", "D4", "F4"]
+
+East Coast fingerpicking.
+Ragtime influence.
+
+---
+
+BLUES PROGRESSION 19 - British Blues (Am)
+Beat 0: Am = ["A3", "C4", "E4", "A4"]
+Beat 4: Dm = ["D3", "F3", "A3", "D4"]
+Beat 8: Am = ["A3", "C4", "E4", "A4"]
+Beat 12: E = ["E3", "G#3", "B3", "E4"]
+
+Clapton influence.
+British invasion.
+
+---
+
+BLUES PROGRESSION 20 - Funky Blues (G major)
+Beat 0: G9 = ["G3", "B3", "F4", "A4", "D5"]
+Beat 4: C9 = ["C3", "E3", "Bb4", "D5", "G5"]
+Beat 8: G9 = ["G3", "B3", "F4", "A4", "D5"]
+Beat 12: D9 = ["D3", "F#3", "C4", "E4", "A4"]
+
+James Brown meets blues.
+Funk blues hybrid.
+
+---
+
+BLUES PROGRESSION 21 - New Orleans (Bb major)
+Beat 0: Bb = ["Bb3", "D4", "F4", "Bb4"]
+Beat 4: Eb = ["Eb3", "G3", "Bb4", "Eb5"]
+Beat 8: Bb = ["Bb3", "D4", "F4", "Bb4"]
+Beat 12: F7 = ["F3", "A3", "Eb4", "C5"]
+
+Professor Longhair style.
+Rumba blues.
+
+---
+
+BLUES PROGRESSION 22 - Country Blues (D major)
+Beat 0: D = ["D3", "F#3", "A3", "D4"]
+Beat 4: G = ["G3", "B3", "D4", "G4"]
+Beat 8: D = ["D3", "F#3", "A3", "D4"]
+Beat 12: A7 = ["A3", "C#4", "G4", "E5"]
+
+Acoustic country blues.
+Simple and pure.
+
+---
+
+BLUES PROGRESSION 23 - Blues Rock Turnaround (A major)
+Beat 0: A7 = ["A3", "C#4", "G4", "E5"]
+Beat 2: A7/C# = ["C#3", "E3", "G4", "A4"]
+Beat 4: D7 = ["D3", "F#3", "C4", "A4"]
+Beat 6: D#dim7 = ["D#3", "F#3", "A3", "C4"]
+Beat 8: A7/E = ["E3", "A3", "C#4", "G4"]
+Beat 12: E7 = ["E3", "G#3", "D4", "B4"]
+
+Classic turnaround.
+Chromatic bass movement.
+
+---
+
+BLUES PROGRESSION 24 - Slow Grind (Gm)
+Beat 0: Gm9 = ["G3", "Bb3", "F4", "A4", "D5"]
+Beat 8: Cm9 = ["C3", "Eb3", "Bb4", "D5", "G5"]
+Beat 12: Gm9 = ["G3", "Bb3", "F4", "A4", "D5"]
+
+Slow and seductive.
+Late night blues.
+
+---
+
+BLUES PROGRESSION 25 - Swamp Blues (E major)
+Beat 0: E7 = ["E3", "G#3", "D4", "B4"]
+Beat 4: E7 = ["E3", "G#3", "D4", "B4"]
+Beat 8: A7 = ["A3", "C#4", "G4", "E5"]
+Beat 12: E7 = ["E3", "G#3", "D4", "B4"]
+
+Louisiana swamp.
+Humid groove.
+
+

@@ -1,0 +1,276 @@
+# Indie / Alternative Chord Progressions
+# Characteristics: Unexpected changes, modal interchange, sus chords,
+# jangly guitars, unconventional patterns, emotional depth
+
+INDIE PROGRESSION 1 - Classic Indie (G major)
+Beat 0: G = ["G3", "B3", "D4", "G4"]
+Beat 4: D/F# = ["F#3", "A3", "D4", "F#4"]
+Beat 8: Em = ["E3", "G3", "B3", "E4"]
+Beat 12: C = ["C3", "E3", "G3", "C4"]
+
+Walking bass in the middle.
+Jangly guitar feel.
+
+---
+
+INDIE PROGRESSION 2 - Dreamy (D major)
+Beat 0: Dmaj7 = ["D3", "F#3", "A4", "C#5"]
+Beat 4: Bm7 = ["B3", "D4", "F#4", "A4"]
+Beat 8: Gmaj7 = ["G3", "B3", "D4", "F#4"]
+Beat 12: A7sus4 = ["A3", "D4", "E4", "G4"]
+
+Suspended resolution.
+Shimmering sound.
+
+---
+
+INDIE PROGRESSION 3 - Sad Boy (A minor)
+Beat 0: Am = ["A3", "C4", "E4", "A4"]
+Beat 4: Fmaj7 = ["F3", "A3", "C4", "E4"]
+Beat 8: C = ["C3", "E3", "G3", "C4"]
+Beat 12: G = ["G3", "B3", "D4", "G4"]
+
+Melancholic but hopeful.
+Bedroom recording vibe.
+
+---
+
+INDIE PROGRESSION 4 - Radiohead (F# minor)
+Beat 0: F#m = ["F#3", "A3", "C#4", "F#4"]
+Beat 4: Dmaj7 = ["D3", "F#3", "A4", "C#5"]
+Beat 8: C#m7 = ["C#3", "E3", "G#3", "B3"]
+Beat 12: Bm7 = ["B3", "D4", "F#4", "A4"]
+
+Art rock influence.
+Unexpected movement.
+
+---
+
+INDIE PROGRESSION 5 - Strokes Style (D major)
+Beat 0: D = ["D3", "F#3", "A3", "D4"]
+Beat 4: Bm = ["B3", "D4", "F#4", "B4"]
+Beat 8: G = ["G3", "B3", "D4", "G4"]
+Beat 12: A = ["A3", "C#4", "E4", "A4"]
+
+Garage rock meets indie.
+Simple but effective.
+
+---
+
+INDIE PROGRESSION 6 - Shoegaze (E major)
+Beat 0: Emaj7 = ["E3", "G#3", "B4", "D#5"]
+Beat 4: Amaj7 = ["A3", "C#4", "E4", "G#4"]
+Beat 8: C#m7 = ["C#3", "G#3", "B4", "E5"]
+Beat 12: B7sus4 = ["B3", "E4", "F#4", "A4"]
+
+Wall of sound.
+Dreamy and distorted.
+
+---
+
+INDIE PROGRESSION 7 - Vampire Weekend (C major)
+Beat 0: Cmaj7 = ["C3", "E3", "G3", "B3"]
+Beat 4: Em7 = ["E3", "G3", "B3", "D4"]
+Beat 8: Am7 = ["A3", "C4", "E4", "G4"]
+Beat 12: Fmaj7 = ["F3", "A3", "C4", "E4"]
+
+Baroque pop influence.
+Preppy harmonies.
+
+---
+
+INDIE PROGRESSION 8 - Arctic Monkeys (E minor)
+Beat 0: Em = ["E3", "G3", "B3", "E4"]
+Beat 4: Am = ["A3", "C4", "E4", "A4"]
+Beat 8: D = ["D3", "F#3", "A3", "D4"]
+Beat 12: G = ["G3", "B3", "D4", "G4"]
+
+British indie rock.
+Sheffield sound.
+
+---
+
+INDIE PROGRESSION 9 - Bon Iver (C major)
+Beat 0: Cmaj9 = ["C3", "E3", "G4", "B4", "D5"]
+Beat 4: Am9 = ["A3", "C4", "E4", "G4", "B4"]
+Beat 8: Fmaj9 = ["F3", "A3", "C4", "E4", "G4"]
+Beat 12: G9sus4 = ["G3", "C4", "D4", "F4", "A4"]
+
+Falsetto territory.
+Emotional folk-indie.
+
+---
+
+INDIE PROGRESSION 10 - Neutral Milk Hotel (G major)
+Beat 0: G = ["G3", "B3", "D4", "G4"]
+Beat 4: Em = ["E3", "G3", "B3", "E4"]
+Beat 8: C = ["C3", "E3", "G3", "C4"]
+Beat 12: D = ["D3", "F#3", "A3", "D4"]
+
+Lo-fi aesthetic.
+Mangum magic.
+
+---
+
+INDIE PROGRESSION 11 - Fleet Foxes (Eb major)
+Beat 0: Eb = ["Eb3", "G3", "Bb4", "Eb5"]
+Beat 4: Cm = ["C3", "Eb3", "G3", "C4"]
+Beat 8: Ab = ["Ab3", "C4", "Eb4", "Ab4"]
+Beat 12: Bb = ["Bb3", "D4", "F4", "Bb4"]
+
+Folk harmonies.
+Layered vocals feel.
+
+---
+
+INDIE PROGRESSION 12 - Mac DeMarco (D major)
+Beat 0: Dmaj7 = ["D3", "F#3", "A4", "C#5"]
+Beat 4: Em7 = ["E3", "G3", "B3", "D4"]
+Beat 8: Gmaj7 = ["G3", "B3", "D4", "F#4"]
+Beat 12: F#m7 = ["F#3", "A3", "C#4", "E4"]
+
+Slacker vibes.
+Jizzy jazz chords.
+
+---
+
+INDIE PROGRESSION 13 - Beach House (A minor)
+Beat 0: Am7 = ["A3", "C4", "E4", "G4"]
+Beat 8: Fmaj7 = ["F3", "A3", "C4", "E4"]
+
+Dream pop simplicity.
+Hypnotic vamp.
+
+---
+
+INDIE PROGRESSION 14 - Tame Impala (B major)
+Beat 0: Bmaj7 = ["B3", "D#4", "F#4", "A#4"]
+Beat 4: G#m7 = ["G#3", "B3", "D#4", "F#4"]
+Beat 8: F#7 = ["F#3", "A#3", "C#4", "E4"]
+Beat 12: E = ["E3", "G#3", "B4", "E5"]
+
+Psychedelic indie.
+Kevin Parker magic.
+
+---
+
+INDIE PROGRESSION 15 - Modest Mouse (G minor)
+Beat 0: Gm = ["G3", "Bb3", "D4", "G4"]
+Beat 4: F = ["F3", "A3", "C4", "F4"]
+Beat 8: Eb = ["Eb3", "G3", "Bb4", "Eb5"]
+Beat 12: D = ["D3", "F#3", "A3", "D4"]
+
+Angular and weird.
+Isaac Brock vibes.
+
+---
+
+INDIE PROGRESSION 16 - Car Seat Headrest (C major)
+Beat 0: C = ["C3", "E3", "G3", "C4"]
+Beat 4: Am = ["A3", "C4", "E4", "A4"]
+Beat 8: F = ["F3", "A3", "C4", "F4"]
+Beat 12: G = ["G3", "B3", "D4", "G4"]
+
+DIY aesthetic.
+Bedroom to stadium.
+
+---
+
+INDIE PROGRESSION 17 - Phoebe Bridgers (D minor)
+Beat 0: Dm7 = ["D3", "F3", "A3", "C4"]
+Beat 4: Bbmaj7 = ["Bb3", "D4", "F4", "A4"]
+Beat 8: Fmaj7 = ["F3", "A3", "C4", "E4"]
+Beat 12: Am7 = ["A3", "C4", "E4", "G4"]
+
+Sad girl autumn.
+Intimate and devastating.
+
+---
+
+INDIE PROGRESSION 18 - Arcade Fire (Eb major)
+Beat 0: Eb = ["Eb3", "G3", "Bb4", "Eb5"]
+Beat 4: Cm = ["C3", "Eb3", "G3", "C4"]
+Beat 8: Ab = ["Ab3", "C4", "Eb4", "Ab4"]
+Beat 12: Bb = ["Bb3", "D4", "F4", "Bb4"]
+
+Anthemic indie.
+Suburban sprawl.
+
+---
+
+INDIE PROGRESSION 19 - Death Cab (A major)
+Beat 0: Amaj7 = ["A3", "C#4", "E4", "G#4"]
+Beat 4: E/G# = ["G#3", "B3", "E4", "G#4"]
+Beat 8: F#m7 = ["F#3", "A3", "C#4", "E4"]
+Beat 12: Dmaj7 = ["D3", "F#3", "A4", "C#5"]
+
+Melancholic beauty.
+Ben Gibbard style.
+
+---
+
+INDIE PROGRESSION 20 - Interpol (F# minor)
+Beat 0: F#m = ["F#3", "A3", "C#4", "F#4"]
+Beat 4: E = ["E3", "G#3", "B3", "E4"]
+Beat 8: D = ["D3", "F#3", "A3", "D4"]
+Beat 12: A = ["A3", "C#4", "E4", "A4"]
+
+Post-punk revival.
+Dark and brooding.
+
+---
+
+INDIE PROGRESSION 21 - Sufjan Stevens (G major)
+Beat 0: Gmaj7 = ["G3", "B3", "D4", "F#4"]
+Beat 4: Em9 = ["E3", "G3", "B4", "D5", "F#5"]
+Beat 8: Cmaj9 = ["C3", "E3", "G4", "B4", "D5"]
+Beat 12: D9sus4 = ["D3", "G3", "A3", "C4", "E4"]
+
+Orchestral folk.
+Intimate and epic.
+
+---
+
+INDIE PROGRESSION 22 - Pixies (E minor)
+Beat 0: Em = ["E3", "G3", "B3", "E4"]
+Beat 4: G = ["G3", "B3", "D4", "G4"]
+Beat 8: D = ["D3", "F#3", "A3", "D4"]
+Beat 12: A = ["A3", "C#4", "E4", "A4"]
+
+Loud-quiet-loud.
+Alternative pioneer.
+
+---
+
+INDIE PROGRESSION 23 - Weezer (Bb major)
+Beat 0: Bb = ["Bb3", "D4", "F4", "Bb4"]
+Beat 4: Gm = ["G3", "Bb3", "D4", "G4"]
+Beat 8: Eb = ["Eb3", "G3", "Bb4", "Eb5"]
+Beat 12: F = ["F3", "A3", "C4", "F4"]
+
+Power pop crunch.
+Rivers Cuomo.
+
+---
+
+INDIE PROGRESSION 24 - Japanese Breakfast (Ab major)
+Beat 0: Abmaj7 = ["Ab3", "C4", "Eb4", "G4"]
+Beat 4: Fm7 = ["F3", "Ab3", "C4", "Eb4"]
+Beat 8: Dbmaj7 = ["Db3", "F3", "Ab4", "C5"]
+Beat 12: Eb7 = ["Eb3", "G3", "Db4", "Bb4"]
+
+Synthpop indie.
+Jubilee vibes.
+
+---
+
+INDIE PROGRESSION 25 - The National (D minor)
+Beat 0: Dm = ["D3", "F3", "A3", "D4"]
+Beat 4: Bb = ["Bb3", "D4", "F4", "Bb4"]
+Beat 8: F = ["F3", "A3", "C4", "F4"]
+Beat 12: Am = ["A3", "C4", "E4", "A4"]
+
+Baritone melancholy.
+Adult indie.
+
+

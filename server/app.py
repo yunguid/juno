@@ -21,6 +21,7 @@ try:
         RTCConfiguration,
         RTCIceServer,
     )
+    from aiortc.sdp import candidate_from_sdp
     import av
     AIORTC_AVAILABLE = True
     AIORTC_IMPORT_ERROR = ""
@@ -31,6 +32,7 @@ except Exception as e:
     RTCIceCandidate = None
     RTCConfiguration = None
     RTCIceServer = None
+    candidate_from_sdp = None
     av = None
     AIORTC_AVAILABLE = False
     AIORTC_IMPORT_ERROR = str(e)
@@ -90,7 +92,7 @@ if AIORTC_AVAILABLE:
             self._audio = audio_capture
             self._loop = loop
             # Larger queue for burst handling, but we'll drop old frames aggressively
-            self._queue: asyncio.Queue[bytes] = asyncio.Queue(maxsize=16)
+            self._queue: asyncio.Queue[bytes] = asyncio.Queue(maxsize=8)
             self._channels = max(1, int(self._audio.config.output_channels or 2))
             self._sample_rate = int(self._audio.config.sample_rate or 48000)
             self._timestamp = 0
@@ -101,7 +103,7 @@ if AIORTC_AVAILABLE:
 
             def _enqueue(data: bytes):
                 # Drop oldest frames if queue is getting full (keep latency bounded)
-                while self._queue.qsize() >= 12:  # Keep ~4 frames of headroom
+                while self._queue.qsize() >= 6:  # Keep ~2 frames of headroom
                     try:
                         self._queue.get_nowait()
                         self._dropped_frames += 1
@@ -129,8 +131,9 @@ if AIORTC_AVAILABLE:
                     data = await asyncio.wait_for(self._queue.get(), timeout=0.5)
                 except asyncio.TimeoutError:
                     # Return silence frame to keep connection alive
-                    samples = self._sample_rate // 20  # 50ms of silence
-                    silence = np.zeros((samples, self._channels), dtype=np.int16)
+                    samples = self._sample_rate // 50  # 20ms of silence
+                    # s16 packed format requires shape (1, samples * channels)
+                    silence = np.zeros((1, samples * self._channels), dtype=np.int16)
                     layout = "stereo" if self._channels == 2 else "mono"
                     frame = av.AudioFrame.from_ndarray(silence, format="s16", layout=layout)
                     frame.sample_rate = self._sample_rate
@@ -146,25 +149,25 @@ if AIORTC_AVAILABLE:
                 if samples <= 0:
                     continue
                     
-                audio = np.frombuffer(data, dtype=np.int16)
-                if self._channels > 1:
-                    audio = audio.reshape(-1, self._channels)
-                else:
-                    audio = audio.reshape(-1, 1)
+                # Audio comes in as interleaved int16: L0, R0, L1, R1, ...
+                # s16 packed format expects shape (1, total_samples) where total = samples * channels
+                audio = np.frombuffer(data, dtype=np.int16).reshape(1, -1)
+                audio = np.ascontiguousarray(audio)
 
                 layout = "stereo" if self._channels == 2 else "mono"
+                # Use s16 (packed/interleaved) format - aiortc Opus encoder requires this
                 frame = av.AudioFrame.from_ndarray(audio, format="s16", layout=layout)
                 frame.sample_rate = self._sample_rate
                 frame.pts = self._timestamp
                 frame.time_base = self._time_base
                 self._timestamp += samples
-                
+
                 # Log stats periodically
                 if self._total_frames > 0 and self._total_frames % 500 == 0:
                     drop_rate = (self._dropped_frames / self._total_frames) * 100
                     if drop_rate > 1:
                         log.warning(f"[WebRTC] Frame drop rate: {drop_rate:.1f}% ({self._dropped_frames}/{self._total_frames})")
-                
+
                 return frame
 
         def stop(self):
@@ -1053,8 +1056,8 @@ async def audio_websocket(websocket: WebSocket):
 
     # When client buffer grows too large, stop sending to avoid runaway latency.
     # The worklet continues consuming buffered audio, reducing latency until we resume.
-    low_water_ms = 250.0
-    high_water_ms = 500.0
+    low_water_ms = 80.0
+    high_water_ms = 160.0
 
     def _enqueue_audio(data: bytes):
         if throttle_event.is_set():
@@ -1122,8 +1125,8 @@ async def audio_websocket(websocket: WebSocket):
 
                     # Track client-provided target to favor smooth playback while keeping bounded latency.
                     if target_ms > 0:
-                        low_water_ms = max(80.0, target_ms - 10.0)
-                        high_water_ms = max(low_water_ms + 60.0, target_ms + 160.0)
+                        low_water_ms = max(40.0, target_ms - 15.0)
+                        high_water_ms = max(low_water_ms + 40.0, target_ms + 50.0)
 
                     if client_buffer_ms > high_water_ms:
                         throttle_event.set()
@@ -1227,15 +1230,13 @@ async def rtc_websocket(websocket: WebSocket):
                 candidate_sdp = msg.get("candidate")
                 if not candidate_sdp:
                     continue
-                candidate = RTCIceCandidate(
-                    sdpMid=msg.get("sdpMid"),
-                    sdpMLineIndex=msg.get("sdpMLineIndex"),
-                    candidate=candidate_sdp,
-                )
                 try:
+                    candidate = candidate_from_sdp(candidate_sdp)
+                    candidate.sdpMid = msg.get("sdpMid")
+                    candidate.sdpMLineIndex = msg.get("sdpMLineIndex")
                     await pc.addIceCandidate(candidate)
-                except Exception:
-                    pass
+                except Exception as e:
+                    log.warning(f"WebRTC ICE candidate error: {e}")
             elif msg_type == "close":
                 break
     except WebSocketDisconnect:

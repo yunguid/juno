@@ -1,0 +1,102 @@
+# Gospel Melody Examples
+# Characteristics: Melismatic runs, soulful ornamentation, building to climax,
+# call and response, spiritual uplift, dynamic expression
+
+GOSPEL MELODY 1 - Classic (C major)
+Bar 1: E4 (beat 0, dur 0.5), G4 (beat 0.5, dur 0.5), C5 (beat 1, dur 2)
+Bar 2: D5 (beat 4, dur 0.5), E5 (beat 4.5, dur 0.5), D5 (beat 5, dur 0.5), C5 (beat 5.5, dur 1.5), G4 (beat 7, dur 1)
+Bar 3: A4 (beat 8, dur 0.25), B4 (beat 8.25, dur 0.25), C5 (beat 8.5, dur 0.5), E5 (beat 9, dur 1.5), D5 (beat 10.5, dur 1.5)
+Bar 4: C5 (beat 12, dur 4)
+
+Melismatic runs, soulful ornamentation.
+
+---
+
+GOSPEL MELODY 2 - Praise (G major)
+Bar 1: D5 (beat 0, dur 1.5), B4 (beat 1.5, dur 0.5), G4 (beat 2, dur 2)
+Bar 2: A4 (beat 4.5, dur 0.5), B4 (beat 5, dur 0.5), C5 (beat 5.5, dur 0.5), D5 (beat 6, dur 2)
+Bar 3: E5 (beat 8, dur 0.5), D5 (beat 8.5, dur 0.5), E5 (beat 9, dur 0.5), F#5 (beat 9.5, dur 0.5), G5 (beat 10, dur 2)
+Bar 4: F#5 (beat 12, dur 0.5), E5 (beat 12.5, dur 0.5), D5 (beat 13, dur 3)
+
+Build to high note in bar 3.
+
+---
+
+GOSPEL MELODY 3 - Testimony (Eb major)
+Bar 1: G4 (beat 0, dur 1), Bb4 (beat 1, dur 1), Eb5 (beat 2, dur 2)
+Bar 2: D5 (beat 4, dur 0.5), C5 (beat 4.5, dur 0.5), Bb4 (beat 5, dur 2.5)
+Bar 3: C5 (beat 8, dur 0.5), D5 (beat 8.5, dur 0.5), Eb5 (beat 9, dur 0.5), F5 (beat 9.5, dur 0.5), G5 (beat 10, dur 2)
+Bar 4: F5 (beat 12, dur 1), Eb5 (beat 13, dur 0.5), Bb4 (beat 13.5, dur 2.5)
+
+Telling your story.
+
+---
+
+GOSPEL MELODY 4 - Worship (Ab major)
+Bar 1: Eb5 (beat 0, dur 2), C5 (beat 2, dur 1), Ab4 (beat 3, dur 1)
+Bar 2: Bb4 (beat 4, dur 1), C5 (beat 5, dur 0.5), Db5 (beat 5.5, dur 0.5), Eb5 (beat 6, dur 2)
+Bar 3: F5 (beat 8, dur 0.5), Eb5 (beat 8.5, dur 0.5), F5 (beat 9, dur 0.5), G5 (beat 9.5, dur 0.5), Ab5 (beat 10, dur 2)
+Bar 4: G5 (beat 12, dur 0.5), F5 (beat 12.5, dur 0.5), Eb5 (beat 13, dur 0.5), C5 (beat 13.5, dur 2.5)
+
+Deep worship moment.
+
+---
+
+GOSPEL MELODY 5 - Joy (F major)
+Bar 1: A4 (beat 0, dur 0.5), C5 (beat 0.5, dur 0.5), F5 (beat 1, dur 1.5), E5 (beat 2.5, dur 1.5)
+Bar 2: D5 (beat 4, dur 0.5), C5 (beat 4.5, dur 0.5), Bb4 (beat 5, dur 0.5), A4 (beat 5.5, dur 2.5)
+Bar 3: C5 (beat 8, dur 0.5), D5 (beat 8.5, dur 0.5), E5 (beat 9, dur 0.5), F5 (beat 9.5, dur 0.5), G5 (beat 10, dur 2)
+Bar 4: F5 (beat 12, dur 1), C5 (beat 13, dur 1), A4 (beat 14, dur 2)
+
+Joyful expression.
+
+---
+
+GOSPEL MELODY 6 - Soul Stirring (Db major)
+Bar 1: Ab4 (beat 0, dur 1.5), F4 (beat 1.5, dur 0.5), Db4 (beat 2, dur 2)
+Bar 2: Eb4 (beat 4, dur 0.5), F4 (beat 4.5, dur 0.5), Ab4 (beat 5, dur 0.5), Bb4 (beat 5.5, dur 0.5), C5 (beat 6, dur 2)
+Bar 3: Db5 (beat 8, dur 0.5), Eb5 (beat 8.5, dur 0.5), F5 (beat 9, dur 1), Eb5 (beat 10, dur 2)
+Bar 4: Db5 (beat 12, dur 2), Ab4 (beat 14, dur 2)
+
+Deep and moving.
+
+---
+
+GOSPEL MELODY 7 - Anointed (Bb major)
+Bar 1: D5 (beat 0, dur 1), F5 (beat 1, dur 1), Eb5 (beat 2, dur 2)
+Bar 2: D5 (beat 4, dur 0.5), C5 (beat 4.5, dur 0.5), Bb4 (beat 5, dur 2.5)
+Bar 3: C5 (beat 8, dur 0.25), D5 (beat 8.25, dur 0.25), Eb5 (beat 8.5, dur 0.5), F5 (beat 9, dur 0.5), G5 (beat 9.5, dur 0.5), A5 (beat 10, dur 2)
+Bar 4: G5 (beat 12, dur 0.5), F5 (beat 12.5, dur 0.5), D5 (beat 13, dur 0.5), Bb4 (beat 13.5, dur 2.5)
+
+Holy Spirit moving.
+
+---
+
+GOSPEL MELODY 8 - Grace (E major)
+Bar 1: G#4 (beat 0, dur 1), B4 (beat 1, dur 1), E5 (beat 2, dur 2)
+Bar 2: D#5 (beat 4, dur 0.5), C#5 (beat 4.5, dur 0.5), B4 (beat 5, dur 2.5)
+Bar 3: C#5 (beat 8, dur 0.5), D#5 (beat 8.5, dur 0.5), E5 (beat 9, dur 0.5), F#5 (beat 9.5, dur 0.5), G#5 (beat 10, dur 2)
+Bar 4: F#5 (beat 12, dur 0.5), E5 (beat 12.5, dur 0.5), B4 (beat 13, dur 3)
+
+Amazing grace.
+
+---
+
+GOSPEL MELODY 9 - Power (A major)
+Bar 1: C#5 (beat 0, dur 0.5), E5 (beat 0.5, dur 0.5), A5 (beat 1, dur 2)
+Bar 2: G#5 (beat 4, dur 0.5), F#5 (beat 4.5, dur 0.5), E5 (beat 5, dur 0.5), D5 (beat 5.5, dur 0.5), C#5 (beat 6, dur 2)
+Bar 3: D5 (beat 8, dur 0.25), E5 (beat 8.25, dur 0.25), F#5 (beat 8.5, dur 0.5), G#5 (beat 9, dur 0.5), A5 (beat 9.5, dur 0.5), B5 (beat 10, dur 2)
+Bar 4: A5 (beat 12, dur 1), E5 (beat 13, dur 1), C#5 (beat 14, dur 2)
+
+Powerful and strong.
+
+---
+
+GOSPEL MELODY 10 - Hallelujah (D major)
+Bar 1: F#4 (beat 0, dur 0.5), A4 (beat 0.5, dur 0.5), D5 (beat 1, dur 2)
+Bar 2: C#5 (beat 4, dur 0.5), B4 (beat 4.5, dur 0.5), A4 (beat 5, dur 2.5)
+Bar 3: B4 (beat 8, dur 0.5), C#5 (beat 8.5, dur 0.5), D5 (beat 9, dur 0.5), E5 (beat 9.5, dur 0.5), F#5 (beat 10, dur 2)
+Bar 4: E5 (beat 12, dur 0.5), D5 (beat 12.5, dur 0.5), A4 (beat 13, dur 3)
+
+Praising the Lord.
+

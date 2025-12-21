@@ -115,3 +115,4 @@ def get_system_prompt(layer_type: LayerType) -> str:
     }
     return fallbacks.get(layer_type, "")
 
+

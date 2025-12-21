@@ -1,0 +1,102 @@
+# Cinematic Melody Examples
+# Characteristics: Wide intervals, dramatic arc, heroic leaps,
+# building intensity, emotional peaks, orchestral feel
+
+CINEMATIC MELODY 1 - Epic (C minor)
+Bar 1: G4 (beat 0, dur 2), C5 (beat 2, dur 2)
+Bar 2: Eb5 (beat 4, dur 2), D5 (beat 6, dur 1), C5 (beat 7, dur 1)
+Bar 3: G5 (beat 8, dur 2), F5 (beat 10, dur 1), Eb5 (beat 11, dur 1)
+Bar 4: D5 (beat 12, dur 2), C5 (beat 14, dur 2)
+
+Wide intervals, heroic arc.
+
+---
+
+CINEMATIC MELODY 2 - Mysterious (D minor)
+Bar 1: D4 (beat 0, dur 3), F4 (beat 3, dur 1)
+Bar 2: A4 (beat 4, dur 2), G4 (beat 6, dur 1), F4 (beat 7, dur 1)
+Bar 3: D5 (beat 8, dur 1.5), C5 (beat 9.5, dur 0.5), Bb4 (beat 10, dur 2)
+Bar 4: A4 (beat 12, dur 4)
+
+Haunting and questioning.
+
+---
+
+CINEMATIC MELODY 3 - Triumph (Eb major)
+Bar 1: Bb4 (beat 0, dur 1), Eb5 (beat 1, dur 2), G5 (beat 3, dur 1)
+Bar 2: F5 (beat 4, dur 1), Eb5 (beat 5, dur 1), Bb4 (beat 6, dur 2)
+Bar 3: C5 (beat 8, dur 0.5), D5 (beat 8.5, dur 0.5), Eb5 (beat 9, dur 0.5), F5 (beat 9.5, dur 0.5), G5 (beat 10, dur 2)
+Bar 4: Ab5 (beat 12, dur 1), G5 (beat 13, dur 1), Eb5 (beat 14, dur 2)
+
+Victorious resolution.
+
+---
+
+CINEMATIC MELODY 4 - Tension (A minor)
+Bar 1: E4 (beat 0, dur 2), F4 (beat 2, dur 0.5), E4 (beat 2.5, dur 0.5), D4 (beat 3, dur 1)
+Bar 2: C4 (beat 4, dur 2), B3 (beat 6, dur 1), A3 (beat 7, dur 1)
+Bar 3: A4 (beat 8, dur 1), B4 (beat 9, dur 0.5), C5 (beat 9.5, dur 0.5), D5 (beat 10, dur 2)
+Bar 4: E5 (beat 12, dur 2), A4 (beat 14, dur 2)
+
+Building suspense.
+
+---
+
+CINEMATIC MELODY 5 - Adventure (G major)
+Bar 1: D5 (beat 0, dur 1), G5 (beat 1, dur 2), A5 (beat 3, dur 1)
+Bar 2: G5 (beat 4, dur 1), F#5 (beat 5, dur 1), E5 (beat 6, dur 1), D5 (beat 7, dur 1)
+Bar 3: E5 (beat 8, dur 0.5), F#5 (beat 8.5, dur 0.5), G5 (beat 9, dur 1), A5 (beat 10, dur 2)
+Bar 4: G5 (beat 12, dur 2), D5 (beat 14, dur 2)
+
+Quest beginning.
+
+---
+
+CINEMATIC MELODY 6 - Tragedy (F minor)
+Bar 1: Ab4 (beat 0, dur 2), C5 (beat 2, dur 1), Db5 (beat 3, dur 1)
+Bar 2: C5 (beat 4, dur 1), Bb4 (beat 5, dur 1), Ab4 (beat 6, dur 2)
+Bar 3: F4 (beat 8, dur 1), G4 (beat 9, dur 0.5), Ab4 (beat 9.5, dur 0.5), C5 (beat 10, dur 2)
+Bar 4: Db5 (beat 12, dur 1), C5 (beat 13, dur 1), Ab4 (beat 14, dur 2)
+
+Heartbreak and loss.
+
+---
+
+CINEMATIC MELODY 7 - Hope (Bb major)
+Bar 1: D5 (beat 0, dur 2), F5 (beat 2, dur 1), Eb5 (beat 3, dur 1)
+Bar 2: D5 (beat 4, dur 1), C5 (beat 5, dur 1), Bb4 (beat 6, dur 2)
+Bar 3: C5 (beat 8, dur 0.5), D5 (beat 8.5, dur 0.5), Eb5 (beat 9, dur 0.5), F5 (beat 9.5, dur 0.5), G5 (beat 10, dur 2)
+Bar 4: F5 (beat 12, dur 1), D5 (beat 13, dur 1), Bb4 (beat 14, dur 2)
+
+Light dawning.
+
+---
+
+CINEMATIC MELODY 8 - Battle (D minor)
+Bar 1: A4 (beat 0, dur 0.5), D5 (beat 0.5, dur 1.5), F5 (beat 2, dur 0.5), E5 (beat 2.5, dur 0.5), D5 (beat 3, dur 1)
+Bar 2: C5 (beat 4, dur 0.5), Bb4 (beat 4.5, dur 0.5), A4 (beat 5, dur 2.5)
+Bar 3: D5 (beat 8, dur 0.5), E5 (beat 8.5, dur 0.5), F5 (beat 9, dur 0.5), G5 (beat 9.5, dur 0.5), A5 (beat 10, dur 2)
+Bar 4: G5 (beat 12, dur 0.5), F5 (beat 12.5, dur 0.5), D5 (beat 13, dur 0.5), A4 (beat 13.5, dur 2.5)
+
+War drums pounding.
+
+---
+
+CINEMATIC MELODY 9 - Discovery (Ab major)
+Bar 1: Eb5 (beat 0, dur 2), Ab5 (beat 2, dur 2)
+Bar 2: G5 (beat 4, dur 1), F5 (beat 5, dur 1), Eb5 (beat 6, dur 1), Db5 (beat 7, dur 1)
+Bar 3: C5 (beat 8, dur 1), Db5 (beat 9, dur 0.5), Eb5 (beat 9.5, dur 0.5), F5 (beat 10, dur 2)
+Bar 4: Eb5 (beat 12, dur 2), Ab4 (beat 14, dur 2)
+
+Wonder and awe.
+
+---
+
+CINEMATIC MELODY 10 - Farewell (E minor)
+Bar 1: G4 (beat 0, dur 2), B4 (beat 2, dur 1), E5 (beat 3, dur 1)
+Bar 2: D5 (beat 4, dur 1), C5 (beat 5, dur 1), B4 (beat 6, dur 2)
+Bar 3: A4 (beat 8, dur 1), B4 (beat 9, dur 0.5), C5 (beat 9.5, dur 0.5), D5 (beat 10, dur 2)
+Bar 4: E5 (beat 12, dur 2), B4 (beat 14, dur 2)
+
+Saying goodbye.
+

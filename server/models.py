@@ -164,6 +164,44 @@ for octave in range(-1, 10):
             if note in flat_map:
                 NOTE_TO_MIDI[f"{flat_map[note]}{octave}"] = midi_num
 
+# Add enharmonic equivalents that the LLM might generate
+# Cb = B (one octave lower), Fb = E, B# = C (next octave), E# = F
+for octave in range(-1, 10):
+    # Cb in octave X = B in octave X-1
+    b_midi = NOTE_TO_MIDI.get(f"B{octave - 1}")
+    if b_midi is not None:
+        NOTE_TO_MIDI[f"Cb{octave}"] = b_midi
+    # Fb in octave X = E in same octave
+    e_midi = NOTE_TO_MIDI.get(f"E{octave}")
+    if e_midi is not None:
+        NOTE_TO_MIDI[f"Fb{octave}"] = e_midi
+    # B# in octave X = C in octave X+1
+    c_midi = NOTE_TO_MIDI.get(f"C{octave + 1}")
+    if c_midi is not None:
+        NOTE_TO_MIDI[f"B#{octave}"] = c_midi
+    # E# in octave X = F in same octave
+    f_midi = NOTE_TO_MIDI.get(f"F{octave}")
+    if f_midi is not None:
+        NOTE_TO_MIDI[f"E#{octave}"] = f_midi
+
+# Add double-flats and double-sharps (LLM sometimes generates these)
+# Double-flat (bb) lowers by 2 semitones, double-sharp (##/x) raises by 2
+DOUBLE_FLAT_MAP = {'Cbb': 'Bb', 'Dbb': 'C', 'Ebb': 'D', 'Fbb': 'Eb', 'Gbb': 'F', 'Abb': 'G', 'Bbb': 'A'}
+DOUBLE_SHARP_MAP = {'C##': 'D', 'D##': 'E', 'E##': 'F#', 'F##': 'G', 'G##': 'A', 'A##': 'B', 'B##': 'C#'}
+for octave in range(-1, 10):
+    for dbl_flat, equiv in DOUBLE_FLAT_MAP.items():
+        # Double-flat on C/D wraps to previous octave
+        target_oct = octave - 1 if dbl_flat in ('Cbb', 'Dbb') else octave
+        target_midi = NOTE_TO_MIDI.get(f"{equiv}{target_oct}")
+        if target_midi is not None:
+            NOTE_TO_MIDI[f"{dbl_flat}{octave}"] = target_midi
+    for dbl_sharp, equiv in DOUBLE_SHARP_MAP.items():
+        # Double-sharp on B wraps to next octave
+        target_oct = octave + 1 if dbl_sharp == 'B##' else octave
+        target_midi = NOTE_TO_MIDI.get(f"{equiv}{target_oct}")
+        if target_midi is not None:
+            NOTE_TO_MIDI[f"{dbl_sharp}{octave}"] = target_midi
+
 
 def note_to_midi(note_name: str) -> int:
     """Convert note name (e.g., 'C4') to MIDI number (e.g., 60)"""

@@ -1,0 +1,278 @@
+# Emotional / Cinematic Melody Examples
+# Characteristics: Wide intervals, dramatic arc, dynamic variation,
+# expressive phrasing, climactic peaks, resolution
+
+EMOTIONAL MELODY 1 - Yearning (C minor)
+Bar 1: Eb5 (beat 0, dur 1.5), D5 (beat 1.5, dur 0.5), C5 (beat 2, dur 2)
+Bar 2: G4 (beat 4, dur 1), Bb4 (beat 5.5, dur 1.5), C5 (beat 7, dur 1)
+Bar 3: D5 (beat 8, dur 1), Eb5 (beat 9, dur 1), F5 (beat 10, dur 1), G5 (beat 11, dur 1)
+Bar 4: Eb5 (beat 12, dur 2), D5 (beat 14, dur 0.5), C5 (beat 14.5, dur 1.5)
+
+Expressive dynamics, rise to climax in bar 3.
+Gentle resolve at end.
+
+---
+
+EMOTIONAL MELODY 2 - Bittersweet (D minor)
+Bar 1: A4 (beat 0.5, dur 1.5), G4 (beat 2, dur 1), F4 (beat 3, dur 1)
+Bar 2: E4 (beat 4, dur 2), D4 (beat 6.5, dur 1.5)
+Bar 3: F4 (beat 8, dur 0.5), A4 (beat 8.5, dur 0.5), C5 (beat 9, dur 1), D5 (beat 10, dur 2)
+Bar 4: C5 (beat 12, dur 1), A4 (beat 13, dur 1), D4 (beat 14, dur 2)
+
+Story arc, breath between phrases.
+Ends on root.
+
+---
+
+EMOTIONAL MELODY 3 - Hope Rising (G major)
+Bar 1: D5 (beat 0, dur 2), B4 (beat 2, dur 1), G4 (beat 3, dur 1)
+Bar 2: A4 (beat 4, dur 1), B4 (beat 5, dur 1), D5 (beat 6, dur 2)
+Bar 3: E5 (beat 8, dur 1), F#5 (beat 9, dur 1), G5 (beat 10, dur 2)
+Bar 4: F#5 (beat 12, dur 1), D5 (beat 13, dur 1), G4 (beat 14, dur 2)
+
+Ascending to climax.
+Bright resolution.
+
+---
+
+EMOTIONAL MELODY 4 - Tears (A minor)
+Bar 1: C5 (beat 0, dur 2), B4 (beat 2, dur 1), A4 (beat 3, dur 1)
+Bar 2: G4 (beat 4, dur 1.5), F4 (beat 5.5, dur 0.5), E4 (beat 6, dur 2)
+Bar 3: A4 (beat 8, dur 0.5), B4 (beat 8.5, dur 0.5), C5 (beat 9, dur 0.5), D5 (beat 9.5, dur 0.5), E5 (beat 10, dur 2)
+Bar 4: D5 (beat 12, dur 0.5), C5 (beat 12.5, dur 0.5), B4 (beat 13, dur 0.5), A4 (beat 13.5, dur 2.5)
+
+Falling tears pattern.
+Descending cascade.
+
+---
+
+EMOTIONAL MELODY 5 - Sunrise (Eb major)
+Bar 1: Bb4 (beat 0, dur 1.5), G4 (beat 1.5, dur 0.5), Eb4 (beat 2, dur 2)
+Bar 2: F4 (beat 4, dur 1), G4 (beat 5, dur 1), Bb4 (beat 6, dur 2)
+Bar 3: C5 (beat 8, dur 1), D5 (beat 9, dur 1), Eb5 (beat 10, dur 2)
+Bar 4: D5 (beat 12, dur 1), Bb4 (beat 13, dur 3)
+
+Dawn breaking through.
+Building light.
+
+---
+
+EMOTIONAL MELODY 6 - Farewell (F minor)
+Bar 1: Ab4 (beat 0, dur 2), G4 (beat 2, dur 1), F4 (beat 3, dur 1)
+Bar 2: Eb4 (beat 4, dur 1.5), rest, C4 (beat 6.5, dur 1.5)
+Bar 3: F4 (beat 8, dur 0.5), Ab4 (beat 8.5, dur 0.5), C5 (beat 9, dur 1), Db5 (beat 10, dur 2)
+Bar 4: C5 (beat 12, dur 1), Ab4 (beat 13, dur 1), F4 (beat 14, dur 2)
+
+Goodbye moment.
+Reluctant ending.
+
+---
+
+EMOTIONAL MELODY 7 - Reunion (Bb major)
+Bar 1: D5 (beat 0, dur 1), F5 (beat 1, dur 1), Eb5 (beat 2, dur 2)
+Bar 2: D5 (beat 4, dur 0.5), C5 (beat 4.5, dur 0.5), Bb4 (beat 5, dur 2.5)
+Bar 3: C5 (beat 8, dur 0.5), D5 (beat 8.5, dur 0.5), Eb5 (beat 9, dur 0.5), F5 (beat 9.5, dur 0.5), G5 (beat 10, dur 2)
+Bar 4: F5 (beat 12, dur 1), D5 (beat 13, dur 1), Bb4 (beat 14, dur 2)
+
+Coming together again.
+Joyful embrace.
+
+---
+
+EMOTIONAL MELODY 8 - Memory (E minor)
+Bar 1: G4 (beat 0, dur 1.5), B4 (beat 1.5, dur 0.5), E5 (beat 2, dur 2)
+Bar 2: D5 (beat 4, dur 1), B4 (beat 5, dur 1), G4 (beat 6, dur 2)
+Bar 3: A4 (beat 8, dur 1), B4 (beat 9, dur 0.5), C5 (beat 9.5, dur 0.5), D5 (beat 10, dur 2)
+Bar 4: E5 (beat 12, dur 2), B4 (beat 14, dur 2)
+
+Nostalgic reflection.
+Looking back.
+
+---
+
+EMOTIONAL MELODY 9 - Epic (B minor)
+Bar 1: D5 (beat 0, dur 2), F#5 (beat 2, dur 2)
+Bar 2: E5 (beat 4, dur 1), D5 (beat 5, dur 1), C#5 (beat 6, dur 1), B4 (beat 7, dur 1)
+Bar 3: F#5 (beat 8, dur 1), G5 (beat 9, dur 1), A5 (beat 10, dur 2)
+Bar 4: G5 (beat 12, dur 1), F#5 (beat 13, dur 1), B4 (beat 14, dur 2)
+
+Heroic leap in bar 3.
+Grand statement.
+
+---
+
+EMOTIONAL MELODY 10 - Peaceful (D major)
+Bar 1: F#4 (beat 0, dur 2), A4 (beat 2, dur 1), D5 (beat 3, dur 1)
+Bar 2: C#5 (beat 4, dur 1.5), B4 (beat 5.5, dur 0.5), A4 (beat 6, dur 2)
+Bar 3: B4 (beat 8, dur 1), A4 (beat 9, dur 1), F#4 (beat 10, dur 2)
+Bar 4: D4 (beat 12, dur 4)
+
+Calm and serene.
+Gentle resolution.
+
+---
+
+EMOTIONAL MELODY 11 - Storm (Db major)
+Bar 1: F5 (beat 0, dur 1), Ab5 (beat 1, dur 1), Gb5 (beat 2, dur 2)
+Bar 2: F5 (beat 4, dur 0.5), Eb5 (beat 4.5, dur 0.5), Db5 (beat 5, dur 2.5)
+Bar 3: Eb5 (beat 8, dur 0.5), F5 (beat 8.5, dur 0.5), Gb5 (beat 9, dur 0.5), Ab5 (beat 9.5, dur 0.5), Bb5 (beat 10, dur 2)
+Bar 4: Ab5 (beat 12, dur 1), Gb5 (beat 13, dur 1), Db5 (beat 14, dur 2)
+
+Turbulent and wild.
+Dramatic swells.
+
+---
+
+EMOTIONAL MELODY 12 - Wonder (G# minor)
+Bar 1: B4 (beat 0, dur 1.5), D#5 (beat 1.5, dur 0.5), E5 (beat 2, dur 2)
+Bar 2: D#5 (beat 4, dur 1), C#5 (beat 5, dur 1), B4 (beat 6, dur 2)
+Bar 3: C#5 (beat 8, dur 1), D#5 (beat 9, dur 0.5), E5 (beat 9.5, dur 0.5), F#5 (beat 10, dur 2)
+Bar 4: E5 (beat 12, dur 1), D#5 (beat 13, dur 0.5), B4 (beat 13.5, dur 2.5)
+
+Awe and discovery.
+Eyes wide open.
+
+---
+
+EMOTIONAL MELODY 13 - Solitude (F major)
+Bar 1: A4 (beat 0, dur 2), C5 (beat 2, dur 1), D5 (beat 3, dur 1)
+Bar 2: C5 (beat 4, dur 1.5), Bb4 (beat 5.5, dur 0.5), A4 (beat 6, dur 2)
+Bar 3: G4 (beat 8, dur 1), A4 (beat 9, dur 1), Bb4 (beat 10, dur 1), C5 (beat 11, dur 1)
+Bar 4: A4 (beat 12, dur 2), F4 (beat 14, dur 2)
+
+Alone but content.
+Reflective peace.
+
+---
+
+EMOTIONAL MELODY 14 - Courage (C# minor)
+Bar 1: E4 (beat 0, dur 1), G#4 (beat 1, dur 1), C#5 (beat 2, dur 2)
+Bar 2: B4 (beat 4, dur 1), A4 (beat 5, dur 1), G#4 (beat 6, dur 2)
+Bar 3: A4 (beat 8, dur 0.5), B4 (beat 8.5, dur 0.5), C#5 (beat 9, dur 0.5), D#5 (beat 9.5, dur 0.5), E5 (beat 10, dur 2)
+Bar 4: D#5 (beat 12, dur 0.5), C#5 (beat 12.5, dur 0.5), G#4 (beat 13, dur 3)
+
+Brave and bold.
+Rising to challenge.
+
+---
+
+EMOTIONAL MELODY 15 - Heartbreak (A minor)
+Bar 1: E5 (beat 0, dur 2), D5 (beat 2, dur 1), C5 (beat 3, dur 1)
+Bar 2: B4 (beat 4, dur 1), A4 (beat 5, dur 1), G4 (beat 6, dur 2)
+Bar 3: A4 (beat 8, dur 1), C5 (beat 9, dur 1), E5 (beat 10, dur 2)
+Bar 4: D5 (beat 12, dur 1), C5 (beat 13, dur 1), A4 (beat 14, dur 2)
+
+Shattered pieces.
+Slow descent.
+
+---
+
+EMOTIONAL MELODY 16 - New Day (E major)
+Bar 1: G#4 (beat 0, dur 1.5), B4 (beat 1.5, dur 0.5), E5 (beat 2, dur 2)
+Bar 2: D#5 (beat 4, dur 1), C#5 (beat 5, dur 1), B4 (beat 6, dur 2)
+Bar 3: C#5 (beat 8, dur 0.5), D#5 (beat 8.5, dur 0.5), E5 (beat 9, dur 0.5), F#5 (beat 9.5, dur 0.5), G#5 (beat 10, dur 2)
+Bar 4: F#5 (beat 12, dur 1), E5 (beat 13, dur 0.5), B4 (beat 13.5, dur 2.5)
+
+Fresh beginnings.
+Hopeful climb.
+
+---
+
+EMOTIONAL MELODY 17 - Love Lost (F# minor)
+Bar 1: A4 (beat 0, dur 2), C#5 (beat 2, dur 1), B4 (beat 3, dur 1)
+Bar 2: A4 (beat 4, dur 0.5), G#4 (beat 4.5, dur 0.5), F#4 (beat 5, dur 2.5)
+Bar 3: E4 (beat 8, dur 1), F#4 (beat 9, dur 0.5), A4 (beat 9.5, dur 0.5), C#5 (beat 10, dur 1), D5 (beat 11, dur 1)
+Bar 4: C#5 (beat 12, dur 1), A4 (beat 13, dur 1), F#4 (beat 14, dur 2)
+
+Aching memory.
+What once was.
+
+---
+
+EMOTIONAL MELODY 18 - Triumph (Bb major)
+Bar 1: D5 (beat 0, dur 1), F5 (beat 1, dur 1), Bb5 (beat 2, dur 2)
+Bar 2: A5 (beat 4, dur 1), G5 (beat 5, dur 1), F5 (beat 6, dur 2)
+Bar 3: G5 (beat 8, dur 0.5), A5 (beat 8.5, dur 0.5), Bb5 (beat 9, dur 1), C6 (beat 10, dur 2)
+Bar 4: Bb5 (beat 12, dur 1), F5 (beat 13, dur 1), D5 (beat 14, dur 2)
+
+Victory achieved.
+Soaring high note.
+
+---
+
+EMOTIONAL MELODY 19 - Gentle Rain (G minor)
+Bar 1: Bb4 (beat 0, dur 1.5), D5 (beat 1.5, dur 0.5), C5 (beat 2, dur 2)
+Bar 2: Bb4 (beat 4, dur 1), A4 (beat 5, dur 0.5), G4 (beat 5.5, dur 2.5)
+Bar 3: F4 (beat 8, dur 1), G4 (beat 9, dur 0.5), A4 (beat 9.5, dur 0.5), Bb4 (beat 10, dur 2)
+Bar 4: A4 (beat 12, dur 0.5), G4 (beat 12.5, dur 0.5), D4 (beat 13, dur 3)
+
+Drops falling.
+Soft and consistent.
+
+---
+
+EMOTIONAL MELODY 20 - Sacred (Ab major)
+Bar 1: Eb5 (beat 0, dur 2), C5 (beat 2, dur 1), Ab4 (beat 3, dur 1)
+Bar 2: Bb4 (beat 4, dur 1), C5 (beat 5, dur 1), Eb5 (beat 6, dur 2)
+Bar 3: F5 (beat 8, dur 1), G5 (beat 9, dur 1), Ab5 (beat 10, dur 2)
+Bar 4: G5 (beat 12, dur 1), Eb5 (beat 13, dur 1), C5 (beat 14, dur 2)
+
+Holy and reverent.
+Cathedral echoes.
+
+---
+
+EMOTIONAL MELODY 21 - Promise (D minor)
+Bar 1: F4 (beat 0, dur 1.5), A4 (beat 1.5, dur 0.5), D5 (beat 2, dur 2)
+Bar 2: C5 (beat 4, dur 1), Bb4 (beat 5, dur 1), A4 (beat 6, dur 2)
+Bar 3: Bb4 (beat 8, dur 0.5), C5 (beat 8.5, dur 0.5), D5 (beat 9, dur 0.5), E5 (beat 9.5, dur 0.5), F5 (beat 10, dur 2)
+Bar 4: E5 (beat 12, dur 0.5), D5 (beat 12.5, dur 0.5), A4 (beat 13, dur 3)
+
+Vow made.
+Commitment spoken.
+
+---
+
+EMOTIONAL MELODY 22 - Innocence (C major)
+Bar 1: E4 (beat 0, dur 2), G4 (beat 2, dur 1), C5 (beat 3, dur 1)
+Bar 2: D5 (beat 4, dur 1.5), C5 (beat 5.5, dur 0.5), B4 (beat 6, dur 1), G4 (beat 7, dur 1)
+Bar 3: A4 (beat 8, dur 1), B4 (beat 9, dur 0.5), C5 (beat 9.5, dur 0.5), D5 (beat 10, dur 2)
+Bar 4: C5 (beat 12, dur 2), G4 (beat 14, dur 2)
+
+Pure and simple.
+Childlike wonder.
+
+---
+
+EMOTIONAL MELODY 23 - Legacy (Eb minor)
+Bar 1: Gb4 (beat 0, dur 1.5), Bb4 (beat 1.5, dur 0.5), Eb5 (beat 2, dur 2)
+Bar 2: Db5 (beat 4, dur 1), Cb5 (beat 5, dur 1), Bb4 (beat 6, dur 2)
+Bar 3: Cb5 (beat 8, dur 0.5), Db5 (beat 8.5, dur 0.5), Eb5 (beat 9, dur 0.5), F5 (beat 9.5, dur 0.5), Gb5 (beat 10, dur 2)
+Bar 4: F5 (beat 12, dur 0.5), Eb5 (beat 12.5, dur 0.5), Bb4 (beat 13, dur 3)
+
+What remains.
+Passed down.
+
+---
+
+EMOTIONAL MELODY 24 - Destiny (F# major)
+Bar 1: A#4 (beat 0, dur 1), C#5 (beat 1, dur 1), F#5 (beat 2, dur 2)
+Bar 2: E#5 (beat 4, dur 1), D#5 (beat 5, dur 1), C#5 (beat 6, dur 2)
+Bar 3: D#5 (beat 8, dur 0.5), E#5 (beat 8.5, dur 0.5), F#5 (beat 9, dur 0.5), G#5 (beat 9.5, dur 0.5), A#5 (beat 10, dur 2)
+Bar 4: G#5 (beat 12, dur 1), F#5 (beat 13, dur 0.5), C#5 (beat 13.5, dur 2.5)
+
+Fate calling.
+Path chosen.
+
+---
+
+EMOTIONAL MELODY 25 - Forever (B major)
+Bar 1: D#5 (beat 0, dur 2), F#5 (beat 2, dur 1), E5 (beat 3, dur 1)
+Bar 2: D#5 (beat 4, dur 1), C#5 (beat 5, dur 1), B4 (beat 6, dur 2)
+Bar 3: C#5 (beat 8, dur 0.5), D#5 (beat 8.5, dur 0.5), E5 (beat 9, dur 0.5), F#5 (beat 9.5, dur 0.5), G#5 (beat 10, dur 2)
+Bar 4: F#5 (beat 12, dur 1), D#5 (beat 13, dur 1), B4 (beat 14, dur 2)
+
+Eternal bond.
+Always and forever.
+
+

@@ -1,0 +1,227 @@
+# Ambient / Atmospheric Chord Progressions
+# Characteristics: Very long sustains, open voicings, suspended chords,
+# pedal tones, modal harmony, space and silence
+
+AMBIENT PROGRESSION 1 - Floating (C major)
+Beat 0-8: Csus2 = ["C3", "D3", "G4", "C5", "D5"]
+Beat 8-16: Fsus2/C = ["C3", "F3", "G4", "C5"]
+
+Very long chords, open fifths, suspended.
+Pedal C in bass.
+
+---
+
+AMBIENT PROGRESSION 2 - Space (E minor)
+Beat 0-6: Em(add9) = ["E3", "B3", "F#4", "G4", "B4"]
+Beat 6-12: Cmaj7#11 = ["C3", "G3", "B4", "E5", "F#5"]
+Beat 12-16: Am9 = ["A3", "E4", "G4", "B4", "C5"]
+
+Lydian color, ethereal extensions.
+Wide voicings create space.
+
+---
+
+AMBIENT PROGRESSION 3 - Drift (Bb major)
+Beat 0-8: Bbmaj9(no3) = ["Bb3", "F4", "A4", "C5"]
+Beat 8-16: Eb(add9)/Bb = ["Bb3", "Eb4", "F4", "G4", "Bb4"]
+
+Omit 3rds for ambiguity.
+Pedal Bb throughout.
+
+---
+
+AMBIENT PROGRESSION 4 - Clouds (D major)
+Beat 0-8: Dsus2 = ["D3", "E3", "A4", "D5"]
+Beat 8-16: Gmaj7(no3) = ["G3", "D4", "F#4", "A4"]
+
+Open voicings, no 3rds.
+Ambiguous mode.
+
+---
+
+AMBIENT PROGRESSION 5 - Mist (G minor)
+Beat 0-8: Gm(add9) = ["G3", "D4", "A4", "Bb4"]
+Beat 8-16: Ebmaj7#11 = ["Eb3", "Bb3", "D4", "G4", "A4"]
+
+Minor key atmosphere.
+Lydian extension on IV.
+
+---
+
+AMBIENT PROGRESSION 6 - Stars (F# major)
+Beat 0-8: F#sus2 = ["F#3", "G#3", "C#4", "F#4"]
+Beat 8-16: Bmaj9(no3) = ["B3", "F#4", "A#4", "C#5"]
+
+Suspended and open.
+Twinkling quality.
+
+---
+
+AMBIENT PROGRESSION 7 - Ocean (A major)
+Beat 0-8: Asus2 = ["A3", "B3", "E4", "A4"]
+Beat 8-16: Dmaj7(no3) = ["D3", "A3", "C#4", "E4"]
+
+Waves of sound.
+Minimal movement.
+
+---
+
+AMBIENT PROGRESSION 8 - Forest (C minor)
+Beat 0-8: Cm(add9) = ["C3", "G3", "D4", "Eb4"]
+Beat 8-16: Absus2 = ["Ab3", "Bb3", "Eb4", "Ab4"]
+
+Natural, organic feel.
+Minor key mystery.
+
+---
+
+AMBIENT PROGRESSION 9 - Aurora (Eb major)
+Beat 0-8: Ebmaj9(no3) = ["Eb3", "Bb3", "D4", "F4"]
+Beat 8-16: Absus2 = ["Ab3", "Bb3", "Eb4", "Ab4"]
+
+Northern lights.
+Shimmering quality.
+
+---
+
+AMBIENT PROGRESSION 10 - Void (B minor)
+Beat 0-12: Bm(add9) = ["B3", "F#4", "A4", "C#5"]
+Beat 12-16: Em(add9) = ["E3", "B3", "F#4", "G4"]
+
+Emptiness.
+Long sustains.
+
+---
+
+AMBIENT PROGRESSION 11 - Sunrise (G major)
+Beat 0-8: Gmaj7(no3) = ["G3", "D4", "F#4", "A4"]
+Beat 8-16: Cmaj9(no3) = ["C3", "G3", "B4", "D5"]
+
+Warm and hopeful.
+Dawn breaking.
+
+---
+
+AMBIENT PROGRESSION 12 - Moonrise (F minor)
+Beat 0-8: Fm(add9) = ["F3", "C4", "G4", "Ab4"]
+Beat 8-16: Dbmaj7#11 = ["Db3", "Ab3", "C4", "F4", "G4"]
+
+Mysterious night.
+Minor key beauty.
+
+---
+
+AMBIENT PROGRESSION 13 - Wind (D minor)
+Beat 0-8: Dm(add11) = ["D3", "A3", "G4", "C5"]
+Beat 8-16: Bbmaj9(no3) = ["Bb3", "F4", "A4", "C5"]
+
+Gentle breeze.
+Open voicings.
+
+---
+
+AMBIENT PROGRESSION 14 - Rain (A minor)
+Beat 0-8: Am(add9) = ["A3", "E4", "B4", "C5"]
+Beat 8-16: Fmaj7#11 = ["F3", "C4", "E4", "A4", "B4"]
+
+Falling drops.
+Lydian color.
+
+---
+
+AMBIENT PROGRESSION 15 - Snow (Db major)
+Beat 0-8: Dbsus2 = ["Db3", "Eb3", "Ab4", "Db5"]
+Beat 8-16: Gbmaj9(no3) = ["Gb3", "Db4", "F4", "Ab4"]
+
+Frozen stillness.
+White silence.
+
+---
+
+AMBIENT PROGRESSION 16 - Deep (E minor)
+Beat 0-8: Em9(no3) = ["E3", "B3", "F#4", "A4"]
+Beat 8-16: Am9(no3) = ["A3", "E4", "B4", "C5"]
+
+Underwater.
+Submerged feeling.
+
+---
+
+AMBIENT PROGRESSION 17 - High (Bb major)
+Beat 0-8: Bbmaj9(no3) = ["Bb3", "F4", "A4", "C5"]
+Beat 8-16: Ebmaj7#11 = ["Eb3", "Bb3", "D4", "G4", "A4"]
+
+Mountain peaks.
+Thin air.
+
+---
+
+AMBIENT PROGRESSION 18 - Echo (G# minor)
+Beat 0-8: G#m(add9) = ["G#3", "D#4", "A#4", "B4"]
+Beat 8-16: Emaj7#11 = ["E3", "B3", "D#4", "G#4", "A#4"]
+
+Cave resonance.
+Repeating patterns.
+
+---
+
+AMBIENT PROGRESSION 19 - Shimmer (F major)
+Beat 0-8: Fmaj9(no3) = ["F3", "C4", "E4", "G4"]
+Beat 8-16: Bbmaj7#11 = ["Bb3", "F4", "A4", "D5", "E5"]
+
+Light reflecting.
+Bright and airy.
+
+---
+
+AMBIENT PROGRESSION 20 - Stillness (C# minor)
+Beat 0-16: C#m(add9) = ["C#3", "G#3", "D#4", "E4"]
+
+Single chord meditation.
+Pure stillness.
+
+---
+
+AMBIENT PROGRESSION 21 - Breath (Eb minor)
+Beat 0-8: Ebm(add9) = ["Eb3", "Bb3", "F4", "Gb4"]
+Beat 8-16: Cbmaj9(no3) = ["Cb3", "Gb3", "Bb4", "Db5"]
+
+Inhale, exhale.
+Slow movement.
+
+---
+
+AMBIENT PROGRESSION 22 - Horizon (A major)
+Beat 0-8: Asus2 = ["A3", "B3", "E4", "A4"]
+Beat 8-16: Dsus2 = ["D3", "E3", "A4", "D5"]
+
+Endless distance.
+Wide open.
+
+---
+
+AMBIENT PROGRESSION 23 - Twilight (B major)
+Beat 0-8: Bmaj9(no3) = ["B3", "F#4", "A#4", "C#5"]
+Beat 8-16: Emaj7#11 = ["E3", "B3", "D#4", "G#4", "A#4"]
+
+Between day and night.
+Liminal space.
+
+---
+
+AMBIENT PROGRESSION 24 - Eternity (F# minor)
+Beat 0-16: F#m(add9) = ["F#3", "C#4", "G#4", "A4"]
+
+Timeless.
+Single chord sustain.
+
+---
+
+AMBIENT PROGRESSION 25 - Infinite (Gb major)
+Beat 0-8: Gbmaj9(no3) = ["Gb3", "Db4", "F4", "Ab4"]
+Beat 8-16: Cbmaj7#11 = ["Cb3", "Gb3", "Bb4", "Eb5", "F5"]
+
+Boundless space.
+No beginning, no end.
+
+

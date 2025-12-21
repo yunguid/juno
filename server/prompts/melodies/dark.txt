@@ -1,0 +1,102 @@
+# Dark / Moody Melody Examples
+# Characteristics: Phrygian mode, minor intervals, descending lines,
+# chromatic tension, sparse and ominous, dissonance
+
+DARK MELODY 1 - Phrygian (C minor)
+Bar 1: C5 (beat 0, dur 1), Db5 (beat 1, dur 0.5), C5 (beat 1.5, dur 0.5), Bb4 (beat 2, dur 2)
+Bar 2: Ab4 (beat 4, dur 1.5), G4 (beat 5.5, dur 0.5), F4 (beat 6, dur 2)
+Bar 3: Eb5 (beat 8, dur 1), Db5 (beat 9, dur 0.5), C5 (beat 9.5, dur 0.5), Bb4 (beat 10, dur 0.5), Ab4 (beat 10.5, dur 1.5)
+Bar 4: G4 (beat 12, dur 2), C4 (beat 14, dur 2)
+
+b2 creates darkness, descending lines.
+
+---
+
+DARK MELODY 2 - Chromatic Descent (A minor)
+Bar 1: A4 (beat 0.5, dur 1), Bb4 (beat 1.5, dur 0.5), A4 (beat 2, dur 1.5)
+Bar 2: E4 (beat 4, dur 2), F4 (beat 6, dur 1), E4 (beat 7, dur 1)
+Bar 3: A4 (beat 8, dur 0.5), G#4 (beat 8.5, dur 0.5), A4 (beat 9, dur 0.5), B4 (beat 9.5, dur 0.5), C5 (beat 10, dur 2)
+Bar 4: B4 (beat 12, dur 1), A4 (beat 13, dur 3)
+
+Chromatic tension.
+
+---
+
+DARK MELODY 3 - Void (E minor)
+Bar 1: B4 (beat 0, dur 2), rest, G4 (beat 3, dur 1)
+Bar 2: F4 (beat 4, dur 2), E4 (beat 6, dur 2)
+Bar 3: rest, B4 (beat 9, dur 1), C5 (beat 10, dur 0.5), B4 (beat 10.5, dur 0.5), A4 (beat 11, dur 1)
+Bar 4: G4 (beat 12, dur 2), E4 (beat 14, dur 2)
+
+Sparse and empty.
+
+---
+
+DARK MELODY 4 - Nightmare (F minor)
+Bar 1: C5 (beat 0, dur 0.5), Db5 (beat 0.5, dur 0.5), C5 (beat 1, dur 1), Ab4 (beat 2.5, dur 1.5)
+Bar 2: G4 (beat 4, dur 1), Ab4 (beat 5, dur 0.5), Bb4 (beat 5.5, dur 0.5), Ab4 (beat 6, dur 2)
+Bar 3: F4 (beat 8, dur 1), G4 (beat 9, dur 0.5), Ab4 (beat 9.5, dur 0.5), C5 (beat 10, dur 2)
+Bar 4: Db5 (beat 12, dur 0.5), C5 (beat 12.5, dur 0.5), Ab4 (beat 13, dur 0.5), F4 (beat 13.5, dur 2.5)
+
+Haunting intervals.
+
+---
+
+DARK MELODY 5 - Shadows (D minor)
+Bar 1: A4 (beat 0, dur 2), Bb4 (beat 2, dur 0.5), A4 (beat 2.5, dur 0.5), G4 (beat 3, dur 1)
+Bar 2: F4 (beat 4, dur 1.5), E4 (beat 5.5, dur 0.5), D4 (beat 6, dur 2)
+Bar 3: E4 (beat 8, dur 0.5), F4 (beat 8.5, dur 0.5), G4 (beat 9, dur 0.5), A4 (beat 9.5, dur 0.5), Bb4 (beat 10, dur 2)
+Bar 4: A4 (beat 12, dur 1), F4 (beat 13, dur 1), D4 (beat 14, dur 2)
+
+Lurking in darkness.
+
+---
+
+DARK MELODY 6 - Abyss (G minor)
+Bar 1: D5 (beat 0, dur 2), Eb5 (beat 2, dur 0.5), D5 (beat 2.5, dur 0.5), C5 (beat 3, dur 1)
+Bar 2: Bb4 (beat 4, dur 1), A4 (beat 5, dur 1), G4 (beat 6, dur 2)
+Bar 3: rest, C5 (beat 9, dur 1), Bb4 (beat 10, dur 0.5), A4 (beat 10.5, dur 0.5), G4 (beat 11, dur 1)
+Bar 4: F#4 (beat 12, dur 0.5), G4 (beat 12.5, dur 0.5), D4 (beat 13, dur 3)
+
+Falling into depth.
+
+---
+
+DARK MELODY 7 - Ritual (B minor)
+Bar 1: F#4 (beat 0, dur 1), B4 (beat 1, dur 1), C5 (beat 2, dur 1), B4 (beat 3, dur 1)
+Bar 2: A4 (beat 4, dur 0.5), G4 (beat 4.5, dur 0.5), F#4 (beat 5, dur 2.5)
+Bar 3: E4 (beat 8, dur 0.5), F#4 (beat 8.5, dur 0.5), G4 (beat 9, dur 0.5), A4 (beat 9.5, dur 0.5), B4 (beat 10, dur 2)
+Bar 4: C5 (beat 12, dur 0.5), B4 (beat 12.5, dur 0.5), F#4 (beat 13, dur 3)
+
+Ancient ceremony.
+
+---
+
+DARK MELODY 8 - Obsession (C# minor)
+Bar 1: E4 (beat 0, dur 1), G#4 (beat 1, dur 1), C#5 (beat 2, dur 2)
+Bar 2: D5 (beat 4, dur 0.5), C#5 (beat 4.5, dur 0.5), B4 (beat 5, dur 0.5), A4 (beat 5.5, dur 0.5), G#4 (beat 6, dur 2)
+Bar 3: A4 (beat 8, dur 0.5), B4 (beat 8.5, dur 0.5), C#5 (beat 9, dur 1), D5 (beat 10, dur 1), E5 (beat 11, dur 1)
+Bar 4: D5 (beat 12, dur 0.5), C#5 (beat 12.5, dur 0.5), G#4 (beat 13, dur 3)
+
+Fixation and madness.
+
+---
+
+DARK MELODY 9 - Malice (Bb minor)
+Bar 1: Db5 (beat 0, dur 1.5), Bb4 (beat 1.5, dur 0.5), Ab4 (beat 2, dur 2)
+Bar 2: Gb4 (beat 4, dur 1), F4 (beat 5, dur 1), Gb4 (beat 6, dur 1), Ab4 (beat 7, dur 1)
+Bar 3: Bb4 (beat 8, dur 0.5), Cb5 (beat 8.5, dur 0.5), Bb4 (beat 9, dur 0.5), Ab4 (beat 9.5, dur 0.5), Gb4 (beat 10, dur 2)
+Bar 4: F4 (beat 12, dur 1), Bb4 (beat 13, dur 3)
+
+Evil intent.
+
+---
+
+DARK MELODY 10 - Dread (F# minor)
+Bar 1: A4 (beat 0, dur 2), B4 (beat 2, dur 0.5), A4 (beat 2.5, dur 0.5), G#4 (beat 3, dur 1)
+Bar 2: F#4 (beat 4, dur 2), rest, E4 (beat 7, dur 1)
+Bar 3: F#4 (beat 8, dur 0.5), G4 (beat 8.5, dur 0.5), F#4 (beat 9, dur 0.5), E4 (beat 9.5, dur 0.5), D4 (beat 10, dur 2)
+Bar 4: C#4 (beat 12, dur 1), F#4 (beat 13, dur 3)
+
+Approaching doom.
+

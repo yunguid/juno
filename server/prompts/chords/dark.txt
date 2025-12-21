@@ -1,0 +1,281 @@
+# Dark / Moody Chord Progressions
+# Characteristics: Phrygian mode, chromatic movement, minor keys,
+# tension without resolution, dissonance, dramatic drops
+
+DARK PROGRESSION 1 - Phrygian (C minor)
+Beat 0: Cm = ["C3", "G3", "Eb4", "G4", "C5"]
+Beat 4: Dbmaj7 = ["Db3", "Ab3", "C4", "F4"]
+Beat 8: Bbm7 = ["Bb2", "F3", "Ab3", "Db4"]
+Beat 12: Abmaj7 = ["Ab3", "C4", "Eb4", "G4"]
+
+bII chord creates sinister phrygian feel.
+Chromatic bass movement adds tension.
+
+---
+
+DARK PROGRESSION 2 - Chromatic Descent (A minor)
+Beat 0: Am = ["A3", "E4", "A4", "C5"]
+Beat 4: Abmaj7 = ["Ab3", "C4", "Eb4", "G4"]
+Beat 8: Gmaj7 = ["G3", "B3", "D4", "F#4"]
+Beat 12: Gbmaj7 = ["Gb3", "Bb3", "Db4", "F4"]
+
+Chromatic descent, unsettling.
+Each chord a half-step lower.
+
+---
+
+DARK PROGRESSION 3 - Tension (F minor)
+Beat 0: Fm = ["F3", "C4", "F4", "Ab4"]
+Beat 4: Db = ["Db3", "Ab3", "Db4", "F4"]
+Beat 8: Bbm = ["Bb3", "Db4", "F4", "Bb4"]
+Beat 12: C7b9 = ["C3", "E4", "Bb4", "Db5"]
+
+Building tension, unresolved dominant.
+b9 creates maximum darkness.
+
+---
+
+DARK PROGRESSION 4 - Shadows (E minor)
+Beat 0: Em = ["E3", "B3", "E4", "G4"]
+Beat 4: F = ["F3", "C4", "F4", "A4"]
+Beat 8: Am = ["A3", "E4", "A4", "C5"]
+Beat 12: B7 = ["B3", "D#4", "F#4", "A4"]
+
+Phrygian II chord.
+Major V creates dark tension.
+
+---
+
+DARK PROGRESSION 5 - Void (D minor)
+Beat 0: Dm = ["D3", "A3", "D4", "F4"]
+Beat 4: Ebmaj7 = ["Eb3", "G3", "Bb4", "D5"]
+Beat 8: Am7b5 = ["A3", "C4", "Eb4", "G4"]
+Beat 12: Dm = ["D3", "F3", "A4", "D5"]
+
+Half-diminished chord creates emptiness.
+Unresolved ending.
+
+---
+
+DARK PROGRESSION 6 - Haunted (G minor)
+Beat 0: Gm = ["G3", "D4", "G4", "Bb4"]
+Beat 4: Eb = ["Eb3", "G3", "Bb4", "Eb5"]
+Beat 8: Cm = ["C3", "G3", "Eb4", "G4"]
+Beat 12: D7 = ["D3", "F#3", "C4", "A4"]
+
+Classic minor key darkness.
+Major V chord is haunting.
+
+---
+
+DARK PROGRESSION 7 - Abyss (B minor)
+Beat 0: Bm = ["B3", "F#4", "B4", "D5"]
+Beat 4: Cmaj7 = ["C3", "E3", "G4", "B4"]
+Beat 8: Em = ["E3", "B3", "E4", "G4"]
+Beat 12: F#7 = ["F#3", "A#3", "E4", "C#5"]
+
+bII major chord creates void.
+Unexpected harmonic movement.
+
+---
+
+DARK PROGRESSION 8 - Nightmare (Bb minor)
+Beat 0: Bbm = ["Bb3", "F4", "Bb4", "Db5"]
+Beat 4: Gbmaj7 = ["Gb3", "Bb3", "Db4", "F4"]
+Beat 8: Dbmaj7 = ["Db3", "F3", "Ab4", "C5"]
+Beat 12: Ebm7 = ["Eb3", "Gb3", "Bb3", "Db4"]
+
+Descending minor progression.
+Flat keys add weight.
+
+---
+
+DARK PROGRESSION 9 - Dread (F# minor)
+Beat 0: F#m = ["F#3", "C#4", "F#4", "A4"]
+Beat 4: Gmaj7 = ["G3", "B3", "D4", "F#4"]
+Beat 8: Dmaj7 = ["D3", "F#3", "A4", "C#5"]
+Beat 12: C#7 = ["C#3", "E#3", "B4", "G#5"]
+
+Tritone movement from F#m to C.
+Augmented feel on V chord.
+
+---
+
+DARK PROGRESSION 10 - Eclipse (C# minor)
+Beat 0: C#m = ["C#3", "G#3", "C#4", "E4"]
+Beat 4: Dmaj7 = ["D3", "F#3", "A4", "C#5"]
+Beat 8: Amaj7 = ["A3", "C#4", "E4", "G#4"]
+Beat 12: G#7 = ["G#3", "B#3", "F#4", "D#5"]
+
+Phrygian II chord.
+Unresolved V chord.
+
+---
+
+DARK PROGRESSION 11 - Descent (Eb minor)
+Beat 0: Ebm = ["Eb3", "Bb3", "Eb4", "Gb4"]
+Beat 4: Dbm = ["Db3", "Ab3", "Db4", "Fb4"]
+Beat 8: Cbmaj7 = ["Cb3", "Eb3", "Gb4", "Bb4"]
+Beat 12: Bb7 = ["Bb3", "D4", "Ab4", "F5"]
+
+Descending by half-steps.
+Dominant 7 creates pull.
+
+---
+
+DARK PROGRESSION 12 - Obsession (G# minor)
+Beat 0: G#m = ["G#3", "D#4", "G#4", "B4"]
+Beat 4: Amaj7 = ["A3", "C#4", "E4", "G#4"]
+Beat 8: Emaj7 = ["E3", "G#3", "B4", "D#5"]
+Beat 12: D#7 = ["D#3", "F##3", "C#4", "A#4"]
+
+Phrygian movement.
+Augmented chord tension.
+
+---
+
+DARK PROGRESSION 13 - Paranoia (D minor)
+Beat 0: Dm = ["D3", "A3", "D4", "F4"]
+Beat 4: Bbmaj7 = ["Bb3", "D4", "F4", "A4"]
+Beat 6: Bbm7 = ["Bb3", "Db4", "F4", "Ab4"]
+Beat 8: Gm7 = ["G3", "Bb3", "D4", "F4"]
+Beat 12: A7 = ["A3", "C#4", "G4", "E5"]
+
+Major to minor IV.
+Creates unease.
+
+---
+
+DARK PROGRESSION 14 - Ritual (A minor)
+Beat 0: Am = ["A3", "E4", "A4", "C5"]
+Beat 2: Am/G = ["G3", "A3", "E4", "C5"]
+Beat 4: Am/F# = ["F#3", "A3", "E4", "C5"]
+Beat 6: Am/F = ["F3", "A3", "E4", "C5"]
+Beat 8: Dm = ["D3", "F3", "A4", "D5"]
+Beat 12: E7 = ["E3", "G#3", "D4", "B4"]
+
+Descending bass line.
+Ritualistic feel.
+
+---
+
+DARK PROGRESSION 15 - Malice (E minor)
+Beat 0: Em = ["E3", "B3", "E4", "G4"]
+Beat 4: C = ["C3", "G3", "E4", "C5"]
+Beat 8: Am = ["A3", "E4", "A4", "C5"]
+Beat 12: B = ["B3", "D#4", "F#4", "B4"]
+
+Major V chord in minor key.
+Creates malevolent resolution.
+
+---
+
+DARK PROGRESSION 16 - Isolation (Ab minor)
+Beat 0: Abm = ["Ab3", "Eb4", "Ab4", "Cb5"]
+Beat 4: Emaj7 = ["E3", "G#3", "B4", "D#5"]
+Beat 8: C#m7 = ["C#3", "G#3", "B4", "E5"]
+Beat 12: Eb7 = ["Eb3", "G3", "Db4", "Bb4"]
+
+Distant key relationships.
+Tritone movement.
+
+---
+
+DARK PROGRESSION 17 - Doom (D minor)
+Beat 0: Dm = ["D3", "A3", "D4", "F4"]
+Beat 4: Eb = ["Eb3", "G3", "Bb4", "Eb5"]
+Beat 8: Bb = ["Bb3", "D4", "F4", "Bb4"]
+Beat 12: A = ["A3", "C#4", "E4", "A4"]
+
+Neapolitan chord.
+Major V for doom.
+
+---
+
+DARK PROGRESSION 18 - Whispers (C minor)
+Beat 0: Cm = ["C3", "G3", "Eb4", "C5"]
+Beat 4: Ab = ["Ab3", "C4", "Eb4", "Ab4"]
+Beat 8: Fm = ["F3", "C4", "F4", "Ab4"]
+Beat 12: G = ["G3", "B3", "D4", "G4"]
+
+Simple but dark.
+Major V resolution.
+
+---
+
+DARK PROGRESSION 19 - Madness (F minor)
+Beat 0: Fm7 = ["F3", "Ab3", "C4", "Eb4"]
+Beat 4: Gbmaj7 = ["Gb3", "Bb3", "Db4", "F4"]
+Beat 8: Ebm7 = ["Eb3", "Gb3", "Bb3", "Db4"]
+Beat 12: Db7 = ["Db3", "F3", "Ab4", "Cb5"]
+
+Tritone-related chords.
+Disorienting harmony.
+
+---
+
+DARK PROGRESSION 20 - Agony (B minor)
+Beat 0: Bm = ["B3", "F#4", "B4", "D5"]
+Beat 4: G = ["G3", "B3", "D4", "G4"]
+Beat 8: A = ["A3", "C#4", "E4", "A4"]
+Beat 12: F#7 = ["F#3", "A#3", "C#4", "E4"]
+
+Minor key anguish.
+V7 creates pain.
+
+---
+
+DARK PROGRESSION 21 - Betrayal (Db minor)
+Beat 0: Dbm = ["Db3", "Ab3", "Db4", "Fb4"]
+Beat 4: Amaj7 = ["A3", "C#4", "E4", "G#4"]
+Beat 8: Emaj7 = ["E3", "G#3", "B4", "D#5"]
+Beat 12: Ab7 = ["Ab3", "C4", "Gb4", "Eb5"]
+
+Distant key movement.
+Unexpected resolutions.
+
+---
+
+DARK PROGRESSION 22 - Torture (G minor)
+Beat 0: Gm = ["G3", "D4", "G4", "Bb4"]
+Beat 4: Abmaj7 = ["Ab3", "C4", "Eb4", "G4"]
+Beat 8: Ebmaj7 = ["Eb3", "G3", "Bb4", "D5"]
+Beat 12: D7b9 = ["D3", "F#3", "C4", "Eb4"]
+
+Phrygian II chord.
+b9 on dominant.
+
+---
+
+DARK PROGRESSION 23 - Vengeance (E minor)
+Beat 0: Em = ["E3", "B3", "E4", "G4"]
+Beat 4: C = ["C3", "E3", "G4", "C5"]
+Beat 8: G = ["G3", "B3", "D4", "G4"]
+Beat 12: D = ["D3", "F#3", "A4", "D5"]
+
+Power chords, simple.
+Building intensity.
+
+---
+
+DARK PROGRESSION 24 - Cursed (A minor)
+Beat 0: Am = ["A3", "E4", "A4", "C5"]
+Beat 4: Dm = ["D3", "A3", "D4", "F4"]
+Beat 8: E = ["E3", "G#3", "B4", "E5"]
+Beat 12: Am = ["A3", "C4", "E4", "A4"]
+
+Andalusian cadence variant.
+Classical darkness.
+
+---
+
+DARK PROGRESSION 25 - Oblivion (C minor)
+Beat 0: Cm9 = ["C3", "G3", "Bb4", "D5", "Eb5"]
+Beat 4: Abmaj7 = ["Ab3", "C4", "Eb4", "G4"]
+Beat 8: Fm9 = ["F3", "C4", "Eb4", "G4", "Ab4"]
+Beat 12: G7alt = ["G3", "B3", "F4", "Ab4"]
+
+Extended chords.
+Altered dominant for darkness.
+
+

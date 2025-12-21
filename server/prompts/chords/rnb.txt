@@ -1,0 +1,279 @@
+# R&B / Neo-Soul Chord Progressions
+# Characteristics: Extended chords (9ths, 11ths, 13ths), smooth voice leading,
+# jazz-influenced harmony, chromatic movement, lush voicings
+
+R&B PROGRESSION 1 - Classic Neo-Soul (C minor)
+Beat 0: Cm9 = ["C3", "G3", "Bb4", "D5", "Eb5"]
+Beat 4: Fm9 = ["F3", "C4", "Eb4", "G4", "Ab4"]
+Beat 8: Abmaj9 = ["Ab3", "C4", "Eb4", "G4", "Bb4"]
+Beat 12: G7b9 = ["G3", "B3", "D4", "F4", "Ab4"]
+
+Smooth voice leading between chords. The Bb stays common between Cm9 and Abmaj9.
+G7b9 creates tension resolving back to Cm9.
+
+---
+
+R&B PROGRESSION 2 - Soulful Warmth (Eb major)
+Beat 0: Ebmaj9 = ["Eb3", "G3", "Bb4", "D5", "F5"]
+Beat 4: Cm11 = ["C3", "G3", "Bb4", "Eb5", "F5"]
+Beat 8: Abmaj7 = ["Ab3", "C4", "Eb4", "G4"]
+Beat 12: Bb13 = ["Bb3", "D4", "F4", "Ab4", "G5"]
+
+Extended dominant (Bb13) creates rich resolution. 
+The F5 is common between Ebmaj9 and Cm11.
+
+---
+
+R&B PROGRESSION 3 - Moody Darkness (D minor)
+Beat 0: Dm9 = ["D3", "A3", "C4", "E4", "F4"]
+Beat 4: Bbmaj7 = ["Bb3", "D4", "F4", "A4"]
+Beat 8: Gm9 = ["G3", "D4", "F4", "A4", "Bb4"]
+Beat 12: A7#9 = ["A3", "C#4", "G4", "B#4"]
+
+Dark but smooth progression. The A7#9 (Hendrix chord) adds tension.
+Voice leading: D4 stays through first three chords.
+
+---
+
+R&B PROGRESSION 4 - Late Night Vibes (F minor)
+Beat 0: Fm9 = ["F3", "C4", "Eb4", "G4", "Ab4"]
+Beat 4: Dbmaj9 = ["Db3", "F4", "Ab4", "C5", "Eb5"]
+Beat 8: Bbm11 = ["Bb3", "Db4", "F4", "Ab4", "Eb5"]
+Beat 12: C7alt = ["C3", "E4", "Bb4", "Db5"]
+
+Altered dominant (C7alt) creates maximum tension before resolution.
+Common tones: Ab4 connects Fm9 to Dbmaj9 to Bbm11.
+
+---
+
+R&B PROGRESSION 5 - Butter Smooth (G major)
+Beat 0: Gmaj9 = ["G3", "B3", "D4", "F#4", "A4"]
+Beat 4: Em9 = ["E3", "G3", "B4", "D5", "F#5"]
+Beat 8: Cmaj9 = ["C3", "E3", "G4", "B4", "D5"]
+Beat 12: Am11 = ["A3", "E4", "G4", "C5", "D5"]
+
+All major/minor 9ths for consistent warmth.
+D stays common through most of the progression.
+
+---
+
+R&B PROGRESSION 6 - Midnight Drive (Bb minor)
+Beat 0: Bbm9 = ["Bb3", "F4", "Ab4", "C5", "Db5"]
+Beat 4: Gbmaj9 = ["Gb3", "Bb3", "Db4", "F4", "Ab4"]
+Beat 8: Ebm9 = ["Eb3", "Bb3", "Db4", "F4", "Gb4"]
+Beat 12: F7#9 = ["F3", "A3", "Eb4", "G#4"]
+
+Dark minor key progression with Hendrix chord ending.
+Bb is the pedal tone connecting the chords.
+
+---
+
+R&B PROGRESSION 7 - Summer Rain (A major)
+Beat 0: Amaj9 = ["A3", "C#4", "E4", "G#4", "B4"]
+Beat 4: F#m11 = ["F#3", "C#4", "E4", "A4", "B4"]
+Beat 8: Dmaj9 = ["D3", "F#3", "A4", "C#5", "E5"]
+Beat 12: E13 = ["E3", "G#3", "D4", "F#4", "C#5"]
+
+Bright major key with rich extensions.
+E and C# connect multiple chords.
+
+---
+
+R&B PROGRESSION 8 - Velvet Touch (Db major)
+Beat 0: Dbmaj9 = ["Db3", "F4", "Ab4", "C5", "Eb5"]
+Beat 4: Bbm9 = ["Bb3", "Db4", "F4", "Ab4", "C5"]
+Beat 8: Gbmaj7#11 = ["Gb3", "Bb3", "Db4", "F4", "C5"]
+Beat 12: Ab13 = ["Ab3", "C4", "Eb4", "Gb4", "F5"]
+
+Lydian color on Gbmaj7#11 adds ethereal quality.
+C5 is the common tone through the progression.
+
+---
+
+R&B PROGRESSION 9 - Tears of Joy (E minor)
+Beat 0: Em9 = ["E3", "B3", "D4", "F#4", "G4"]
+Beat 4: Cmaj9 = ["C3", "E3", "G4", "B4", "D5"]
+Beat 8: Am11 = ["A3", "E4", "G4", "C5", "D5"]
+Beat 12: B7b9 = ["B3", "D#4", "A4", "C5"]
+
+Minor key with emotional tension-release.
+G and D connect the first three chords.
+
+---
+
+R&B PROGRESSION 10 - Purple Haze (C# minor)
+Beat 0: C#m9 = ["C#3", "G#3", "B4", "D#5", "E5"]
+Beat 4: Amaj9 = ["A3", "C#4", "E4", "G#4", "B4"]
+Beat 8: F#m11 = ["F#3", "C#4", "E4", "A4", "B4"]
+Beat 12: G#7#9 = ["G#3", "B#3", "F#4", "A#4"]
+
+Dark yet beautiful progression with Hendrix chord resolution.
+
+---
+
+R&B PROGRESSION 11 - Honey Drip (F major)
+Beat 0: Fmaj9 = ["F3", "A3", "C4", "E4", "G4"]
+Beat 4: Dm9 = ["D3", "A3", "C4", "E4", "F4"]
+Beat 8: Bbmaj9 = ["Bb3", "D4", "F4", "A4", "C5"]
+Beat 12: C13 = ["C3", "E3", "Bb4", "D5", "A5"]
+
+Warm, honey-smooth progression.
+A and C are common tones.
+
+---
+
+R&B PROGRESSION 12 - Silk Sheets (Ab major)
+Beat 0: Abmaj9 = ["Ab3", "C4", "Eb4", "G4", "Bb4"]
+Beat 4: Fm9 = ["F3", "C4", "Eb4", "G4", "Ab4"]
+Beat 8: Dbmaj9 = ["Db3", "F4", "Ab4", "C5", "Eb5"]
+Beat 12: Eb13 = ["Eb3", "G3", "Db4", "F4", "C5"]
+
+Lush major key progression with rich extensions.
+Eb4 connects the first three chords.
+
+---
+
+R&B PROGRESSION 13 - Candlelight (B minor)
+Beat 0: Bm9 = ["B3", "F#4", "A4", "C#5", "D5"]
+Beat 4: Gmaj9 = ["G3", "B3", "D4", "F#4", "A4"]
+Beat 8: Em9 = ["E3", "B3", "D4", "F#4", "G4"]
+Beat 12: F#7b9 = ["F#3", "A#3", "E4", "G4"]
+
+Romantic minor key progression.
+F#4 and D4 connect multiple chords.
+
+---
+
+R&B PROGRESSION 14 - Ocean Breeze (E major)
+Beat 0: Emaj9 = ["E3", "G#3", "B4", "D#5", "F#5"]
+Beat 4: C#m9 = ["C#3", "G#3", "B4", "D#5", "E5"]
+Beat 8: Amaj9 = ["A3", "C#4", "E4", "G#4", "B4"]
+Beat 12: B13 = ["B3", "D#4", "A4", "C#5", "G#5"]
+
+Bright and airy major progression.
+B4 connects the first three chords.
+
+---
+
+R&B PROGRESSION 15 - Whispered Secrets (G minor)
+Beat 0: Gm9 = ["G3", "D4", "F4", "A4", "Bb4"]
+Beat 4: Ebmaj9 = ["Eb3", "G3", "Bb4", "D5", "F5"]
+Beat 8: Cm11 = ["C3", "G3", "Bb4", "Eb5", "F5"]
+Beat 12: D7alt = ["D3", "F#4", "C5", "Eb5"]
+
+Dark minor with altered dominant resolution.
+Bb4 and G connect multiple chords.
+
+---
+
+R&B PROGRESSION 16 - Golden Hour (D major)
+Beat 0: Dmaj9 = ["D3", "F#3", "A4", "C#5", "E5"]
+Beat 4: Bm9 = ["B3", "F#4", "A4", "C#5", "D5"]
+Beat 8: Gmaj9 = ["G3", "B3", "D4", "F#4", "A4"]
+Beat 12: A13 = ["A3", "C#4", "G4", "B4", "F#5"]
+
+Warm golden progression in D major.
+A4 and F#4 are common tones.
+
+---
+
+R&B PROGRESSION 17 - Slow Dance (Bb major)
+Beat 0: Bbmaj9 = ["Bb3", "D4", "F4", "A4", "C5"]
+Beat 4: Gm9 = ["G3", "D4", "F4", "A4", "Bb4"]
+Beat 8: Ebmaj9 = ["Eb3", "G3", "Bb4", "D5", "F5"]
+Beat 12: F13 = ["F3", "A3", "Eb4", "G4", "D5"]
+
+Smooth major key progression.
+D4 and F4 connect the first two chords.
+
+---
+
+R&B PROGRESSION 18 - Moonlit Walk (F# minor)
+Beat 0: F#m9 = ["F#3", "C#4", "E4", "G#4", "A4"]
+Beat 4: Dmaj9 = ["D3", "F#3", "A4", "C#5", "E5"]
+Beat 8: Bm9 = ["B3", "F#4", "A4", "C#5", "D5"]
+Beat 12: C#7#9 = ["C#3", "E#3", "B4", "D#5"]
+
+Dark romantic progression.
+A4 connects three of the four chords.
+
+---
+
+R&B PROGRESSION 19 - Sunrise Glow (A major)
+Beat 0: Amaj9 = ["A3", "C#4", "E4", "G#4", "B4"]
+Beat 2: A/C# = ["C#3", "E3", "A4", "C#5"]
+Beat 4: Dmaj9 = ["D3", "F#3", "A4", "C#5", "E5"]
+Beat 8: Bm11 = ["B3", "F#4", "A4", "D5", "E5"]
+Beat 12: E13 = ["E3", "G#3", "D4", "F#4", "C#5"]
+
+Inversion movement (A to A/C#) adds motion.
+
+---
+
+R&B PROGRESSION 20 - Rainy Window (Eb minor)
+Beat 0: Ebm9 = ["Eb3", "Bb3", "Db4", "F4", "Gb4"]
+Beat 4: Cbmaj9 = ["Cb3", "Eb3", "Gb4", "Bb4", "Db5"]
+Beat 8: Abm11 = ["Ab3", "Eb4", "Gb4", "Cb5", "Db5"]
+Beat 12: Bb7alt = ["Bb3", "D4", "Ab4", "Cb5"]
+
+Dark, melancholic minor key.
+Eb and Gb connect multiple chords.
+
+---
+
+R&B PROGRESSION 21 - Satin Pillows (C major)
+Beat 0: Cmaj9 = ["C3", "E3", "G4", "B4", "D5"]
+Beat 4: Am9 = ["A3", "C4", "E4", "G4", "B4"]
+Beat 8: Fmaj9 = ["F3", "A3", "C4", "E4", "G4"]
+Beat 12: G13 = ["G3", "B3", "F4", "A4", "E5"]
+
+Classic smooth progression with extensions.
+G4 and E4 are common tones.
+
+---
+
+R&B PROGRESSION 22 - Twilight Dreams (Gb major)
+Beat 0: Gbmaj9 = ["Gb3", "Bb3", "Db4", "F4", "Ab4"]
+Beat 4: Ebm9 = ["Eb3", "Bb3", "Db4", "F4", "Gb4"]
+Beat 8: Cbmaj9 = ["Cb3", "Eb3", "Gb4", "Bb4", "Db5"]
+Beat 12: Db13 = ["Db3", "F3", "Cb4", "Eb4", "Bb4"]
+
+Rich flat-key progression.
+Db4 and Bb3 connect multiple chords.
+
+---
+
+R&B PROGRESSION 23 - Gentle Touch (B major)
+Beat 0: Bmaj9 = ["B3", "D#4", "F#4", "A#4", "C#5"]
+Beat 4: G#m9 = ["G#3", "D#4", "F#4", "A#4", "B4"]
+Beat 8: Emaj9 = ["E3", "G#3", "B4", "D#5", "F#5"]
+Beat 12: F#13 = ["F#3", "A#3", "E4", "G#4", "D#5"]
+
+Bright major progression with smooth voice leading.
+D#4 and F#4 connect the first two chords.
+
+---
+
+R&B PROGRESSION 24 - Cherry Blossoms (A minor)
+Beat 0: Am9 = ["A3", "E4", "G4", "B4", "C5"]
+Beat 4: Fmaj9 = ["F3", "A3", "C4", "E4", "G4"]
+Beat 8: Dm9 = ["D3", "A3", "C4", "E4", "F4"]
+Beat 12: E7b9 = ["E3", "G#3", "D4", "F4"]
+
+Minor key with jazzy dominant resolution.
+E4 and C4 connect multiple chords.
+
+---
+
+R&B PROGRESSION 25 - Starlight Serenade (Db major)
+Beat 0: Dbmaj9 = ["Db3", "F4", "Ab4", "C5", "Eb5"]
+Beat 2: Db/F = ["F3", "Ab3", "Db4", "F4"]
+Beat 4: Gbmaj9 = ["Gb3", "Bb3", "Db4", "F4", "Ab4"]
+Beat 6: Gbm(maj7) = ["Gb3", "Bbb3", "Db4", "F4"]
+Beat 8: Dbmaj9/Ab = ["Ab3", "Db4", "F4", "Ab4", "C5"]
+Beat 12: Ab13 = ["Ab3", "C4", "Eb4", "Gb4", "F5"]
+
+Inversion movement and borrowed chord (Gbm) for sophistication.
+F4 is the common tone connecting most chords.
+
+

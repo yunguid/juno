@@ -1,0 +1,278 @@
+# Trap / Hip-Hop Chord Progressions
+# Characteristics: Dark minor keys, simple triads, 808 bass foundation,
+# sparse voicings, phrygian flavor, menacing tension
+
+TRAP PROGRESSION 1 - Dark (C minor)
+Beat 0: Cm = ["C3", "Eb4", "G4"]
+Beat 4: Ab = ["Ab3", "C4", "Eb4"]
+Beat 8: Bb = ["Bb3", "D4", "F4"]
+Beat 12: Gm = ["G3", "Bb3", "D4"]
+
+Simple triads, minor key, sparse.
+Let the 808 do the work.
+
+---
+
+TRAP PROGRESSION 2 - Eerie (A minor)
+Beat 0: Am = ["A3", "C4", "E4"]
+Beat 4: F = ["F3", "A3", "C4"]
+Beat 8: E = ["E3", "G#3", "B3"]
+Beat 12: E7 = ["E3", "G#3", "B3", "D4"]
+
+Major V for tension, dark vibe.
+Harmonic minor feel.
+
+---
+
+TRAP PROGRESSION 3 - Menacing (F minor)
+Beat 0: Fm = ["F3", "Ab3", "C4"]
+Beat 4: Db = ["Db3", "F3", "Ab3"]
+Beat 8: Eb = ["Eb3", "G3", "Bb3"]
+Beat 12: C = ["C3", "E3", "G3"]
+
+Phrygian, dark, hard-hitting.
+Major V at end.
+
+---
+
+TRAP PROGRESSION 4 - Street (D minor)
+Beat 0: Dm = ["D3", "F3", "A3"]
+Beat 4: Bb = ["Bb3", "D4", "F4"]
+Beat 8: C = ["C3", "E3", "G3"]
+Beat 12: A = ["A3", "C#4", "E4"]
+
+i-bVI-bVII-V pattern.
+Classic trap feel.
+
+---
+
+TRAP PROGRESSION 5 - Hood (G minor)
+Beat 0: Gm = ["G3", "Bb3", "D4"]
+Beat 4: Eb = ["Eb3", "G3", "Bb3"]
+Beat 8: F = ["F3", "A3", "C4"]
+Beat 12: D = ["D3", "F#3", "A3"]
+
+Minor key drama.
+Major V resolution.
+
+---
+
+TRAP PROGRESSION 6 - Savage (E minor)
+Beat 0: Em = ["E3", "G3", "B3"]
+Beat 4: C = ["C3", "E3", "G3"]
+Beat 8: D = ["D3", "F#3", "A3"]
+Beat 12: B = ["B3", "D#4", "F#4"]
+
+Dark and aggressive.
+Major V tension.
+
+---
+
+TRAP PROGRESSION 7 - Drill (Bb minor)
+Beat 0: Bbm = ["Bb3", "Db4", "F4"]
+Beat 4: Gb = ["Gb3", "Bb3", "Db4"]
+Beat 8: Ab = ["Ab3", "C4", "Eb4"]
+Beat 12: F = ["F3", "A3", "C4"]
+
+UK drill style.
+Dark minor key.
+
+---
+
+TRAP PROGRESSION 8 - Bounce (F# minor)
+Beat 0: F#m = ["F#3", "A3", "C#4"]
+Beat 4: D = ["D3", "F#3", "A3"]
+Beat 8: E = ["E3", "G#3", "B3"]
+Beat 12: C# = ["C#3", "E#3", "G#3"]
+
+Bouncy trap feel.
+Major V energy.
+
+---
+
+TRAP PROGRESSION 9 - Murky (C# minor)
+Beat 0: C#m = ["C#3", "E3", "G#3"]
+Beat 4: A = ["A3", "C#4", "E4"]
+Beat 8: B = ["B3", "D#4", "F#4"]
+Beat 12: G# = ["G#3", "B#3", "D#4"]
+
+Underwater darkness.
+Murky sound.
+
+---
+
+TRAP PROGRESSION 10 - Haunted (B minor)
+Beat 0: Bm = ["B3", "D4", "F#4"]
+Beat 4: G = ["G3", "B3", "D4"]
+Beat 8: A = ["A3", "C#4", "E4"]
+Beat 12: F# = ["F#3", "A#3", "C#4"]
+
+Ghostly presence.
+Minor key mystery.
+
+---
+
+TRAP PROGRESSION 11 - Grind (Ab minor)
+Beat 0: Abm = ["Ab3", "Cb4", "Eb4"]
+Beat 4: E = ["E3", "G#3", "B3"]
+Beat 8: Gb = ["Gb3", "Bb3", "Db4"]
+Beat 12: Eb = ["Eb3", "G3", "Bb3"]
+
+Hard work ethic.
+Dark determination.
+
+---
+
+TRAP PROGRESSION 12 - Flex (Eb minor)
+Beat 0: Ebm = ["Eb3", "Gb3", "Bb3"]
+Beat 4: Cb = ["Cb3", "Eb3", "Gb3"]
+Beat 8: Db = ["Db3", "F3", "Ab3"]
+Beat 12: Bb = ["Bb3", "D4", "F4"]
+
+Showing off.
+Minor to major V.
+
+---
+
+TRAP PROGRESSION 13 - Cold (G# minor)
+Beat 0: G#m = ["G#3", "B3", "D#4"]
+Beat 4: E = ["E3", "G#3", "B3"]
+Beat 8: F# = ["F#3", "A#3", "C#4"]
+Beat 12: D# = ["D#3", "F##3", "A#3"]
+
+Frozen emotion.
+Dark and cold.
+
+---
+
+TRAP PROGRESSION 14 - Rage (D minor)
+Beat 0: Dm = ["D3", "F3", "A3"]
+Beat 4: Eb = ["Eb3", "G3", "Bb3"]
+Beat 8: Bb = ["Bb3", "D4", "F4"]
+Beat 12: A = ["A3", "C#4", "E4"]
+
+Angry energy.
+Phrygian bII.
+
+---
+
+TRAP PROGRESSION 15 - Slide (A minor)
+Beat 0: Am = ["A3", "C4", "E4"]
+Beat 4: G = ["G3", "B3", "D4"]
+Beat 8: F = ["F3", "A3", "C4"]
+Beat 12: E = ["E3", "G#3", "B3"]
+
+Smooth slide.
+Andalusian cadence.
+
+---
+
+TRAP PROGRESSION 16 - Drip (F minor)
+Beat 0: Fm = ["F3", "Ab3", "C4"]
+Beat 4: Eb = ["Eb3", "G3", "Bb3"]
+Beat 8: Db = ["Db3", "F3", "Ab3"]
+Beat 12: C = ["C3", "E3", "G3"]
+
+Stylish drip.
+Minor key cool.
+
+---
+
+TRAP PROGRESSION 17 - Ice (E minor)
+Beat 0: Em = ["E3", "G3", "B3"]
+Beat 4: D = ["D3", "F#3", "A3"]
+Beat 8: C = ["C3", "E3", "G3"]
+Beat 12: B = ["B3", "D#4", "F#4"]
+
+Frozen assets.
+Cold and hard.
+
+---
+
+TRAP PROGRESSION 18 - Night (Bb minor)
+Beat 0: Bbm = ["Bb3", "Db4", "F4"]
+Beat 4: Ab = ["Ab3", "C4", "Eb4"]
+Beat 8: Gb = ["Gb3", "Bb3", "Db4"]
+Beat 12: F = ["F3", "A3", "C4"]
+
+Late night vibes.
+Dark streets.
+
+---
+
+TRAP PROGRESSION 19 - Pressure (C# minor)
+Beat 0: C#m = ["C#3", "E3", "G#3"]
+Beat 4: B = ["B3", "D#4", "F#4"]
+Beat 8: A = ["A3", "C#4", "E4"]
+Beat 12: G# = ["G#3", "B#3", "D#4"]
+
+Under pressure.
+Building tension.
+
+---
+
+TRAP PROGRESSION 20 - Money (G minor)
+Beat 0: Gm = ["G3", "Bb3", "D4"]
+Beat 4: F = ["F3", "A3", "C4"]
+Beat 8: Eb = ["Eb3", "G3", "Bb3"]
+Beat 12: D = ["D3", "F#3", "A3"]
+
+Cash flow.
+Minor key wealth.
+
+---
+
+TRAP PROGRESSION 21 - Pain (F# minor)
+Beat 0: F#m = ["F#3", "A3", "C#4"]
+Beat 4: E = ["E3", "G#3", "B3"]
+Beat 8: D = ["D3", "F#3", "A3"]
+Beat 12: C# = ["C#3", "E#3", "G#3"]
+
+Emotional pain.
+Minor key anguish.
+
+---
+
+TRAP PROGRESSION 22 - Real (D minor)
+Beat 0: Dm = ["D3", "F3", "A3"]
+Beat 4: C = ["C3", "E3", "G3"]
+Beat 8: Bb = ["Bb3", "D4", "F4"]
+Beat 12: A = ["A3", "C#4", "E4"]
+
+Keeping it real.
+Street authenticity.
+
+---
+
+TRAP PROGRESSION 23 - Ghost (Ab minor)
+Beat 0: Abm = ["Ab3", "Cb4", "Eb4"]
+Beat 4: Fb = ["Fb3", "Ab3", "Cb4"]
+Beat 8: Gb = ["Gb3", "Bb3", "Db4"]
+Beat 12: Eb = ["Eb3", "G3", "Bb3"]
+
+Spectral presence.
+Haunting melody.
+
+---
+
+TRAP PROGRESSION 24 - Lit (E minor)
+Beat 0: Em = ["E3", "G3", "B3"]
+Beat 4: C = ["C3", "E3", "G3"]
+Beat 8: G = ["G3", "B3", "D4"]
+Beat 12: D = ["D3", "F#3", "A3"]
+
+Party energy.
+Dark but hype.
+
+---
+
+TRAP PROGRESSION 25 - Smoke (B minor)
+Beat 0: Bm = ["B3", "D4", "F#4"]
+Beat 4: A = ["A3", "C#4", "E4"]
+Beat 8: G = ["G3", "B3", "D4"]
+Beat 12: F# = ["F#3", "A#3", "C#4"]
+
+Hazy atmosphere.
+Minor key chill.
+
+

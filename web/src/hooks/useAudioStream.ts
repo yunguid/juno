@@ -9,6 +9,9 @@ const IS_IOS = (() => {
 export function useAudioStream(wsUrl: string) {
   const audioContextRef = useRef<AudioContext | null>(null)
   const workletNodeRef = useRef<AudioWorkletNode | null>(null)
+  const scriptNodeRef = useRef<ScriptProcessorNode | null>(null)
+  const scriptQueueRef = useRef<{ data: Float32Array; offset: number; channels: number }[]>([])
+  const scriptConfigRef = useRef<{ sampleRate: number; channels: number } | null>(null)
   const wsRef = useRef<WebSocket | null>(null)
   const rtcWsRef = useRef<WebSocket | null>(null)
   const rtcPcRef = useRef<RTCPeerConnection | null>(null)
@@ -20,12 +23,13 @@ export function useAudioStream(wsUrl: string) {
   const audioConfigRef = useRef<{ sampleRate: number; channels: number } | null>(null)
   const lastStatusLogMsRef = useRef(0)
   const lastUnderrunsRef = useRef(0)
-  const initialTargetBufferMs = IS_IOS ? 260 : 180
+  const initialTargetBufferMs = IS_IOS ? 180 : 80
   const iceServersRef = useRef<RTCIceServer[] | null>(null)
+  const preferredTransportRef = useRef<string | null>(null)
 
   const initAudioContext = useCallback(async () => {
     if (!audioContextRef.current) {
-      audioContextRef.current = new AudioContext({ latencyHint: 'playback' })
+      audioContextRef.current = new AudioContext({ latencyHint: 'interactive' })
       console.log('AudioContext created, state:', audioContextRef.current.state)
     }
     if (audioContextRef.current.state === 'suspended') {
@@ -71,9 +75,78 @@ export function useAudioStream(wsUrl: string) {
     return iceServersRef.current
   }, [])
 
+  const initScriptProcessor = useCallback((audioContext: AudioContext) => {
+    if (scriptNodeRef.current) return scriptNodeRef.current
+
+    const node = audioContext.createScriptProcessor(1024, 0, 2)
+    node.onaudioprocess = (event) => {
+      const output = event.outputBuffer
+      const channels = output.numberOfChannels
+      const frames = output.length
+      const config = scriptConfigRef.current
+      const queue = scriptQueueRef.current
+
+      let queueSamples = 0
+      for (const item of queue) {
+        queueSamples += (item.data.length - item.offset) / Math.max(1, item.channels)
+      }
+
+      if (config) {
+        const bufferMs = (queueSamples / config.sampleRate) * 1000
+        const now = performance.now()
+        if (now - lastStatusLogMsRef.current > 2000) {
+          lastStatusLogMsRef.current = now
+          console.log(`[AudioStream] ScriptProcessor buffer ${bufferMs.toFixed(0)}ms`)
+        }
+        const ws = wsRef.current
+        if (ws && ws.readyState === WebSocket.OPEN) {
+          ws.send(JSON.stringify({ type: 'buffer_status', buffer_ms: bufferMs, target_ms: null, underruns: 0 }))
+        }
+      }
+
+      for (let ch = 0; ch < channels; ch += 1) {
+        const channelData = output.getChannelData(ch)
+        for (let i = 0; i < frames; i += 1) {
+          if (!queue.length) {
+            channelData[i] = 0
+            continue
+          }
+          const item = queue[0]
+          const itemChannels = Math.max(1, item.channels)
+          const frameOffset = item.offset
+          let sample = 0
+          if (frameOffset + itemChannels <= item.data.length) {
+            if (itemChannels === 1) {
+              sample = item.data[frameOffset]
+            } else {
+              sample = item.data[frameOffset + Math.min(ch, itemChannels - 1)]
+            }
+          }
+          channelData[i] = sample
+
+          if (ch === channels - 1) {
+            item.offset += itemChannels
+            if (item.offset >= item.data.length) {
+              queue.shift()
+            }
+          }
+        }
+      }
+    }
+
+    node.connect(audioContext.destination)
+    scriptNodeRef.current = node
+    console.warn('[AudioStream] AudioWorklet unavailable; using ScriptProcessor fallback.')
+    return scriptNodeRef.current
+  }, [])
+
   const initAudioWorklet = useCallback(async (audioContext: AudioContext) => {
-    if (workletNodeRef.current) {
-      return workletNodeRef.current
+    if (workletNodeRef.current || scriptNodeRef.current) {
+      return workletNodeRef.current ?? scriptNodeRef.current
+    }
+
+    if (!audioContext.audioWorklet || !audioContext.audioWorklet.addModule) {
+      return initScriptProcessor(audioContext)
     }
 
     try {
@@ -118,9 +191,9 @@ export function useAudioStream(wsUrl: string) {
       return workletNodeRef.current
     } catch (error) {
       console.error('Failed to initialize AudioWorklet:', error)
-      throw error
+      return initScriptProcessor(audioContext)
     }
-  }, [])
+  }, [initScriptProcessor])
 
   const startStreamingWebSocket = useCallback(async () => {
     if (isStreamingRef.current) return
@@ -159,18 +232,20 @@ export function useAudioStream(wsUrl: string) {
             }
             console.log('Audio config:', audioConfigRef.current)
 
-            if (workletNodeRef.current) {
-              let targetBufferMs = initialTargetBufferMs
-              if (typeof config.chunk_frames === 'number' && typeof config.sample_rate === 'number') {
-                const chunkMs = (config.chunk_frames / config.sample_rate) * 1000
-                if (Number.isFinite(chunkMs) && chunkMs > 0) {
-                  targetBufferMs = Math.max(targetBufferMs, Math.min(600, chunkMs * 4))
-                }
-              }
+            scriptConfigRef.current = audioConfigRef.current
+
+      if (workletNodeRef.current) {
+        let targetBufferMs = initialTargetBufferMs
+        if (typeof config.chunk_frames === 'number' && typeof config.sample_rate === 'number') {
+          const chunkMs = (config.chunk_frames / config.sample_rate) * 1000
+          if (Number.isFinite(chunkMs) && chunkMs > 0) {
+            targetBufferMs = Math.max(50, Math.min(220, Math.max(targetBufferMs, chunkMs * 2.2)))
+          }
+        }
               workletNodeRef.current.port.postMessage({
                 type: 'config',
                 data: {
-                  inputSampleRate: config.sample_rate,
+                  sampleRate: config.sample_rate,
                   channels: config.channels,
                   targetBufferMs,
                 },
@@ -183,6 +258,14 @@ export function useAudioStream(wsUrl: string) {
               type: 'pcm',
               data: event.data,
             }, [event.data])
+          } else if (scriptNodeRef.current && audioConfigRef.current) {
+            const channels = Math.max(1, audioConfigRef.current.channels)
+            const input = new Int16Array(event.data)
+            const floatData = new Float32Array(input.length)
+            for (let i = 0; i < input.length; i += 1) {
+              floatData[i] = input[i] / 32768
+            }
+            scriptQueueRef.current.push({ data: floatData, offset: 0, channels })
           }
         }
       }
@@ -218,6 +301,12 @@ export function useAudioStream(wsUrl: string) {
     if (workletNodeRef.current) {
       workletNodeRef.current.port.postMessage({ type: 'reset' })
     }
+    if (scriptNodeRef.current) {
+      scriptNodeRef.current.disconnect()
+      scriptNodeRef.current = null
+    }
+    scriptQueueRef.current = []
+    scriptConfigRef.current = null
 
     isStreamingRef.current = false
     audioConfigRef.current = null
@@ -282,19 +371,24 @@ export function useAudioStream(wsUrl: string) {
         window.clearTimeout(timeout)
         const stream = event.streams?.[0] ?? new MediaStream([event.track])
         try {
-          const audioEl = rtcAudioElRef.current ?? new Audio()
-          audioEl.autoplay = true
-          audioEl.playsInline = true
-          audioEl.srcObject = stream
-          rtcAudioElRef.current = audioEl
+          const receiver = event.receiver
+          if (receiver && 'playoutDelayHint' in receiver) {
+            ;(receiver as RTCRtpReceiver).playoutDelayHint = 0.06
+          }
+
           try {
-            await audioEl.play()
-          } catch (e) {
-            console.warn('Audio element play failed, trying AudioContext:', e)
             const ctx = await ensureAudioUnlocked()
             const source = ctx.createMediaStreamSource(stream)
             source.connect(ctx.destination)
             rtcSourceNodeRef.current = source
+          } catch (e) {
+            console.warn('AudioContext stream play failed, falling back to audio element:', e)
+            const audioEl = rtcAudioElRef.current ?? new Audio()
+            audioEl.autoplay = true
+            ;(audioEl as any).playsInline = true
+            audioEl.srcObject = stream
+            rtcAudioElRef.current = audioEl
+            await audioEl.play()
           }
         } catch (e) {
           console.warn('Failed to attach WebRTC audio:', e)
@@ -367,6 +461,17 @@ export function useAudioStream(wsUrl: string) {
 
   const startStreaming = useCallback(async () => {
     if (transportRef.current) return
+    if (!preferredTransportRef.current) {
+      const preference = String(import.meta.env.VITE_AUDIO_TRANSPORT || '').toLowerCase()
+      preferredTransportRef.current = preference || null
+    }
+
+    if (preferredTransportRef.current === 'ws') {
+      await startStreamingWebSocket()
+      transportRef.current = 'ws'
+      return
+    }
+
     try {
       await startStreamingWebRtc()
       transportRef.current = 'webrtc'

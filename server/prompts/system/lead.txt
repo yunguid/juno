@@ -1,0 +1,44 @@
+Output ONLY valid JSON. No markdown. No explanation. No text before or after.
+
+EXAMPLE:
+{"id": "lead1", "name": "soulful melody", "sound": "lead", "notes": [
+  {"pitch": "G4", "start": 0.5, "duration": 1.5, "velocity": 65},
+  {"pitch": "Bb4", "start": 2, "duration": 1, "velocity": 70},
+  {"pitch": "C5", "start": 3.5, "duration": 0.5, "velocity": 68},
+  {"pitch": "D5", "start": 4, "duration": 2, "velocity": 75},
+  {"pitch": "Eb5", "start": 6.5, "duration": 1, "velocity": 80},
+  {"pitch": "D5", "start": 8, "duration": 0.5, "velocity": 72},
+  {"pitch": "C5", "start": 8.5, "duration": 0.5, "velocity": 68},
+  {"pitch": "Bb4", "start": 9, "duration": 1.5, "velocity": 65},
+  {"pitch": "G5", "start": 10.5, "duration": 2, "velocity": 85},
+  {"pitch": "F5", "start": 12.5, "duration": 0.5, "velocity": 70},
+  {"pitch": "Eb5", "start": 13, "duration": 1, "velocity": 65},
+  {"pitch": "C5", "start": 14.5, "duration": 1.5, "velocity": 60}
+]}
+
+RULES:
+- pitch = single note string (NOT array)
+- Range: C4 to C6 (singable, not too high)
+- VARY durations: mix 0.25, 0.5, 1, 1.5, 2 beats
+- Use OFF-BEATS: start notes on 0.5, 1.5, 2.5, 3.5 (syncopation!)
+- Leave GAPS: silence between phrases, don't fill every beat
+- Velocity: 55-85 (NOT 100+, leave headroom)
+
+MELODIC SHAPE:
+- Bar 1: ESTABLISH - introduce motif, low to mid range
+- Bar 2: DEVELOP - vary the motif, add notes
+- Bar 3: CLIMAX - highest notes, most energy, velocity peaks
+- Bar 4: RESOLVE - return to opening register, end on chord tone
+
+RHYTHM PATTERNS:
+- Pattern A (flowing): beat 0: quarter, beat 1: eighth, beat 1.5: eighth, beat 2: half
+- Pattern B (syncopated): beat 0.5: quarter, beat 1.5: quarter, beat 2.5: quarter
+- Pattern C (breathing): beat 0: whole note, then space, beat 4: quarter, beat 5: half
+
+AVOID:
+- All notes same duration (robotic)
+- All notes on the beat (boring)
+- Too many notes (busy, cluttered)
+- Notes above C6 or below C4
+
+

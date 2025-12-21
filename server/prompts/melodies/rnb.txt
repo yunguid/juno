@@ -1,0 +1,278 @@
+# R&B / Neo-Soul Melody Examples
+# Characteristics: Soulful runs, syncopated phrasing, melismatic ornaments,
+# smooth transitions, blue notes, expressive dynamics
+
+R&B MELODY 1 - Classic Soul (C minor)
+Bar 1: G4 (beat 0.5, dur 1.5), Eb5 (beat 1.5, dur 0.5), D5 (beat 2, dur 1.5)
+Bar 2: C5 (beat 4, dur 2), Bb4 (beat 6.5, dur 1)
+Bar 3: G4 (beat 8, dur 0.5), Bb4 (beat 8.5, dur 0.5), C5 (beat 9, dur 0.5), D5 (beat 9.5, dur 2)
+Bar 4: Eb5 (beat 12, dur 1), D5 (beat 13, dur 0.5), C5 (beat 13.5, dur 2)
+
+Syncopated starts, soulful runs.
+End on chord tones.
+
+---
+
+R&B MELODY 2 - Smooth Flow (Eb major)
+Bar 1: Bb4 (beat 0, dur 1.5), G4 (beat 1.5, dur 0.5), Bb4 (beat 2, dur 2)
+Bar 2: C5 (beat 4.5, dur 1), Bb4 (beat 5.5, dur 0.5), Ab4 (beat 6, dur 1), G4 (beat 7, dur 1)
+Bar 3: Eb5 (beat 8, dur 2), D5 (beat 10, dur 0.5), C5 (beat 10.5, dur 1.5)
+Bar 4: Bb4 (beat 12, dur 3), rest
+
+Melodic arc with breath at end.
+Smooth voice-like phrasing.
+
+---
+
+R&B MELODY 3 - Frank Ocean Style (D minor)
+Bar 1: A4 (beat 0, dur 2), rest, F4 (beat 3, dur 1)
+Bar 2: G4 (beat 4, dur 1.5), A4 (beat 5.5, dur 0.5), Bb4 (beat 6, dur 2)
+Bar 3: C5 (beat 8.5, dur 1.5), D5 (beat 10, dur 2)
+Bar 4: C5 (beat 12, dur 0.5), Bb4 (beat 12.5, dur 0.5), A4 (beat 13, dur 3)
+
+Sparse and emotional.
+Space between phrases.
+
+---
+
+R&B MELODY 4 - SZA Vibes (F minor)
+Bar 1: Ab4 (beat 0.5, dur 1), C5 (beat 1.5, dur 1.5), Bb4 (beat 3, dur 1)
+Bar 2: Ab4 (beat 4, dur 0.5), G4 (beat 4.5, dur 0.5), F4 (beat 5, dur 2.5)
+Bar 3: Eb5 (beat 8, dur 1), Db5 (beat 9, dur 0.5), C5 (beat 9.5, dur 1), Bb4 (beat 10.5, dur 1.5)
+Bar 4: Ab4 (beat 12, dur 4)
+
+Vulnerable and intimate.
+Soft dynamics.
+
+---
+
+R&B MELODY 5 - Daniel Caesar (G major)
+Bar 1: B4 (beat 0, dur 1.5), D5 (beat 1.5, dur 0.5), E5 (beat 2, dur 2)
+Bar 2: D5 (beat 4, dur 1), B4 (beat 5, dur 1), G4 (beat 6, dur 2)
+Bar 3: A4 (beat 8, dur 0.5), B4 (beat 8.5, dur 0.5), D5 (beat 9, dur 1), E5 (beat 10, dur 2)
+Bar 4: D5 (beat 12, dur 1), B4 (beat 13, dur 3)
+
+Warm and comforting.
+Gospel influence.
+
+---
+
+R&B MELODY 6 - Erykah Badu (Bb minor)
+Bar 1: Db5 (beat 0.5, dur 1), F5 (beat 1.5, dur 0.5), Eb5 (beat 2, dur 1.5)
+Bar 2: Db5 (beat 4, dur 0.5), Bb4 (beat 4.5, dur 0.5), rest, Ab4 (beat 6, dur 2)
+Bar 3: Bb4 (beat 8, dur 0.5), C5 (beat 8.5, dur 0.5), Db5 (beat 9, dur 1.5), Eb5 (beat 10.5, dur 1.5)
+Bar 4: Db5 (beat 12, dur 2), rest
+
+Quirky and organic.
+Natural phrasing.
+
+---
+
+R&B MELODY 7 - Usher Slow Jam (A major)
+Bar 1: C#5 (beat 0, dur 2), B4 (beat 2, dur 1), A4 (beat 3, dur 1)
+Bar 2: F#4 (beat 4.5, dur 1.5), A4 (beat 6, dur 1), B4 (beat 7, dur 1)
+Bar 3: C#5 (beat 8, dur 1), D5 (beat 9, dur 0.5), E5 (beat 9.5, dur 1.5), F#5 (beat 11, dur 1)
+Bar 4: E5 (beat 12, dur 1), C#5 (beat 13, dur 3)
+
+Climax in bar 3.
+Smooth ballad style.
+
+---
+
+R&B MELODY 8 - HER Style (Db major)
+Bar 1: Ab4 (beat 0.5, dur 1.5), Eb5 (beat 2, dur 1), Db5 (beat 3, dur 1)
+Bar 2: C5 (beat 4, dur 2), Bb4 (beat 6, dur 0.5), Ab4 (beat 6.5, dur 1.5)
+Bar 3: F5 (beat 8, dur 1.5), Eb5 (beat 9.5, dur 0.5), Db5 (beat 10, dur 2)
+Bar 4: C5 (beat 12, dur 1), Ab4 (beat 13, dur 3)
+
+Guitar-soul fusion.
+Intimate performance.
+
+---
+
+R&B MELODY 9 - Weekend Vibes (E minor)
+Bar 1: G4 (beat 0, dur 1), B4 (beat 1, dur 1), D5 (beat 2, dur 2)
+Bar 2: E5 (beat 4.5, dur 1.5), D5 (beat 6, dur 1), B4 (beat 7, dur 1)
+Bar 3: G4 (beat 8, dur 0.5), A4 (beat 8.5, dur 0.5), B4 (beat 9, dur 1), D5 (beat 10, dur 2)
+Bar 4: E5 (beat 12, dur 2), D5 (beat 14, dur 2)
+
+Melancholic groove.
+After hours feel.
+
+---
+
+R&B MELODY 10 - Run Pattern (C# minor)
+Bar 1: E4 (beat 0, dur 0.5), F#4 (beat 0.5, dur 0.5), G#4 (beat 1, dur 0.5), A4 (beat 1.5, dur 0.5), B4 (beat 2, dur 2)
+Bar 2: C#5 (beat 4, dur 1), B4 (beat 5, dur 0.5), A4 (beat 5.5, dur 0.5), G#4 (beat 6, dur 2)
+Bar 3: rest, B4 (beat 9, dur 1), C#5 (beat 10, dur 1), D#5 (beat 11, dur 1)
+Bar 4: E5 (beat 12, dur 1.5), D#5 (beat 13.5, dur 0.5), C#5 (beat 14, dur 2)
+
+Melismatic run in bar 1.
+Descending in bar 2.
+
+---
+
+R&B MELODY 11 - Falsetto Territory (F major)
+Bar 1: C5 (beat 0.5, dur 1.5), A4 (beat 2, dur 1), F4 (beat 3, dur 1)
+Bar 2: G4 (beat 4, dur 1), A4 (beat 5, dur 1), C5 (beat 6, dur 2)
+Bar 3: D5 (beat 8, dur 0.5), E5 (beat 8.5, dur 0.5), F5 (beat 9, dur 2), E5 (beat 11, dur 1)
+Bar 4: D5 (beat 12, dur 0.5), C5 (beat 12.5, dur 0.5), A4 (beat 13, dur 3)
+
+High register in bar 3.
+Smooth descent.
+
+---
+
+R&B MELODY 12 - Late Night (Ab major)
+Bar 1: Eb5 (beat 0, dur 2), Db5 (beat 2, dur 0.5), C5 (beat 2.5, dur 1.5)
+Bar 2: Bb4 (beat 4.5, dur 1.5), Ab4 (beat 6, dur 2)
+Bar 3: C5 (beat 8, dur 1), Db5 (beat 9, dur 1), Eb5 (beat 10, dur 2)
+Bar 4: Db5 (beat 12, dur 1), C5 (beat 13, dur 0.5), Ab4 (beat 13.5, dur 2.5)
+
+Pillowy soft dynamics.
+Dreamy atmosphere.
+
+---
+
+R&B MELODY 13 - Groove Pocket (B minor)
+Bar 1: D5 (beat 0.5, dur 1), F#5 (beat 1.5, dur 0.5), E5 (beat 2, dur 1.5)
+Bar 2: D5 (beat 4, dur 0.5), C#5 (beat 4.5, dur 0.5), B4 (beat 5, dur 2.5)
+Bar 3: A4 (beat 8, dur 0.5), B4 (beat 8.5, dur 0.5), C#5 (beat 9, dur 0.5), D5 (beat 9.5, dur 1.5), E5 (beat 11, dur 1)
+Bar 4: D5 (beat 12, dur 2), B4 (beat 14, dur 2)
+
+Rhythmic pocket.
+Locked groove.
+
+---
+
+R&B MELODY 14 - Gospel Influence (E major)
+Bar 1: G#4 (beat 0, dur 1), B4 (beat 1, dur 1), C#5 (beat 2, dur 2)
+Bar 2: E5 (beat 4, dur 1.5), D#5 (beat 5.5, dur 0.5), C#5 (beat 6, dur 1), B4 (beat 7, dur 1)
+Bar 3: A4 (beat 8, dur 0.5), B4 (beat 8.5, dur 0.5), C#5 (beat 9, dur 0.5), D#5 (beat 9.5, dur 0.5), E5 (beat 10, dur 2)
+Bar 4: D#5 (beat 12, dur 0.5), C#5 (beat 12.5, dur 0.5), B4 (beat 13, dur 3)
+
+Church roots showing.
+Uplifting climb.
+
+---
+
+R&B MELODY 15 - Summer Jam (D major)
+Bar 1: F#4 (beat 0.5, dur 1.5), A4 (beat 2, dur 1), D5 (beat 3, dur 1)
+Bar 2: E5 (beat 4, dur 1), D5 (beat 5, dur 1), C#5 (beat 6, dur 1), B4 (beat 7, dur 1)
+Bar 3: A4 (beat 8, dur 1), B4 (beat 9, dur 0.5), C#5 (beat 9.5, dur 0.5), D5 (beat 10, dur 2)
+Bar 4: E5 (beat 12, dur 1.5), D5 (beat 13.5, dur 2.5)
+
+Bright and bouncy.
+Feel-good energy.
+
+---
+
+R&B MELODY 16 - Bedroom Ballad (Gb major)
+Bar 1: Db5 (beat 0, dur 2), Bb4 (beat 2, dur 1), Ab4 (beat 3, dur 1)
+Bar 2: Gb4 (beat 4.5, dur 1.5), Ab4 (beat 6, dur 1), Bb4 (beat 7, dur 1)
+Bar 3: Db5 (beat 8, dur 1), Eb5 (beat 9, dur 1), F5 (beat 10, dur 2)
+Bar 4: Eb5 (beat 12, dur 1), Db5 (beat 13, dur 3)
+
+Intimate and close.
+Whispered secrets.
+
+---
+
+R&B MELODY 17 - Retro Soul (G minor)
+Bar 1: Bb4 (beat 0.5, dur 1.5), D5 (beat 2, dur 1), C5 (beat 3, dur 1)
+Bar 2: Bb4 (beat 4, dur 1), A4 (beat 5, dur 0.5), G4 (beat 5.5, dur 2.5)
+Bar 3: F4 (beat 8, dur 0.5), G4 (beat 8.5, dur 0.5), A4 (beat 9, dur 0.5), Bb4 (beat 9.5, dur 1), D5 (beat 10.5, dur 1.5)
+Bar 4: C5 (beat 12, dur 1), Bb4 (beat 13, dur 3)
+
+Motown meets modern.
+Classic R&B flavor.
+
+---
+
+R&B MELODY 18 - Slow Burn (C major)
+Bar 1: E4 (beat 0, dur 2), G4 (beat 2, dur 1), A4 (beat 3, dur 1)
+Bar 2: B4 (beat 4, dur 2), rest, G4 (beat 7, dur 1)
+Bar 3: C5 (beat 8, dur 1.5), D5 (beat 9.5, dur 0.5), E5 (beat 10, dur 2)
+Bar 4: D5 (beat 12, dur 1), C5 (beat 13, dur 0.5), B4 (beat 13.5, dur 2.5)
+
+Building slowly.
+Patient phrasing.
+
+---
+
+R&B MELODY 19 - Midnight Session (F# minor)
+Bar 1: A4 (beat 0.5, dur 1.5), C#5 (beat 2, dur 1), B4 (beat 3, dur 1)
+Bar 2: A4 (beat 4, dur 0.5), G#4 (beat 4.5, dur 0.5), F#4 (beat 5, dur 2.5)
+Bar 3: E4 (beat 8, dur 0.5), F#4 (beat 8.5, dur 0.5), G#4 (beat 9, dur 0.5), A4 (beat 9.5, dur 0.5), B4 (beat 10, dur 1), C#5 (beat 11, dur 1)
+Bar 4: B4 (beat 12, dur 1.5), A4 (beat 13.5, dur 2.5)
+
+2am studio vibes.
+Creative flow.
+
+---
+
+R&B MELODY 20 - Silk Sheets (Bb major)
+Bar 1: D5 (beat 0, dur 1.5), F5 (beat 1.5, dur 0.5), Eb5 (beat 2, dur 2)
+Bar 2: D5 (beat 4, dur 1), C5 (beat 5, dur 1), Bb4 (beat 6, dur 2)
+Bar 3: C5 (beat 8, dur 0.5), D5 (beat 8.5, dur 0.5), Eb5 (beat 9, dur 1), F5 (beat 10, dur 2)
+Bar 4: Eb5 (beat 12, dur 1), D5 (beat 13, dur 0.5), C5 (beat 13.5, dur 0.5), Bb4 (beat 14, dur 2)
+
+Luxury and comfort.
+Smooth as silk.
+
+---
+
+R&B MELODY 21 - Vulnerable (A minor)
+Bar 1: C5 (beat 0.5, dur 1.5), B4 (beat 2, dur 0.5), A4 (beat 2.5, dur 1.5)
+Bar 2: G4 (beat 4, dur 2), E4 (beat 6.5, dur 1.5)
+Bar 3: A4 (beat 8, dur 1), B4 (beat 9, dur 0.5), C5 (beat 9.5, dur 0.5), D5 (beat 10, dur 1), E5 (beat 11, dur 1)
+Bar 4: D5 (beat 12, dur 0.5), C5 (beat 12.5, dur 0.5), B4 (beat 13, dur 0.5), A4 (beat 13.5, dur 2.5)
+
+Heart on sleeve.
+Raw emotion.
+
+---
+
+R&B MELODY 22 - Sunrise Coffee (D major)
+Bar 1: F#4 (beat 0, dur 1), A4 (beat 1, dur 1), B4 (beat 2, dur 2)
+Bar 2: D5 (beat 4, dur 1.5), C#5 (beat 5.5, dur 0.5), B4 (beat 6, dur 1), A4 (beat 7, dur 1)
+Bar 3: B4 (beat 8, dur 0.5), C#5 (beat 8.5, dur 0.5), D5 (beat 9, dur 1), E5 (beat 10, dur 2)
+Bar 4: D5 (beat 12, dur 1), B4 (beat 13, dur 3)
+
+Fresh morning feel.
+Warm and bright.
+
+---
+
+R&B MELODY 23 - Club Night (Eb minor)
+Bar 1: Gb4 (beat 0.5, dur 1.5), Bb4 (beat 2, dur 1), Ab4 (beat 3, dur 1)
+Bar 2: Gb4 (beat 4, dur 0.5), F4 (beat 4.5, dur 0.5), Eb4 (beat 5, dur 2.5)
+Bar 3: Db5 (beat 8, dur 1), Eb5 (beat 9, dur 1), F5 (beat 10, dur 2)
+Bar 4: Eb5 (beat 12, dur 1), Db5 (beat 13, dur 0.5), Bb4 (beat 13.5, dur 2.5)
+
+Dance floor R&B.
+Sexy and dark.
+
+---
+
+R&B MELODY 24 - Acoustic Session (E major)
+Bar 1: G#4 (beat 0, dur 1.5), B4 (beat 1.5, dur 0.5), C#5 (beat 2, dur 2)
+Bar 2: B4 (beat 4, dur 1), A4 (beat 5, dur 1), G#4 (beat 6, dur 1), F#4 (beat 7, dur 1)
+Bar 3: E4 (beat 8, dur 1), G#4 (beat 9, dur 0.5), B4 (beat 9.5, dur 0.5), C#5 (beat 10, dur 1), D#5 (beat 11, dur 1)
+Bar 4: C#5 (beat 12, dur 1.5), B4 (beat 13.5, dur 2.5)
+
+Stripped down.
+Guitar and voice.
+
+---
+
+R&B MELODY 25 - Ocean View (Db major)
+Bar 1: Ab4 (beat 0, dur 2), Db5 (beat 2, dur 1), Eb5 (beat 3, dur 1)
+Bar 2: F5 (beat 4, dur 1.5), Eb5 (beat 5.5, dur 0.5), Db5 (beat 6, dur 1), C5 (beat 7, dur 1)
+Bar 3: Bb4 (beat 8, dur 0.5), C5 (beat 8.5, dur 0.5), Db5 (beat 9, dur 1), Eb5 (beat 10, dur 2)
+Bar 4: Db5 (beat 12, dur 2), Ab4 (beat 14, dur 2)
+
+Breezy and open.
+Pacific coast vibes.
+
+

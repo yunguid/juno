@@ -1,0 +1,97 @@
+# Ambient Melody Examples
+# Characteristics: Very sparse, long held notes, wide intervals,
+# ethereal quality, lots of space, floating feel
+
+AMBIENT MELODY 1 - Floating (C major)
+Bar 1-2: G4 (beat 0, dur 6), Eb5 (beat 6, dur 2)
+Bar 3-4: D5 (beat 8, dur 4), C5 (beat 12, dur 4)
+
+Very sparse, long held notes.
+
+---
+
+AMBIENT MELODY 2 - Space (E minor)
+Bar 1: B4 (beat 0, dur 4)
+Bar 2: rest
+Bar 3: F#5 (beat 8, dur 3), E5 (beat 11, dur 1)
+Bar 4: G5 (beat 12, dur 4)
+
+Floating, lots of space.
+
+---
+
+AMBIENT MELODY 3 - Drift (G major)
+Bar 1: D5 (beat 0, dur 4)
+Bar 2: B4 (beat 4, dur 4)
+Bar 3-4: G5 (beat 8, dur 8)
+
+Minimal movement.
+
+---
+
+AMBIENT MELODY 4 - Mist (F minor)
+Bar 1: Ab4 (beat 0, dur 4)
+Bar 2: C5 (beat 4, dur 4)
+Bar 3: Bb4 (beat 8, dur 4)
+Bar 4: Ab4 (beat 12, dur 4)
+
+Slow and gentle.
+
+---
+
+AMBIENT MELODY 5 - Stars (D major)
+Bar 1: F#5 (beat 0, dur 3), rest
+Bar 2: A4 (beat 5, dur 3)
+Bar 3: D5 (beat 8, dur 4)
+Bar 4: rest
+
+Twinkling stillness.
+
+---
+
+AMBIENT MELODY 6 - Ocean (A minor)
+Bar 1: E5 (beat 0, dur 4)
+Bar 2: C5 (beat 4, dur 4)
+Bar 3: B4 (beat 8, dur 4)
+Bar 4: A4 (beat 12, dur 4)
+
+Waves of sound.
+
+---
+
+AMBIENT MELODY 7 - Wind (Bb major)
+Bar 1: D5 (beat 0, dur 4)
+Bar 2: rest
+Bar 3: F5 (beat 8, dur 4)
+Bar 4: Eb5 (beat 12, dur 4)
+
+Breeze through trees.
+
+---
+
+AMBIENT MELODY 8 - Rain (C minor)
+Bar 1-2: Eb5 (beat 0, dur 8)
+Bar 3: G4 (beat 8, dur 4)
+Bar 4: C5 (beat 12, dur 4)
+
+Gentle drops.
+
+---
+
+AMBIENT MELODY 9 - Snow (E major)
+Bar 1: G#4 (beat 0, dur 4)
+Bar 2: B4 (beat 4, dur 4)
+Bar 3-4: E5 (beat 8, dur 8)
+
+Frozen silence.
+
+---
+
+AMBIENT MELODY 10 - Horizon (F major)
+Bar 1: A4 (beat 0, dur 4)
+Bar 2: C5 (beat 4, dur 4)
+Bar 3: F5 (beat 8, dur 4)
+Bar 4: C5 (beat 12, dur 4)
+
+Endless distance.
+

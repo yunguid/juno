@@ -6,7 +6,7 @@ class PCMProcessor extends AudioWorkletProcessor {
     super();
     
     // Interleaved ring buffer (Float32) sized for headroom; target latency is managed separately.
-    this.capacitySeconds = 1.5;
+    this.capacitySeconds = 0.9;
     this.bufferSize = 0;
     this.buffer = new Float32Array(0);
     this.writePos = 0;
@@ -19,10 +19,10 @@ class PCMProcessor extends AudioWorkletProcessor {
 
     // Adaptive buffering - tuned for low latency with WebRTC/WebSocket
     this.started = false; // prebuffer gate
-    this.minTargetMs = 60;   // Lower floor for faster recovery
-    this.maxTargetMs = 400;  // Lower ceiling to cap worst-case latency
-    this.targetBufferMs = 120; // Start with tighter buffer
-    this.maxExtraBufferMs = 150; // Drop sooner to prevent runaway lag
+    this.minTargetMs = 40;   // Lower floor for faster recovery
+    this.maxTargetMs = 240;  // Lower ceiling to cap worst-case latency
+    this.targetBufferMs = 90; // Start with tighter buffer
+    this.maxExtraBufferMs = 100; // Drop sooner to prevent runaway lag
     
     // Underrun handling
     this.underrunCount = 0;

@@ -1,0 +1,102 @@
+# Electronic Melody Examples
+# Characteristics: Arpeggiated patterns, driving energy, synth-friendly,
+# builds and drops, energetic climax, dance floor ready
+
+ELECTRONIC MELODY 1 - Arpeggiated (A minor)
+Bar 1: A4 (beat 0, dur 0.25), C5 (beat 0.25, dur 0.25), E5 (beat 0.5, dur 0.25), A5 (beat 0.75, dur 0.25), E5 (beat 1, dur 0.25), C5 (beat 1.25, dur 0.25), A4 (beat 1.5, dur 0.25), C5 (beat 1.75, dur 0.25), E5 (beat 2, dur 2)
+Bar 2: F4 (beat 4, dur 0.25), A4 (beat 4.25, dur 0.25), C5 (beat 4.5, dur 0.25), F5 (beat 4.75, dur 0.25), C5 (beat 5, dur 0.25), A4 (beat 5.25, dur 0.25), F4 (beat 5.5, dur 0.25), A4 (beat 5.75, dur 0.25), C5 (beat 6, dur 2)
+Bar 3: G4 (beat 8, dur 0.25), B4 (beat 8.25, dur 0.25), D5 (beat 8.5, dur 0.25), G5 (beat 8.75, dur 0.25), D5 (beat 9, dur 0.25), B4 (beat 9.25, dur 0.25), G4 (beat 9.5, dur 0.25), B4 (beat 9.75, dur 0.25), D5 (beat 10, dur 2)
+Bar 4: A5 (beat 12, dur 2), E5 (beat 14, dur 2)
+
+Driving arpeggios.
+
+---
+
+ELECTRONIC MELODY 2 - Euphoric (F major)
+Bar 1: C5 (beat 0, dur 1), A4 (beat 1, dur 0.5), C5 (beat 1.5, dur 0.5), F5 (beat 2, dur 2)
+Bar 2: E5 (beat 4, dur 0.5), D5 (beat 4.5, dur 0.5), C5 (beat 5, dur 1), A4 (beat 6, dur 2)
+Bar 3: C5 (beat 8, dur 0.5), F5 (beat 8.5, dur 0.5), G5 (beat 9, dur 1), A5 (beat 10, dur 2)
+Bar 4: G5 (beat 12, dur 1), F5 (beat 13, dur 1), C5 (beat 14, dur 2)
+
+Rising energy.
+
+---
+
+ELECTRONIC MELODY 3 - Trance (E minor)
+Bar 1: B4 (beat 0, dur 0.5), E5 (beat 0.5, dur 0.5), G5 (beat 1, dur 1), F#5 (beat 2, dur 1), E5 (beat 3, dur 1)
+Bar 2: D5 (beat 4, dur 0.5), C5 (beat 4.5, dur 0.5), B4 (beat 5, dur 2.5)
+Bar 3: E5 (beat 8, dur 0.5), F#5 (beat 8.5, dur 0.5), G5 (beat 9, dur 0.5), A5 (beat 9.5, dur 0.5), B5 (beat 10, dur 2)
+Bar 4: A5 (beat 12, dur 0.5), G5 (beat 12.5, dur 0.5), E5 (beat 13, dur 0.5), B4 (beat 13.5, dur 2.5)
+
+Classic trance feel.
+
+---
+
+ELECTRONIC MELODY 4 - House (G major)
+Bar 1: D5 (beat 0, dur 0.5), G5 (beat 0.5, dur 1.5), F#5 (beat 2, dur 0.5), E5 (beat 2.5, dur 0.5), D5 (beat 3, dur 1)
+Bar 2: C5 (beat 4, dur 0.5), B4 (beat 4.5, dur 0.5), A4 (beat 5, dur 1), G4 (beat 6, dur 2)
+Bar 3: A4 (beat 8, dur 0.5), B4 (beat 8.5, dur 0.5), C5 (beat 9, dur 0.5), D5 (beat 9.5, dur 0.5), E5 (beat 10, dur 2)
+Bar 4: D5 (beat 12, dur 1), B4 (beat 13, dur 1), G4 (beat 14, dur 2)
+
+Four on the floor.
+
+---
+
+ELECTRONIC MELODY 5 - Future Bass (Db major)
+Bar 1: Ab4 (beat 0, dur 1), Db5 (beat 1, dur 1), Eb5 (beat 2, dur 2)
+Bar 2: F5 (beat 4, dur 0.5), Eb5 (beat 4.5, dur 0.5), Db5 (beat 5, dur 1), Ab4 (beat 6, dur 2)
+Bar 3: Bb4 (beat 8, dur 0.5), C5 (beat 8.5, dur 0.5), Db5 (beat 9, dur 0.5), Eb5 (beat 9.5, dur 0.5), F5 (beat 10, dur 2)
+Bar 4: Eb5 (beat 12, dur 1), Db5 (beat 13, dur 1), Ab4 (beat 14, dur 2)
+
+Supersawed goodness.
+
+---
+
+ELECTRONIC MELODY 6 - Bass Music (C minor)
+Bar 1: G4 (beat 0, dur 0.5), C5 (beat 0.5, dur 1), Eb5 (beat 1.5, dur 0.5), D5 (beat 2, dur 2)
+Bar 2: C5 (beat 4, dur 0.5), Bb4 (beat 4.5, dur 0.5), G4 (beat 5, dur 2.5)
+Bar 3: Eb5 (beat 8, dur 0.5), F5 (beat 8.5, dur 0.5), G5 (beat 9, dur 1), F5 (beat 10, dur 2)
+Bar 4: Eb5 (beat 12, dur 0.5), D5 (beat 12.5, dur 0.5), C5 (beat 13, dur 0.5), G4 (beat 13.5, dur 2.5)
+
+Heavy drops.
+
+---
+
+ELECTRONIC MELODY 7 - Progressive (D minor)
+Bar 1: A4 (beat 0, dur 1), D5 (beat 1, dur 1), F5 (beat 2, dur 2)
+Bar 2: E5 (beat 4, dur 0.5), D5 (beat 4.5, dur 0.5), C5 (beat 5, dur 1), A4 (beat 6, dur 2)
+Bar 3: Bb4 (beat 8, dur 0.5), C5 (beat 8.5, dur 0.5), D5 (beat 9, dur 0.5), E5 (beat 9.5, dur 0.5), F5 (beat 10, dur 2)
+Bar 4: E5 (beat 12, dur 1), D5 (beat 13, dur 1), A4 (beat 14, dur 2)
+
+Building journey.
+
+---
+
+ELECTRONIC MELODY 8 - Synthwave (F# minor)
+Bar 1: A4 (beat 0, dur 0.5), C#5 (beat 0.5, dur 0.5), F#5 (beat 1, dur 2)
+Bar 2: E5 (beat 4, dur 0.5), D5 (beat 4.5, dur 0.5), C#5 (beat 5, dur 1), A4 (beat 6, dur 2)
+Bar 3: B4 (beat 8, dur 0.5), C#5 (beat 8.5, dur 0.5), D5 (beat 9, dur 0.5), E5 (beat 9.5, dur 0.5), F#5 (beat 10, dur 2)
+Bar 4: E5 (beat 12, dur 0.5), D5 (beat 12.5, dur 0.5), C#5 (beat 13, dur 0.5), A4 (beat 13.5, dur 2.5)
+
+80s retro vibes.
+
+---
+
+ELECTRONIC MELODY 9 - Techno (A minor)
+Bar 1: E5 (beat 0, dur 0.25), A4 (beat 0.25, dur 0.25), E5 (beat 0.5, dur 0.25), A4 (beat 0.75, dur 0.25), E5 (beat 1, dur 0.25), C5 (beat 1.25, dur 0.25), E5 (beat 1.5, dur 0.25), C5 (beat 1.75, dur 0.25), E5 (beat 2, dur 2)
+Bar 2: D5 (beat 4, dur 0.25), A4 (beat 4.25, dur 0.25), D5 (beat 4.5, dur 0.25), A4 (beat 4.75, dur 0.25), D5 (beat 5, dur 0.25), B4 (beat 5.25, dur 0.25), D5 (beat 5.5, dur 0.25), B4 (beat 5.75, dur 0.25), D5 (beat 6, dur 2)
+Bar 3: C5 (beat 8, dur 0.25), E4 (beat 8.25, dur 0.25), C5 (beat 8.5, dur 0.25), E4 (beat 8.75, dur 0.25), C5 (beat 9, dur 0.25), G4 (beat 9.25, dur 0.25), C5 (beat 9.5, dur 0.25), G4 (beat 9.75, dur 0.25), C5 (beat 10, dur 2)
+Bar 4: A5 (beat 12, dur 2), E5 (beat 14, dur 2)
+
+Hypnotic patterns.
+
+---
+
+ELECTRONIC MELODY 10 - DnB (E minor)
+Bar 1: B4 (beat 0, dur 0.25), E5 (beat 0.25, dur 0.25), G5 (beat 0.5, dur 0.5), F#5 (beat 1, dur 0.5), E5 (beat 1.5, dur 0.5), D5 (beat 2, dur 2)
+Bar 2: C5 (beat 4, dur 0.25), B4 (beat 4.25, dur 0.25), A4 (beat 4.5, dur 0.5), G4 (beat 5, dur 0.5), A4 (beat 5.5, dur 0.5), B4 (beat 6, dur 2)
+Bar 3: E5 (beat 8, dur 0.25), F#5 (beat 8.25, dur 0.25), G5 (beat 8.5, dur 0.5), A5 (beat 9, dur 0.5), B5 (beat 9.5, dur 0.5), A5 (beat 10, dur 2)
+Bar 4: G5 (beat 12, dur 0.5), E5 (beat 12.5, dur 0.5), D5 (beat 13, dur 0.5), B4 (beat 13.5, dur 2.5)
+
+Fast and energetic.
+

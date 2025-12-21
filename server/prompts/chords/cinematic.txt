@@ -1,0 +1,281 @@
+# Cinematic / Epic Chord Progressions
+# Characteristics: Wide voicings, dramatic builds, minor key epicness,
+# borrowed chords, tension and release, orchestral feel
+
+CINEMATIC PROGRESSION 1 - Epic (C minor)
+Beat 0: Cm = ["C3", "G3", "Eb4", "G4", "C5"]
+Beat 4: Ab = ["Ab3", "C4", "Eb4", "Ab4"]
+Beat 8: Eb = ["Eb3", "G3", "Bb4", "Eb5"]
+Beat 12: Bb = ["Bb3", "D4", "F4", "Bb4"]
+
+i-bVI-bIII-bVII, heroic arc.
+The most cinematic progression.
+
+---
+
+CINEMATIC PROGRESSION 2 - Mysterious (D minor)
+Beat 0: Dm = ["D3", "A3", "D4", "F4"]
+Beat 4: Bbmaj7 = ["Bb3", "D4", "F4", "A4"]
+Beat 8: Gm = ["G3", "D4", "G4", "Bb4"]
+Beat 12: A = ["A3", "C#4", "E4", "A4"]
+
+Minor with major V, unresolved tension.
+Mystery theme.
+
+---
+
+CINEMATIC PROGRESSION 3 - Triumphant (Eb major)
+Beat 0: Eb = ["Eb3", "G3", "Bb4", "Eb5"]
+Beat 4: Cm = ["C3", "G3", "Eb4", "G4"]
+Beat 8: Ab = ["Ab3", "C4", "Eb4", "Ab4"]
+Beat 12: Bb = ["Bb3", "D4", "F4", "Bb4"]
+
+Major key, victorious feel.
+Achievement unlocked.
+
+---
+
+CINEMATIC PROGRESSION 4 - Tension (F minor)
+Beat 0: Fm = ["F3", "C4", "F4", "Ab4"]
+Beat 4: Db = ["Db3", "Ab3", "Db4", "F4"]
+Beat 8: Eb = ["Eb3", "Bb3", "Eb4", "G4"]
+Beat 12: C = ["C3", "G3", "C4", "E4"]
+
+Building suspense.
+Thriller soundtrack.
+
+---
+
+CINEMATIC PROGRESSION 5 - Adventure (G major)
+Beat 0: G = ["G3", "D4", "G4", "B4"]
+Beat 4: Em = ["E3", "B3", "E4", "G4"]
+Beat 8: C = ["C3", "G3", "C4", "E4"]
+Beat 12: D = ["D3", "A3", "D4", "F#4"]
+
+Quest beginning.
+Hero's journey.
+
+---
+
+CINEMATIC PROGRESSION 6 - Tragedy (A minor)
+Beat 0: Am = ["A3", "E4", "A4", "C5"]
+Beat 4: F = ["F3", "C4", "F4", "A4"]
+Beat 8: Dm = ["D3", "A3", "D4", "F4"]
+Beat 12: E = ["E3", "B3", "E4", "G#4"]
+
+Heartbreak and loss.
+Emotional devastation.
+
+---
+
+CINEMATIC PROGRESSION 7 - Victory (Bb major)
+Beat 0: Bb = ["Bb3", "F4", "Bb4", "D5"]
+Beat 4: Gm = ["G3", "D4", "G4", "Bb4"]
+Beat 8: Eb = ["Eb3", "Bb3", "Eb4", "G4"]
+Beat 12: F = ["F3", "C4", "F4", "A4"]
+
+Final battle won.
+Triumphant resolution.
+
+---
+
+CINEMATIC PROGRESSION 8 - Chase (E minor)
+Beat 0: Em = ["E3", "B3", "E4", "G4"]
+Beat 4: C = ["C3", "G3", "C4", "E4"]
+Beat 8: Am = ["A3", "E4", "A4", "C5"]
+Beat 12: B = ["B3", "F#4", "B4", "D#5"]
+
+Heart-pounding pursuit.
+Action sequence.
+
+---
+
+CINEMATIC PROGRESSION 9 - Romance (F major)
+Beat 0: F = ["F3", "C4", "F4", "A4"]
+Beat 4: Dm = ["D3", "A3", "D4", "F4"]
+Beat 8: Bb = ["Bb3", "F4", "Bb4", "D5"]
+Beat 12: C = ["C3", "G3", "C4", "E4"]
+
+Love theme.
+Sweeping emotion.
+
+---
+
+CINEMATIC PROGRESSION 10 - Fear (C# minor)
+Beat 0: C#m = ["C#3", "G#3", "C#4", "E4"]
+Beat 4: A = ["A3", "E4", "A4", "C#5"]
+Beat 8: F#m = ["F#3", "C#4", "F#4", "A4"]
+Beat 12: G# = ["G#3", "D#4", "G#4", "B#4"]
+
+Horror building.
+Dread approaching.
+
+---
+
+CINEMATIC PROGRESSION 11 - Wonder (Ab major)
+Beat 0: Ab = ["Ab3", "Eb4", "Ab4", "C5"]
+Beat 4: Fm = ["F3", "C4", "F4", "Ab4"]
+Beat 8: Db = ["Db3", "Ab3", "Db4", "F4"]
+Beat 12: Eb = ["Eb3", "Bb3", "Eb4", "G4"]
+
+Discovering magic.
+Awe-inspiring moment.
+
+---
+
+CINEMATIC PROGRESSION 12 - Sacrifice (B minor)
+Beat 0: Bm = ["B3", "F#4", "B4", "D5"]
+Beat 4: G = ["G3", "D4", "G4", "B4"]
+Beat 8: A = ["A3", "E4", "A4", "C#5"]
+Beat 12: F# = ["F#3", "C#4", "F#4", "A#4"]
+
+Noble sacrifice.
+Bittersweet heroism.
+
+---
+
+CINEMATIC PROGRESSION 13 - Battle (D minor)
+Beat 0: Dm = ["D3", "A3", "D4", "F4"]
+Beat 4: Bb = ["Bb3", "F4", "Bb4", "D5"]
+Beat 8: C = ["C3", "G3", "C4", "E4"]
+Beat 12: A = ["A3", "E4", "A4", "C#5"]
+
+War drums.
+Epic conflict.
+
+---
+
+CINEMATIC PROGRESSION 14 - Discovery (G major)
+Beat 0: G = ["G3", "D4", "G4", "B4"]
+Beat 4: C = ["C3", "G3", "C4", "E4"]
+Beat 8: Em = ["E3", "B3", "E4", "G4"]
+Beat 12: D = ["D3", "A3", "D4", "F#4"]
+
+Finding treasure.
+Revelation moment.
+
+---
+
+CINEMATIC PROGRESSION 15 - Farewell (Eb minor)
+Beat 0: Ebm = ["Eb3", "Bb3", "Eb4", "Gb4"]
+Beat 4: Cb = ["Cb3", "Gb3", "Cb4", "Eb4"]
+Beat 8: Gb = ["Gb3", "Db4", "Gb4", "Bb4"]
+Beat 12: Db = ["Db3", "Ab3", "Db4", "F4"]
+
+Saying goodbye.
+Emotional ending.
+
+---
+
+CINEMATIC PROGRESSION 16 - Hope (C major)
+Beat 0: C = ["C3", "G3", "C4", "E4"]
+Beat 4: Am = ["A3", "E4", "A4", "C5"]
+Beat 8: F = ["F3", "C4", "F4", "A4"]
+Beat 12: G = ["G3", "D4", "G4", "B4"]
+
+Light dawning.
+Optimistic future.
+
+---
+
+CINEMATIC PROGRESSION 17 - Villain (F# minor)
+Beat 0: F#m = ["F#3", "C#4", "F#4", "A4"]
+Beat 4: D = ["D3", "A3", "D4", "F#4"]
+Beat 8: E = ["E3", "B3", "E4", "G#4"]
+Beat 12: C# = ["C#3", "G#3", "C#4", "E#4"]
+
+Evil presence.
+Antagonist theme.
+
+---
+
+CINEMATIC PROGRESSION 18 - Homeland (Bb major)
+Beat 0: Bb = ["Bb3", "F4", "Bb4", "D5"]
+Beat 4: Eb = ["Eb3", "Bb3", "Eb4", "G4"]
+Beat 8: F = ["F3", "C4", "F4", "A4"]
+Beat 12: Gm = ["G3", "D4", "G4", "Bb4"]
+
+Returning home.
+Nostalgic warmth.
+
+---
+
+CINEMATIC PROGRESSION 19 - Prophecy (A minor)
+Beat 0: Am = ["A3", "E4", "A4", "C5"]
+Beat 4: Dm = ["D3", "A3", "D4", "F4"]
+Beat 8: F = ["F3", "C4", "F4", "A4"]
+Beat 12: E = ["E3", "B3", "E4", "G#4"]
+
+Ancient wisdom.
+Mystical revelation.
+
+---
+
+CINEMATIC PROGRESSION 20 - Flight (D major)
+Beat 0: D = ["D3", "A3", "D4", "F#4"]
+Beat 4: Bm = ["B3", "F#4", "B4", "D5"]
+Beat 8: G = ["G3", "D4", "G4", "B4"]
+Beat 12: A = ["A3", "E4", "A4", "C#5"]
+
+Soaring through sky.
+Freedom and flight.
+
+---
+
+CINEMATIC PROGRESSION 21 - Memory (G minor)
+Beat 0: Gm = ["G3", "D4", "G4", "Bb4"]
+Beat 4: Eb = ["Eb3", "Bb3", "Eb4", "G4"]
+Beat 8: Cm = ["C3", "G3", "C4", "Eb4"]
+Beat 12: D = ["D3", "A3", "D4", "F#4"]
+
+Flashback sequence.
+Bittersweet memory.
+
+---
+
+CINEMATIC PROGRESSION 22 - Dawn (E major)
+Beat 0: E = ["E3", "B3", "E4", "G#4"]
+Beat 4: C#m = ["C#3", "G#3", "C#4", "E4"]
+Beat 8: A = ["A3", "E4", "A4", "C#5"]
+Beat 12: B = ["B3", "F#4", "B4", "D#5"]
+
+New day beginning.
+Fresh start.
+
+---
+
+CINEMATIC PROGRESSION 23 - Legacy (C minor)
+Beat 0: Cm = ["C3", "G3", "C4", "Eb4"]
+Beat 4: Ab = ["Ab3", "Eb4", "Ab4", "C5"]
+Beat 8: Fm = ["F3", "C4", "F4", "Ab4"]
+Beat 12: G = ["G3", "D4", "G4", "B4"]
+
+What we leave behind.
+Generational theme.
+
+---
+
+CINEMATIC PROGRESSION 24 - Destiny (F minor)
+Beat 0: Fm = ["F3", "C4", "F4", "Ab4"]
+Beat 4: Db = ["Db3", "Ab3", "Db4", "F4"]
+Beat 8: Bbm = ["Bb3", "F4", "Bb4", "Db5"]
+Beat 12: C = ["C3", "G3", "C4", "E4"]
+
+Fate calling.
+Inevitable journey.
+
+---
+
+CINEMATIC PROGRESSION 25 - Epic Finale (D minor)
+Beat 0: Dm = ["D3", "A3", "D4", "F4"]
+Beat 4: Bb = ["Bb3", "F4", "Bb4", "D5"]
+Beat 6: C = ["C3", "G3", "C4", "E4"]
+Beat 8: Dm = ["D3", "A3", "D4", "F4"]
+Beat 10: F = ["F3", "C4", "F4", "A4"]
+Beat 12: C = ["C3", "G3", "C4", "E4"]
+Beat 14: Dm = ["D3", "A3", "D4", "F4"]
+
+Credits rolling.
+The end.
+
+

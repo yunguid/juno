@@ -1,0 +1,278 @@
+# Lo-Fi / Chill Melody Examples
+# Characteristics: Sparse notes, lazy feel, pentatonic, slightly behind beat,
+# nostalgic intervals, room for vinyl crackle, study vibes
+
+LOFI MELODY 1 - Warm Afternoon (F major)
+Bar 1: C5 (beat 0.5, dur 1.5), A4 (beat 2, dur 2)
+Bar 2: G4 (beat 4.5, dur 1.5), E4 (beat 6, dur 1), F4 (beat 7.5, dur 0.5)
+Bar 3: A4 (beat 8, dur 1), G4 (beat 9.5, dur 1.5), E4 (beat 11, dur 1)
+Bar 4: C4 (beat 12, dur 4)
+
+Simple, sparse, slightly behind beat.
+Nostalgic warmth.
+
+---
+
+LOFI MELODY 2 - Rainy Window (A minor)
+Bar 1: E5 (beat 0, dur 2), C5 (beat 2.5, dur 1.5)
+Bar 2: B4 (beat 4, dur 1), A4 (beat 5.5, dur 2.5)
+Bar 3: C5 (beat 8.5, dur 1), B4 (beat 9.5, dur 0.5), A4 (beat 10, dur 1), G4 (beat 11.5, dur 0.5)
+Bar 4: A4 (beat 12, dur 4)
+
+Pentatonic movement.
+Space between notes.
+
+---
+
+LOFI MELODY 3 - Coffee Shop (G major)
+Bar 1: D5 (beat 0, dur 1.5), B4 (beat 1.5, dur 1), G4 (beat 3, dur 1)
+Bar 2: A4 (beat 4.5, dur 1.5), B4 (beat 6, dur 2)
+Bar 3: D5 (beat 8, dur 1), E5 (beat 9.5, dur 1.5), D5 (beat 11, dur 1)
+Bar 4: B4 (beat 12, dur 4)
+
+Cafe background music.
+Warm and cozy.
+
+---
+
+LOFI MELODY 4 - Late Night Study (D minor)
+Bar 1: F4 (beat 0, dur 2), A4 (beat 2.5, dur 1.5)
+Bar 2: G4 (beat 4, dur 1), F4 (beat 5.5, dur 1.5), E4 (beat 7, dur 1)
+Bar 3: D4 (beat 8.5, dur 1.5), F4 (beat 10, dur 1), A4 (beat 11.5, dur 0.5)
+Bar 4: G4 (beat 12, dur 4)
+
+Midnight concentration.
+Focused but relaxed.
+
+---
+
+LOFI MELODY 5 - Sunset Colors (Eb major)
+Bar 1: Bb4 (beat 0, dur 2), G4 (beat 2.5, dur 1.5)
+Bar 2: Ab4 (beat 4, dur 1), Bb4 (beat 5.5, dur 1.5), C5 (beat 7, dur 1)
+Bar 3: Bb4 (beat 8.5, dur 1.5), G4 (beat 10, dur 1), Eb4 (beat 11.5, dur 0.5)
+Bar 4: F4 (beat 12, dur 4)
+
+Golden hour vibes.
+Warm glow.
+
+---
+
+LOFI MELODY 6 - Old Photographs (C major)
+Bar 1: E4 (beat 0, dur 2), G4 (beat 2.5, dur 1.5)
+Bar 2: C5 (beat 4, dur 1), B4 (beat 5.5, dur 1.5), A4 (beat 7, dur 1)
+Bar 3: G4 (beat 8.5, dur 1.5), E4 (beat 10, dur 1), D4 (beat 11.5, dur 0.5)
+Bar 4: C4 (beat 12, dur 4)
+
+Faded memories.
+Sepia tones.
+
+---
+
+LOFI MELODY 7 - Vinyl Dreams (Ab major)
+Bar 1: Eb5 (beat 0, dur 1.5), C5 (beat 2, dur 2)
+Bar 2: Db5 (beat 4.5, dur 1.5), Bb4 (beat 6, dur 2)
+Bar 3: C5 (beat 8, dur 1), Db5 (beat 9.5, dur 1.5), Eb5 (beat 11, dur 1)
+Bar 4: C5 (beat 12, dur 4)
+
+Record player spinning.
+Crackle and hiss.
+
+---
+
+LOFI MELODY 8 - Morning Dew (E minor)
+Bar 1: G4 (beat 0, dur 2), B4 (beat 2.5, dur 1.5)
+Bar 2: A4 (beat 4, dur 1), G4 (beat 5.5, dur 1.5), E4 (beat 7, dur 1)
+Bar 3: F#4 (beat 8.5, dur 1.5), G4 (beat 10, dur 1), A4 (beat 11.5, dur 0.5)
+Bar 4: G4 (beat 12, dur 4)
+
+Fresh and new.
+Dewdrops on leaves.
+
+---
+
+LOFI MELODY 9 - Bookstore (Bb major)
+Bar 1: D5 (beat 0, dur 1.5), Bb4 (beat 2, dur 2)
+Bar 2: C5 (beat 4.5, dur 1.5), A4 (beat 6, dur 2)
+Bar 3: Bb4 (beat 8, dur 1), C5 (beat 9.5, dur 1.5), D5 (beat 11, dur 1)
+Bar 4: Bb4 (beat 12, dur 4)
+
+Dusty shelves.
+Quiet corner.
+
+---
+
+LOFI MELODY 10 - Sleepy Sunday (D major)
+Bar 1: F#4 (beat 0, dur 2), A4 (beat 2.5, dur 1.5)
+Bar 2: B4 (beat 4, dur 1), A4 (beat 5.5, dur 1.5), G4 (beat 7, dur 1)
+Bar 3: F#4 (beat 8.5, dur 1.5), E4 (beat 10, dur 1), D4 (beat 11.5, dur 0.5)
+Bar 4: D4 (beat 12, dur 4)
+
+Lazy morning.
+No alarm clock.
+
+---
+
+LOFI MELODY 11 - Pressed Flowers (F minor)
+Bar 1: Ab4 (beat 0, dur 1.5), C5 (beat 2, dur 2)
+Bar 2: Bb4 (beat 4.5, dur 1.5), Ab4 (beat 6, dur 2)
+Bar 3: G4 (beat 8, dur 1), Ab4 (beat 9.5, dur 1.5), Bb4 (beat 11, dur 1)
+Bar 4: Ab4 (beat 12, dur 4)
+
+Preserved beauty.
+Dried petals.
+
+---
+
+LOFI MELODY 12 - Train Window (G minor)
+Bar 1: Bb4 (beat 0, dur 2), D5 (beat 2.5, dur 1.5)
+Bar 2: C5 (beat 4, dur 1), Bb4 (beat 5.5, dur 1.5), A4 (beat 7, dur 1)
+Bar 3: G4 (beat 8.5, dur 1.5), F4 (beat 10, dur 1), D4 (beat 11.5, dur 0.5)
+Bar 4: G4 (beat 12, dur 4)
+
+Passing scenery.
+Rhythmic motion.
+
+---
+
+LOFI MELODY 13 - Paper Lanterns (A major)
+Bar 1: C#5 (beat 0, dur 1.5), A4 (beat 2, dur 2)
+Bar 2: B4 (beat 4.5, dur 1.5), G#4 (beat 6, dur 2)
+Bar 3: A4 (beat 8, dur 1), B4 (beat 9.5, dur 1.5), C#5 (beat 11, dur 1)
+Bar 4: A4 (beat 12, dur 4)
+
+Floating gently.
+Soft glow.
+
+---
+
+LOFI MELODY 14 - Sketch Book (C minor)
+Bar 1: Eb4 (beat 0, dur 2), G4 (beat 2.5, dur 1.5)
+Bar 2: F4 (beat 4, dur 1), Eb4 (beat 5.5, dur 1.5), D4 (beat 7, dur 1)
+Bar 3: C4 (beat 8.5, dur 1.5), Eb4 (beat 10, dur 1), G4 (beat 11.5, dur 0.5)
+Bar 4: F4 (beat 12, dur 4)
+
+Pencil on paper.
+Creative flow.
+
+---
+
+LOFI MELODY 15 - Empty Room (E major)
+Bar 1: G#4 (beat 0, dur 1.5), B4 (beat 2, dur 2)
+Bar 2: A4 (beat 4.5, dur 1.5), G#4 (beat 6, dur 2)
+Bar 3: F#4 (beat 8, dur 1), G#4 (beat 9.5, dur 1.5), A4 (beat 11, dur 1)
+Bar 4: G#4 (beat 12, dur 4)
+
+Solitude.
+Echo of footsteps.
+
+---
+
+LOFI MELODY 16 - Tea Ceremony (Db major)
+Bar 1: Ab4 (beat 0, dur 2), F4 (beat 2.5, dur 1.5)
+Bar 2: Gb4 (beat 4, dur 1), Ab4 (beat 5.5, dur 1.5), Bb4 (beat 7, dur 1)
+Bar 3: Ab4 (beat 8.5, dur 1.5), F4 (beat 10, dur 1), Db4 (beat 11.5, dur 0.5)
+Bar 4: Eb4 (beat 12, dur 4)
+
+Mindful moments.
+Steam rising.
+
+---
+
+LOFI MELODY 17 - Gentle Rain (B minor)
+Bar 1: D5 (beat 0, dur 1.5), B4 (beat 2, dur 2)
+Bar 2: C#5 (beat 4.5, dur 1.5), A4 (beat 6, dur 2)
+Bar 3: B4 (beat 8, dur 1), C#5 (beat 9.5, dur 1.5), D5 (beat 11, dur 1)
+Bar 4: B4 (beat 12, dur 4)
+
+Soft patter.
+Cozy indoors.
+
+---
+
+LOFI MELODY 18 - Clock Tower (F major)
+Bar 1: C5 (beat 0, dur 1.5), A4 (beat 2, dur 2)
+Bar 2: Bb4 (beat 4.5, dur 1.5), G4 (beat 6, dur 2)
+Bar 3: A4 (beat 8, dur 1), Bb4 (beat 9.5, dur 1.5), C5 (beat 11, dur 1)
+Bar 4: A4 (beat 12, dur 4)
+
+Time passing.
+Tick tock.
+
+---
+
+LOFI MELODY 19 - Antique Shop (Eb minor)
+Bar 1: Gb4 (beat 0, dur 2), Bb4 (beat 2.5, dur 1.5)
+Bar 2: Ab4 (beat 4, dur 1), Gb4 (beat 5.5, dur 1.5), F4 (beat 7, dur 1)
+Bar 3: Eb4 (beat 8.5, dur 1.5), Gb4 (beat 10, dur 1), Ab4 (beat 11.5, dur 0.5)
+Bar 4: Gb4 (beat 12, dur 4)
+
+Dusty treasures.
+Hidden gems.
+
+---
+
+LOFI MELODY 20 - Faded Ink (A minor)
+Bar 1: C5 (beat 0, dur 1.5), A4 (beat 2, dur 2)
+Bar 2: B4 (beat 4.5, dur 1.5), G4 (beat 6, dur 2)
+Bar 3: A4 (beat 8, dur 1), B4 (beat 9.5, dur 1.5), C5 (beat 11, dur 1)
+Bar 4: A4 (beat 12, dur 4)
+
+Old letters.
+Written words.
+
+---
+
+LOFI MELODY 21 - City Lights (G major)
+Bar 1: B4 (beat 0, dur 2), D5 (beat 2.5, dur 1.5)
+Bar 2: C5 (beat 4, dur 1), B4 (beat 5.5, dur 1.5), A4 (beat 7, dur 1)
+Bar 3: G4 (beat 8.5, dur 1.5), B4 (beat 10, dur 1), D5 (beat 11.5, dur 0.5)
+Bar 4: C5 (beat 12, dur 4)
+
+Urban night.
+Neon glow.
+
+---
+
+LOFI MELODY 22 - Autumn Walk (D minor)
+Bar 1: F4 (beat 0, dur 1.5), A4 (beat 2, dur 2)
+Bar 2: G4 (beat 4.5, dur 1.5), F4 (beat 6, dur 2)
+Bar 3: E4 (beat 8, dur 1), F4 (beat 9.5, dur 1.5), G4 (beat 11, dur 1)
+Bar 4: F4 (beat 12, dur 4)
+
+Falling leaves.
+Crunchy steps.
+
+---
+
+LOFI MELODY 23 - Stargazing (Bb major)
+Bar 1: D5 (beat 0, dur 2), F5 (beat 2.5, dur 1.5)
+Bar 2: Eb5 (beat 4, dur 1), D5 (beat 5.5, dur 1.5), C5 (beat 7, dur 1)
+Bar 3: Bb4 (beat 8.5, dur 1.5), D5 (beat 10, dur 1), F5 (beat 11.5, dur 0.5)
+Bar 4: Eb5 (beat 12, dur 4)
+
+Looking up.
+Infinite wonder.
+
+---
+
+LOFI MELODY 24 - Typewriter (C major)
+Bar 1: E4 (beat 0, dur 1.5), G4 (beat 2, dur 2)
+Bar 2: F4 (beat 4.5, dur 1.5), E4 (beat 6, dur 2)
+Bar 3: D4 (beat 8, dur 1), E4 (beat 9.5, dur 1.5), F4 (beat 11, dur 1)
+Bar 4: E4 (beat 12, dur 4)
+
+Keys clicking.
+Words forming.
+
+---
+
+LOFI MELODY 25 - Midnight Oil (E minor)
+Bar 1: G4 (beat 0, dur 2), B4 (beat 2.5, dur 1.5)
+Bar 2: A4 (beat 4, dur 1), G4 (beat 5.5, dur 1.5), F#4 (beat 7, dur 1)
+Bar 3: E4 (beat 8.5, dur 1.5), G4 (beat 10, dur 1), B4 (beat 11.5, dur 0.5)
+Bar 4: A4 (beat 12, dur 4)
+
+Burning bright.
+Late night work.
+
+

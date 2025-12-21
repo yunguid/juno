@@ -1,0 +1,278 @@
+# Lo-Fi / Chill Chord Progressions
+# Characteristics: Simple 7th chords, warm major 7ths, nostalgic minor 7ths,
+# jazzy extensions, vinyl crackle vibes, study music feel
+
+LOFI PROGRESSION 1 - Warm Afternoon (F major)
+Beat 0: Fmaj7 = ["F3", "A3", "C4", "E4"]
+Beat 4: Em7 = ["E3", "G3", "B3", "D4"]
+Beat 8: Dm7 = ["D3", "F3", "A3", "C4"]
+Beat 12: Cmaj7 = ["C3", "E3", "G3", "B3"]
+
+Simple descending 7th chords.
+Warm and nostalgic.
+
+---
+
+LOFI PROGRESSION 2 - Rainy Window (A minor)
+Beat 0: Am9 = ["A3", "C4", "E4", "G4", "B4"]
+Beat 4: Fmaj9 = ["F3", "A3", "C4", "E4", "G4"]
+Beat 8: Dm9 = ["D3", "F3", "A3", "C4", "E4"]
+Beat 12: E7b9 = ["E3", "G#3", "D4", "F4"]
+
+Melancholic minor feel.
+E7b9 adds jazzy tension.
+
+---
+
+LOFI PROGRESSION 3 - Sunset Colors (G major)
+Beat 0: Gmaj7 = ["G3", "B3", "D4", "F#4"]
+Beat 4: Em7 = ["E3", "G3", "B3", "D4"]
+Beat 8: Cmaj9 = ["C3", "E3", "G4", "B4", "D5"]
+Beat 12: D7sus4 = ["D3", "G3", "A3", "C4"]
+
+Dreamy and open voicings.
+Suspended dominant for soft resolution.
+
+---
+
+LOFI PROGRESSION 4 - Coffee Shop (D major)
+Beat 0: Dmaj7 = ["D3", "F#3", "A4", "C#5"]
+Beat 4: Bm7 = ["B3", "D4", "F#4", "A4"]
+Beat 8: Gmaj7 = ["G3", "B3", "D4", "F#4"]
+Beat 12: A7sus4 = ["A3", "D4", "E4", "G4"]
+
+Bright but cozy.
+ii-V voiceleading.
+
+---
+
+LOFI PROGRESSION 5 - Late Night Study (C major)
+Beat 0: Cmaj7 = ["C3", "E3", "G3", "B3"]
+Beat 4: Am7 = ["A3", "C4", "E4", "G4"]
+Beat 8: Dm7 = ["D3", "F3", "A3", "C4"]
+Beat 12: G7 = ["G3", "B3", "D4", "F4"]
+
+Classic I-vi-ii-V progression.
+Timeless and soothing.
+
+---
+
+LOFI PROGRESSION 6 - Autumn Leaves Falling (E minor)
+Beat 0: Em7 = ["E3", "G3", "B3", "D4"]
+Beat 4: Cmaj7 = ["C3", "E3", "G3", "B3"]
+Beat 8: Am7 = ["A3", "C4", "E4", "G4"]
+Beat 12: B7 = ["B3", "D#4", "F#4", "A4"]
+
+Minor key melancholy.
+B7 creates strong pull back to Em.
+
+---
+
+LOFI PROGRESSION 7 - Midnight Memories (Bb major)
+Beat 0: Bbmaj7 = ["Bb3", "D4", "F4", "A4"]
+Beat 4: Gm7 = ["G3", "Bb3", "D4", "F4"]
+Beat 8: Ebmaj7 = ["Eb3", "G3", "Bb4", "D5"]
+Beat 12: F7sus4 = ["F3", "Bb3", "C4", "Eb4"]
+
+Warm major progression.
+Suspended chord keeps it floating.
+
+---
+
+LOFI PROGRESSION 8 - Vinyl Dreams (Ab major)
+Beat 0: Abmaj7 = ["Ab3", "C4", "Eb4", "G4"]
+Beat 4: Fm7 = ["F3", "Ab3", "C4", "Eb4"]
+Beat 8: Dbmaj7 = ["Db3", "F3", "Ab4", "C5"]
+Beat 12: Eb7sus4 = ["Eb3", "Ab3", "Bb3", "Db4"]
+
+Rich flat-key warmth.
+Classic doo-wop influenced.
+
+---
+
+LOFI PROGRESSION 9 - Sleepy Sunday (D minor)
+Beat 0: Dm7 = ["D3", "F3", "A3", "C4"]
+Beat 4: Bbmaj7 = ["Bb3", "D4", "F4", "A4"]
+Beat 8: Gm7 = ["G3", "Bb3", "D4", "F4"]
+Beat 12: A7sus4 = ["A3", "D4", "E4", "G4"]
+
+Minor key chill.
+A7sus4 softens the resolution.
+
+---
+
+LOFI PROGRESSION 10 - Bookstore Vibes (Eb major)
+Beat 0: Ebmaj7 = ["Eb3", "G3", "Bb4", "D5"]
+Beat 4: Cm7 = ["C3", "Eb3", "G3", "Bb3"]
+Beat 8: Abmaj7 = ["Ab3", "C4", "Eb4", "G4"]
+Beat 12: Bb7sus4 = ["Bb3", "Eb4", "F4", "Ab4"]
+
+Intellectual warmth.
+Voice leading through common tones.
+
+---
+
+LOFI PROGRESSION 11 - Morning Dew (C major)
+Beat 0: Cmaj9 = ["C3", "E3", "G4", "B4", "D5"]
+Beat 4: Fmaj7 = ["F3", "A3", "C4", "E4"]
+Beat 8: Am7 = ["A3", "C4", "E4", "G4"]
+Beat 12: Em7 = ["E3", "G3", "B3", "D4"]
+
+Fresh and open.
+Descending root motion.
+
+---
+
+LOFI PROGRESSION 12 - Paper Lanterns (G minor)
+Beat 0: Gm7 = ["G3", "Bb3", "D4", "F4"]
+Beat 4: Ebmaj7 = ["Eb3", "G3", "Bb4", "D5"]
+Beat 8: Cm7 = ["C3", "Eb3", "G3", "Bb3"]
+Beat 12: D7sus4 = ["D3", "G3", "A3", "C4"]
+
+Bittersweet minor.
+Asian-influenced sound.
+
+---
+
+LOFI PROGRESSION 13 - Old Photographs (A major)
+Beat 0: Amaj7 = ["A3", "C#4", "E4", "G#4"]
+Beat 4: F#m7 = ["F#3", "A3", "C#4", "E4"]
+Beat 8: Dmaj7 = ["D3", "F#3", "A4", "C#5"]
+Beat 12: E7sus4 = ["E3", "A3", "B3", "D4"]
+
+Nostalgic major key.
+Suspended dominant for softness.
+
+---
+
+LOFI PROGRESSION 14 - Cloudy Afternoon (F minor)
+Beat 0: Fm7 = ["F3", "Ab3", "C4", "Eb4"]
+Beat 4: Dbmaj7 = ["Db3", "F3", "Ab4", "C5"]
+Beat 8: Bbm7 = ["Bb3", "Db4", "F4", "Ab4"]
+Beat 12: C7sus4 = ["C3", "F3", "G3", "Bb3"]
+
+Moody minor key.
+Flat key warmth.
+
+---
+
+LOFI PROGRESSION 15 - Typewriter (Bb minor)
+Beat 0: Bbm7 = ["Bb3", "Db4", "F4", "Ab4"]
+Beat 4: Gbmaj7 = ["Gb3", "Bb3", "Db4", "F4"]
+Beat 8: Ebm7 = ["Eb3", "Gb3", "Bb3", "Db4"]
+Beat 12: F7sus4 = ["F3", "Bb3", "C4", "Eb4"]
+
+Dark lofi vibes.
+Consistent minor color.
+
+---
+
+LOFI PROGRESSION 16 - Dust Jacket (E major)
+Beat 0: Emaj7 = ["E3", "G#3", "B4", "D#5"]
+Beat 4: C#m7 = ["C#3", "E3", "G#3", "B3"]
+Beat 8: Amaj7 = ["A3", "C#4", "E4", "G#4"]
+Beat 12: B7sus4 = ["B3", "E4", "F#4", "A4"]
+
+Bright and warm.
+Suspended chord resolution.
+
+---
+
+LOFI PROGRESSION 17 - Pressed Flowers (Db major)
+Beat 0: Dbmaj7 = ["Db3", "F3", "Ab4", "C5"]
+Beat 4: Bbm7 = ["Bb3", "Db4", "F4", "Ab4"]
+Beat 8: Gbmaj7 = ["Gb3", "Bb3", "Db4", "F4"]
+Beat 12: Ab7sus4 = ["Ab3", "Db4", "Eb4", "Gb4"]
+
+Romantic and vintage.
+Rich voicings.
+
+---
+
+LOFI PROGRESSION 18 - Sketch Book (B minor)
+Beat 0: Bm7 = ["B3", "D4", "F#4", "A4"]
+Beat 4: Gmaj7 = ["G3", "B3", "D4", "F#4"]
+Beat 8: Em7 = ["E3", "G3", "B3", "D4"]
+Beat 12: F#7sus4 = ["F#3", "B3", "C#4", "E4"]
+
+Thoughtful minor.
+Smooth voice leading.
+
+---
+
+LOFI PROGRESSION 19 - Clock Tower (F major)
+Beat 0: Fmaj7 = ["F3", "A3", "C4", "E4"]
+Beat 4: Dm9 = ["D3", "F3", "A3", "C4", "E4"]
+Beat 8: Bbmaj7 = ["Bb3", "D4", "F4", "A4"]
+Beat 12: C7sus4 = ["C3", "F3", "G3", "Bb3"]
+
+Timeless and nostalgic.
+Classic voice leading.
+
+---
+
+LOFI PROGRESSION 20 - Empty Room (C minor)
+Beat 0: Cm7 = ["C3", "Eb3", "G3", "Bb3"]
+Beat 4: Abmaj7 = ["Ab3", "C4", "Eb4", "G4"]
+Beat 8: Fm7 = ["F3", "Ab3", "C4", "Eb4"]
+Beat 12: G7sus4 = ["G3", "C4", "D4", "F4"]
+
+Melancholic but beautiful.
+Minor key introspection.
+
+---
+
+LOFI PROGRESSION 21 - Tea Ceremony (A major)
+Beat 0: Amaj7 = ["A3", "C#4", "E4", "G#4"]
+Beat 4: Amaj7/G# = ["G#3", "A3", "C#4", "E4"]
+Beat 8: Dmaj7 = ["D3", "F#3", "A4", "C#5"]
+Beat 12: Dm7 = ["D3", "F3", "A3", "C4"]
+
+Major to parallel minor IV.
+Emotional color change.
+
+---
+
+LOFI PROGRESSION 22 - Gentle Rain (G major)
+Beat 0: Gmaj9 = ["G3", "B3", "D4", "F#4", "A4"]
+Beat 4: Em9 = ["E3", "G3", "B4", "D5", "F#5"]
+Beat 8: Cmaj9 = ["C3", "E3", "G4", "B4", "D5"]
+Beat 12: D9sus4 = ["D3", "G3", "A3", "C4", "E4"]
+
+Extended 9th chords throughout.
+Rich and full.
+
+---
+
+LOFI PROGRESSION 23 - Faded Ink (D minor)
+Beat 0: Dm9 = ["D3", "A3", "C4", "E4", "F4"]
+Beat 4: Am7 = ["A3", "C4", "E4", "G4"]
+Beat 8: Fmaj7 = ["F3", "A3", "C4", "E4"]
+Beat 12: G7 = ["G3", "B3", "D4", "F4"]
+
+Minor to relative major.
+Bittersweet resolution.
+
+---
+
+LOFI PROGRESSION 24 - City Lights (Eb major)
+Beat 0: Ebmaj9 = ["Eb3", "G3", "Bb4", "D5", "F5"]
+Beat 4: Cm9 = ["C3", "G3", "Bb4", "D5", "Eb5"]
+Beat 8: Abmaj7 = ["Ab3", "C4", "Eb4", "G4"]
+Beat 12: Bb13 = ["Bb3", "D4", "F4", "Ab4", "G5"]
+
+Rich extended chords.
+Urban nighttime vibe.
+
+---
+
+LOFI PROGRESSION 25 - Antique Shop (B major)
+Beat 0: Bmaj7 = ["B3", "D#4", "F#4", "A#4"]
+Beat 4: G#m7 = ["G#3", "B3", "D#4", "F#4"]
+Beat 8: Emaj7 = ["E3", "G#3", "B4", "D#5"]
+Beat 12: F#7sus4 = ["F#3", "B3", "C#4", "E4"]
+
+Vintage and warm.
+Classic lofi colors.
+
+

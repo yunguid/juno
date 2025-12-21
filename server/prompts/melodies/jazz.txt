@@ -1,0 +1,102 @@
+# Jazz Melody Examples
+# Characteristics: Bebop vocabulary, enclosures, chromatic approach notes,
+# swing feel, arpeggios, guide tone lines, tension and release
+
+JAZZ MELODY 1 - Bebop (C major)
+Bar 1: F4 (beat 0, dur 0.5), E4 (beat 0.5, dur 0.5), D4 (beat 1, dur 1), B4 (beat 2.5, dur 1)
+Bar 2: G4 (beat 4, dur 2), E4 (beat 6, dur 0.5), D4 (beat 6.5, dur 0.5), C4 (beat 7, dur 1)
+Bar 3: A4 (beat 8.5, dur 0.5), G4 (beat 9, dur 0.5), E4 (beat 9.5, dur 0.5), C4 (beat 10, dur 2)
+Bar 4: D4 (beat 12, dur 1), C4 (beat 13, dur 3)
+
+Bebop enclosures, chromatic approach.
+
+---
+
+JAZZ MELODY 2 - Modal (D dorian)
+Bar 1: D5 (beat 0, dur 1), C5 (beat 1, dur 0.5), A4 (beat 1.5, dur 1.5)
+Bar 2: F4 (beat 4, dur 0.5), G4 (beat 4.5, dur 0.5), A4 (beat 5, dur 0.5), C5 (beat 5.5, dur 2)
+Bar 3: E5 (beat 8, dur 0.5), D5 (beat 8.5, dur 0.5), C5 (beat 9, dur 0.5), B4 (beat 9.5, dur 0.5), A4 (beat 10, dur 2)
+Bar 4: G4 (beat 12, dur 2), D4 (beat 14, dur 2)
+
+Modal, angular feel.
+
+---
+
+JAZZ MELODY 3 - Ballad (Bb major)
+Bar 1: D5 (beat 0, dur 2), F5 (beat 2, dur 1), Eb5 (beat 3, dur 1)
+Bar 2: D5 (beat 4, dur 1.5), C5 (beat 5.5, dur 0.5), Bb4 (beat 6, dur 2)
+Bar 3: C5 (beat 8, dur 1), D5 (beat 9, dur 1), Eb5 (beat 10, dur 1), F5 (beat 11, dur 1)
+Bar 4: D5 (beat 12, dur 2), Bb4 (beat 14, dur 2)
+
+Rubato ballad phrasing.
+
+---
+
+JAZZ MELODY 4 - Blues (F major)
+Bar 1: A4 (beat 0, dur 0.5), Ab4 (beat 0.5, dur 0.5), A4 (beat 1, dur 1), C5 (beat 2.5, dur 1.5)
+Bar 2: Bb4 (beat 4, dur 0.5), A4 (beat 4.5, dur 0.5), G4 (beat 5, dur 0.5), F4 (beat 5.5, dur 2.5)
+Bar 3: D4 (beat 8, dur 0.5), F4 (beat 8.5, dur 0.5), A4 (beat 9, dur 0.5), C5 (beat 9.5, dur 0.5), Eb5 (beat 10, dur 2)
+Bar 4: D5 (beat 12, dur 0.5), C5 (beat 12.5, dur 0.5), A4 (beat 13, dur 0.5), F4 (beat 13.5, dur 2.5)
+
+Blue notes and blues scale.
+
+---
+
+JAZZ MELODY 5 - Cool (G major)
+Bar 1: B4 (beat 0, dur 2), A4 (beat 2, dur 1), G4 (beat 3, dur 1)
+Bar 2: F#4 (beat 4, dur 1.5), rest, D4 (beat 6.5, dur 1.5)
+Bar 3: E4 (beat 8, dur 1), F#4 (beat 9, dur 1), G4 (beat 10, dur 1), A4 (beat 11, dur 1)
+Bar 4: B4 (beat 12, dur 3), rest
+
+West Coast cool jazz.
+
+---
+
+JAZZ MELODY 6 - Swing (Ab major)
+Bar 1: Eb5 (beat 0, dur 1), C5 (beat 1, dur 0.5), Bb4 (beat 1.5, dur 0.5), Ab4 (beat 2, dur 2)
+Bar 2: Bb4 (beat 4, dur 0.5), C5 (beat 4.5, dur 0.5), Eb5 (beat 5, dur 1.5), F5 (beat 6.5, dur 1.5)
+Bar 3: Eb5 (beat 8, dur 0.5), Db5 (beat 8.5, dur 0.5), C5 (beat 9, dur 0.5), Bb4 (beat 9.5, dur 0.5), Ab4 (beat 10, dur 2)
+Bar 4: Bb4 (beat 12, dur 1), Ab4 (beat 13, dur 3)
+
+Big band swing feel.
+
+---
+
+JAZZ MELODY 7 - Latin (A minor)
+Bar 1: A4 (beat 0, dur 0.5), B4 (beat 0.5, dur 0.5), C5 (beat 1, dur 1), E5 (beat 2, dur 2)
+Bar 2: D5 (beat 4, dur 0.5), C5 (beat 4.5, dur 0.5), B4 (beat 5, dur 0.5), A4 (beat 5.5, dur 2.5)
+Bar 3: G4 (beat 8, dur 0.5), A4 (beat 8.5, dur 0.5), B4 (beat 9, dur 0.5), C5 (beat 9.5, dur 0.5), D5 (beat 10, dur 0.5), E5 (beat 10.5, dur 1.5)
+Bar 4: D5 (beat 12, dur 0.5), C5 (beat 12.5, dur 0.5), A4 (beat 13, dur 3)
+
+Bossa nova gentle syncopation.
+
+---
+
+JAZZ MELODY 8 - Fusion (E minor)
+Bar 1: B4 (beat 0, dur 0.5), D5 (beat 0.5, dur 0.5), E5 (beat 1, dur 1), G5 (beat 2, dur 0.5), F#5 (beat 2.5, dur 0.5), E5 (beat 3, dur 1)
+Bar 2: D5 (beat 4, dur 0.5), B4 (beat 4.5, dur 0.5), A4 (beat 5, dur 0.5), G4 (beat 5.5, dur 0.5), F#4 (beat 6, dur 2)
+Bar 3: E4 (beat 8, dur 0.5), F#4 (beat 8.5, dur 0.5), G4 (beat 9, dur 0.5), A4 (beat 9.5, dur 0.5), B4 (beat 10, dur 0.5), D5 (beat 10.5, dur 0.5), E5 (beat 11, dur 1)
+Bar 4: D5 (beat 12, dur 1), B4 (beat 13, dur 1), E4 (beat 14, dur 2)
+
+Jazz-funk fusion energy.
+
+---
+
+JAZZ MELODY 9 - Standards (F major)
+Bar 1: A4 (beat 0, dur 2), C5 (beat 2, dur 1), Bb4 (beat 3, dur 1)
+Bar 2: A4 (beat 4, dur 1.5), G4 (beat 5.5, dur 0.5), F4 (beat 6, dur 2)
+Bar 3: G4 (beat 8, dur 1), A4 (beat 9, dur 0.5), Bb4 (beat 9.5, dur 0.5), C5 (beat 10, dur 2)
+Bar 4: A4 (beat 12, dur 2), F4 (beat 14, dur 2)
+
+Great American Songbook.
+
+---
+
+JAZZ MELODY 10 - Spiritual (Eb major)
+Bar 1: G4 (beat 0, dur 2), Bb4 (beat 2, dur 1), Eb5 (beat 3, dur 1)
+Bar 2: F5 (beat 4, dur 1), Eb5 (beat 5, dur 1), D5 (beat 6, dur 1), Bb4 (beat 7, dur 1)
+Bar 3: C5 (beat 8, dur 1), Bb4 (beat 9, dur 1), Ab4 (beat 10, dur 1), G4 (beat 11, dur 1)
+Bar 4: F4 (beat 12, dur 1), Eb4 (beat 13, dur 3)
+
+Coltrane spiritual quality.
+

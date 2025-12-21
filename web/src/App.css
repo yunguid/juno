@@ -1015,6 +1015,33 @@ header h1 {
 .sound-picker-filters {
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.sound-picker-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  width: 100%;
+}
+
+.sound-chip {
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sound-chip.active,
+.sound-chip:hover {
+  background: rgba(88, 120, 255, 0.2);
+  border-color: rgba(88, 120, 255, 0.45);
+  color: #fff;
 }
 
 .sound-picker-controls select {
@@ -1054,6 +1081,13 @@ header h1 {
   color: #fff;
 }
 
+.sound-picker-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
 .sound-picker-toggle {
   display: flex;
   align-items: center;
@@ -1064,6 +1098,39 @@ header h1 {
 
 .sound-picker-toggle input {
   accent-color: rgba(88, 120, 255, 0.85);
+}
+
+.sound-picker-sort {
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.75rem;
+}
+
+.sound-picker-letterbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0.4rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(7, 9, 14, 0.8);
+}
+
+.sound-picker-letterbar button {
+  padding: 0.2rem 0.45rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(200, 210, 255, 0.7);
+  font-size: 0.65rem;
+  cursor: pointer;
+}
+
+.sound-picker-letterbar button:hover {
+  background: rgba(88, 120, 255, 0.2);
+  color: #fff;
 }
 
 .sound-picker-list {
@@ -1090,6 +1157,11 @@ header h1 {
   gap: 0.15rem;
 }
 
+.sound-option:focus-visible {
+  outline: 2px solid rgba(88, 120, 255, 0.6);
+  outline-offset: 2px;
+}
+
 .sound-option:hover {
   background: rgba(88, 120, 255, 0.12);
   border-color: rgba(88, 120, 255, 0.28);
@@ -1103,6 +1175,10 @@ header h1 {
 
 .sound-option-name {
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
 
 .sound-option-meta {
@@ -1110,6 +1186,18 @@ header h1 {
   color: rgba(200, 210, 255, 0.6);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+.sound-favorite {
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.sound-favorite.active {
+  color: rgba(255, 210, 90, 0.95);
 }
 
 .sound-picker-empty {
