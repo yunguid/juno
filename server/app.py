@@ -889,7 +889,7 @@ async def audio_websocket(websocket: WebSocket):
 
     audio = get_audio_capture()
     loop = asyncio.get_running_loop()
-    audio_queue: asyncio.Queue[bytes] = asyncio.Queue(maxsize=4)
+    audio_queue: asyncio.Queue[bytes] = asyncio.Queue(maxsize=8)
     throttle_event = threading.Event()
     client_buffer_ms: float = 0.0
     recv_task: asyncio.Task | None = None
@@ -935,7 +935,12 @@ async def audio_websocket(websocket: WebSocket):
         await websocket.send_json({
             "type": "audio_config",
             "sample_rate": audio.config.sample_rate,
-            "channels": audio.config.output_channels
+            "channels": audio.config.output_channels,
+            "chunk_frames": audio.config.chunk_frames,
+            "bytes_per_sample": 2,
+            "sample_format": "s16le",
+            "interleaved": True,
+            "stream_version": 1,
         })
 
         async def receive_control():
@@ -958,10 +963,10 @@ async def audio_websocket(websocket: WebSocket):
                     except (TypeError, ValueError):
                         target_ms = 0.0
 
-                    # Track client-provided target to keep latency low while giving some hysteresis.
+                    # Track client-provided target to favor smooth playback while keeping bounded latency.
                     if target_ms > 0:
-                        low_water_ms = max(50.0, target_ms - 20.0)
-                        high_water_ms = max(low_water_ms + 40.0, target_ms + 80.0)
+                        low_water_ms = max(80.0, target_ms - 10.0)
+                        high_water_ms = max(low_water_ms + 60.0, target_ms + 160.0)
 
                     if client_buffer_ms > high_water_ms:
                         throttle_event.set()

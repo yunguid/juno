@@ -6,7 +6,7 @@ class PCMProcessor extends AudioWorkletProcessor {
     super();
     
     // Interleaved ring buffer (Float32) sized for headroom; target latency is managed separately.
-    this.capacitySeconds = 1.0;
+    this.capacitySeconds = 1.5;
     this.bufferSize = 0;
     this.buffer = new Float32Array(0);
     this.writePos = 0;
@@ -19,10 +19,10 @@ class PCMProcessor extends AudioWorkletProcessor {
 
     // Adaptive buffering
     this.started = false; // prebuffer gate
-    this.minTargetMs = 80;
+    this.minTargetMs = 100;
     this.maxTargetMs = 600;
-    this.targetBufferMs = 160;
-    this.maxExtraBufferMs = 200; // drop beyond target + extra to cap latency
+    this.targetBufferMs = 200;
+    this.maxExtraBufferMs = 300; // drop beyond target + extra to cap latency
     
     // Underrun handling
     this.underrunCount = 0;
@@ -158,7 +158,7 @@ class PCMProcessor extends AudioWorkletProcessor {
       // Underrun - output silence with smooth fade to avoid clicks
       this.underrunCount++;
       this.lastUnderrunFrame = this.frameCount;
-      this.targetBufferMs = this._clampTargetMs(this.targetBufferMs * 1.25);
+      this.targetBufferMs = this._clampTargetMs(this.targetBufferMs * 1.35);
       this.started = false;
       
       const availableFrames = Math.floor(this.availableSamples / this.channels);

@@ -235,7 +235,16 @@ class AudioConfig:
     sample_rate: int = 44100
     capture_channels: int = 8
     output_channels: int = 2
-    chunk_frames: int = 4096  # Larger chunks for network streaming (~93ms at 44100Hz)
+    chunk_frames: int = 2048  # Default chunk size (~46ms at 44100Hz); lower latency than 4096.
+    max_backlog_chunks: int = 6  # Preserve continuity; higher means smoother but adds latency.
+
+    def __post_init__(self) -> None:
+        env_chunk = _env_int("JUNO_AUDIO_CHUNK_FRAMES")
+        if env_chunk is not None and env_chunk > 0:
+            self.chunk_frames = env_chunk
+        env_backlog = _env_int("JUNO_AUDIO_MAX_BACKLOG_CHUNKS")
+        if env_backlog is not None and env_backlog > 0:
+            self.max_backlog_chunks = env_backlog
 
 
 class AudioCapture:
@@ -302,14 +311,20 @@ class AudioCapture:
             except Exception:
                 continue
 
-            # If capture got ahead (e.g., event loop pause), discard backlog and keep most recent.
+            # If capture got ahead (e.g., event loop pause), trim backlog to preserve continuity.
             try:
-                while True:
-                    audio_bytes = self._audio_queue.get_nowait()
-            except queue.Empty:
-                pass
+                backlog = self._audio_queue.qsize()
             except Exception:
-                pass
+                backlog = 0
+            if backlog > self.config.max_backlog_chunks:
+                drop_count = backlog - self.config.max_backlog_chunks
+                for _ in range(drop_count):
+                    try:
+                        self._audio_queue.get_nowait()
+                    except queue.Empty:
+                        break
+                    except Exception:
+                        break
 
             self._chunk_count += 1
             if self._chunk_count % 200 == 1:
