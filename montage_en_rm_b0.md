@@ -1,0 +1,22452 @@
+# MUSIC SYNTHESIZER
+
+## Reference Manual
+
+## Contents
+- Using the MONTAGE Manuals (p. 2)
+- Reference (p. 24)
+- Basic Structure (p. 3)
+- Display (touch panel) configuration (p. 24)
+- Functional Blocks (p. 3)
+- Tone Generator Block (p. 4)
+- Tone Generator block (p. 4)
+- A/D Input Block (p. 10)
+- Sequencer Block (p. 10)
+- Arpeggio Block (p. 11)
+- Arpeggio categories (p. 11)
+- Sub categories (p. 11)
+- Arpeggio Type Name (p. 12)
+- Arpeggio-related settings (p. 13)
+- Arpeggio playback types (p. 15)
+- Motion Sequencer Block (p. 16)
+- Effect Block (p. 18)
+- Effect structure (p. 18)
+- Effect connection (p. 19)
+- About the Vocoder Effect (p. 19)
+- Envelope Follower Block (p. 20)
+- Controller Block (p. 21)
+- Keyboard (p. 21)
+- Pitch Bend wheel (p. 21)
+- Modulation wheel (p. 21)
+- Ribbon Controller (p. 21)
+- Assignable Switches (p. 21)
+- Knobs/Control Sliders (p. 22)
+- Super Knob (p. 22)
+- Internal Memory (p. 22)
+- Performance Play (Home) (p. 26)
+- Motion Control (p. 28)
+- Mixing (p. 44)
+- Scene (p. 49)
+- Play/Rec (p. 54)
+- Normal Part (AWM2) Edit (p. 58)
+- Element Common Edit (Common) (p. 58)
+- Element Edit (Element) (p. 94)
+- Element All (All Element) (p. 117)
+- Drum Part Edit (p. 119)
+- Key Common Edit (Common) (p. 119)
+- Key Edit (Key) (p. 126)
+- Normal Part (FM-X) Edit (p. 131)
+- Operator Common Edit (Common) (p. 131)
+- Operator Edit (Operator) (p. 141)
+- Common/Audio Edit (Common/Audio) (p. 145)
+- Category Search (p. 161)
+- Performance Category Search (p. 161)
+- Arpeggio Category Search (Arp Category Search) (p. 163)
+- Waveform Category Search (Waveform Search) (p. 164)
+- Utility (p. 165)
+- Live Set (p. 183)
+- Live Set (p. 183)
+- Live Set Edit (Edit) (p. 184)
+- Live Set Register (Register) (p. 186)
+- Connecting an iPhone or iPad (p. 187)
+---
+
+## Using the MONTAGE Manuals
+
+Your MONTAGE6/MONTAGE7/MONTAGE8 synthesizer comes with four different reference guides — the Owner’s Manual, the
+Reference Manual (this document), the Synthesizer Parameter Manual, and the Data List. While the Owner’s Manual is
+packaged together with the synthesizer as a hardcopy booklet, this Reference Manual, the Synthesizer Parameter Manual, and
+the Data List are available for download from our web page as PDF documents.
+
+Owner’s Manual (hardcopy booklet)
+
+Describes how to set up your MONTAGE6/MONTAGE7/MONTAGE8 and how to perform basic operations.
+This manual explains the following operations.
+- Quick Guide — Selecting Performances
+- Quick Guide — Playing the Keyboard
+- Quick Guide — Creating Your Own Live Sets
+- Quick Guide — Editing the Settings
+- Recording and Playback
+- Using as a Master Keyboard
+- Connecting a Microphone or Audio Equipment
+- Making Global System Settings
+- Connecting External MIDI Instruments
+- Using a Connected Computer
+- Saving/Loading Data
+
+Reference Manual (this PDF document)
+
+Describes the internal design of your MONTAGE6/MONTAGE7/MONTAGE8 and the various parameters that can be adjusted
+and set.
+
+Synthesizer Parameter Manual (PDF document)
+
+Explains the Part parameters, effect types, effect parameters, and MIDI messages that are used for synthesizers incorporating
+the Yamaha AWM2 and FM-X tone generators. Read the Owner’s Manual and Reference Manual first and then use this
+parameter manual, if necessary, to learn more about parameters and terms that relate to Yamaha synthesizers.
+
+Data List (PDF document)
+
+Provides lists such as the Waveform List, Performance List, Effect Type List, Arpeggio Type List, as well as reference materials
+such as the MIDI Implementation Chart.
+
+Select the display name tab
+
+Select the function
+
+Using the Reference Manual
+- Using the display name tabs along the upper part of each page from the
+
+Reference section, you can jump to the page for parameter
+explanations of the corresponding display.
+
+- You can click on any page number from the Table of Contents or within
+
+descriptive text to jump to the corresponding page.
+
+- You can also click on desired items and topics you want to refer to in the
+
+“Bookmarks” index to the left of the main window, and jump to the
+corresponding page. (Click the “Bookmarks” tab to open the index if it is
+not displayed.)
+
+- If you want to find information on a specific topic, function or feature,
+
+select “Find” or “Search” from the Adobe Reader “Edit” menu and enter
+a key word to locate the related information anywhere in the document.
+NOTE The most-recent version of Adobe® Reader® can be downloaded from the
+
+following web page.
+http://www.adobe.com/products/reader/
+
+NOTE The names and positions of menu items may vary according to the version
+
+of Adobe Reader being used.
+
+Information
+- The illustrations and LCD screens as shown in this manual are for instructional purposes only, and may appear somewhat
+
+different from those on your instrument.
+
+- All other trademarks are the property of their respective holders.
+- iPhone, iPad, iPod touch, and Lightning are trademarks of Apple Inc., registered in the U.S. and other countries.
+- IOS is a trademark or registered trademark of Cisco in the U.S. and other countries and is used under license.
+
+MONTAGE Reference Manual
+
+2
+
+---
+
+Basic Structure
+
+Functional Blocks
+The MONTAGE6/MONTAGE7/MONTAGE8 system consists of eight main functional blocks: Tone
+Generator, A/D Input, Sequencer, Motion Sequencer, Arpeggio, Controller, Effect, and Envelope Follower.
+
+Controller Block (page 21)
+Keyboard
+Controllers
+(such as Super Knob)
+
+Motion Sequencer Block
+(page 16)
+
+Control Message Flow
+
+Audio Signal Flow
+
+Tone Generator (page 4)
+AWM2 Tone Generator
+FM-X Tone Generator
+16 Parts
+Performances
+
+Effects (page 18)
+System Effects
+17 Insertion Effects
+Element EQ
+Part EQ
+Master Effect
+Master EQ
+
+Sequencer Block
+(page 10)
+16-Track
+MIDI Sequencer
+Songs
+
+Arpeggio Block
+(page 11)
+Arpeggio Playback x 8
+Preset Arpeggio
+User Arpeggio
+
+Envelope
+Follower Block
+(page 20)
+
+A/D Input
+(page 10)
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Effect block
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Reference
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+Normal Part (AWM) Edit
+
+Drum Part Edit
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+MIDI OUT
+
+[USB TO HOST]
+MIDI [OUT]
+
+MIDI IN
+
+[USB TO HOST]
+MIDI [IN]
+
+AUDIO IN
+
+AUDIO OUT
+
+[USB TO HOST]
+A/D INPUT [L/MONO]/[R]
+
+[USB TO HOST]
+OUTPUT [L/MONO]/[R]
+ASSIGNABLE OUTPUT [L]/[R]
+
+Computer
+
+External MIDI equipment
+
+Computer Microphone,
+
+Computer
+
+audio equipment,
+etc.
+
+Powered
+speakers, etc.
+
+AWM2 (Advanced Wave Memory 2)
+This instrument is equipped with an AWM2 tone generator block. AWM2 (Advanced Wave Memory 2)
+is a synthesis system based on sampled waves (sound material), and is used in many Yamaha
+synthesizers. For extra realism, each AWM2 Voice uses multiple samples of a real instrument’s
+waveform. Furthermore, a wide variety of parameters—envelope generator, filter, modulation, and
+others—can be applied.
+
+MONTAGE Reference Manual
+
+3
+
+---
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Effect block
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Reference
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+Normal Part (AWM) Edit
+
+Drum Part Edit
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+FM-X
+This synthesizer also features an FM-X tone generator, in addition to the AWM2 block. The
+abbreviation “FM” of FM-X stands for “frequency modulation,” which is a special tone generation
+system that uses the frequency of one waveform to modulate another waveform, in order to produce a
+completely new one. In this synthesizer, there are eight FM Operators and a full 88 different Algorithm
+types. By changing the operator combination patterns, controlling the modulation with other
+parameters such as levels and envelopes, and using high-quality filters, effects, and EQ commonly
+with AWM2, you can create richly textured sounds that change in a highly complex fashion.
+
+Tone Generator Block
+The tone generator block is what actually produces sound in response to the MIDI messages received
+from the Sequencer block, Controller block, Arpeggio block and from the external MIDI instrument. The
+MIDI messages are assigned to sixteen independent channels, and the instrument is capable of
+simultaneously playing sixteen separate Parts, via the sixteen MIDI channels. However, the sixteen-
+channel limit can be overcome by using separate MIDI “ports,” each supporting sixteen channels. The
+tone generator block of this instrument can handle MIDI messages over Port 1.
+
+Tone Generator block
+
+Performances
+
+A Performance is a single set of sounds consisting of multiple Parts. You can change sounds as desired by
+selecting the appropriate Performance. Each Performance has two types of parameters; parameters
+unique to each Part and parameters common to all Parts. You can edit the entire Performance in the
+Common/Audio Edit display (page 145).
+
+Part structure of a Performance
+
+A Performance consists of 16 Parts and you can create Performances (in which multiple Parts or Parts are
+combined—in a layer, or in other configurations) using the keyboard.
+
+Parts
+
+Internally, there are three Part types: Normal Parts (AWM2), Normal Parts (FM-X), and Drum Parts. Normal
+Parts (AWM2) are mainly pitched musical instrument type sounds that can be played over the full range of
+the keyboard. Normal Parts (FM-X) are also mainly pitched musical instrument type sounds, using FM
+synthesis. Drum Parts are mainly percussion/drum sounds that are assigned to individual notes. A Normal
+Part (AWM2) can consist of up to eight Elements, a Normal Part (FM-X) can consist of up to eight
+Operators, and a Drum Part can consist of up to 73 Drum Keys.
+An Element/Operator/Drum Key is the basic, smallest unit for a Part. By combining multiple Elements/
+Operators/Keys, Parts can be created to produce even more realistic sounds or various richly textured
+types of sound. Each Part is created by editing parameters unique to each (Element Edit parameters/
+Operator Edit parameters/Key Edit parameters) and parameters common to all the Elements/Operators/
+Keys (Element Common Edit, Operator Common Edit, and Key Common Edit parameters.)
+NOTE For instructions on editing a Normal Part (AWM2), see page 58. For instructions on editing a Normal Part (FM-X),
+
+see page 131. For instructions on editing a Drum Part, see page 119.
+
+MONTAGE Reference Manual
+
+4
+
+---
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Effect block
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Reference
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+Normal Part (AWM) Edit
+
+Drum Part Edit
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+Normal Parts (AWM2), Normal Parts (FM-X), and Drum Parts
+
+Velocity
+
+Element 6
+
+Element 2
+
+Element 1
+
+Element 4
+
+Element 3
+
+Normal Parts (AWM2)
+These Parts are played conventionally from the
+keyboard, with standard pitches sounding for each key,
+generated by AWM2. A Normal Part consists of up to
+eight Elements. Depending on the settings in the Part
+Edit, these Elements are sounded simultaneously, or
+different Elements are sounded according to the note
+range, velocity range and the XA (Expanded
+Articulation) settings (page 6).
+The illustration shows an example of a Normal Part (AWM2). Since the six Elements here are distributed
+across both the note range of the keyboard and the velocity range, a different Element sounds depending
+on which note you play and how strongly you play it. In the velocity distribution, Elements 1, 3 and 5 sound
+when playing the keyboard softly, while Elements 2, 4 and 6 sound when playing it strongly. In the note
+distribution, Elements 1 and 2 sound in the lower range of the keyboard, Elements 3 and 4 sound in the
+middle range, and Elements 5 and 6 sound in the higher range. In the velocity distribution, Elements 1, 3
+and 5 sound when playing the keyboard softly, while Elements 2, 4 and 6 sound when playing it strongly. In
+a practical example of this in use, a piano Part could be composed of six different samples. Elements 1, 3
+and 5 would be the sounds of the piano played softly, over the respective note ranges, while Elements 2, 4
+and 6 would be strongly played sounds, for each respective note range. Actually, this instrument is even
+more flexible than this, since it allows up to eight independent Elements.
+
+Element 5
+
+Normal Parts (FM-X)
+These Parts are also played conventionally from the keyboard, with standard pitches sounding for each
+key, generated by FM synthesis. The sound for a Normal Part (FM-X) is created by modulating a frequency
+of a fundamental waveform with another waveform. An operator that generates a fundamental waveform is
+a “carrier,” and an operator that modulates these waveforms is a “modulator.” The combination of a
+number of Operators is called “Algorithm.”
+When the waveform output from the Operator is a simple sine wave, no harmonics are included other than
+the fundamental tone. However, you can create harmonics by modulating the waveform with other
+Operators. How harmonics can be created depends on the Modulators’ output levels and the frequency
+rates of Carriers and Modulators. On the other hand, the basic pitch is determined by Carrier’s frequency,
+and the output level is determined by the Carrier’s output level. The figure described below shows a basic
+way to create FM sound by using an analog synthesizer.
+
+Modulator output level
+determines the Cutoff
+Frequency of the Filter.
+
+Modulation
+
+Modulator envelope determines
+the Filter envelope.
+
+Modulator OP
+
+Frequency ratio of the
+Modulator and the Carrier
+determines the base waveform
+including specific harmonics by
+the Oscillator.
+
+Carrier OP
+
+Carrier frequency determines
+the pitch of the Oscillator.
+
+Carrier output level
+determines the volume
+by using the amplifier.
+
+Carrier envelope determines
+the amplifier envelope.
+
+Although the figure described above shows waveforms which are generated by two operators, the
+MONTAGE has eight Operators. The combination of a number of Operators is called an “Algorithm” and
+this synthesizer has parameters for setting the Algorithm.
+
+Drum Parts
+Drum Parts are mainly percussion/drum sounds
+that are assigned to individual notes on the
+keyboard (C0 to C6). Unlike Elements, a Drum
+key is equivalent to the corresponding note,
+meaning that you cannot change its range.
+Drum or percussion sounds are assigned to
+each Drum Key. You can create various types of
+Drum Parts by changing the drum or percussion sound assigned to each key and edit the parameters
+such as pitch and EG.
+
+Individual drum
+sounds
+(different for
+each key)
+
+C0
+
+C1
+
+C6
+
+MONTAGE Reference Manual
+
+5
+
+---
+
+Expanded Articulation (XA)
+
+Expanded Articulation (XA) is a tone generation system that provides greater performance flexibility and
+acoustic realism. This feature allows you to more effectively recreate realistic sound and natural
+performance techniques—such as legato and staccato—and provides other unique modes for random
+and alternate sound changes as you play.
+
+Realistic legato performance
+This instrument more accurately reproduces a legato effect by allowing specific Elements to be sounded
+when playing legato and other Elements to be played normally (with the XA Control parameter settings
+“Normal” and “Legato”).
+
+Authentic note release sound
+The MONTAGE reproduces these special, characteristic sounds by setting the XA Control parameter of
+certain Elements to “Key Off.”
+
+Subtle sound variations for each note played
+The MONTAGE more accurately reproduces these subtle sound variations by using the XA Control
+parameter settings “Cycle” and “Random.”
+
+Switching among different sounds to recreate the natural performance on an
+acoustic instrument
+Acoustic instruments have their own unique characteristics—even specific, unique sounds that are
+produced only at certain times in a performance. These include the flutter tonguing on a flute or the
+playing of high harmonics on an acoustic guitar. The MONTAGE recreates these by allowing you to switch
+between the sounds while you play—using the [ASSIGN 1]/[ASSIGN 2] buttons and the XA Control
+parameter settings, “A.SW1 On,” “A.SW2 On” and “A.SW Off.”
+NOTE You can turn the [ASSIGN 1]/[ASSIGN 2] button on or off also by transmitting the Control Change number
+
+specified in the Common/Audio Edit display ([Control]  [Control Number]) (page 153) from an external device.
+
+New sounds and new styles of playing
+The highly versatile functions above can be applied effectively not only to acoustic sounds but also to
+synthesizer and electronic Parts as well. The XA feature opens up enormous potential for realizing
+authentic sounds, performing expressively and coming up with creative new styles of playing.
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Effect block
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Reference
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+Normal Part (AWM) Edit
+
+Drum Part Edit
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+Motion Control System
+
+The Motion Control System is a completely new feature for variably controlling Motions (rhythmical,
+multidimensional sound changes) in real time. This amazingly powerful feature dramatically and
+dynamically alters the sounds of the instrument in new, never-heard-before ways—changing texturally,
+rhythmically with the beats, providing cool, colorful lighting effects, and responding expressively to your
+creative passion. The Motion Control System has three main functions:
+
+Super Knob:
+For creating multi-dimensional sonic changes, and enhancing those changes with colorful, continually
+shifting lighting changes. Multiple parameters can be controlled simultaneously.
+
+Motion Sequencer:
+For continually variable sound changes. The powerful Motion Sequencer feature lets you dynamically
+change sounds by operating Parameters depending on sequences created in advance. It provides real
+time control for changing sounds depending on various sequences such as Tempo, Arpeggio, or the
+rhythm of external connected devices.
+
+Envelope Follower:
+Envelope Follower is a function for detecting the volume envelope of the input signal waveform and
+modifying sounds dynamically.
+NOTE Envelope Follower can be controlled not only by the audio signal from an external device, but also by the output
+
+of all Parts.
+
+MONTAGE Reference Manual
+
+6
+
+---
+
+Motion Control System Structure
+
+- Continuous control of
+
+Motion changes
+
+- Switch between Motions
+
+- Trigger, Hold
+
+AUDIO
+
+- Part 1 – 16
+- A/D Input Part
+
+BEAT
+
+- Audio Beat Sync
+- External MIDI
+- Internal Tempo
+
+Control the Motion
+Sequencer in real time
+
+Envelope Follower
+
+Motion Sequencer
+
+Super Knob
+
+Rhythmic change
+
+Automation
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Effect block
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Reference
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+Normal Part (AWM) Edit
+
+Drum Part Edit
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+Multi-dimensional
+sonic change
+
+Tone generator
+
+Effect
+
+For details on the Motion Control, refer to the website below:
+
+http://www.yamaha.com/montage/
+
+MONTAGE Reference Manual
+
+7
+
+---
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Effect block
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Reference
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+Normal Part (AWM) Edit
+
+Drum Part Edit
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+Elements, Drum Keys and Operators
+
+Elements/Drum Keys/Operators are the smallest “building blocks” in the MONTAGE that comprise a Part.
+These small sound units can be built, enhanced and processed by a variety of traditional synthesizer
+parameters, such as Pitch EG, Filter EG, Amplitude EG, and LFO (shown below).
+
+LFO
+Low Frequency Oscillator
+
+OSC (Oscillator)
+
+Waveform (AWM2)
+
+PITCH
+Controls the pitch of
+the sound.
+
+FILTER
+Changes the tonal
+quality of the
+sound.
+
+AMP
+Controls the output
+level (amplitude) of
+the sound.
+
+Pitch EG
+(Pitch Envelope
+Generator)
+
+Filter EG
+(Filter Envelope
+Generator)
+
+Amplitude EG
+(Amplitude Envelope
+Generator)
+
+Oscillator
+This unit allows you to assign the waveform (or basic sound material) to each Element/Operator/Key.
+Oscillator-related parameters can be set as follows.
+
+- For Normal Parts (AWM2) and Drum Parts
+
+[EDIT]  Part selection  Element selection  [Osc/Tune] (page 94, page 126)
+
+- For Normal Parts (FM-X)
+
+[EDIT]  Part selection  Operator selection  [Form/Freq] (page 141)
+
+Pitch
+This unit allows you to control how the pitch changes over time. Pitch-related parameters can be set as
+follows.
+
+- For Normal Parts (AWM2) and Drum Parts
+
+[EDIT]  Part selection  Element selection  [Osc/Tune] (page 94, page 126)
+
+- For Normal Parts (FM-X)
+
+[EDIT]  Part selection  ELEMENT/OPERATOR [COMMON]  [Pitch/Filter] (page 134)
+
+Parameters related to Pitch EG can be set as follows.
+
+- For Normal Parts (AWM2)
+
+[EDIT]  Part selection  Element selection  [Pitch EG] (page 98)
+
+- For Normal Parts (FM-X)
+
+[EDIT]  Part selection  ELEMENT/OPERATOR [COMMON]  [Pitch/Filter] (page 134)
+
+Filter
+This unit modifies the tone of the sound by cutting the output of a specific frequency portion of the sound.
+Also, by setting the FEG (Filter Envelope Generator), you can control how the Cutoff Frequency of the Filter
+changes over time. Parameters related to Filter and Filter EG can be set as follows.
+
+- For Normal Parts (AWM2) and Drum Parts
+
+[EDIT]  Part selection  Element selection  [Filter] (page 100, page 128)
+
+- For Normal Parts (FM-X)
+
+[EDIT]  Part selection  ELEMENT/OPERATOR [COMMON]  [Pitch/Filter] (page 134)
+
+MONTAGE Reference Manual
+
+8
+
+---
+
+Amplitude
+This unit controls the output level (amplitude) of the Element/Drum Key/Operator.
+Parameters related to Amplitude and Amplitude EG can be set as follows.
+
+- For Normal Parts (AWM2)
+
+[EDIT]  Part selection  Element selection  [Amplitude] (page 108)
+
+- For Drum Parts
+
+[EDIT]  Part selection  Element selection  [Level/Pan] (page 129)
+
+- For Normal Parts (FM-X)
+
+[EDIT]  Part selection  Operator selection  [Level] (page 143)
+
+LFO (Low Frequency Oscillator)
+As its name suggests, the LFO produces a wave of a low frequency.
+These waves can be used to vary the pitch, filter or amplitude of each Element/Operator to create effects
+such as vibrato, wah and tremolo. There are two LFO types: Part LFO, which is common to all Elements/
+Operators, and Element LFO, which is unique for each Element.
+Parameters related to Part LFO can be set as follows.
+
+- For Normal Parts (AWM2)
+
+[EDIT]  Part selection  ELEMENT/OPERATOR [COMMON]  [Mod/Control]  [Part LFO] (page 85)
+
+- For Normal Parts (FM-X)
+
+[EDIT]  Part selection  ELEMENT/OPERATOR [COMMON]  [Mod/Control]  [Part LFO] or [2nd LFO]
+(page 138)
+
+Parameters related to Element LFO can be set as follows.
+
+[EDIT]  Part selection  Element selection  [Element LFO] (page 113)
+
+Maximum Polyphony
+Maximum polyphony refers to the highest number of notes that can be sounded simultaneously from
+the internal tone generator of the instrument.
+The maximum polyphony of this synthesizer is 128 for each AWM2 and FM-X. When the internal tone
+generator block receives a number of notes exceeding the maximum polyphony, previously played
+notes are cut off. Keep in mind that this may be especially noticeable with Parts not having decay.
+Furthermore, the maximum polyphony applies to the number of Elements/Drum Keys used, not the
+number of Parts. When Normal Parts (AWM2) that include up to eight Elements are used, the
+maximum number of simultaneous notes may be less than 128.
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Effect block
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Reference
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+Normal Part (AWM) Edit
+
+Drum Part Edit
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+MONTAGE Reference Manual
+
+9
+
+---
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Effect block
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Reference
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+Normal Part (AWM) Edit
+
+Drum Part Edit
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+A/D Input Block
+This block handles the audio signal input from the A/D INPUT [L/MONO]/[R] jacks. Various parameters
+such as volume, pan, and effect can be set for the audio signal and the sound is output together with other
+Parts. An Insertion Effect, the System Effects, the Master Effects, and the Master EQ can be applied to the
+audio signal input via the A/D INPUT [L/MONO]/[R] jacks.
+Parameters related to the A/D Input block can be set as follows.
+
+[PERFORMANCE]  [Mixing] (page 44)
+[EDIT]  PART [COMMON]  [Audio In]  [Mixing] (page 147)
+
+The Effect which is applied to the audio signal input from the A/D INPUT [L/MONO]/[R] jacks can be set as
+follows.
+
+[EDIT]  PART [COMMON]  [Audio In]  [Routing] (page 148)
+
+The gain of the audio signal from the A/D INPUT [L/MONO]/[R] jacks can be adjusted via the A/D INPUT
+[GAIN] knob on the panel. Moreover, the on/off setting of the audio signal from the A/D INPUT [L/MONO]/
+[R] jacks can be turned on/off via the A/D INPUT [ON/OFF] button.
+
+[UTILITY]  [Settings]  [Audio I/O]  “A/D Input” (page 168)
+
+Sequencer Block
+This lets you create Songs by recording and editing your performances as MIDI data (from the controller
+block or an external device), allowing you to play the data back with the tone generator block.
+
+Songs
+
+A Song is created by recording your keyboard performance as MIDI sequence data to individual Tracks.
+The MONTAGE can store up to 64 Songs.
+
+Tracks
+
+This is a memory location on the sequencer where your musical performances are stored. One Part can be
+recorded to one track. Since the MONTAGE has 16 tracks for one Song, you can record and play back a
+16-Part performance.
+
+MIDI recording
+
+You can record your keyboard performance to the Song. You can record knob operations, controller
+operations and Arpeggio playback as well as your keyboard playing to the specified Track as MIDI events.
+Your keyboard performance and controller/knob operations will be recorded to the Track when the
+corresponding Keyboard Control Switch for the Part is turned ON.
+NOTE The Control Change messages and Parameter Change messages can be recorded by operating the Knobs. For
+
+details on Control Change messages, see the Synthesizer Parameter Manual PDF document.
+
+NOTE For detailed instruction, refer to the Owner’s Manual.
+
+MONTAGE Reference Manual
+
+10
+
+---
+
+Arpeggio Block
+This block lets you automatically trigger musical and rhythmic phrases by simply pressing a note or notes
+on the keyboard. Yamaha’s Arpeggio sequence also changes in response to the actual notes or chords
+you play, giving you a wide variety of inspiring musical phrases and ideas—both in composing and
+performing.
+
+Arpeggio categories
+
+The Arpeggio types are divided into 18 categories (including “No Assign” and “Control/Hybrid Seq”) as
+listed below. The categories are based on instrument type.
+
+Arpeggio Type Category List
+
+Piano
+
+Keys
+
+Organ
+
+Gtr
+
+Bass
+
+Str
+
+Brass
+
+WW
+
+SynLd
+
+Piano
+
+Keyboard
+
+Organ
+
+Guitar
+
+Bass
+
+String
+
+Brass
+
+Woodwind
+
+Syn Lead
+
+Sub categories
+
+Pad
+
+SynCp
+
+CPerc
+
+Dr/Pc
+
+S.FX
+
+M.FX
+
+Ethnc
+
+---
+
+Ct/Hb
+
+Pad/Choir
+
+Syn Comp
+
+Chromatic Perc
+
+Drum/Perc
+
+Sound FX
+
+Musical FX
+
+Ethnic
+
+No Assign
+
+Control / Hybrid Seq
+
+The Arpeggio categories are divided into the sub categories listed below. Because the sub categories are
+listed based on the music genre, it is easy to find the sub category appropriate for your desired music
+style.
+
+Arpeggio Type Sub Category List
+
+Rock
+
+Rock
+
+World
+
+World
+
+Pop Rock
+
+Pop Rock
+
+General
+
+General
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Effect block
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Reference
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+Normal Part (AWM) Edit
+
+Drum Part Edit
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+Ballad
+
+No Assign
+
+No Assign
+
+Ballad
+
+Chill
+
+Chillout / Ambient
+
+Hip Hop
+
+Hip Hop
+
+Funk
+
+Funk
+
+Modern R&B Modern R&B
+
+Classic R&B
+
+Classic R&B
+
+House
+
+Techno
+
+Jazz
+
+D&B
+
+Latin
+
+House / Dance Pop
+
+Techno / Trance
+
+Jazz / Swing
+
+D&B / Breakbeats
+
+Latin
+
+Filter
+
+Exprs
+
+Pan
+
+Mod
+
+PBend
+
+Assign
+
+Comb
+
+Zone
+
+Z.Pad
+
+Filter *
+
+Expression *
+
+Pan *
+
+Modulation *
+
+Pitch Bend *
+
+Assign 1/2 *
+
+Comb *
+
+Zone Velocity *
+
+Zone Vel for Pad *
+
+NOTE In the Category Search display, the Sub Categories marked with an asterisk (*) are displayed only when
+
+“Control/Hybrid Seq” is selected as the Category type.
+
+MONTAGE Reference Manual
+
+11
+
+---
+
+Arpeggio Type Name
+
+The Arpeggio Types are named according to certain rules and abbreviations. Once you understand these
+rules and abbreviations, you’ll find it easy to browse through and select the desired Arpeggio Types.
+
+Arpeggio types with “_N” at the end of the type name (example: HipHop1_N)
+These Arpeggios are for using with the Normal Part, and Arpeggios with complex notes can be created
+even when triggered by one note (page 15).
+
+Arpeggio types with “_C” at the end of the type name (example: Rock1_C)
+These Arpeggios are for using with the Normal Part, and correct Arpeggios can be created corresponding
+to the chord you play (page 15).
+
+Arpeggio types with a normal name (example: UpOct1)
+In addition to the above types, there are three playback types: the Arpeggios created for use of Normal
+Parts and played back using only the played notes and their octave notes (page 15), the Arpeggios
+created for use of Drum Parts (page 15), and Arpeggios containing mainly non-note events (page 16).
+
+Arpeggio types with “_AF1”, “_AF2”, or “_AF1&2” at the end of the type name
+(example: Electro Pop AF1)
+When these Arpeggios are played, both of [ASSIGN 1] and [ASSIGN 2] buttons are automatically turned
+ON and the phrase starts playback.
+
+Arpeggio types with [Mg] at the beginning of the type name (example:
+[Mg]HardRock1)
+These Arpeggios are for using with a Mega Voice.
+
+Mega Voices and Mega Voice Arpeggios
+Normal sound uses velocity switching to make the sound quality and/or level of a Part change
+according to how strongly or softly you play the keyboard—giving greater authenticity and natural
+response to these Parts. However Mega Voices have a very complex structure with many different
+layers that are not suitable for playing manually. Mega Voices were developed specifically to be
+played by Mega Voice Arpeggios to produce incredibly realistic results. You should always use Mega
+Voices with Mega Voice Arpeggios.
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Effect block
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Reference
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+Normal Part (AWM) Edit
+
+Drum Part Edit
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+The Arpeggio Type List in the Data List PDF document contains the following columns.
+
+Main
+Category
+
+Sub
+Category
+
+ARP
+No.
+
+ARP Name
+
+Time
+Signature
+
+Length Original
+Tempo
+
+Accent Random
+
+SFX
+
+Sound Type
+
+ApKb
+
+ApKb
+
+ApKb
+
+ApKb
+
+ApKb
+
+ApKb
+
+ApKb
+
+Rock
+
+Rock
+
+Rock
+
+Rock
+
+Rock
+
+Rock
+
+Rock
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+MA_70s Rock _ES
+
+MB_70s Rock _ES
+
+MC_70s Rock
+
+MD_70s Rock
+
+FA_70s Rock
+
+FB_70s Rock _ES
+
+FC_70s Rock _ES
+
+4 / 4
+
+4 / 4
+
+4 / 4
+
+4 / 4
+
+4 / 4
+
+4 / 4
+
+4 / 4
+
+2
+
+1
+
+2
+
+4
+
+1
+
+1
+
+2
+
+130
+
+130
+
+130
+
+130
+
+130
+
+130
+
+130
+
+Acoustic Piano
+
+:
+
+NOTE Note that this list is for illustration purposes only. For a complete listing of the Arpeggio Types, see the Data List
+
+PDF document.
+
+1 Main Category
+
+Indicates an Arpeggio Main Category.
+
+2 Sub Category
+
+Indicates an Arpeggio Sub Category.
+
+3 ARP No (Arpeggio Number)
+
+Indicates the Arpeggio type number.
+
+4 ARP Name (Arpeggio Name)
+Indicates the Arpeggio Name.
+
+MONTAGE Reference Manual
+
+12
+
+---
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Effect block
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Reference
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+Normal Part (AWM) Edit
+
+Drum Part Edit
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+5 Time Signature
+
+Indicates the time signature or meter of the Arpeggio type.
+
+6 Length
+
+Indicates the data length (amount of measures) of the Arpeggio type. When the Loop parameter*1 is
+set to “off,” the Arpeggio plays back for this length and stops.
+
+7 Original Tempo
+
+Indicates the appropriate tempo value of the Arpeggio type. Note that this tempo is not set
+automatically when selecting an Arpeggio type.
+
+8 Accent
+
+The circle indicates that the Arpeggio uses the Accent Phrase feature (page 14).
+
+9 Random SFX
+
+The circle indicates that the Arpeggio uses the SFX feature (page 14).
+
+) Sound Type
+
+Indicates the sound type appropriate for the Arpeggio Type.
+
+*1 The Loop parameter is set as follows.
+[EDIT]  Part Selection  ELEMENT/OPERATOR [COMMON]  [Arpeggio]  [Common] (page 73)
+
+Arpeggio-related settings
+
+There are several methods for triggering and stopping the Arpeggio playback. In addition, you can set
+whether or not SFX sounds and special Accent Phrases are triggered along with the normal sequence
+data.
+
+Turning Arpeggio playback on/off
+
+The following three settings are available for turning the Arpeggio playback on/off.
+
+To play the Arpeggio only when the note is
+pressed:
+
+Set the “Hold” parameter to “Off” and the “Trigger
+Mode” parameter to “Gate.”
+
+To continue the Arpeggio even if the note is
+released:
+
+Set the “Hold” parameter to “On” and the “Trigger
+Mode” parameter to “Gate.”
+
+To toggle the Arpeggio playback on/off
+whenever the note is pressed:
+
+Set the “Trigger Mode” parameter to “Toggle.” The
+“Hold” parameter can be set to either “On” or “Off.”
+
+NOTE “Hold” is set as follows.
+
+[EDIT]  Part Selection  ELEMENT/OPERATOR [COMMON]  [Arpeggio]  [Common] (page 73)
+
+NOTE When receiving a MIDI sustain message (control change #64) with both of “Arp Master” and “Arp Part” set to
+
+“On,” you can obtain the same result by setting “Hold” to “On.”
+
+NOTE “Trigger Mode” is set as follows.
+
+[EDIT]  Part Selection  ELEMENT/OPERATOR [COMMON]  [Arpeggio]  [Advanced] (page 77)
+
+MONTAGE Reference Manual
+
+13
+
+---
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Effect block
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Reference
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+Normal Part (AWM) Edit
+
+Drum Part Edit
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+Using the Knobs to control Arpeggios
+
+By pressing the Knob function [ARP/MS] button, you can use the Knobs 1 – 4 to control Arpeggio
+playback. Try this out and listen for the changes in the sound. For details regarding the effect of the Knobs
+1 – 8, see Quick Edit (page 31).
+
+Arpeggio functions which can be controlled by Knob operations
+
+Knob 1  Knob 2  Knob 3  Knob 4
+
+Accent Phrases
+
+Accent Phrases are composed of sequence data included in some Arpeggio types, sounding only when
+you play notes at a velocity higher (stronger) than that specified in the Accent Velocity Threshold
+parameter.
+If it is hard to play at velocities necessary to trigger the Accent Phrase, set the “Vel Threshold” (Accent
+Velocity Threshold) parameter to a lower value.
+NOTE “Vel Threshold” (Accent Velocity Threshold) parameter is set as follows.
+
+[EDIT]  Part Selection  ELEMENT/OPERATOR [COMMON]  [Arpeggio]  [Advanced] (page 77)
+
+NOTE For information on Arpeggio types that use this function, refer to the “Arpeggio Type List” in the Data List PDF
+
+document.
+
+Random SFX
+
+Some Arpeggio types feature a Random SFX function which will trigger special sounds (such as guitar fret
+noises) when the note is released. The following parameters affecting Random SFX are provided.
+
+For turning the Random SFX on/off:
+
+Random SFX parameter
+
+For setting the volume of the SFX sound:
+
+Velocity Offset (Random SFX Velocity Offset)
+parameter
+
+For determining whether or not the volume of
+the SFX sound is controlled by velocity:
+
+Key On Ctrl (Random SFX Key on Control) parameter
+
+NOTE “Random SFX,” “Velocity Offset,” and “Key On Ctrl” are set as follows.
+
+[EDIT]  Part Selection  ELEMENT/OPERATOR [COMMON]  [Arpeggio]  [Advanced] (page 77)
+
+NOTE The Random SFX function is not available for the Arpeggio which stops when the note is released.
+NOTE For information on Arpeggio types that use the Random SFX function, refer to the “Arpeggio Type List” in the
+
+Data List PDF document.
+
+MONTAGE Reference Manual
+
+14
+
+---
+
+Arpeggio playback types
+
+There are three main Arpeggio playback types as described below.
+
+Arpeggios for Normal Parts
+
+Arpeggio types (belonging to all categories except for Drum/Perc and a part of Control/HybridSeq)
+created for use of Normal Parts have the following three playback types.
+
+Playback of played notes only
+The Arpeggio is played back using only the played note(s) and octave notes.
+
+Playback of a programmed sequence according to the played notes
+These Arpeggio types have the several sequences each of which is suited for a certain chord type. Even if
+you press only one note, the Arpeggio is played back using the programmed sequence— meaning that
+notes other than the ones you play may be sounded. Pressing another note triggers a transposed
+sequence using the pressed note as the new root note. Adding notes to those already held changes the
+sequence accordingly. Arpeggios with this playback type have “_N” at the end of the type name.
+
+Playback of a programmed sequence according to the played chord
+These Arpeggio types created for use with Normal Parts are played back to match the chord type
+determined by detecting the notes you play on the keyboard. Arpeggios with this playback type have “_C”
+at the end of the type name.
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Effect block
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Reference
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+NOTE When the “Key Mode” parameter is set to “Sort” or “Sort+Drct,” the same sequence is played back no matter
+
+Normal Part (AWM) Edit
+
+Drum Part Edit
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+what order you play the notes. When the “Key Mode” parameter is set to “Thru” or “Thru+Drct,” a different
+sequence is played back depending on the order you play the notes.
+
+NOTE Since these types are programmed for Normal Parts, using them with Drum Parts may not produce musically
+
+appropriate results.
+
+Arpeggios for Drum Parts
+
+Arpeggio types in Drum/Perc categories are programmed specifically for use with Drum Parts, giving you
+instant access to various rhythm patterns. Three different playback types are available.
+
+Playback of a drum pattern
+Pressing any note(s) will trigger the same rhythm pattern.
+
+Playback of a drum pattern, plus additional played notes (assigned drum
+instruments)
+Pressing any note will trigger the same rhythm pattern. Adding notes to the one already held produces
+additional sounds (assigned drum instruments) for the drum pattern.
+
+Playback only of the played notes (assigned drum instruments)
+Playing a note or notes will trigger a rhythm pattern using only the notes played (assigned drum
+instruments). Keep in mind that even if you play the same notes, the triggered rhythm pattern differs
+depending on the order of the notes played. This gives you access to different rhythm patterns using the
+same instruments simply by changing the order in which you play the notes, when the “Key Mode”
+parameter is set to “Thru” or “Thru+Drct.”
+
+NOTE The three playback types above are not distinguished by category name or type name. You’ll have to actually
+
+play the types and hear the difference.
+
+NOTE Since these types are programmed for Drum Parts, using them with Normal Parts may not produce musically
+
+appropriate results.
+
+MONTAGE Reference Manual
+
+15
+
+---
+
+Arpeggios containing mainly non-note events
+
+Arpeggio types (in Control/HybridSeq main categories with Filter, Expression, Pan, Modulation, Pitch Bend,
+and Assign 1/2 sub categories) are programmed primarily with Control Change and Pitch Bend data. They
+are used to change the tone or pitch of the sound, rather than play specific notes.
+In fact, some types contain no note data at all. When using a type of this category, set the “Key Mode”
+parameter to “Direct,” “Sort+Drct,” or “Thru+Drct.”
+NOTE Settings related to Key Mode are set as follows.
+
+[EDIT]  Part Selection  ELEMENT/OPERATOR [COMMON]  [Arpeggio]  [Common] (page 73)
+
+Tips for Arpeggio playback
+Arpeggios not only provide inspiration and full rhythmic passages over which you can perform, they
+give you quality MIDI data you can use in creating Songs, or fully formed backing parts to be used in
+your live performances. For instructions on using Arpeggio, see the “Quick Guide” in the Owner’s
+Manual.
+
+Motion Sequencer Block
+The powerful Motion Sequencer feature lets you dynamically change sounds by operating Parameters
+depending on sequences created in advance.
+It provides real time control for changing sounds depending on various sequences such as Tempo,
+Arpeggio, or the rhythm of external connected devices.
+You can assign up to eight desired Sequence types for one Lane.
+You can also set up to four Lanes corresponding to the Motion Sequencer function for one Part. Up to eight
+Lanes can be used at the same time for the entire Performance.
+The setting status (on or off) the Lanes in the entire Performance will be shown as follows.
+
+[PERFORMANCE]  [Motion Control]  [Motion Seq] (page 38)
+
+Also, the parameters for each Lane are set as follows.
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON]  [Motion Seq] 
+[Lane] (page 81)
+
+Lane setting
+
+Sequence Patterns for the Lane
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Effect block
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Reference
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+Normal Part (AWM) Edit
+
+Drum Part Edit
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+Selected Sequence setting
+
+Lane setting
+
+MONTAGE Reference Manual
+
+16
+
+---
+
+Turning the Motion Sequencer on/off
+
+The following settings are available for turning the Motion Sequencer playback on/off.
+
+To play the Motion Sequence when the note is
+pressed:
+
+Set the “LaneSW” parameter to “On,” the “Trigger”
+parameter to “Off,” and the” Sync” parameter to “Off.”
+
+To play the Motion Sequence when the
+[MOTION SEQ TRIGGER] button is pressed:
+
+Set the “LaneSW” parameter to “On,” the “Trigger”
+parameter to “On,” and the “Sync” parameter to “Off.”
+
+NOTE “LaneSW” and “Trigger” are set as follows.
+
+[EDIT]  Part selection  ELEMENT/OPERATOR [COMMON]  [MOTION Seq]  [Lane] (page 81)
+
+Using the Knobs to control Motion Sequencer
+
+By pressing the Knob function [ARP/MS] button, you can use the Knobs 1 – 2 and 5 – 8 to control Motion
+Sequencer playback. Try this out and listen for the changes in the sound. For details regarding the effect of
+the Knobs, see Quick Edit (page 31).
+
+Motion Sequencer functions which can be controlled by Knob operations
+
+Knob 1  Knob 2
+
+Knob 5  Knob 6  Knob 7  Knob 8
+
+Editing Motion Sequences
+
+You can create a custom Motion Sequence consisting of up to sixteen steps. For details about Editing, see
+page 83.
+
+Parameters related to Motion Sequencer
+
+In this instrument, Motion Sequencer is considered as a virtual controller and can be selectable in the
+“Source” parameter. The target parameter you want to control by Motion Sequencer is set in the
+“Destination” parameter. For details, see page 89.
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Effect block
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Reference
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+Normal Part (AWM) Edit
+
+Drum Part Edit
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+MONTAGE Reference Manual
+
+17
+
+---
+
+Effect Block
+This block applies effects to the output of the tone generator block as well as audio input block,
+processing and enhancing the sound. Effects are applied in the final stages of editing, letting you change
+the sound as desired.
+
+Effect structure
+
+System Effects — Variation and Reverb
+
+System Effects are applied to the overall sound. With System Effects, the sound of each Part is sent to the
+effect according to the Effect Send Level for each Part. The processed sound (referred to as “wet”) is sent
+back to the mixer according to the Return Level, and output—after being mixed with the unprocessed
+“dry” sound. This instrument is equipped with Variation and Reverb as System Effects. In addition, you can
+set the Send Level from Variation to Reverb. This parameter is used to apply Reverb to the signals output
+from the Variation. You can get a natural effect by applying Reverb depth to the Variation sound with the
+same level as that of the dry sound.
+
+Insertion Effects
+
+Insertion Effects can be applied individually to each of specified parts before merging signals of all parts.
+It should be used for sounds for which you want to drastically change the character. You can set different
+Effect types to the Insertion Effects A and B for each Part. These settings can be set Part Edit  [Effect]
+(page 67, page 122, page 136).
+This synthesizer features 17 sets of Insertion Effects. They can be applied to 1 to 16 Parts (maximum) and
+A/D Input Part.
+
+Master Effect
+
+This block applies effects to the final stereo output signal of the entire sound. Multiple Effect types are
+available.
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Effect block
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Reference
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+Normal Part (AWM) Edit
+
+Drum Part Edit
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+Element EQ
+
+Element EQ is applied to each Element of the Normal Part (AWM2) and each key of the Drum Part. You can
+specify one of three different EQ shapes, including shelving and peaking.
+NOTE Element EQ does not affect the Input signals from the A/D INPUT [L/MONO]/[R] jacks.
+
+Part EQ
+
+This EQ is applied to a Part before and after the Insertion Effect.
+
+3-band
+parametric EQ
+
+Part EQ
+
+Part
+
+Insertion Effect
+
+2-band
+parametric EQ
+
+Part EQ
+
+Master EQ
+
+Master EQ is applied to the final (post-effect), overall sound of the instrument. In this EQ, all five bands can
+be set to peaking, with shelving being available also for the lowest and highest bands.
+
+MONTAGE Reference Manual
+
+18
+
+---
+
+Effect connection
+
+1 Each EQ and Insertion Effect applied to each
+
+Performance
+
+Part
+
+2 Variation and Reverb related parameters
+Setting: Part Edit  [Effect]  [Routing] (page 67, page 122,
+
+page 136)
+Common/Audio Edit  [Effect]  [Routing] (page 154)
+
+3 Master Effect related parameters
+Setting: Common/Audio Edit  [Effect]  [Master FX]
+
+(page 158)
+
+4 Master EQ related parameters
+Setting: Common/Audio Edit  [Effect]  [Master EQ]
+
+(page 159)
+
+NOTE Regarding the audio input signal from the A/D INPUT [L/
+MONO]/[R] jacks, the effect is set in Common/Audio Edit
+ [Audio In].
+
+Part
+
+Part EQ
+Insertion A/B
+
+Send Level
+
+Master
+Effect
+
+Master EQ
+
+Variation
+
+Effect block
+
+Reverb
+
+Variation
+to Reverb
+
+System Effect
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Return Level
+
+Reference
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+Normal Part (AWM) Edit
+
+Drum Part Edit
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+About the Vocoder Effect
+
+MONTAGE features a Vocoder effect. Vocoder is a distinctive, “robot voice” effect which extracts the
+characteristic of the microphone sound and adds it to the sound via your keyboard performance. The
+human voice consists of sounds generated from the vocal cords, and filtered by the throat, nose and
+mouth. These resonant sections have specific frequency characteristics and they function effectively as a
+filter, creating many formants (harmonic content). The Vocoder effect extracts the filter characteristics of
+the voice from the microphone input and recreates the vocal formants by the use of multiple band pass
+filters. The machine-like ‘robot’ voice is created by passing the pitched sounds of musical instruments
+(such as a synthesizer sound) through the filters.
+
+Mic Input or
+Part Output
+
+Part Output
+(Keyboard
+Performance)
+
+Extracting the characteristic
+of the input sound
+
+Creating formants
+
+Robot-like
+voice
+
+Vocoder
+
+About Effect categories, Effect types, and Effect parameters
+For information regarding the effect categories of this instrument and the effect types contained in
+their categories, see the “Effect Type List” in the Data List PDF document. For information on the
+effect parameters which can be set in the each effect type, see the “Effect Parameter List” in the Data
+List PDF document. For information on the descriptions of each effect category, each effect type, and
+each effect parameter, see the Synthesizer Parameters Manual PDF document.
+
+About Preset settings
+Preset settings for parameters of each effect type are provided as templates and can be selected in
+the Effect Type selection display. To get a desired effect sound, try first selecting one of the Presets
+close to your imagined sound, then change the parameters as necessary. Preset settings can be
+determined by setting “Preset” in each effect parameter display. For information on each effect type,
+see the Data List PDF document.
+
+MONTAGE Reference Manual
+
+19
+
+---
+
+Envelope Follower Block
+Envelope Follower is a function for detecting the envelope of the input signal waveform and modifying
+sounds dynamically. This function allows you to control not only Part outputs but also input signals from
+external devices connected to the A/D INPUT [L/MONO]/[R] jacks.
+The Input source of each Envelope Follower is fixed such as Part 1 for EnvFollower 1, Part 2 for
+EnvFollower 2, and the Audio Part for EnvFollower AD. However, the signal output from each Envelope
+Follower can be another “input source” for any desired destination such as each Part or even the entire
+Performance. For example, you can modify the sound of Part 2 by using the Envelope Follower for Part 1
+(EnvFollower 1) as the “Source.” The Envelope Follower as the “Source” and the target parameter to be
+controlled by the Envelope Follower (which is called “Destination”) are set in the Control Assign display
+(page 89).
+
+Each Envelope Follower
+
+EnvFollower 1
+
+EnvFollower 2
+
+EnvFollower MST
+
+EnvFollower AD
+
+Part 1
+
+Part 2
+
+Entire
+Performance
+(sixteen Parts and
+Audio Part)
+
+Audio Part
+
+Each Input source for Envelope Follower
+
+Input signal to Envelope Follower (Fixed)
+
+Output signal from Envelope Follower (The Destination is flexible)
+
+Selected Envelope Follower
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Effect block
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Reference
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+Normal Part (AWM) Edit
+
+Drum Part Edit
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+Signal flow of
+Envelope Follower
+
+Input sources for
+Envelope Follower
+
+[EDIT]  PART [COMMON]  [Audio In]  [Routing]  “Envelope Follower” (EnvFollower AD)
+[EDIT]  PART [COMMON]  [Effect]  [Routing]  “Envelope Follower” (EnvFollower MST)
+[EDIT]  Part selection  ELEMENT/OPERATOR [COMMON]  [Effect]  [Routing]  “Envelope
+Follower” (EnvFollower 1 – 16)
+
+MONTAGE Reference Manual
+
+20
+
+---
+
+Controller Block
+This block consists of the keyboard, Pitch Bend and Modulation Wheels, Ribbon Controller, Knobs, Sliders
+and so on. The keyboard itself doesn’t generate sounds, but instead generates/transmits note on/off,
+velocity and other information (MIDI messages) to the synthesizer’s tone generator block when you play
+notes. The controllers also generate/transmit MIDI messages. The synthesizer’s tone generator block
+produces sound according to the MIDI messages transmitted from the keyboard and controllers.
+
+Keyboard
+
+The keyboard transmits the note on/off messages to the Tone Generator Block (for sounding) and
+Sequencer Block (for recording). You can change the note range of the keyboard in octaves by using the
+OCTAVE [-]/[+] buttons, transpose the notes by using the OCTAVE [-]/[+] buttons while holding down the
+[SHIFT] button, and set how the actual velocity is generated according to the strength with which you play
+notes.
+
+Pitch Bend wheel
+
+Use the Pitch Bend wheel to bend notes up (roll the wheel away from
+you) or down (roll the wheel toward you) while playing the keyboard.
+Roll the wheel upward/downward to bend the pitch upward/downward.
+This wheel is self-centering and will automatically return to normal pitch
+when released. The Pitch Bend Range setting can be changed in Part
+Edit  [Part Settings]  [Pitch] (page 60). Functions other than Pitch
+Bend can be assigned to the Pitch Bend wheel in the Part Edit 
+[Mod/Control]  [Control Assign] (page 89, page 139).
+
+Pitch up
+
+Pitch down
+
+Modulation wheel
+
+Even though the Modulation wheel is conventionally used to apply
+vibrato to the sound, many of the preset Performances have other
+functions and effects assigned to the wheel.
+The more you move this wheel up, the greater the effect that is applied
+to the sound. To avoid accidentally applying effects to the current
+Performance, make sure the Modulation wheel is set to minimum
+before you start playing. Various functions can be assigned to the
+Modulation wheel in Part Edit  [Mod/Control]  [Control Assign]
+(page 89, page 139).
+
+Ribbon Controller
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Effect block
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Reference
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+Normal Part (AWM) Edit
+
+Drum Part Edit
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Maximum
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+Minimum
+
+The Ribbon Controller is touch sensitive, and is controlled by running your finger laterally across the
+surface. Various functions are assigned to each Part of the preset Performance. Various functions can be
+assigned to the Ribbon Controller in the Control Assign display (page 89) of the Part Edit. You can also
+determine whether the Ribbon Controller value returns to the center, or stays at the point where you
+released your finger in the General display (page 146) of the Common/Audio Edit.
+
+Assignable Switches
+
+According to the XA (Expanded Articulation) Control settings (page 6) in Element Edit  [Osc/Tune]
+(page 94), you can call up specific Elements of the current Part by pressing each of these buttons during
+your keyboard performance. You can select how the on/off status of these buttons is switched in Common/
+Audio Edit  [General] (page 145). Furthermore, you can assign various functions (other than calling up
+specific Elements) to these buttons in Part Edit  [Mod/Control]  [Control Assign] (page 89, page 139).
+
+MONTAGE Reference Manual
+
+21
+
+---
+
+Knobs/Control Sliders
+
+These knobs and sliders let you change various aspects of the Part’s sound in real time—while you play.
+For instructions on using the knobs/sliders, see the Owner’s Manual. For instructions on using the Knobs 1
+– 8, see “Quick Edit” (page 29).
+
+Super Knob
+
+The Super Knob lets you simultaneously control the parameters common to all Parts (Assign 1 – 8) which
+are assigned to the eight knobs. For instructions on using the Super Knob, see the Owner’s Manual. For
+the editable setting values for the Super Knob, see the Super Knob display (page 39). Also, for instructions
+on setting the Assign 1 – 8 controls, see the Control Assign display (page 152) for the Common/Audio Edit.
+
+Internal Memory
+The MONTAGE creates a variety of different kinds of data, including Performances, Live Sets, and Songs.
+This section describes how to maintain the various types of data and use the memory devices/media for
+storing them.
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Effect block
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Reference
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+Normal Part (AWM) Edit
+
+Internal Memory
+
+Recall
+Buffer
+Excluding
+Master and
+Utility settings
+
+Compare
+Buffer
+Excluding
+Master and
+Utility settings
+
+Preset Memory
+
+- Preset Performance
+- Arpeggio
+- Motion Sequence
+- Audition Phrase
+- Waveform
+- Live Set
+- Curve
+- Micro Tuning
+
+Data communication
+between this synthesizer
+and an external device
+
+Internal data communication
+
+Drum Part Edit
+
+MIDI instrument or computer
+DAW software
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+u
+s
+i
+n
+g
+
+s
+t
+o
+r
+e
+
+b
+u
+t
+t
+o
+n
+)
+
+S
+t
+o
+r
+e
+(
+e
+x
+e
+c
+u
+t
+e
+d
+
+b
+y
+
+Edit Buffer
+
+- Performance Edit
+- Motion Sequence Edit
+
+- User Curve Edit
+- Live Set Edit
+- User Micro Tuning Edit
+- User Waveform Edit
+
+- Utility
+- Quick Setup
+
+Bulk Dump
+
+User Memory
+
+USB Flash Memory
+
+For User
+- User Performance
+- User Arpeggio
+- User Motion Sequence
+- User Curve
+- User Live Set
+- User Micro Tuning
+
+- User Waveform
+
+- Utility
+- Quick Setup
+
+MOTIF XF format
+File extensions “.X3A,” “.X3V,”
+“.X3G,” and “.X3W”
+
+L
+o
+a
+d
+/
+
+S
+a
+v
+e
+
+File extensions “.X7U”
+
+For Library*
+
+File extensions “.X7L”
+
+- Song
+
+Song
+
+File extensions “.MID”
+
+File extensions “.WAV”
+
+Audio Record/Playback
+
+File extensions “.WAV” “.AIF”
+
+* Same as the “For User” area except the following: It does not include the Utility or Quick Setup settings. Also, the included Live Set
+
+contains only one Bank for each imported file.
+
+Preset Memory
+Preset Memory is memory designed specifically for reading out data such as Preset Performance,
+Arpeggio, and Audition Phrase. You cannot overwrite the data in Preset Memory.
+
+MONTAGE Reference Manual
+
+22
+
+---
+
+Edit buffer
+The edit buffer is the memory location for edited data of these types: Performance, Live Set, and Song.
+Although the edit buffer is designed specifically for data writing and data reading, the data contained in
+the edit buffer is lost when the power is turned off. You should always store edited data to User memory
+before editing new performance or before turning off the power. Data other than Performance and Motion
+Sequence are automatically stored.
+
+User memory
+User data edited in the Edit buffer and utility settings for the entire system are stored in the dedicated area
+in the User memory. Up to eight Library files (.X7L) read from the USB flash memory device are loaded in
+the dedicated area in the User memory.
+This is read-write memory and the data will be kept even after the power is turned off.
+
+Recall buffer and Compare buffer
+If you’ve selected another Performance without storing the one you were editing, you can recall your
+original edits, since the edit buffer’s contents are stored on backup memory, called the Recall buffer. Also,
+the instrument has a Compare buffer in which the sound settings prior to editing will temporarily be
+reinstated for comparison purposes. You can switch between the just-edited sound and its unedited
+condition, and hear how your edits affect the sound. Both of these are read-write memory types. However,
+you should make sure to store the sequence data before turning off the power, because any sequence
+data you’ve created will be lost when the power is turned off. For instructions on using the Compare
+function, see the Owner’s Manual.
+
+Basic Structure
+
+Functional blocks
+
+Tone Generator block
+
+A/D Input block
+
+Sequencer block
+
+Arpeggio block
+
+Motion Sequencer block
+
+Effect block
+
+Envelope Follower block
+
+Controller block
+
+Internal Memory
+
+Reference
+
+Display (touch panel) config.
+
+Performance Play (Home)
+
+Motion Control
+
+Mixing
+
+Scene
+
+Play/Rec
+
+Normal Part (AWM) Edit
+
+Drum Part Edit
+
+Normal Part (FM-X) Edit
+
+Common/Audio Edit
+
+Category Search
+
+Utility
+
+Live Set
+
+iPhone/iPad connection
+
+MONTAGE Reference Manual
+
+23
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Reference
+
+Display (touch panel)
+
+Display (touch panel) configuration
+
+This section explains the navigation bar which is common to all types of displays.
+
+1 2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+Navigation bar
+
+1 HOME icon
+
+Moves to the Performance Play display (page 26).
+
+2 EXIT icon
+
+Functions same as the [EXIT] button on the panel. Press this icon to exit from the current display and
+return to the previous level in the hierarchy.
+
+3 [INFORMATION] area
+
+Displays helpful information, including the currently selected display name.
+
+4 EFFECT icon
+
+Touch the icon to call up the Effect Switch display (page 182). The icon turns off when any of the Effect
+blocks (Insertion, System or Master) is off.
+
+5 QUICK SETUP icon
+
+Displays the settings of Local Control ON/OFF and MIDI IN/OUT.
+The keyboard-shaped icon lights up when Local Control is set to ON and turns off when Local Control
+is set to OFF.
+When MIDI is set as the MIDI IN/OUT setting, a MIDI connector-shaped icon appears. When USB is set
+as the MIDI IN/OUT setting, a USB connector-shaped icon appears. Touch the desired icon to call up
+the corresponding Quick Setup display (page 166).
+
+6 TEMPO SETTINGS icon
+
+Displays the tempo of the currently selected Performance. Touch the icon to call up the Tempo Settings
+display (page 180).
+
+7 LIVE SET icon
+
+Touch the icon to call up the Live Set display (page 183).
+
+8 UTILITY icon
+
+Touch the icon to call up the last opened display among the Utility displays.
+
+MONTAGE Reference Manual
+
+24
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+9
+
+Display (touch panel)
+
+Scroll buttons
+
+Display All button
+
+Display All
+
+9 Pop-up List
+
+Displays setting values for parameters. When the setting values are displayed in multiple pages, you
+will need to use the Scroll buttons to scroll through the pages or the Display All button to display all of
+the setting values.
+
+MONTAGE Reference Manual
+
+25
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Performance Play (Home)
+
+From the Performance Play display you can play a selected Performance and edit some of the
+Performance-related settings.
+
+Home
+
+Operation
+
+Press the [PERFORMANCE] button, or
+Touch the [HOME] icon
+
+1
+
+2
+
+7
+
+8
+
+6
+
+)
+
+!
+
+@ # $
+
+1 Performance name
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+3
+
+4
+
+5
+
+9
+
+Indicates the currently selected Performance name. Touching the parameter calls up the menu for
+Category Search, Edit, and Recall.
+NOTE Once you edit any parameter in the selected Performance, a blue flag icon appears at right in the
+
+Performance Name.
+
+2 Part indicator
+
+When the cursor is on the Performance name or on Parts 1 – 8, this indicates whether Parts 9 – 16 are
+used or not.
+When the cursor is on Parts 9 – 16, it indicates whether Parts 1 – 8 are used or not. If Parts 9 – 16 are
+not in use, this indicator is not shown.
+
+3 Flag
+
+Indicates the tone generation attributes of the currently selected Performance. (See chart below.)
+
+Flag
+
+AWM2
+
+FM-X
+
+Definition
+
+Performance comprised only of AWM2 Parts
+
+Performance comprised only of FM-X Parts
+
+FM-X+AWM2
+
+Performance comprised of both AWM2 and FM-X Parts
+
+MC
+
+SSS
+
+Performance featuring Motion Control
+
+Performance featuring Seamless Sound Switching
+
+4 Knob functions
+
+Indicates the functions currently assigned to the Knobs 1 – 8.
+
+MONTAGE Reference Manual
+
+26
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+5 Part names
+
+Indicates the Part names. Touching the parameter calls up the menu for Category Search, Edit, and
+Copy. To add another Part, touch “+” icon.
+
+6 Common Motion Sequencer switch
+
+Determines whether the Motion Sequencer of the Common/AD Parts is on or off. When all Lane
+switches of the Common/AD Parts are off, this switch is not shown.
+Settings: Off, On
+
+7 Part Arpeggio On/Off switch
+
+Determines whether the Arpeggio of each Part is on or off.
+Settings: Off, On
+
+8 Part Motion Sequencer switch
+
+Determines whether the Motion Sequencer of each Part is on or off. When all Lane switches of the Part
+are off, this switch is not shown.
+Settings: Off, On
+
+9 Note Limit
+
+Determines the lowest and highest notes in the Part’s note range. For example, setting a Note Limit of
+“C5 – C4” lets you hear the Part by playing notes in the two ranges of C -2 to C4 and C5 to G8; notes
+played between C4 and C5 have no sound. For details about the Note Limit setting, see the Owner’s
+Manual.
+Settings: C -2 – G8
+
+) Keyboard Control switch
+
+Determines whether the Keyboard Control for each Part is on or off. When this switch is set to off, the
+Part will not sound even you play the keyboard (unless the Part is selected).
+Settings: Off, On
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+! Switching Mute on/off for Parts
+
+Determines whether the Mute for each Part is on or off.
+Settings: Off, On
+
+@ Switching Solo on/off for Parts
+
+Determines whether the Solo for each Part is on or off.
+Settings: Off, On
+
+# Volume of Parts
+
+Determines the Volume for the Part.
+Settings: 0 – 127
+
+$ Meter
+
+Indicates the audio output level of the Part.
+
+MONTAGE Reference Manual
+
+27
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Motion Control
+
+From the Motion Control display you can edit all Motion Control settings, such as general sound settings,
+Arpeggio, and the Motion Sequencer of the currently selected Performance.
+The Motion Control section contains the following various displays.
+- Overview
+- Quick Edit
+- Arpeggio
+- Motion Sequencer
+- Super Knob
+- Knob Auto
+
+Motion Control
+
+Overview
+
+The Overview display indicates the illustration of the connection between Controllers and Parts. You can
+confirm the current settings here.
+
+Operation
+
+[PERFORMANCE]  [Motion Control]  [Overview] or [SHIFT] + [PERFORMANCE]
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Part
+Indicates the currently selected Part. To confirm a Part’s connections, select the Part here.
+Settings: Common, Part 1 – 16
+
+Edit Common Control Settings/Edit Part Control Settings
+Calls up the Control Assign display for the selected Part. For “Common,” see page 152. For Part 1 – 16,
+see page 89.
+
+Control Function (Controller Function)
+Switches between the Performance Control and the Part Control.
+Settings: Performance Control, Part Control
+
+MONTAGE Reference Manual
+
+28
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Controller
+Determines whether or not the illustration of the connection between “Controller” and Part is shown.
+The “Controller” here refers to:
+- Pitch Bend wheel
+- Modulation wheel
+- Ribbon Controller
+- [ASSIGN 1] and [ASSIGN 2] buttons (Assignable switches 1 and 2)
+- [MOTION SEQ HOLD] (Motion sequencer Hold) button
+- [MOTION SEQ TRIGGER] (Motion sequencer trigger) button
+Settings: Off, On
+
+Assignable
+Determines whether or not the illustration of the connection between “Assignable” and Part is shown.
+The “Assignable” here refers to:
+- Assignable Knobs 1 – 8
+Settings: Off, On
+
+Fader
+Determines whether or not the illustration of the connection between “Fader” and Part is shown.
+The “Fader” here refers to:
+- Control sliders 1 – 8
+Settings: Off, On
+
+Super Knob
+Determines whether or not the illustration of the connection between “Super Knob” and Part is shown.
+The “Super Knob” here refers to:
+- Super Knob
+Settings: Off, On
+
+Quick Edit
+
+From the Quick Edit display you can make general sound settings. You can select whether the settings are
+commonly applied to all Parts or to only one selected Part.
+The parameters with the indicators can be controlled by the Knobs 1 – 8. To do this, use the Knob Function
+[TONE]/[EQ/FX]/[ARP/MS] buttons for switching the knob operations.
+
+Operation
+
+[PERFORMANCE]  [Motion Control]  [Quick Edit]
+
+MONTAGE Reference Manual
+
+29
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Part
+Indicates the currently selected Part. Select the Part you want to use Quick Edit with here.
+Settings: Common, Part 1 – 16
+
+ When “Part” is set to “Common”
+
+You can edit the parameters commonly applied to all Parts.
+
+Performance Name
+Enters the desired name for the Performance. Performance names can contain up to 20 characters.
+Touching the parameter calls up the input character display.
+
+FEG Atk (FEG Attack Time)
+Determines the speed of filter variation from the time a note is played until the maximum initial level of
+the Cutoff Frequency is reached. This parameter determines the offset value of the FEG (page 105) for
+the Element/Operator Common.
+Settings: -64 – +63
+
+FEG Decay (FEG Decay Time)
+Determines how fast the Cutoff Frequency falls from maximum attack level to the sustain level. This
+parameter determines the offset value of the FEG parameter (page 105) for the Element/Operator
+Common.
+Settings: -64 – +63
+
+FEG Rel (FEG Release Time)
+Determines how fast the Cutoff Frequency falls from the sustain level to zero when a note is released.
+This parameter determines the offset value for the FEG parameter (page 105) of the Element/Operator
+Common.
+Settings: -64 – +63
+
+Edit Master EQ
+Calls up the Master EQ display (page 159) for Common/Audio Edit.
+
+Edit All Arp (Edit All Arpeggio)
+Calls up the Arpeggio display (page 35) for Motion Control.
+
+Edit Common MS (Edit Common Motion Sequencer)
+Calls up the Motion Sequencer Lane display (page 151) for Common/Audio Edit.
+
+Cutoff (Cutoff Frequency)
+Determines the Cutoff Frequency for the Filter, when the Low Pass Filter is selected, for example, the
+larger the value the brighter the decay. This parameter determines the offset value of the Filter Cutoff
+Frequency (page 102) for the Element/Drum Key/Operator Common.
+Settings: -64 – +63
+
+Resonance
+Determines the emphasis given to the Cutoff Frequency. This parameter determines the offset value of
+the Filter Resonance (page 103) for the Element/Drum Key/Operator Common.
+Settings: -64 – +63
+
+FEG Depth
+Determines the range over which the cutoff frequency of the Filter EG changes. This parameter
+determines the offset value of the FEG Depth (page 105) for the Element/Operator Common.
+Settings: -64 – +63
+
+Portamento (Portamento Time)
+Determines the pitch transition time when Portamento is applied. This parameter is synchronized to the
+same parameter for the Common/Audio Edit.
+Settings: -64 – +63
+
+Attack (AEG Attack Time)
+Determines the speed of attack from the time a key is played until the maximum initial level of the AEG
+is reached. This parameter determines the offset value of the AEG (page 110, page 129, page 143) for
+the Element/Drum Key/Operator.
+Settings: -64 – +63
+
+MONTAGE Reference Manual
+
+30
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Decay (AEG Decay Time)
+Determines how fast the volume falls from maximum attack level to the sustain level. This parameter
+determines the offset value of the AEG (page 110, page 129, page 143). for the Element/Drum Key/
+Operator
+Settings: -64 – +63
+
+Sustain (AEG Sustain Level)
+Determines the sustain level at which the volume will continue while a note is held, after the initial attack
+and decay. This parameter determines the offset value of the AEG (page 110, page 129, page 143) for
+the Element/Drum Key/Operator.
+Settings: -64 – +63
+
+Release (AEG Release Time)
+Determines how fast the volume falls from the sustain level to zero when a note is released. This
+parameter determines the offset value of the AEG (page 110, page 129, page 143) for the Element/
+Drum Key/Operator.
+Settings: -64 – +63
+
+Low Gain (Maser EQ Low Gain)
+Determines the level gain of the Master EQ Low band.
+Settings: -12dB – +12dB
+
+Lo Mid Gain (Master EQ Low Mid Gain)
+Determines the level gain of the Master EQ Low Mid band.
+Settings: -12dB – +12dB
+
+Mid Gain (Master EQ Mid Gain)
+Determines the level gain of the Master EQ Mid band.
+Settings: -12dB – +12dB
+
+Hi Mid Gain (Master EQ High Mid Gain)
+Determines the level gain of the Master EQ High Mid band.
+Settings: -12dB – +12dB
+
+High Gain (Master EQ High Gain)
+Determines the level gain of the Master EQ High band.
+Settings: -12dB – +12dB
+
+Pan (Performance Pan)
+Determines the stereo pan position of the selected Performance. This parameter offsets the same
+parameter in the Part Edit setting.
+Settings: L63 – C (center) – R63
+
+Var Return (Variation Return)
+Determines the Return level of the Variation Effect.
+Settings: 0 – 127
+
+Rev Return (Reverb Return)
+Determines the Return level of the Reverb Effect.
+Settings: 0 – 127
+
+Common Clock Swing (Common Swing)
+Determines the Swing of the Arpeggio/Motion Sequencer for the entire Performance. This is the offset
+value for the Swing of the Arpeggio/Motion Sequencer for each Part.
+Settings: -120 – +120
+
+MONTAGE Reference Manual
+
+31
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Common Clock Unit (Common Unit Multiply)
+Adjusts the Arpeggio/Motion Sequencer playback time for the entire Performance.
+This parameter is applied to the Part when the Unit Multiply parameter for Arpeggio/Motion Sequencer
+of the Part is set to “Common.”
+By using this parameter, you can create a different Arpeggio/Motion Sequencer type from the original
+one.
+Settings: 50% – 400%
+
+200%: The playback time will be doubled and the tempo is halved.
+100%: The normal playback time.
+50%: The playback time will be halved and the tempo doubled.
+
+Common Arp Gate Time (Common Arpeggio Gate Time)
+Determines the Gate Time Rate (length) of the Arpeggio for the entire Performance. This is the offset
+value for the Gate Time Rate of the Arpeggio for each Part.
+Settings: -100 – +100
+
+Common Arp Velocity (Common Arpeggio Velocity Rate)
+Determines the Velocity Rate of the Arpeggio for the entire Performance. This is the offset value for the
+Velocity Rate of the Arpeggio for each Part.
+Settings: -100 – +100
+
+Common Motion Seq Amplitude (Common Motion Sequencer Amplitude)
+Determines the Amplitude of the Motion Sequencer for the entire Performance. “Amplitude” determines
+how the entire Motion Sequence changes.
+This is the offset value for the Part Motion Seq Amplitude, which is also the offset value for the Lane
+Amplitude. This results in that both of the Common and Part MS Amplitudes offset the Amplitude setting
+in the Lane (only when “MS FX” is set to on for the Lane).
+Settings: -64 – +63
+
+Common Motion Seq Shape (Common Motion Sequencer Pulse Shape)
+Determines the Pulse Shape of the Motion Sequencer for the entire Performance. This changes the
+step curve shape of the sequence.
+This is the offset value for the Part Motion Seq Pulse Shape, which is also the offset value for the Lane
+Pulse Shape. This results in that both of the Common and Part MS Pulse Shapes offset the Pulse Shape
+setting for the parameter in the Lane (only when “MS FX” is set to on for the Lane and “Control” is set to
+on for the parameter).
+Settings: -100 – +100
+
+Common Motion Seq Smooth (Common Motion Sequencer Smoothness)
+Determines the Smoothness of the Motion Sequencer for the entire Performance. “Smoothness” is the
+degree to which the time of the Motion Sequence is smoothly changed.
+This is the offset value for the Part Motion Seq Smoothness, which is also the offset value for the Lane
+Smoothness. This results in that both of the Common and Part MS Smoothnesses offset the
+Smoothness setting for the parameter in the Lane (only when “MS FX” is set to on for the Lane).
+Settings: -64 – +63
+
+Common Motion Seq Random (Common Motion Sequencer Random)
+Determines the Random of the Motion Sequencer for the entire Performance. “Random” is the degree
+to which the Step Value of the Sequence is randomly changed.
+This is the offset value for the Part Motion Seq Random when “MS FX” is set to on for the Lane.
+Settings: -64 – +63
+
+MONTAGE Reference Manual
+
+32
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+ When “Part” is set to Part 1 – 16
+
+You can edit the parameters for the selected Part.
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Part Category Main (Part Main Category)
+Part Category Sub (Part Sub Category)
+Determines the Main Category and Sub Category of the Part.
+The categories are keywords representing the general characteristics of the Parts. Selecting the
+appropriate category makes it easy to find the desired Part from the huge variety of Parts available.
+There are 17 Main Categories which indicate types of instruments. There are up to nine Sub Categories
+for each Main Category, indicating more detailed types of instruments.
+Settings: See the Data List PDF document.
+
+Part Name
+Enters the desired name for the Part. Part names can contain up to 20 characters. Touching the
+parameter calls up the input character display.
+
+The parameters below are same as the ones when “Part” is set to “Common” (page 30).
+- FEG Atk (FEG Attack Time)
+- FEG Decay (FEG Decay Time)
+- FEG Rel (FEG Release Time)
+- Cutoff
+- Resonance
+- FEG Depth
+- Portamento (Portamento Time)
+
+The setting values differ from the ones which “Part” is set to “Common.”
+Settings: 0 – 127
+
+- Attack (AEG Attack Time)
+- Decay (AEG Decay Time)
+- Sustain (AEG Sustain Level)
+- Release (AEG Release Time)
+
+FEG Sus (FEG Sustain Level)
+Determines the FEG Sustain Level for the Part. This is the offset value for the FEG Decay2 Level of the
+Element/Operator Common (page 105).
+Settings: -64 – +63
+
+Edit Part EQ
+Calls up the Part EQ display (page 70) for Part Edit.
+
+Edit Part Arp (Edit Part Arpeggio)
+Calls up the Arpeggio display (page 73) for Part Edit.
+
+MONTAGE Reference Manual
+
+33
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Edit Part MS (Edit Part Motion Sequencer)
+Calls up the Motion Sequencer Lane display (page 81) for Part Edit.
+
+EQ Low Gain (3 band EQ Low Gain)
+Determines the level gain for the Low band.
+Settings: -12dB – +12dB
+
+EQ Mid Freq (3 band EQ Mid Frequency)
+Determines the frequency for the Mid band.
+Settings: 139.7Hz – 10.1kHz
+
+EQ Mid Gain (3 band EQ Mid Gain)
+Determines the level gain for the Mid band.
+Settings: -12dB – +12dB
+
+EQ Mid Q (3 band EQ Mid Q)
+Determines the EQ bandwidth of the Mid band.
+Settings: 0.7 – 10.3
+
+EQ High Gain (3 band EQ Hi Gain)
+Determines the level gain of the High band.
+Settings: -12dB – +12dB
+
+Pan
+Determines the stereo pan position of the selected Part.
+Settings: L63 – C (Center) – R63
+
+Var Send (Variation Send)
+Determines the Send level of the signal sent to the Variation effect.
+Settings: 0 – 127
+
+Rev Send (Reverb Send)
+Determines the Send level of the signal sent to the Reverb effect.
+Settings: 0 – 127
+
+Part Clock Swing (Part Swing)
+Delays notes on even-numbered beats (backbeats) to produce a swing feel.
+- +1 and higher: Delay the Arpeggio notes.
+- -1 and lower: Advance the Arpeggio notes.
+- 0: Exact timing as set by “Arpeggio/Motion Sequencer Grid” Value, resulting in no swing.
+
+Judicious use of this setting lets you create swing rhythms and triplet feels, such as shuffle and
+bounce.
+Settings: -120 – +120
+
+Part Clock Unit (Part Unit Multiply)
+Adjusts the Arpeggio/Motion Sequencer playback time for the selected Part.
+Settings: 50% – 400%, Common
+
+200%: The playback time will be doubled and the tempo is halved.
+100%: The normal playback time.
+50%: The playback time will be halved and the tempo doubled.
+Common: The value set in the Unit Multiply common to the all Parts will be applied.
+
+Part Arp Gate Time (Part Arpeggio Gate Time)
+Determines how much the Gate Time (length) of the Arpeggio notes is offset from the original value.
+This is the offset value for the Gate Time Rate (page 76) of each Arpeggio Select setting.
+Settings: 0% – 200%
+
+Part Arp Velocity (Part Arpeggio Velocity Rate)
+Determines how much the velocity of Arpeggio playback is offset from the original value.
+This is the offset value for the Velocity Rate (page 76) of each Arpeggio Select setting.
+Settings: 0% – 200%
+
+MONTAGE Reference Manual
+
+34
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Part Motion Seq Amplitude (Part Motion Sequencer Amplitude)
+Determines the Amplitude (page 83) of the Motion Sequencer for the selected Part.
+This is the offset value for the Lane Motion Seq Amplitude when “MS FX” is set to on for the Lane.
+Settings: -64 – +63
+
+Performance
+
+Home
+
+Motion Control
+
+Part Motion Seq Shape (Part Motion Sequencer Pulse Shape)
+Determines the Pulse Shape of the Motion Sequencer for the selected Part.
+This is the offset value for the Lane Motion Seq “Step Curve Parameter” (page 84) when “MS FX” is set
+to on for the Lane and “Control” is set to on for the parameter.
+Settings: -100 – +100
+
+Part Motion Seq Smooth (Part Motion Sequencer Smoothness)
+Determines the Smoothness of the Motion Sequencer for the selected Part.
+This is the offset value for the Lane Motion Seq Smoothness (page 83) when “MS FX” is set to on for the
+Lane.
+Settings: -64 – +63
+
+Part Motion Seq Random
+Determines the Random of the Motion Sequencer for the selected Part. “Random” is the degree to
+which the Step Value of the Sequence is randomly changed.
+Settings: 0 – 127
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Arpeggio
+
+From the Arpeggio display you can set Arpeggio-related parameters for multiple Parts.
+Touching the Arpeggio Type name on this display (or pressing the [CATEGORY] button on the panel) calls
+up a menu. In the displayed menu, touch [Search] to call up the Arpeggio Category Search display and
+touch [Number] to determine the Arpeggio Type by specifying the Arpeggio Number.
+
+Operation
+
+[PERFORMANCE]  [Motion Control]  [Arpeggio]
+
+View
+
+Arpeggio Type
+
+Part 9-16 / Part 1-8
+Switches between the displays of Parts 9 – 16 or the Parts 1 – 8. In case of the picture above, touch the
+“Part 9-16” to display the Arpeggio Types for the “Part 9-16.”
+Settings: Part 9-16 / Part 1-8
+
+Arp Master (Arpeggio Master Switch)
+Determines whether the Arpeggio is on or off for the entire Performance. This setting is applied to the [ARP
+ON/OFF] button on the panel.
+Settings: Off, On
+
+MONTAGE Reference Manual
+
+35
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Sync Quantize (Sync Quantize Value)
+Determines the actual timing at which the next Arpeggio playback starts when you trigger it while the
+Arpeggio of multiple Parts is playing back. When set to “off,” the next Arpeggio starts as soon as you
+trigger it. The number indicates the clock.
+Settings: Off, 60 (32nd note), 80 (16th note triplet), 120 (16th note), 160 (8th note triplet), 240 (8th note), 320 (1/4 note triplet),
+
+480 (1/4 note)
+
+Arp (Part Arpeggio Switch)
+Determines whether the Arpeggio for each Part is on or off. This setting is applied to the Number C [1] – [8]
+buttons on the panel in the Part Control status.
+Settings: Off, On
+
+Arp Select (Arpeggio Select)
+Determines the Arpeggio Types. This setting is applied to the Number C [1] – [8] buttons on the panel in
+the Performance Control status.
+Settings: 1 – 8
+
+View
+Determines which information regarding Arpeggio Type is displayed.
+Settings: Category, Number, Range
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+ When “View” is set to “Category”
+
+Category (Arpeggio Category)
+Settings: See the Arpeggio category list (page 11).
+
+Sub (Arpeggio Sub Category)
+Settings: See the Arpeggio sub category list (page 11).
+
+Name (Arpeggio Name)
+Settings: See the Data List PDF document.
+
+ When “View” is set to “Number”
+
+Bank (Arpeggio Bank)
+Settings: Preset, User, Library 1 – 8
+
+Number (Arpeggio Number)
+Settings: See the Data List PDF document.
+
+Name (Arpeggio Name)
+Settings: See the Data List PDF document.
+
+MONTAGE Reference Manual
+
+36
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+ When “View” is set to “Range”
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Name (Arpeggio Name)
+Settings: See the Data List PDF document.
+
+Velocity Limit (Arpeggio Velocity Limit)
+Determines the lowest and highest velocity which can trigger Arpeggio playback. For details on
+settings of Velocity Limit, see the Owner’s Manual.
+Settings: 1 – 127
+
+Note Limit (Arpeggio Note Limit)
+Determines the lowest and highest notes in the Arpeggio’s note range. For details on settings of Note
+Limit, see the Owner’s Manual.
+Settings: C -2 – G8
+
+MONTAGE Reference Manual
+
+37
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Motion Seq (Motion Sequencer)
+
+From the Motion Sequencer display you can set parameters related to Motion Sequencer for multiple Parts.
+
+Operation
+
+[PERFORMANCE]  [Motion Control]  [Motion Seq]
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+MS Master (Motion Sequencer Master Switch)
+Determines whether the Motion Sequencer is on or off for the entire Performance. This setting is applied to
+the [MOTION SEQ ON/OFF] button on the panel.
+Settings: Off, On
+
+Active (Active Motion Sequencer)
+Indicates the number of the active Lane. The number after slash indicates the maximum number of the
+Lanes which can be activated simultaneously.
+
+PartSW (Motion Sequencer Part Switch)
+Determines whether the Motion Sequencer is on or off for each Part/all Parts. This setting is applied to the
+corresponding Number B [1] – [8] button on the panel in the Part Control status. Also you can turn the
+Motion Sequencer for Common/AD Part on or off by operating the ELEMENT/OPERATOR [COMMON]
+button on the panel. Please note that you cannot use the panel buttons when all Lane switches for the Part
+are set to off.
+Settings: Off, On
+
+Lane Switch
+Determines whether each Lane is on or off. You can set up to four Lanes corresponding to the Motion
+Sequencer function for one Part. Up to eight Lanes can be used at the same time for the entire
+Performance.
+Settings: Off, On
+
+Motion Seq Select (Motion Sequence Select)
+Determines the Motion Sequence Type. This setting is applied to the Number B [1] – [8] buttons on the
+panel in the Performance Control status.
+Settings: 1 – 8
+
+MONTAGE Reference Manual
+
+38
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Super Knob
+
+From the Super Knob display you can set parameters controlled by the Super knob.
+
+Operation
+
+[PERFORMANCE]  [Motion Control]  [Super Knob]
+
+Assignable Knob 1 – 8 Destination Value 1
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Assignable Knob 1 – 8 Destination Value 2
+
+Assignable Knob 1 – 8 Destination Value 1
+Assignable Knob 1 – 8 Destination Value 2
+Determines the lowest value (Assignable value 1) and the highest value (Assignable value 2) for the
+corresponding Knob.
+When you operate the Super Knob, the Assignable Knob value varies within the specified range.
+Settings: 0 – 127
+
+Assignable Knob 1 – 8 Value
+Determines the value for the Assignable Knobs 1 – 8.
+Settings: 0 – 127
+
+Super Knob (Super Knob Value)
+Determines the value of the Super Knob.
+Settings: 0 – 127
+
+LED Pattern (Super Knob LED Pattern)
+Determines the lighting pattern of the Super Knob.
+Settings: Type 1, Type 2-1, Type 2-2, Type 3-1, Type 3-2, Type 4-1, Type 4-2, Type 5-1, Type 5-2, Type 6, Type 7-1, Type 7-2,
+
+Type 8-1, Type 8-2, Type 9, Type 10, Type 11, Off
+
+MONTAGE Reference Manual
+
+39
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Knob Auto
+
+From the Knob Auto display you can set parameters related to Motion Sequencer applied to the Super
+Knob (Super Knob Motion Sequencer.) The parameter value of the Super Knob can be automatically
+controlled by the Motion Sequencer.
+You can set only one Lane for the Super Knob Motion Sequencer.
+NOTE Up to eight Lanes can be used at the same time for the entire Performance. However, the Lane set for the Super
+
+Knob is not included in the eight referred to here.
+
+Operation
+
+[PERFORMANCE]  [Motion Control]  [Knob Auto]
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+MS Master (Motion Sequencer Master Switch)
+Turns the Motion Sequencer for the entire Performance on/off. This setting is applied to the [MOTION SEQ
+ON/OFF] button on the panel.
+Settings: Off, On
+
+Super Knob MS (Super Knob Motion Sequencer Switch)
+Turns the Motion Sequencer applied to the Super Knob on/off.
+Settings: Off, On
+
+MS FX (Super Knob Motion Sequencer FX Receive)
+Determines whether or not the Motion Sequencer is affected by the knob operation when the
+corresponding Knob Function [ARP/MS FX] button is set to on.
+Settings: Off, On
+
+Trigger (Super Knob Motion Sequencer Trigger Receive)
+Determines whether the signal from the [MOTION SEQ TRIGGER] button is received or not. When this is
+set to on, the Motion Sequence will begin whenever you press the [MOTION SEQ TRIGGER] button.
+Settings: Off, On
+
+Sequence Select (Super Knob Motion Sequence Select)
+Determines the Motion Sequence Type. This setting is applied to the Number B [1] – [8] buttons on the
+panel in the Performance Control status.
+Settings: 1 – 8
+
+Sync Part (Super Knob Motion Sequencer Sync Part)
+Determines which Part is synchronized with the Super Knob Motion Sequencer. This setting is applied to
+the Note On Setting and the Arp/Motion Seq Grid setting for the selected Part.
+Settings: Part 1 – Part 16
+
+MONTAGE Reference Manual
+
+40
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Arp/MS Grid (Arpeggio/Motion Sequencer Grid)
+Determines the type of note that serves as the basis for the Quantize or Swing. The parameter value is
+displayed in clocks.
+For the Motion Sequencer, this parameter value is one step length. This setting is applied to the Part which
+is selected as the Sync Part (above).
+Settings: 60 (32nd note), 80 (16th note triplet), 120 (16th note), 160 (8th note triplet), 240 (8th note), 320 (1/4 note triplet),
+
+480 (1/4 note)
+
+Random (Super Knob Motion Sequencer Random)
+Determines the degree to which the Step Value of the Sequence is randomly changed.
+Settings: 0 – 127
+
+Sync (Super Knob Motion Sequencer Sync)
+Determines if the playback of the Motion Sequence applied to the Super Knob is synchronized to the
+Tempo, Beat, or Arpeggio of the Performance.
+Settings: Off, Tempo, Beat, Arp
+
+Off: Super Knob Motion Sequencer plays back according to its own clock and is not synchronized to an external
+clock.
+Tempo: Super Knob Motion Sequencer is synchronized with the Performance tempo.
+Beat: Super Knob Motion Sequencer is synchronized with the beat.
+Arp: Super Knob Motion Sequencer is synchronized with the 1st beat of the measure of the currently playing
+Arpeggio.
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Speed (Super Knob Motion Sequencer Speed)
+Determines the speed of the playback of the Motion Sequence.
+This parameter is active when the Super Knob Motion Sequencer Sync is “Off.”
+Settings: 0 – 127
+
+Unit Multiply (Super Knob Motion Sequencer Unit Multiply)
+Adjusts the Super Knob Motion Sequencer playback time.
+This parameter is active when the Super Knob Motion Sequencer Sync is “Off.”
+Settings: 50% – 6400%, Common
+
+200%: The playback time will be doubled and the tempo is halved.
+100%: The normal playback time.
+50%: The playback time will be halved and the tempo doubled.
+Common: The value set in the Unit Multiply common to the all Parts will be applied.
+
+Key On Reset (Super Knob Motion Sequencer Key On Reset)
+Determines whether or not the playback of the Motion Sequence is stopped when you play the keyboard.
+This parameter is active when the Super Knob Motion Sequencer Sync is set to something other than
+“Arp.”
+Also this parameter is not available when “Trigger” is set to “On.”
+Settings: Off, Each-On, 1st-On
+
+Each-On: The Sequence resets with each note you play and starts the Sequence from the beginning.
+1st-On: The Sequence resets with each note you play and starts the Sequencer from the beginning. If you play a
+second note while the first is being held, the Sequence continues cycling according to the same phase as triggered
+by the first note—in other words, the Sequence only resets if the first note is released before the second is played.
+
+Loop (Super Knob Motion Sequencer Loop)
+Determines whether the Motion Sequence is played only once or repeatedly.
+Settings: Off, On
+
+Velocity Limit (Super Knob Motion Sequencer Velocity Limit)
+Determines the minimum and maximum Velocity values over which the Motion Sequence responds.
+Settings: 1 – 127
+
+Cycle (Super Knob Motion Sequencer Cycle)
+Selects the desired step length for the Motion Sequence.
+Settings: 1 – 16
+
+Load Sequence
+Loads Motion Sequence data in the User Memory. For details about Loading, see “Load” (page 174).
+
+MONTAGE Reference Manual
+
+41
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Edit Sequence
+Calls up the Motion Sequence Setting display. You can create a custom Sequence consisting of up to
+sixteen steps.
+
+Motion Seq Step Value
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Motion Seq Step Type
+
+Cycle (Super Knob Motion Sequencer Cycle)
+Selects the desired step length for the Motion Sequence.
+Settings: 1 – 16
+
+Amplitude (Super Knob Motion Sequencer Amplitude)
+Determines how the entire Motion Sequence changes.
+Settings: 0 – 127
+
+Smooth (Super Knob Motion Sequencer Smoothness)
+Determines the smoothness of the time change of the Motion Sequence.
+Settings: 0 – 127
+
+Sequence Select (Super Knob Motion Sequence Select)
+Determines the Motion Sequence Type. This setting is applied to the Number B [1] – [8] buttons on the
+panel in the Performance Control status.
+Settings: 1 – 8
+
+Polarity (Super Knob Motion Sequencer Polarity)
+Determines the Sequence Polarity.
+Settings: Unipolar, Bipolar
+
+Unipolar: Unipolar changes only in a positive direction from a base parameter value according to the Sequence.
+Bipolar: Bipolar changes in both of positive and negative directions from a base parameter value.
+
+Motion Seq Step Value (Super Knob Motion Sequencer Step Value)
+Determines the Step Value for the Motion Sequence. You can control the Step Value 1 – 8 or 9 – 16 by the
+Sliders 1 – 8 depending on the cursor position on the display.
+Settings: 0 – 127
+
+Motion Seq Step Type (Super Knob Motion Sequencer Step Type)
+Determines each Step Type of the Motion Sequence. You can switch between the Step Types A and B for
+the Step 1 – 8 or 9 – 16 by the SCENE [1] – [8] buttons depending on the cursor position on the display.
+Settings: A, B
+
+MONTAGE Reference Manual
+
+42
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Pulse A / Pulse B (Super Knob Motion Sequencer Step Curve Type)
+Determines the Curve Type of the parameter for each of “Pulse A” and “Pulse B.” “Motion Seq Step Type”
+described above determines which curve set here is used for each step. The vertical axis indicates the
+step value and the horizontal axis indicates the time. For detail about the curve shapes, see page 90.
+Settings: For Preset Bank: Standard, Sigmoid, Threshold, Bell, Dogleg, FM, AM, M, Discrete Saw, Smooth Saw, Triangle,
+
+Square, Trapezoid, Tilt Sine, Bounce, Resonance, Sequence, Hold
+
+For User Bank: User 1 – 32
+
+When a Library file is read: Curves in Library 1 – 8
+
+Direction (Super Knob Motion Sequencer Step Curve Direction)
+Determines the Direction of the Step Curve for the Motion Sequence.
+Settings: Forward, Reverse
+
+Prm1 / Prm2 (Super Knob Motion Sequencer Step Curve Parameter)
+Adjusts the shape of the Step Curve for the Motion Sequence.
+This parameter is not available depending on the Curve Type. Also the range of available parameter
+values differs depending on the Curve Type.
+
+Control (Super Knob Motion Sequencer Step Curve Shape Control Switch)
+Determines whether or not to control the shape of the Step Curve for the Motion Sequence by operating
+Knobs. This parameter is displayed only when “MS FX” is set to on. Also this parameter is not available
+depending on the Curve Type.
+Settings: Off, On
+
+Store Sequence
+Stores the edited Motion Sequence data. For details about storing data, see “Store/Save” (page 176).
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+MONTAGE Reference Manual
+
+43
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Mixing
+
+From the Mixing display you can adjust the volume and effect settings for each Part.
+NOTICE
+The settings in the Mixing display are stored as part of Performance data.
+
+Mixing
+
+Operation
+
+[PERFORMANCE]  [Mixing]
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Part 1-16 / Audio Switch
+
+Part 1-16 / Audio Switch
+Switches between the displays of the Mixing settings for Parts 1 – 16 or the Mixing settings for Parts 1 – 8,
+the Audio Part, the Digital Part, and the Master.
+Settings: Part 1-16, Audio
+
+MONTAGE Reference Manual
+
+44
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+ When one of Parts 1 – 16 is selected
+
+Determines the Mixing setting for each Part 1 –16.
+
+Function Switch
+
+Part Category
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Part Category
+Indicates the Main category for the Part.
+Settings: See the Data List PDF document.
+
+Function Switch
+Determines the Mute/Solo setting and the Keyboard Control settings for the selected Part 1 – 16.
+Settings: Mute/Solo, Kbd Ctrl
+
+(cid:129) When “Mute/Solo” is selected
+
+Mute/Solo (Part Mute/Solo)
+Turns the Mute/Solo function on/off for the selected Part 1 – 16. When the function is on, this button
+lights.
+Settings: Off, On
+
+MONTAGE Reference Manual
+
+45
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+(cid:129) When “Kbd Ctrl” is selected
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Kbd Ctrl (Keyboard Control)
+Turns the Keyboard Control function on/off for the selected Part 1 – 8. When the function is on, this
+button lights.
+Settings: Off, On
+
+3-band/2-band Switch
+
+EQ
+
+3-band/2-band Switch (3-band EQ/2-band EQ Switch)
+Switches between the displays of the 3-band EQ or the 2-band EQ for Parts 1 – 16.
+Settings: 3-band, 2-band
+
+EQ (Equalizer)
+Displays the 3-band EQ or the 2-band EQ depending on the “3-band/2-band” setting.
+Touching the button calls up the menu of Part EQ Edit.
+
+Rev Send (Reverb Send)
+Adjusts the Reverb send level of the selected Part 1 – 16.
+Settings: 0 – 127
+
+MONTAGE Reference Manual
+
+46
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Var Send (Variation Send)
+Adjusts the Variation send level of the selected Part 1 – 16.
+Settings: 0 – 127
+
+Dry Level
+Determines the level of the unprocessed (dry) sound of the selected Part 1 – 16.
+Settings: 0 – 127
+
+Pan
+Determines the stereo pan position of the selected Part 1 – 16.
+Settings: L63 – C – R63
+
+Volume (Part Volume)
+Determines the output level of the selected Part 1 – 16.
+Settings: 0 – 127
+
+ When “AD” Audio Part or “Digi” Digital Part is selected
+
+Determines the Mixing setting of the Audio/Digital Part.
+
+A/D Part EQ
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+A/D Part EQ (Audio Part Equalizer)
+Displays the 2-band parametric EQ.
+Touching the button calls up the menu of Common/Audio Part EQ Edit.
+
+A/D Part Rev Send (Audio Part Reverb Send)
+Digital Part Rev Send (Digital Part Reverb Send)
+Adjusts the Reverb send level of the Audio Part/Digital Part.
+Settings: 0 – 127
+
+A/D Part Var Send (Audio Part Variation Send)
+Digital Part Var Send (Digital Part Variation Send)
+Adjusts the Variation send level of the Audio Part/Digital Part.
+Settings: 0 – 127
+
+A/D Part Dry Level (Audio Part Dry Level)
+Digital Part Dry Level
+Determines the level of the unprocessed (dry) sound of the Audio Part/Digital Part.
+Settings: 0 – 127
+
+MONTAGE Reference Manual
+
+47
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+A/D Part Pan (Audio Part Pan)
+Digital Part Pan
+Determines the stereo pan position of the Audio Part/Digital Part.
+Settings: L63 – C – R63
+
+A/D Volume (Audio Part Volume)
+Digital Part Volume
+Determines the output level of the Audio Part/Digital Part.
+Settings: 0 – 127
+
+ When “Mst” (Master Part) is selected
+Determines the Master Mixing settings.
+
+Master EQ
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Master EQ (Master Equalizer)
+Displays the 5-band parametric EQ.
+Touching the button calls up the menu of Master EQ Edit.
+
+Rev Return (Reverb Return)
+Var Return (Variation Return)
+Determines the return level of the Reverb/Variation effect.
+Settings: 0 – 127
+
+Pan (Performance Pan)
+Determines the stereo pan position of the entire Performance. This parameter offsets the same
+parameter in the Part Edit setting.
+Settings: L63 – C – R63
+
+Performance Volume
+Determines the output level of the entire Performance.
+Settings: 0 – 127
+
+MONTAGE Reference Manual
+
+48
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Scene
+
+You can store all parameter settings such as Arpeggio type, Motion Sequencer type, and the Part
+parameter values together as a “Scene.” There are eight Scenes and you can select them by pressing the
+[SCENE] button. From the Scene display you can edit parameters related to the Scene function.
+When [Memory] is turned on for the function, the Motion Sequencer type, or the Arpeggio type, the
+corresponding function information is automatically memorized to the currently selected [SCENE] button.
+For details about the Scene function, see the Owner’s Manual.
+NOTE You can also change Scene Settings from any other operation displays. To do this, set the parameter value
+
+available for the Scene by operating the corresponding knob/slider, and press one of the SCENE [1] – [8]
+buttons while holding down the [SHIFT] button. Scenes 1 to 8 are assigned to each button.
+
+Scene
+
+Operation
+
+[PERFORMANCE]  [Scene]
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Scene Select
+Switches Scenes by selecting tabs. This setting is applied to the SCENE [1] – [8] buttons on the panel.
+Settings: 1 – 8
+
+Memory (Memorize Switch)
+Determines whether or not to memorize each parameter (such as Arpeggio, Motion Sequencer, Super
+Knob, Mixing, Amplitude EG, and Arp/MS FX) as a Scene. When this is off, the parameter is not displayed
+even when the corresponding tab is selected.
+Settings: Off, On
+
+ When the “Arp/Motion Seq” tab is selected and both Memorize Switches for “Arp” and
+
+“Motion Seq” are set to ON
+
+Motion Seq Master (Motion Sequencer Master Switch)
+Determines whether Motion Sequencer is set to ON or OFF for the entire Performance in the selected
+Scene.
+Settings: Off, On
+
+Motion Seq Select (Motion Sequence Select)
+Determines the Motion Sequence type for the selected Scene.
+Settings: 1 – 8
+
+Arp Master (Arpeggio Master Switch)
+Determines whether Arpeggio is set to ON or OFF for the entire Performance in the selected Scene.
+Settings: Off, On
+
+MONTAGE Reference Manual
+
+49
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Arp Select (Arpeggio Select)
+Determines the Arpeggio type for the selected Scene.
+Settings: 1 – 8
+
+ When the “Super Knob” tab is selected and the corresponding Memorize Switch is set
+
+to ON
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Super Knob (Super Knob Value)
+Determines the Super Knob Value for the selected Scene.
+Settings: 0 – 127
+
+ When the “Mixing 1” tab is selected and the corresponding Memorize Switch is set to
+
+ON
+
+Rev Send (Reverb Send)
+Adjusts the Reverb Send level of each Part in the selected Scene.
+Settings: 0 – 127
+
+Var Send (Variation Send)
+Adjusts the Variation Send level of each Part in the selected Scene.
+Settings: 0 – 127
+
+MONTAGE Reference Manual
+
+50
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Dry Level
+Determines the level of the unprocessed (dry) sound for each Part in the selected Scene.
+Settings: 0 – 127
+
+Pan
+Determines the stereo pan position for each Part in the selected Scene.
+Settings: L63 – C – R63
+
+Volume (Part Volume)
+Determines the volumes of each Part in the selected Scene.
+Settings: 0 – 127
+
+ When the “Mixing 2” tab is selected and the corresponding Memorize Switch is set to
+
+ON
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Cutoff
+Determines the Cutoff frequency for each Part in the selected Scene.
+Settings: -64 – +63
+
+Res (Resonance)
+Determines the resonance for each Part in the selected Scene.
+Settings: -64 – +63
+
+FEG Depth
+Determines the Filter Envelope Generator depth (amount of Cutoff Frequency) for each Part in the
+selected Scene.
+Settings: -64 – +63
+
+Mute (Part Mute)
+Determines the Mute setting for each Part in the selected Scene.
+Settings: Off, On
+
+MONTAGE Reference Manual
+
+51
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+ When the “AEG” tab is selected and the corresponding Memorize Switch is set to ON
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Attack (AEG Attack Time)
+Determines the AEG Attack Time for each Part in the selected Scene.
+Settings: -64 – +63
+
+Decay (AEG Decay Time)
+Determines the AEG Decay Time for each Part in the selected Scene.
+Settings: -64 – +63
+
+Sustain (AEG Sustain Level)
+Determines the AEG Sustain Level for each Part in the selected Scene.
+Settings: -64 – +63
+
+Release (AEG Release Time)
+Determines the AEG Release Time for each Part in the selected Scene.
+Settings: -64 – +63
+
+ When the “Arp/MS FX 1” tab is selected and the corresponding Memorize Switch is set
+
+to ON
+
+MONTAGE Reference Manual
+
+52
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Swing
+Determines the Swing setting of Arpeggio and Motion Sequencer for each Part in the selected Scene.
+For details about Swing, see “Quick Edit” (page 34).
+Settings: -120 – +120
+
+Performance
+
+Home
+
+Motion Control
+
+Unit (Part Unit Multiply)
+Determines the Unit Multiply setting of Arpeggio and Motion Sequencer for each Part in the selected
+Scene.
+Settings: 50% – 400%, Common
+
+200%: The playback time will be doubled and the tempo is halved.
+100%: The normal playback time.
+50%: The playback time will be halved and the tempo doubled.
+Common: The value set in the Unit Multiply common to the all Parts will be applied.
+
+Gate Time (Gate Time Rate)
+Determines the Gate Time Rate of Arpeggio for each Part in the selected Scene.
+Settings: 0% – 200%
+
+Velocity (Velocity Rate)
+Determines the Velocity Rate of Arpeggio for each Part in the selected Scene.
+Settings: 0% – 200%
+
+ When the “Arp/MS FX 2” tab is selected and the corresponding Memorize Switch is set
+
+to ON
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Amp (Motion Sequencer Amplitude)
+Determines the Amplitude of Motion Sequencer for each Part in the selected Scene. For details about
+Amplitude, see “Quick Edit” (page 32).
+Settings: -64 – +63
+
+Shape (Motion Sequencer Pulse Shape)
+Determines the Pulse Shape of Motion Sequencer for each Part in the selected Scene. For details
+about Pulse Shape, see “Quick Edit” (page 32).
+Settings: -100 – +100
+
+Smooth (Motion Sequencer Smooth)
+Determines the Smoothness of Motion Sequencer for each Part in the selected Scene. For details
+about Smoothness, see “Quick Edit” (page 32).
+Settings: -64 – +63
+
+Random (Motion Sequencer Random)
+Determines the “Random” of Motion Sequence for each Part in the selected Scene. For details about
+Random, see “Quick Edit” (page 32).
+Settings: 0 – 127
+
+MONTAGE Reference Manual
+
+53
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Play/Rec
+
+You can playback/record MIDI data as Songs on this instrument itself or playback/record your
+performance (audio data) on a USB flash memory device.
+
+Play/Rec
+
+MIDI
+
+From the MIDI display you can playback/record your keyboard performance with using the selected
+Performance to the Song. You can playback/record knob operations, controller operations and Arpeggio
+playback as well as your keyboard playing to the specified Track as MIDI events.
+
+ Playback and Playback Standby
+
+Operation
+
+Press the [R] (Play) button, or
+[PERFORMANCE]  [Play/Rec]  [MIDI]
+
+Song Length
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Song Name
+Indicates the selected Song Name. Touching the parameter calls up the menu for Load and Rename.
+
+Track Play Switch
+
+Performance Name
+Indicates the selected Performance Name.
+
+Time Signature
+Indicates the meter of the Song.
+
+Position (Song Position)
+Determines the starting position of Recording/Playback. The indicator also shows the current position
+during playback.
+The measure’s number is in the left cell and the beat number and clocks are in the right cell.
+
+Tempo
+Determines the Song tempo.
+Settings: 5 – 300
+NOTE The tempo can be set as follows.
+
+[PERFORMANCE]  [UTILITY]  [Tempo Settings] (page 180)
+
+MONTAGE Reference Manual
+
+54
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Store Tempo
+Changes the Song tempo to the currently selected Tempo.
+This parameter is not available during:
+- New recording (No previously recorded Song data.)
+- Playback
+- Recording Standby
+- Recording
+
+Save As .mid File
+Calls up the Store/Save display to save the Song as a file.
+This button is not available during:
+- New recording (No previously recorded Song data.)
+- Playback
+- Recording Standby
+- Recording
+- An external memory such as a USB flash memory device is not connected.
+
+Song Length
+Indicates the length of the entire sequence.
+
+Track Play Switch
+Switches the playback for each track on/off.
+Settings: Off, On
+
+ Record and Record Standby
+
+Operation
+
+Press the [I] (Record) button, or
+[PERFORMANCE]  [Play/Rec]  [MIDI]  [I] (Record) button
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Time Signature
+Determines the meter of the Song.
+Settings: 1/16 – 16/16, 1/8 – 16/8, 1/4 – 8/4
+
+Rec Quantize (Record Quantize)
+Quantization is the process of adjusting the timing of note events by moving them closer to the nearest
+exact beat. You can use this feature, for example, to improve the timing of a performance recorded in real
+time. Record quantize aligns the timing of notes automatically, as you record.
+Settings: 60 (32nd note), 80 (16th note triplet), 120 (16th note), 160 (8th note triplet), 240 (8th note), 320 (1/4 note triplet),
+
+480 (1/4 note), Off
+
+MONTAGE Reference Manual
+
+55
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Record Type
+Determines the Recording Type. This parameter is not available for the first recording.
+Settings: Replace, Overdub, Punch
+
+Replace: You can use this method when you want to overwrite an already recorded Track with new data in real time.
+The original data will be erased.
+Overdub: You can use this method when you want to add more data to a Track that already contains data.
+Previously recorded data will be maintained.
+Punch: You can use this method when you want to overwrite data to a specified range of a Track that already
+contains data. It allows you to overwrite the already recorded data from the starting point to the ending point
+(measure/beat) that was specified before recording.
+
+Punch In
+Determines the starting point (measure and beat) for recording. This parameter is available only when
+“punch” is selected for “Record Type.”
+
+Punch Out
+Determines the ending point (measure and beat) for recording. This parameter is available only when
+“punch” is selected for “Record Type.”
+NOTE For details about the Punch In/Out setting, see the Owner’s Manual.
+
+Undo
+The Undo Job cancels the changes you made in your most recent recording session, restoring the data to
+its previous state.
+
+Redo
+Redo is available only after using Undo, and lets you restore the changes you made before undoing them.
+
+Audio
+
+From the Audio display you can record your performance on the instrument as WAV format (44.1-kHz, 24-
+bit, stereo) audio files to a USB flash memory device. It is possible to record continuously for up to 74
+minutes (assuming that the USB storage device has sufficient free memory).
+
+ Playback and Playback Standby
+
+Operation
+
+[PERFORMANCE]  [Play/Rec]  [Audio]
+
+Current play position in the
+entire audio data
+
+Level meter
+
+Audio Name
+Indicates the name of the selected Audio file.
+
+MONTAGE Reference Manual
+
+56
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Position (Audio Position)
+Determines the starting position of Playback. The indicator also shows the current position during
+playback.
+
+Audio Volume
+Determines the volume of the Audio Playback. This parameter cannot be changed during recording.
+Settings: 0 – 255
+
+Audio Length
+Indicates the length of the entire audio data.
+
+Level Meter
+Indicates the Audio Input/Output level.
+
+ Record and Record Standby
+
+Operation
+
+[PERFORMANCE]  [Play/Rec]  [Audio]  [I] (Record) button
+
+Performance
+
+Home
+
+Motion Control
+
+Overview
+
+Quick Edit
+
+Arpeggio
+
+Motion Seq
+
+Super Knob
+
+Knob Auto
+
+Mixing
+
+Scene
+
+Play / Rec
+
+MIDI
+
+Audio
+
+Recordable (Audio Recordable Time)
+Indicates available recording time. This parameter is displayed only during recording standby.
+
+Trigger Level
+Determines the method of starting recording. This parameter is displayed only during recording standby.
+If you set the trigger level to “manual,” recording will begin whenever you press the [R] (Play) button.
+Alternatively, if you set a value between 1 and 127, recording will begin automatically whenever the [R]
+(Play) button is pressed and the playback volume exceeds that level. The level set here will be indicated
+by blue triangles in the level meter. For best results, set this parameter as low as possible to capture the
+entire signal, but not so low as to record unwanted noise.
+Settings: manual, 1 – 127
+
+MONTAGE Reference Manual
+
+57
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Normal Part (AWM2) Edit
+
+A Normal Part (AWM2) (having pitched musical instrument sounds) can consist of up to eight Elements.
+An Element is the basic, smallest unit for a Part. There are two types of Normal Part (AWM2) Edit displays:
+Element Common Edit display, for editing settings common to all eight Elements; and Element Edit display,
+for editing individual Elements.
+
+Element Common Edit (Common)
+
+Part Settings
+
+General
+
+From the General display you can set various parameters such as Part Name, Volume, and Pan.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON] 
+[Part Settings]  [General]
+
+Part Category Main (Part Main Category)
+Part Category Sub (Part Sub Category)
+Determines the Main category and the Sub category for the selected Part.
+Settings: See the Data List PDF document.
+
+Part Name
+Determines the Part name of the selected Part. Part names can contain up to 20 characters. Touching the
+parameter calls up the input character display.
+
+Volume (Part Volume)
+Determines the output level of the selected Part.
+Settings: 0 – 127
+
+Pan
+Determines the stereo pan position of the selected Part.
+Settings: L63 – C – R63
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+58
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Dry Level
+Determines the dry sound level (without effect processing) of the selected Part. This is available only when
+“Part Output” is set to “MainL&R.”
+Settings: 0 – 127
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+Var Send (Variation Send)
+Determines the level of the selected Part that is sent to the Variation effect. This is available only when “Part
+Output” is set to “MainL&R.”
+Settings: 0 – 127
+
+Rev Send (Reverb Send)
+Determines the level of the selected Part that is sent to the Reverb effect. This is available only when “Part
+Output” is set to “MainL&R.”
+Settings: 0 – 127
+
+Part Output (Part Output Select)
+Determines which audio output is used for the selected Part.
+Settings: MainL&R, AsgnL&R, USB1&2...USB29&30, AsgnL, AsgnR, USB1 – 30, Off
+
+MainL&R: Outputs in stereo (two channels) to the OUTPUT [L/MONO]/[R] jacks.
+AsgnL&R: Outputs in stereo (two channels) to the ASSIGNABLE OUTPUT [L]/[R] jacks.
+USB1&2…USB29&30: Outputs in stereo (Channels 1&2 – 29&30) to the [USB TO HOST] terminal.
+AsgnL: Outputs in mono (one channel) to the ASSIGNABLE OUTPUT [L] jack.
+AsgnR: Outputs in mono (one channel) to the ASSIGNABLE OUTPUT [R] jack.
+USB1 – 30: Outputs in mono (Channels 1 – 30) to the [USB TO HOST] terminal.
+Off: No audio signal for the Part is output.
+
+Mono/Poly
+Selects monophonic or polyphonic playback for the selected Part. Monophonic is for single notes only, and
+polyphonic is for playing multiple simultaneous notes.
+Settings: Mono, Poly
+
+Key Assign (Key Assign Mode)
+Determines the playing method when the same notes are received continuously, and without
+corresponding note off messages. For details, refer to the Synthesizer Parameter Manual PDF document.
+Settings: Single, Multi
+
+Single: Double or repeated playback of the same note is not possible. The first note will be stopped, then the next
+note will be sounded.
+Multi: All notes are sounded simultaneously. This allows playback of the same note when it is played multiple times
+in succession (especially for tambourine and cymbal sounds that you would want to ring out to their full decay).
+
+Arp Play Only (Arpeggio Play Only)
+Determines whether or not the current Part plays only the note events of the Arpeggio playback. When this
+parameter is set to on, only the note events of the Arpeggio playback affect the tone generator block.
+Settings: Off, On
+
+Element Pan (Element Pan Switch)
+Determines whether the individual pan settings for each Element (made via ([EDIT]  Part selection 
+Element selection  [Amplitude]  [Level/Pan]  “Pan”) are applied or not. When this is set to “off,” the
+pan position for each Element in the Part is set to center.
+Settings: Off, On
+
+Velocity Limit
+Determines the minimum and maximum values of the velocity range within which each Part will respond.
+Each Part will only sound for notes played within its specified velocity range. If you first specify the
+maximum value and then the minimum value, for example “93 to 34,” then the Velocity range covers both
+“1 to 34” and “93 to 127.” For instructions on setting the Velocity Limit, refer to the Owner’s Manual.
+Settings: 1 – 127
+
+Note Limit
+Determines the lowest and highest notes of the keyboard range for each Part. Each Part will only sound for
+notes played within its specified range. If you first specify the highest note and then the lowest note, for
+example “C5 to C4,” then the note range covers both “C-2 to C4” and “C5 to G8.”
+Settings: C -2 – G8
+
+MONTAGE Reference Manual
+
+59
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Velocity Depth (Velocity Sensitivity Depth)
+Determines the degree to which the resulting volume of the
+tone generator responds to your playing strength. The higher
+the value, the more the volume changes in response to your
+playing strength (as shown below).
+Settings: 0 – 127
+
+When Offset (below) is set to 64:
+
+Normal Part (AWM2) Edit
+
+127
+
+Actual resulting
+velocity
+(affecting the
+tone generator)
+
+0
+
+Depth=127
+
+Depth=64
+
+Common
+
+Depth=32
+
+Depth=0
+
+127
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Velocity Offset (Velocity Sensitivity Offset)
+Determines the amount by which played velocities are adjusted for the actual resulting velocity effect. This
+lets you raise or lower all velocities based on this setting value—allowing you to automatically compensate
+for playing too strongly or too softly.
+Settings: 0 – 127
+
+Velocity with which you play a note
+
+When Depth (above) = 64
+and Offset = 32
+
+When Depth (above) = 64
+and Offset = 64
+
+When Depth (above) = 64
+and Offset = 96
+
+127
+
+Actual
+resulting
+velocity
+(affecting
+the tone
+generator)
+
+127
+Actual
+resulting
+velocity
+(affecting
+the tone
+generator)
+
+127
+
+Actual
+resulting
+velocity
+(affecting
+the tone
+generator)
+
+0
+
+64
+
+127
+
+Velocity with which you play a note
+
+Pitch
+
+0
+
+64
+Velocity with which you play a note
+
+127
+
+0
+
+64
+Velocity with which you play a note
+
+127
+
+From the Pitch display you can set Pitch-related parameters for the Part.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON] 
+[Part Settings]  [Pitch]
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+Portamento Master SW (Portamento Master Switch)
+Portamento is used to create a smooth transition in pitch from the first note played on the keyboard to the
+next. The Portamento Master Switch determines whether Portamento is applied to the entire Performance
+or not.
+Settings: Off, On
+
+MONTAGE Reference Manual
+
+60
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Portamento Part SW (Portamento Part Switch)
+Determines whether Portamento is applied to the selected Part or not.
+Settings: Off, On
+
+Portamento Mode
+Determines the Portamento mode.
+Settings: Fingered, Full-time
+
+Fingered: Portamento is only applied when you play legato (playing the next note before releasing the previous
+one).
+Full-time: Portamento is applied to all notes.
+
+Portamento Time
+Determines the pitch transition time or rate when Portamento is applied.
+Settings: 0 – 127
+
+Portamento Time Mode
+Determines how the pitch changes in time.
+Settings: Rate 1, Time 1, Rate 2, Time 2
+
+Rate 1: Pitch changes at the specified rate.
+Time 1: Pitch changes in the specified time.
+Rate 2: Pitch changes at the specified rate within an octave.
+Time 2: Pitch changes in the specified time within an octave.
+
+Portamento Legato Slope
+Determines the speed of the attack of legato notes, when “Mono/Poly” is set to “Mono.” (Legato notes
+“overlap” each other, the next being played before the previous is released.)
+Settings: 0 – 7
+
+Note Shift
+Determines the pitch (key transpose) setting for each Part in semitones.
+Settings: -24 – +0 – +24
+
+Detune
+Determines the pitch settings of the selected Part in 0.1 Hz increments.
+Settings: -12.8Hz – +0.0Hz – +12.7Hz
+
+Pitch Bend / (Pitch Bend Range Upper/Lower)
+Determines the maximum Pitch Bend Range in semitones.
+Settings: -48 – +0 – +24
+
+Micro Tuning Name
+Determines the tuning system for the selected Part. For information on the various tuning systems, see the
+Synthesizer Parameter Manual PDF document.
+Settings: Equal Temperament, Pure Major, Pure Minor, Werckmeister, Kirnberger, Vallotti & Young, 1/4 shift, 1/4 tone, 1/8 tone,
+Indian, Arabic 1, Arabic 2, Arabic 3, User 1 – 8 (when the User Bank is selected), Library 1-1 – 8-8 (when the Library
+file is read)
+
+Micro Tuning Root
+Determines the root note for the Micro Tuning function. This root note setting may not be necessary
+depending on the “Micro Tuning Name” type.
+Settings: C – B
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+61
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Edit User Tuning
+Calls up the User Micro Tuning Setting display.
+
+Tuning No. (Micro Tuning Number)
+Indicates the selected User Micro Tuning Number.
+Settings: 1 – 8
+
+Tuning Name (Micro Tuning Name)
+Determines the name of the selected User Micro Tuning. Touching the parameter calls up the input
+character display.
+
+C, C#, D, D#, E, F, F#, G, G#, A, A#, B
+Adjusts the pitch of each note in 1 cent steps determines the Micro Tuning.
+Settings: -99 – +99
+
+Initialize
+Initializes the selected User Micro Tuning.
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+62
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+Zone Settings
+
+From the Zone Setting display you can set Zone-related parameters.
+You can divide the keyboard into a maximum of eight independent areas (called “Zones”). To each Zone
+can be assigned different MIDI channels. This makes it possible to control several Parts of the multi-timbral
+tone generator simultaneously by a single keyboard or to control Parts of an external MIDI instrument over
+several different channels in addition to the internal Parts of this synthesizer itself—letting you use the
+MONTAGE to effectively do the work of several keyboards.
+To activate this display, select [UTILITY]  [Settings]  [Advanced], then set “Zone Master” to “ON.”
+For details, refer to the Owner’s Manual.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON] 
+[Part Settings]  [Zone Settings]
+
+Zone (Zone Switch)
+Determines whether the Zone function is used (on) or not (off). When this is set to off, all of the following
+parameters are not available.
+Settings: Off, On
+
+Int SW (Internal Switch)
+Determines whether MIDI messages generated by playing the keyboard in the range of the selected Zone
+are transmitted to the internal tone generator or not.
+Settings: Off, On
+
+Transmit Ch (Transmit Channel)
+Determines the MIDI Transmit Channel for the selected Zone.
+Settings: Ch1 – Ch16, Off
+
+Note Limit
+Determines the lowest and highest notes of the range for the selected Zone. The selected Zone will sound
+only when you play notes within this range. If you first specify the highest note and then the lowest note, for
+example “C5 to C4,” then the note range covers both “C-2 to C4” and “C5 to G8.”
+Settings: C -2 – G8
+
+Octave Shift
+Determines the amount in octaves by which the range of the Zone is shifted up or down. You can adjust the
+offset up or down over a maximum range of three octaves.
+Settings: -3 – +0 (Default) – +3
+
+Transpose
+Determines the amount in semitones by which the range of the Zone is shifted up or down.
+Settings: -11 – +0 (Default) – +11
+
+MONTAGE Reference Manual
+
+63
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Bank Select (Transmit Bank Select)
+Determines whether Bank Select MSB/LSB messages are transmitted to the external tone generator or not.
+This is not available when the Transmit Channel is set to off.
+Settings: Off, On
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+Pgm Change (Transmit Program Change)
+Determines whether Program Change messages are transmitted to the external tone generator or not. This
+is not available when the Transmit Channel is set to off.
+Settings: Off, On
+
+Vol/Exp (Transmit Volume/Expression)
+Determines whether volume messages are transmitted to the external tone generator or not. This is not
+available when the Transmit Channel is set to off.
+Settings: Off, On
+
+Pan (Transmit Pan)
+Determines whether Pan messages are transmitted to the external tone generator or not. This is not
+available when the Transmit Channel is set to off.
+Settings: Off, On
+
+MIDI Bank MSB/LSB (Bank Select MSB/LSB)
+Determines the Bank numbers to be transmitted to the external tone generator when selecting the
+Performance. The Bank consists of MSB and LSB values. This is not available when “Transmit Bank Select”
+is set to off.
+Settings: 000 – 127
+
+MIDI Pgm Num (Program Change Number)
+Determines the Program Change Number to be transmitted to the external tone generator when selecting
+the Performance. This is not available when the “Transmit Program Change” is set to off.
+Settings: 001 – 128
+
+MIDI Volume
+Determines the transmit volume to the external tone generator when selecting the Performance.
+This is not available when the Transmit Volume/Expression is set to “off”.
+Settings: 0 – 127
+
+MIDI Pan
+Determines the Pan to be transmitted to the external tone generator when selecting the Performance.
+This is not available when the Transmit Pan is set to “off.”
+Settings: L64 – C – R63
+
+MIDI Send
+By turning this parameter on, MIDI Bank, MIDI Pgm Number, MIDI Volume, or MIDI Pan is transmitted to
+the external tone generator depending on the setting of the Transmit Switch.
+This is not available when the Transmit Channel is set to off or when all of the four Transmit Switches are set
+to off.
+Settings: Off, On
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+64
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Zone Transmit
+
+From the Zone Transmit display you can set how each individual zone affects transmission of various MIDI
+data, such as Control Change and Program Change messages. When the relevant parameter is set to
+“on,” playing the selected zone will transmit the corresponding MIDI data.
+All settings made in this display are not available when “Transmit Ch” is set to “Off” in the Zone Setting
+display.
+To activate this display, select [UTILITY]  [Settings]  [Advanced], then set “Zone Master” to “ON.”
+For details, refer to the Owner’s Manual.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON] 
+[Part Settings]  [Zone Transmit]
+
+Pgm Change (Transmit Program Change)
+Determines whether Program Change messages are transmitted to the external tone generator or not.
+Settings: Off, On
+
+Bank Select (Transmit Bank Select)
+Determines whether Bank Select MSB/LSB messages are transmitted to the external tone generator or not.
+This is not available when the Transmit Control Change is set to off.
+Settings: Off, On
+
+Pitch Bend (Transmit Pitch Bend)
+Determines whether Pitch Bend messages are transmitted to the external tone generator or not.
+Settings: Off, On
+
+After Touch (Transmit After Touch)
+Determines whether After Touch messages are transmitted to the external tone generator or not.
+Settings: Off, On
+
+CC (Transmit Control Change)
+Determines whether Control Change messages are transmitted to the external tone generator or not.
+Settings: Off, On
+
+Vol/Exp (Transmit Volume/Expression)
+Determines whether volume messages are transmitted to the external tone generator or not.
+This is not available when the Transmit Control Change is set to off.
+Settings: Off, On
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+65
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+Pan (Transmit Pan)
+Determines whether Pan messages are transmitted to the external tone generator or not.
+This is not available when the Transmit Control Change is set to off.
+Settings: Off, On
+
+MW (Transmit Modulation Wheel)
+Determines whether MIDI messages generated by using the Modulation Wheel are transmitted to the
+external tone generator or not.
+This is not available when the Transmit Control Change is set to off.
+Settings: Off, On
+
+Sustain (Transmit Sustain)
+Determines whether Sustain messages are transmitted to the external tone generator or not.
+This is not available when the Transmit Control Change is set to off.
+Settings: Off, On
+
+FC1/FC2 (Transmit Fool Controller)
+Determines whether MIDI messages generated by pressing the optional Foot Controller are transmitted to
+the external tone generator or not.
+This is not available when the Transmit Control Change is set to off.
+Settings: Off, On
+
+FS (Transmit Foot Switch)
+Determines whether MIDI messages generated by pressing the optional Foot Switch are transmitted to the
+external tone generator or not.
+This is not available when the Transmit Control Change is set to off.
+Settings: Off, On
+
+A. SW1/A. SW2 (Transmit Assignable Switch)
+Determines whether MIDI messages generated by pressing the [ASSIGN 1] and [ASSIGN 2] buttons are
+transmitted to the external tone generator or not.
+This is not available when the Transmit Control Change is set to off.
+Settings: Off, On
+
+MS Hold (Transmit Motion Sequencer Hold)
+Determines whether MIDI messages generated by pressing the [MOTION SEQ HOLD] button are
+transmitted to the external tone generator or not.
+This is not available when the Transmit Control Change is set to off.
+Settings: Off, On
+
+MS Trigger (Transmit Motion Sequencer Trigger)
+Determines whether MIDI messages generated by pressing the [MOTION SEQ TRIGGER] button are
+transmitted to the external tone generator or not.
+This is not available when the Transmit Control Change is set to off.
+Settings: Off, On
+
+RB (Transmit Ribbon Controller)
+Determines whether MIDI messages generated by using the Ribbon Controller are transmitted to the
+external tone generator or not.
+This is not available when the Transmit Control Change is set to off.
+Settings: Off, On
+
+BC (Transmit Breath Controller)
+Determines whether MIDI messages for Breath Controller are transmitted to the external tone generator or
+not.
+This is not available when the Transmit Control Change is set to off.
+Settings: Off, On
+
+A.Knob1 – 8 (Transmit Assignable Knob)
+Determines whether MIDI messages generated by using the Assignable Knobs 1 – 8 are transmitted to the
+external tone generator or not.
+This is not available when the Transmit Control Change is set to off.
+Settings: Off, On
+
+MONTAGE Reference Manual
+
+66
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+Effect
+
+Routing
+
+From the Routing display you can determine the Effect connections for Parts.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON]  [Effect]
+[Routing]
+
+Insertion FX Switch
+
+Insertion FX Switch
+
+Element 1 – 8 (Element Connection Switch)
+Determines which Insertion Effect (A or B) is used to process each individual Element. The “Thru” setting
+lets you bypass the Insertion Effects for the specified element.
+Settings: Thru, InsA (Insertion Effect A), InsB (Insertion Effect B)
+
+Insertion FX Switch (Insertion Effect Switch)
+Determines whether the Insertion Effect A/B is active or not.
+Settings: Off, On
+
+Category (Effect Category)
+Type (Effect Type)
+Determines the category and type for the selected Effect.
+Settings: For details on the editable Effect categories and types, see the Data List PDF document. Also, for details on the
+
+description for each Effect type, see the Synthesizer Parameter Manual PDF document.
+
+Preset
+Allows you to call up pre-programmed settings for each Effect type, designed to be used for specific
+applications and situations. You can change how the sound is affected by the selected pre-programmed
+settings.
+Settings: For a list of all Preset Effects, see the Data List PDF document.
+
+Side Chain/Modulator (Side Chain/Modulator Part)
+The Side Chain/Modulator uses the output from one track to control an effect in a different track. You can
+specify the Effect type for activating the feature so that input signals for Parts other than the selected Part
+or the audio input signal can control the specified Effect. This may not be active depending on the
+particular Effect Type.
+Here you can determine the Part used for the Side Chain/Modulator.
+This is not available when you select the same Part or “Master” as the Modulator Part.
+Settings: Part 1 – 16, A/D, Master, Off
+
+MONTAGE Reference Manual
+
+67
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Ins Connect (Insertion Connection Type)
+Determines the effect routing for Insertion Effects A and B. The setting changes are shown on the diagram
+in the display, giving you a clear picture of how the signal is routed. For details, see the section “Effect
+connection” (page 19) of the “Basic Structure.”
+Settings: Parallel, Ins AB, Ins BA
+
+Rev Send (Reverb Send)
+Determines the Send level of the signal sent from Insertion Effect A/B (or the bypassed signal) to the
+Reverb effect. This is available only when “Part Output” is set to “MainL&R.”
+Settings: 0 – 127
+
+Var Send (Variation Send)
+Determines the Send level of the signal sent from Insertion Effect A/B (or the bypassed signal) to the
+Variation effect. This is available only when “Part Output” is set to “MainL&R.”
+Settings: 0 – 127
+
+Part Output (Part Output Select)
+Determines the specific audio output.
+Settings: MainL&R, AsgnL&R, USB1&2…USB29&30, AsgnL, AsgnR, USB1 – 30, Off
+
+MainL&R: Outputs in stereo (two channels) to the OUTPUT [L/MONO]/[R] jacks.
+AsgnL&R: Outputs in stereo (two channels) to the ASSIGNABLE OUTPUT [L]/[R] jacks.
+USB1&2…USB29&30: Outputs in stereo (Channels 1&2 – 29&30) to the [USB TO HOST] terminal.
+AsgnL: Outputs in mono (one channel) to the ASSIGNABLE OUTPUT [L] jack.
+AsgnR: Outputs in mono (one channel) to the ASSIGNABLE OUTPUT [R] jack.
+USB1 – 30: Outputs in mono (Channels 1 – 30) to the [USB TO HOST] terminal.
+Off: No audio signal for the Part is output.
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Envelope Follower
+Calls up the Envelope Follower setting display. For details on the Envelope Follower, see the “Envelope
+Follower Block” (page 20) in the “Basic Structure.”
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+Part (Input Source)
+Displays the Part as “Input Source” for the selected Envelope Follower.
+Settings: Master, AD, Part 1 – Part 16
+
+Gain (Envelope Follower Gain)
+Determines the Input gain of the Input Source set in “Part.”
+Settings: -24dB – 0dB – +24dB
+
+Attack (Envelope Follower Attack)
+Determines the attack time of the Envelope Follower.
+Settings: 1ms – 40ms
+
+MONTAGE Reference Manual
+
+68
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Release (Envelope Follower Release)
+Determines the release time of the Envelope Follower.
+Settings: 10ms – 680ms
+
+Input Level
+Indicates the Input Level of the signal from the Input Source set in “Part.”
+
+Envelope Follower Output
+Indicates the Output Level of the Envelope Follower.
+
+Ins A (Insertion Effect A)
+Ins B (Insertion Effect B)
+
+From the Insertion Effect A/Insertion Effect B display you can set parameters related to Insertion Effect.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON]  [Effect]
+[Ins A] / [Ins B]
+
+Insertion FX Switch
+
+Insertion FX Switch (Insertion Effect Switch)
+Determines whether the selected Insertion Effect is active or not.
+
+Effect Parameter
+
+Category (Effect Category)
+Type (Effect Type)
+Determines the category and type for the selected Insertion Effect.
+Settings: For details on the editable Effect categories and types, see the Data List PDF document. Also, for details on the
+
+description for each Effect type, see the Synthesizer Parameter Manual PDF document.
+
+Preset
+Allows you to call up pre-programmed settings for each Effect type, designed to be used for specific
+applications and situations. You can change how the sound is affected by the selected pre-programmed
+settings.
+Settings: For a list of all Preset Effect types, see the Data List PDF document.
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+69
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Side Chain/Modulator (Side Chain/Modulator Part)
+The Side Chain/Modulator uses the output from one track to control an effect in a different track. You can
+specify the Effect type for activating the feature so that input signals for Parts other than the selected Part
+or the audio input signal can control the specified Effect. This may not be active depending on the
+particular Effect Type.
+Here you can determine the Part used for the Side Chain/Modulator.
+This is not available when you select the same Part or “Master” as the Modulator Part.
+Settings: Part 1 – 16, A/D, Master, Off
+
+Effect Parameter
+Active Effect parameters differ depending on the selected Effect Types. For details on the editable Effect
+parameters, see the Data List PDF document. Also, for details on the description for each Effect parameter,
+see the Synthesizer Parameter Manual PDF document.
+
+EQ (Part Equalizer)
+
+From the Part Equalizer display you can set parameters related to Part EQ.
+
+Part
+
+3-band EQ
+
+Insertion Effect
+
+2-band EQ
+
+Part EQ
+
+Part EQ
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON]  [Effect] 
+[EQ]
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+3-band EQ / 2-band EQ (3-band EQ/2-band EQ Switch)
+Switches displays between 3-band EQ and 2-band EQ.
+Settings: 3-band EQ, 2-band EQ
+
+MONTAGE Reference Manual
+
+70
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+ When “3-band EQ” is selected
+
+From this display you can make 3-band EQ settings.
+
+EQ Low Gain (3-band EQ Low Gain)
+Determines the level gain of the Low band.
+Settings: -12dB – +12dB
+
+EQ Mid Gain (3-band EQ Middle Gain)
+Determines the level gain of the Mid band.
+Settings: -12dB – +12dB
+
+EQ Hi Gain (3-band EQ High Gain)
+Determines the level gain of the High band.
+Settings: -12dB – +12dB
+
+EQ Low Freq (3-band EQ Low Frequency)
+Determines the frequency for the Low band.
+Settings: 50.1Hz – 2.00kHz
+
+EQ Mid Freq (3-band EQ Middle Frequency)
+Determines the frequency for the Mid band.
+Settings: 139.7Hz – 10.1kHz
+
+EQ Hi Freq (3-band EQ High Frequency)
+Determines the frequency for the High band.
+Settings: 503.8Hz – 14.0kHz
+
+EQ Mid Q (3-band EQ Middle Q)
+Determines the EQ bandwidth of the Mid band.
+Settings: 0.7 – 10.3
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+71
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+ When “2-band EQ” is selected
+
+From this display you can make 2-band EQ settings.
+
+EQ1 Type (2-band EQ1 Type)/EQ2 Type (2-band EQ2 Type)
+Determines the Equalizer Type.
+Settings: Thru, LPF, HPF, Low Shelf, Hi Shelf, Peak/Dip
+
+Thru: This setting bypasses the equalizers leaving the entire signal unaffected.
+LPF/HPF: This setting only passes signals below or above the Cutoff Frequency.
+Low Shelf/Hi Shelf: This setting attenuates/boosts the signal at frequencies above or below the specified
+Frequency setting
+
+Low Shelf
+
++
+
+0
+
+–
+
+Gain
+
+Frequency
+
+Frequency
+
+High Shelf
+
+Gain
+
+Frequency
+
++
+
+0
+
+–
+
+Frequency
+
+Peak/Dip: This setting attenuates/boosts the signal at the specified Frequency setting.
+
+Gain
+
+Frequency
+
+Frequency
+
++
+
+0
+
+–
+
+EQ 1 Gain (2-band EQ1 Gain)/EQ 2 Gain (2-band EQ2 Gain)
+Determines the level gain of the frequency set in “EQ1 Freq” or “EQ2 Freq.”
+This is not active when “EQ Type” is set to “Thru,” “LPF,” or “HPF.”
+Settings: -12dB – +12dB
+
+EQ 1 Freq (2-band EQ1 Frequency)/EQ 2 Freq (2-band EQ2 Frequency)
+Determines the frequency to be attenuated/boosted.
+This is not active when “EQ Type” is set to “Thru.”
+Settings: 63Hz – 18.0Hz
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+72
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+EQ 1 Q (2-band EQ1 Q)/EQ 2 Q (2-band EQ2 Q)
+Determines the EQ bandwidth for the frequency which is set in “EQ 1 Freq/EQ2 Freq.” This is available
+only when “EQ Type” is set to “Peak/Dip.”
+Settings: 0.1 – 12.0
+NOTE For details on EQ structure, see the Synthesizer Parameter Manual PDF document.
+
+Output Level (2-band Output Level)
+Determines the Output level of the 2-band EQ.
+Settings: -12dB – +12dB
+
+Arpeggio
+
+Common
+
+From the Common display you can set Arpeggio-related parameters for the Part.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON]  [Arpeggio]
+ [Common]
+
+Arp Part (Part Arpeggio Switch)
+Determines whether the Arpeggio for the selected Part is active or not.
+Settings: Off, On
+
+Arp Master (Arpeggio Master Switch)
+Determines whether the Arpeggio for the entire Performance is active or not.
+Settings: Off, On
+
+Sync Quantize (Sync Quantize Value)
+Determines the actual timing at which the next Arpeggio playback starts when you trigger it while the
+Arpeggios for Parts are being played back. When set to “off,” the next Arpeggio starts as soon as you
+trigger it. The number shown at right of each value indicates the resolution in clocks.
+Settings: Off, 60 (32nd note), 80 (16th note triplet), 120 (16th note), 160 (8th note triplet), 240 (8th note), 320 (1/4 note triplet),
+
+480 (1/4 note)
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+73
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Hold
+Determines whether the Arpeggio continues cycling after the keys are released.
+Settings: Sync-off, Off, On
+
+Sync-off: Arpeggio playback continues to run silently, even when you release the keys. Pressing any key turns
+Arpeggio playback on again, and the Arpeggio is heard from the point in the cycle where playback is resumed.
+Off: The Arpeggio plays only while you hold the keys.
+On: The Arpeggio cycles automatically, even if you release your fingers from the keys.
+
+Key Mode
+Determines how the Arpeggio plays back when playing the keyboard.
+Settings: Sort, Thru, Direct, Sort+Drct, Thru+Drct
+
+Sort: When you play specific notes (for example, the notes of a chord), the same sequence plays, no matter what
+order you play the notes.
+Thru: When you play specific notes (for example, the notes of a chord), the resulting sequence differs depending on
+the order of the notes.
+Direct: Note events of the Arpeggio sequence do not play; only the notes you play on the keyboard are heard. When
+the Arpeggio plays back, events such as Pan and Brightness are applied to the sound of your keyboard
+performance. Use this setting when the Arpeggio types include non-note data or when you set the Arpeggio
+Category to Control.
+Sort+Drct: The Arpeggio plays back according to the Sort setting, and the notes played are also sounded.
+Thru+Drct: The Arpeggio plays back according to the Thru setting, and the notes played are also sounded.
+
+Velocity (Velocity Rate)
+Determines how much the velocity of Arpeggio playback is offset from the original value. If the resulting
+Velocity value is 0, it will be set to 1. If the resulting Velocity value is greater than 128 it will be set to 127.
+Settings: 0% – 200%
+
+Gate Time (Gate Time Rate)
+Determines how much the Gate Time (length) of the Arpeggio notes is offset from the original value. If the
+resulting Gate Time value is 0, it will be set to 1.
+Settings: 0% – 200%
+
+Change Timing
+Determines the actual timing at which the Arpeggio type is switched when you select another type during
+Arpeggio playback. When set to “Real-time,” the Arpeggio type is switched immediately. When set to
+“Measure,” the Arpeggio type is switched at the top of the next measure.
+Settings: Real-time, Measure
+
+Loop
+Determines whether the Arpeggio plays through a single time or continuously, while notes are held.
+Settings: Off, On
+
+Arp Play Only (Arpeggio Play Only)
+Determines whether or not the current Part plays only the note events of the Arpeggio playback. When this
+parameter is set to on, only the note events of the Arpeggio playback affect the tone generator block.
+Settings: Off, On
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+Arp/MS Grid (Arpeggio/Motion Sequencer Grid)
+Determines the type of note that serves as the basis for the Quantize or Swing. The parameter value is
+displayed in clocks.
+For Motion Sequencer, this parameter value is one step length.
+Settings: 60 (32nd note), 80 (16th note triplet), 120 (16th note), 160 (8th note triplet), 240 (8th note), 320 (1/4 note triplet),
+
+All Element
+
+Osc
+
+Balance
+
+480 (1/4 note)
+
+Qntz Strength (Quantize Strength)
+This parameter sets the “strength” by which note events are pulled toward the quantize beat set in “Arp/MS
+Grid.” A setting of 100% produces exact timing set in “Arp/MS Grid.” A setting of 0% results in no
+quantization.
+Settings: 0% – 100%
+
+MONTAGE Reference Manual
+
+74
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Unit (Part Unit Multiply)
+Adjusts the Arpeggio playback time. By using this parameter, you can create a different Arpeggio from the
+original one.
+Settings: 50%, 66%, 75%, 100%, 133%, 150%, 200%, 266%, 300%, 400%, Common
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+200%: The playback time will be doubled and the tempo is halved.
+100%: The normal playback time.
+50%: The playback time will be halved and the tempo doubled.
+Common: The value set in the Unit Multiply common to the all Parts will be applied.
+
+Swing
+Delays notes on even-numbered beats (backbeats) to produce a swing feel.
+- +1 and higher: Delay the Arpeggio notes.
+- -1 and lower: Advance the Arpeggio notes.
+- 0: Exact timing as set by “Arpeggio/Motion Sequencer Grid” Value, resulting in no swing.
+
+Judicious use of this setting lets you create swing rhythms and triplet feels, such as shuffle and bounce.
+Settings: -120 – +120
+
+Velocity Limit (Arpeggio Velocity Limit)
+Determines the minimum and maximum Velocity values in which the Arpeggio responds. Each Arpeggio
+will only sound for notes played within its specified velocity range. If you first specify the maximum value
+and then the minimum value, for example “93 to 34,” then the Velocity range covers both “1 to 34” and “93
+to 127.”
+Settings: 1 – 127
+
+Note Limit (Arpeggio Note Limit)
+Determines the lowest and highest notes in the Arpeggio’s note range. Each Arpeggio will only sound for
+notes played within its specified range. If you first specify the highest note and then the lowest note, for
+example “C5 to C4,” then the note range covers both “C-2 to C4” and “C5 to G8.”
+Settings: C -2 – G8
+
+Octave Shift (Arpeggio Output Octave Shift)
+Shifts the pitch of the Arpeggio up or down in octaves.
+Settings: -10 – +0 – +10
+
+Octave Range (Arpeggio Octave Range)
+Specifies the maximum Arpeggio range in octaves.
+Settings: -3 – +0 – +3
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+75
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Individual
+
+From the Individual display you can set parameters corresponding to Arpeggio Selects 1 – 8.
+Touching the Arpeggio Type Setting calls up a menu. In the displayed menu, touch [Search] to call up the
+Arpeggio Category Search display (page 163) and touch [Number] to determine the Arpeggio Type by
+specifying the Arpeggio Number.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON]  [Arpeggio]
+ [Individual]
+
+Arpeggio Type Settings
+
+Arp Part (Part Arpeggio Switch)
+Arp Master (Arpeggio Master Switch)
+Sync Quantize (Sync Quantize Value)
+Same as in the Common display.
+
+Arp (Arpeggio Select)
+Selects the desired Arpeggio stored as Arpeggio Select.
+Settings: 1 – 8
+
+Category (Arpeggio Category)
+Indicates the selected Arpeggio Category.
+Settings: See the “Arpeggio Category List” on page 11.
+
+Sub (Arpeggio Sub Category)
+Indicates the selected Arpeggio Sub Category.
+Settings: See the “Arpeggio Sub Category List” on page 11.
+
+Name (Arpeggio Name)
+Indicates the selected Arpeggio Name.
+Settings: See the Data List PDF document.
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+Velocity (Velocity Rate)
+Determines how much the velocity of Arpeggio playback is offset from the original value. If the resulting
+Velocity value is 0, it will be set to 1. If the resulting Velocity value is greater than 128 it will be set to 127.
+Settings: -100% – +100%
+
+Gate Time (Gate Time Rate)
+Determines how much the Gate Time (length) of the Arpeggio notes is offset from the original value. If the
+resulting Gate Time value is 0, it will be set to 1.
+Settings: -100% – +100%
+
+MONTAGE Reference Manual
+
+76
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Advanced
+
+From the Advanced display you can set advanced parameters related to the Arpeggio function.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON] [Arpeggio] 
+[Advanced]
+
+Arp Part (Part Arpeggio Switch)
+Arp Master (Arpeggio Master Switch)
+Sync Quantize (Sync Quantize Value)
+Same as in the Common display.
+
+Accent Vel Threshold (Accent Velocity Threshold)
+Determines the minimum velocity that will trigger the Accent Phrase.
+Accent Phrases are composed of sequence data included in some Arpeggio types, sounding only when
+you play notes at a velocity higher (stronger) than that specified in the Accent Velocity Threshold
+parameter. If it is difficult to play at velocities necessary to trigger the Accent Phrase, set the “Accent Vel
+Threshold” (Accent Velocity Threshold) parameter to a lower value.
+NOTE For information on Arpeggio types that use this function, refer to the Data List PDF document.
+Settings: off, 1 – 127
+
+Accent Start Quantize
+Determines the start timing of the Accent Phrase when the Velocity specified in Accent Velocity Threshold
+above is received. When this is set to off, the Accent Phrase starts as soon as the Velocity is received.
+When this is set to on, the Accent Phrase starts on the beat specified for each Arpeggio type after the
+Velocity is received.
+Settings: off, on
+
+Random SFX
+Determines whether Random SFX is active or not.
+Some Arpeggio types feature a Random SFX function which will trigger special sounds (such as guitar fret
+noises) when the note is released.
+NOTE For information on Arpeggio types that use this function, refer to the “Arpeggio Type List” in the Data List PDF
+
+document.
+
+Settings: off, on
+
+Random SFX Velocity Offset
+Determines the offset value by which the Random SFX notes will be shifted from their original velocities.
+Settings: -64 – +0 – +63
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+77
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Random SFX Key On Ctrl (Random SFX Key On Control)
+When this is set to “on,” the Random SFX sound is played at the velocity generated by the playing of each
+note. When this is set to “off,” a special Random SFX sound is played at a pre-programmed velocity.
+Settings: off, on
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+Velocity Mode
+Adjusts the velocity of the Arpeggio notes.
+Settings: Original, Thru
+
+Original: The Arpeggio plays back at the Velocity set for the Arpeggio Type.
+Thru: The Arpeggio plays back according to the Velocity of your playing.
+
+Trigger Mode
+When this is set to “Gate,” pressing the note starts Arpeggio playback and releasing the note stops it.
+When this is set to “Toggle,” pressing the note starts/stops Arpeggio playback and releasing the note does
+not affect Arpeggio playback.
+Settings: Gate, Toggle
+
+Motion Seq (Motion Sequencer)
+
+Common
+
+From the Common display you can set the parameters related to Motion Sequencer for the Part.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON]  [Motion Seq]
+ [Common]
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+Common Clock Swing (Common Swing)
+Determines the Swing of the Arpeggio/Motion Sequencer for the entire Performance. This is the offset
+value for the Swing of the Arpeggio/Motion Sequencer for each Part.
+Settings: -120 – +120
+
+Common Clock Unit (Common Unit Multiply)
+Adjusts the Arpeggio/Motion Sequencer playback time for the entire Performance.
+This parameter is applied to the Part when the Unit Multiply parameter for Arpeggio/Motion Sequencer of
+the Part is set to “Common.”
+By using this parameter, you can create a different Arpeggio/Motion Sequencer type from the original one.
+Settings: 50% – 400%
+
+200%: The playback time will be doubled and the tempo is halved.
+100%: The normal playback time.
+50%: The playback time will be halved and the tempo doubled.
+
+MONTAGE Reference Manual
+
+78
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Common Arp Gate Time (Common Arpeggio Gate Time)
+Determines the Gate Time Rate (length) of the Arpeggio for the entire Performance. This is the offset value
+for the Gate Time Rate of the Arpeggio for each Part.
+Settings: -100% – +100%
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+Common Arp Velocity (Common Arpeggio Velocity Rate)
+Determines the Velocity Rate of the Arpeggio for the entire Performance. This is the offset value for the
+Velocity Rate of the Arpeggio for each Part.
+Settings: -100% – +100%
+
+Common Motion Seq Amplitude (Common Motion Sequencer Amplitude)
+Determines the Amplitude of the Motion Sequencer for the entire Performance. “Amplitude” determines
+how the entire Motion Sequence changes.
+This is the offset value for the Part Motion Seq Amplitude, which is also the offset value for the Lane
+Amplitude. This results in that both of the Common and Part MS Amplitudes offset the Amplitude setting in
+the Lane (only when “MS FX” is set to on for the Lane).
+Settings: -64 – +63
+
+Common Motion Seq Shape (Common Motion Sequencer Pulse Shape)
+Determines the Pulse Shape of the Motion Sequencer for the entire Performance. This changes the step
+curve shape of the sequence.
+This is the offset value for the Part Motion Seq Pulse Shape, which is also the offset value for the Lane
+Pulse Shape. This results in that both of the Common and Part MS Pulse Shapes offset the Pulse Shape
+setting for the parameter in the Lane (only when “MS FX” is set to on for the Lane and “Control” is set to on
+for the parameter).
+Settings: -100 – +100
+
+Common Motion Seq Smooth (Common Motion Sequencer Smoothness)
+Determines the Smoothness of the Motion Sequencer for the entire Performance. “Smoothness” is the
+degree to which the time of the Motion Sequence is smoothly changed.
+This is the offset value for the Part Motion Seq Smoothness, which is also the offset value for the Lane
+Smoothness. This results in that both of the Common and Part MS Smoothnesses offset the Smoothness
+setting for the parameter in the Lane (only when “MS FX” is set to on for the Lane).
+Settings: -64 – +63
+
+Common Motion Seq Random (Common Motion Sequencer Random)
+Determines the Random of the Motion Sequencer for the entire Performance. “Random” is the degree to
+which the Step Value of the Sequence is randomly changed.
+This is the offset value for the Part Motion Seq Random when “MS FX” is set to on for the Lane.
+Settings: -64 – +63
+
+Part Clock Swing (Clock Swing)
+Determines the Swing of the Arpeggio/Motion Sequencer for the selected Part. This parameter delays
+notes on even-numbered beats (backbeats) to produce a swing feel.
+- +1 and higher: Delay the Arpeggio notes.
+- -1 and lower: Advance the Arpeggio notes.
+- 0: Exact timing as set by “Arpeggio/Motion Sequencer Grid” Value, resulting in no swing.
+
+Judicious use of this setting lets you create swing rhythms and triplet feels, such as shuffle and bounce.
+Settings: -120 – +120
+
+Part Clock Unit (Part Unit Multiply)
+This adjusts the Arpeggio/Motion Sequencer playback time for the selected Part.
+Settings: 50% – 400%, Common
+
+200%: The playback time will be doubled and the tempo is halved.
+100%: The normal playback time.
+50%: The playback time will be halved and the tempo doubled.
+Common: The value set in the Unit Multiply common to the all Parts will be applied.
+
+Part Arp Gate Time (Part Arpeggio Gate Time)
+Determines how much the Gate Time (length) of the Arpeggio notes is offset from the original value. This is
+the offset value for the Gate Time Rate (page 76) of each Arpeggio Select setting.
+Settings: 0% – 200%
+
+MONTAGE Reference Manual
+
+79
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Part Arp Velocity (Part Arpeggio Velocity Rate)
+Determines how much the velocity of Arpeggio playback is offset from the original value. This is the offset
+value for the Velocity Rate (page 76) of each Arpeggio Select setting.
+Settings: 0% – 200%
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+Part Motion Seq Amplitude (Part Motion Sequencer Amplitude)
+Determines the Amplitude of the Motion Sequencer for the selected Part.
+This is the offset value for the Lane Motion Seq Amplitude (page 83) when “MS FX” is set to on for the
+Lane.
+Settings: -64 – +63
+
+Part Motion Seq Shape (Part Motion Sequencer Pulse Shape)
+Determines the Pulse Shape of the Motion Sequencer for the selected Part.
+This is the offset value for the Lane Motion Seq “Step Curve Parameter” (page 84) when “MS FX” is set to
+on for the Lane and “Control” is set to on for the parameter.
+Settings: -100 – +100
+
+Part Motion Seq Smooth (Part Motion Sequencer Smoothness)
+Determines the Smoothness of the Motion Sequencer for the selected Part.
+This is the offset value for the Lane Motion Seq Smoothness (page 83) when “MS FX” is set to on for the
+Lane.
+Settings: -64 – +63
+
+Part Motion Seq Random (Part Motion Sequencer Random)
+Determines the Random of the Motion Sequencer for the selected Part. “Random” is the degree to which
+the Step Value of the Sequence is randomly changed.
+Settings: 0 – 127
+
+Arp/MS Grid (Arpeggio/Motion Sequencer Grid)
+Determines the type of note that serves as the basis for the Quantize or Swing. The parameter value is
+displayed in clocks.
+For Motion Sequencer, this parameter value is one step length.
+Settings: 60 (32nd note), 80 (16th note triplet), 120 (16th note), 160 (8th note triplet), 240 (8th note), 320 (1/4 note triplet),
+
+480 (1/4 note)
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+80
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Lane
+
+From the Lane display you can set parameters for each Lane of the Motion Sequencer.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON]  [Motion Seq]
+ [Lane]
+
+Motion Seq Master SW (Motion Sequencer Master Switch)
+Determines whether the Motion Sequencer for the entire Performance is active or not.
+Settings: Off, On
+
+Motion Seq Part SW (Motion Sequencer Part Switch)
+Determines whether the Motion Sequencer for the selected Part is active or not.
+Settings: Off, On
+
+Lane SW (Lane Switch)
+Determines whether each Lane is active or not. Up to four Lanes of Motion Sequencer can be used for one
+Part and up to eight Lanes can be used at the same time for the entire Performance. When this is set to off,
+parameters related to the corresponding Lane will not be displayed.
+Settings: Off, On
+
+MS FX (Lane Motion Sequencer FX Receive)
+Determines whether or not the selected Lane is affected by Knob operations when the corresponding
+Knob Function [ARP/MS FX] button is set to on.
+Settings: Off, On
+
+Trigger (Lane Motion Sequencer Trigger Receive)
+Determines whether or not the selected Lane receives the signal generated by [MOTION SEQ TRIGGER]
+button. When this is set to on, the Motion Sequence will begin whenever you press the [MOTION SEQ
+TRIGGER] button.
+Settings: Off, On
+
+Sequence Select (Lane Motion Sequence Select)
+Selects the desired Motion Sequence.
+Settings: 1 – 8
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+81
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Sync (Lane Motion Sequencer Sync)
+Determines if the playback of the Motion Sequence applied to the Destination (set in the Control Assign
+display (page 89)) is synchronized to the Tempo, Beat, or Arpeggio of the Performance.
+Settings: Off, Tempo, Beat, Arp, Lane 1 (when Lane 2 – 4 is selected)
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+Off: Lane Motion Sequencer plays back according to its own clock and is not synchronized to an external clock.
+Tempo: Lane Motion Sequencer is synchronized with the Performance tempo.
+Beat: Lane Motion Sequencer is synchronized with the beat.
+Arp: Lane Motion Sequencer is synchronized with the 1st beat of the measure of the currently playing Arpeggio.
+Lane 1: Lane Motion Sequencer is synchronized with the Lane 1.
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Speed (Lane Motion Sequencer Speed)
+Determines the playback speed of the Motion Sequence.
+This is available only when the “Lane Motion Sequencer Sync” is set to “Off.”
+Settings: 0 – 127
+
+Unit Multiply (Lane Motion Sequencer Unit Multiply)
+Adjusts the Motion Sequencer playback time for the selected Lane.
+This is available when the Lane Motion Sequencer Sync parameter is set to something other than “Off” and
+“Lane 1.”
+Settings: 50% – 6400%, Common, Arp
+
+200%: The playback time will be doubled and the tempo is halved.
+100%: The normal playback time.
+50%: The playback time will be halved and the tempo doubled.
+Common: The value set in the Unit Multiply common to the all Parts will be applied.
+Arp: The value set in the Arpeggio Unit Multiply for the selected Part will be applied.
+
+Key On Reset (Lane Motion Sequencer Key On Reset)
+Determines whether or not the playback of the Motion Sequence is stopped when you play the keyboard.
+This parameter is active when the Lane Motion Sequencer Sync parameter is set to something other than
+“Arp” and “Lane 1.”
+Also this parameter is not available when “Trigger” is set to “On.”
+Settings: Off, Each-On, 1st-On
+
+Each-On: The Sequence resets with each note you play and starts the Sequence from the beginning.
+1st-On: The Sequence resets with each note you play and starts the Sequencer from the beginning. If you play a
+second note while the first is being held, the Sequence continues cycling according to the same phase as triggered
+by the first note—in other words, the Sequence only resets if the first note is released before the second is played.
+
+Loop (Lane Motion Sequencer Loop)
+Determines whether the Motion Sequence is played only once or repeatedly.
+This is available when the Lane Motion Sequencer Sync parameter is set to something other than “Lane 1.”
+Settings: Off, On
+
+Velocity Limit (Lane Motion Sequencer Velocity Limit)
+Determines the minimum and maximum Velocity values in which the Motion Sequence responds.
+This is available when the Lane Motion Sequencer Sync parameter is set to something other than “Lane 1.”
+Settings: 1 – 127
+
+Cycle (Lane Motion Sequencer Cycle)
+Selects the desired step length for the Motion Sequence.
+Settings: 1 – 16
+
+Load Sequence
+Loads Motion Sequence data in the User Memory. For details about Loading, see “Load” (page 174).
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+82
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Edit Sequence
+Calls up the Motion Sequence setting display. You can create a custom Sequence consisting of up to
+sixteen steps.
+
+Motion Seq Step Value (Lane Motion Sequencer Step Value)
+
+Motion Seq Step Type (Lane Motion Sequencer Step Type)
+
+Lane (Current Select Lane)
+Indicates the currently selected Lane. This parameter is not displayed when the corresponding Lane
+Switch is set to off.
+Settings: 1 – 4
+
+Cycle (Lane Motion Sequencer Cycle)
+Selects the desired step length for the Motion Sequence.
+Settings: 1 – 16
+
+Amplitude (Lane Motion Sequencer Amplitude)
+Determines how the entire Motion Sequence changes.
+Settings: 0 – 127
+
+Smooth (Lane Motion Sequencer Smoothness)
+Determines the smoothness of the time change of the Motion Sequence.
+Settings: 0 – 127
+
+Sequence Select (Lane Motion Sequence Select)
+Determines the Motion Sequence Select.
+Settings: 1 – 8
+
+Polarity (Lane Motion Sequencer Polarity)
+Determines the Sequence Polarity.
+Settings: Unipolar, Bipolar
+
+Unipolar: Unipolar changes only in a positive direction from a base parameter value according to the Sequence.
+Bipolar: Bipolar changes in both of positive and negative directions from a base parameter value.
+
+Motion Seq Step Value (Lane Motion Sequencer Step Value)
+Determines the Step Value for the Motion Sequence. You can control the Step Value 1 – 8 or 9 – 16 by the
+Sliders 1 – 8 depending on the cursor position on the display.
+Settings: 0 – 127
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+83
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Motion Seq Step Type (Lane Motion Sequencer Step Type)
+Determines each Step Type of the Motion Sequence. You can switch between the Step Types A and B for
+the Step 1 – 8 or 9 – 16 by the SCENE [1] – [8] buttons depending on the cursor position on the display.
+Settings: A, B
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+Pulse A / Pulse B (Lane Motion Sequencer Step Curve Type)
+Determines the Curve Type of the parameter for each of “Pulse A” and “Pulse B.” “Motion Seq Step Type”
+described above determines which curve set here is used for each step.
+Settings: For Preset Bank: Standard, Sigmoid, Threshold, Bell, Dogleg, FM, AM, M, Discrete Saw, Smooth Saw, Triangle,
+
+Square, Trapezoid, Tilt Sine, Bounce, Resonance, Sequence, Hold
+
+For details, see the Synthesizer Parameter Manual PDF document.
+
+For User Bank: User 1 – 32
+
+When a Library file is read: Curves in Library 1 – 8
+
+Direction (Lance Motion Sequencer Step Curve Direction)
+Determines the Direction of the Step Curve for the Motion Sequence.
+Settings: Forward, Reverse
+
+Prm1/Prm2 (Lane Motion Sequencer Step Curve Parameter)
+Adjusts the shape of the Step Curve for the Motion Sequence.
+This parameter is not available depending on the Curve Type. Also the range of available parameter
+values differs depending on the Curve Type.
+
+Control (Lane Motion Sequencer Step Curve Shape Control Switch)
+Determines whether or not to control the shape of the Step Curve for the Motion Sequence by operating
+Knobs. This parameter is displayed only when “MS FX” is set to on. Also this parameter is not available
+depending on the Curve Type.
+Settings: Off, On
+
+Store Sequence
+Stores the edited Sequence data. For details about storing data, see “Store/Save” (page 176).
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+84
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Mod/Control (Modulation/Control)
+
+Part LFO
+
+From the Part LFO display you can set the LFO-related parameters for the Part.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON] 
+[Mod/Control]  [Part LFO]
+
+LFO Wave
+Selects the LFO waveform.
+Settings: Triangle, Triangle+, Saw Up, Saw Down, Squ1/4, Squ1/3, Square, Squ2/3, Squ3/4, Trapezoid, S/H1, S/H2, User
+
+Tempo Sync (LFO Tempo Sync)
+Determines whether or not the LFO is synchronized to the tempo of the Arpeggio or Song.
+Settings: Off (not synchronized), On (synchronized)
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+85
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+ When “Tempo Sync” is set to “OFF”
+
+Speed (LFO Speed)
+Adjusts the speed (frequency) of LFO variation. This is not available when the Tempo Sync parameter
+is set to “On.”
+Settings: 0 – 63
+
+Random Speed (LFO Random Speed Depth)
+Determines the degree to which the LFO speed changes at random.
+Settings: 0 – 127
+
+ When “Tempo Sync” is set to “ON”
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+Tempo Speed (LFO Tempo Speed)
+This parameter is available only when “Tempo Sync” above has been set to “ON.” It allows you to make
+detailed note value settings that determine how the LFO pulses in sync with the Arpeggio.
+Settings: 1/16, 1/8 Tri. (eighth-note triplets), 1/16 Dot. (dotted sixteenth notes), 1/8, 1/4 Tri. (quarter-note triplets), 1/8 Dot.
+(dotted eighth notes), 1/4, 1/2 Tri. (half-note triplets), 1/4 Dot. (dotted quarter notes), 1/2, Whole Tri. (whole-note
+triplets), 1/2 Dot. (dotted half notes), 1/4 x 4 (quarter-note quadruplets; four quarter notes to the beat), 1/4 x 5
+(quarter-note quintuplets; five quarter notes to the beat), 1/4 x 6 (quarter-note sextuplets; six quarter notes to the
+beat), 1/4 x 7 (quarter-note septuplets; seven quarter notes to the beat), 1/4 x 8 (quarter-note octuplets; eight
+quarter notes to the beat), 1/4 x 16 (sixteen quarter-notes to the beat), 1/4 x 32 (32 quarter notes to the beat),
+1/4 x 64 (64 quarter notes to the beat)
+
+MONTAGE Reference Manual
+
+86
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Delay (LFO Delay Time)
+Determines the delay time between the moment you press a key on the keyboard and the moment the LFO
+comes into effect.
+Settings: 0 – 127
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+Fade In (LFO Fade In Time)
+Determines the amount of time for the LFO effect to fade in (after the “Delay” time has elapsed).
+Settings: 0 – 127
+
+Hold (LFO Hold Time)
+Determines the length of time during which the LFO is held at its maximum level.
+Settings: 0 – 126, Hold
+
+Hold: No fade-out
+
+Fade Out (LFO Fade Out Time)
+Determines the time over which the LFO effect is faded out (after the “Hold” time has elapsed).
+Settings: 0 – 127
+
+Key On Reset (LFO Key On Reset)
+Determines whether or not the LFO is reset each time a note is pressed.
+Settings: Off, Each-On, 1st-On
+
+Each-On: The LFO resets with each note you play and starts a waveform at the phase specified by the Phase
+parameter.
+1st-On: The LFO resets with each note you play and starts a waveform at the phase specified by the Phase
+parameter. If you play a second note while the first is being held, the LFO continues cycling according to the same
+phase as triggered by the first note—in other words, the LFO only resets if the first note is released before the second
+is played.
+
+Loop (LFO Loop)
+Determines whether the LFO Wave plays through a single time (off) or continuously (on).
+Settings: Off, On
+
+Phase (LFO Phase)
+Determines the starting phase point for the LFO Wave when it is reset.
+Settings: 0°, 90°, 120°, 180°, 240°, 270°
+
+Element Phase Offset (LFO Element Phase Offset)
+Determines the offset values of the “Phase” parameter (above) for the respective Elements.
+Settings: 0°, 90°, 120°, 180°, 240°, 270°
+
+Destination (LFO Destination)
+Determines the functions which will be controlled by the LFO Wave.
+Settings: Insertion Effect A Parameter 1 – 24, Insertion Effect B Parameter 1 – 24, Level, Pitch, Cutoff, Resonance, Pan, E.LFO
+
+Speed
+
+Depth (LFO Depth)
+Set the LFO Wave Depth (amplitude) for “Destination” parameter (above).
+Settings: 0 – 127
+
+Element Depth Ratio (LFO Element Depth Ratio)
+Determines the offset values of the “Depth” parameter (above) for the respective Elements.
+When set to “Off,” the LFO effect is not available. This is available only when Element-related parameters
+are set in “Destination.”
+Settings: Off, 0 – 127
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+87
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Edit User LFO
+Calls up the User LFO Setting display. You can create a custom LFO wave consisting of up to sixteen
+steps.
+
+User LFO Step Value
+
+Cycle
+Selects the desired step length for the LFO.
+Settings: 2 steps, 3 steps, 4 steps, 6 steps, 8 steps, 12 steps, 16 steps
+
+Slope
+Determines the slope or ramp characteristics of the LFO wave.
+Settings:  Off (no slope), Up, Down, Up&Down
+
+User LFO Step Value
+Determines the level for each step.
+Settings: -64 – +63
+
+Template
+This includes pre-programmed settings for creating an original LFO.
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+88
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+Control Assign
+
+From the Control Assign display you can make controller assign settings for the Part.
+You can change sounds as desired by setting the desired controller to “Source” and the desired parameter
+to “Destination.” Not only physical controllers such as the Pitch Bend wheel but also Motion Sequencer or
+Envelope Follower can be set to “Source” as a virtual controller.
+Up to 16 Controller Sets can be assigned to each Part.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON] 
+[Mod/Control]  [Control Assign]
+
+Auto Select (Auto Select Switch)
+Determines whether the Auto Select function for Display Filter (below) is active (On) or not (Off). When this
+parameter is set to “On,” the operated Controller is automatically set in “Display Filter”. Also you can obtain
+the same result by pressing the [CONTROL ASSIGN] button.
+Settings: Off, On
+
+Display Filter
+Determines the Controller to be displayed.
+Settings: PitchBend, Modwheel, AfterTouch, FootCtrl 1, FootCtrl 2, FootSwitch, Ribbon, Breath, AsgnKnob 1 – 8, AsgnSw 1,
+
+AsgnSw 2, MS Lane 1 – 4, EnvFollow 1 – 16, EnvFollowAD, EnvFollowMst
+
+Display Name
+Determines the name of each Assignable Knob 1 – 8 which is displayed in the Performance Play display
+(page 26). This is available only when “AsgnKnob 1 – 8” is set in “Source.”
+
+Destination
+Determines the target parameter to be controlled. To add another Destination, touch “+” icon. For
+information on setting examples for “Destination,” see below.
+Settings: See the “Control List” in the Data List PDF document.
+
+Destination Setting Examples
+The following settings are some useful examples how to set the Destination.
+
+To control the volume:
+
+To change the pitch:
+
+To change the speed of the Rotary Speaker:
+
+To apply a Wah pedal effect:
+
+Part Param  Volume
+
+Part Param  Pitch
+Ins A/B  InsA/B SpdCtrl *1
+Ins A/B  InsA/B PdlCtrl *2
+
+Concerning *1 and *2, the following settings are necessary in addition to the above settings.
+*1 “Ins A/B Type” = “Rotary Speaker” in the Effect display of Part Edit
+*2 “Ins A/B Type” = “VCM Pedal Wah” in the Effect display of Part Edit
+
+MONTAGE Reference Manual
+
+89
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Source
+Determines the desired Controller for controlling the parameter set in “Destination.”
+Settings: PitchBend, Modwheel, AfterTouch, FootCtrl 1, FootCtrl 2, FootSwitch, Ribbon, Breath, AsgnKnob 1 – 8, AsgnSw 1,
+
+AsgnSw 2, MS Lane 1 – 4, EnvFollow 1 – 16, EnvFollowAD, EnvFollowMst
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+Element SW (Element Switch)
+Selects whether the controller will affect each individual Element (On) or not (Off). This is available only
+when Element-related parameters are set in “Destination.”
+Settings: Off, On
+
+Curve Type
+Determines the Curve type of the parameter set in “Destination.” In the illustrations below, the vertical axis
+indicates the operation value of the controller set in “Destination” and the horizontal axis indicates the
+parameter value set in “Source.”
+Settings: Standard, Sigmoid, Threshold, Bell, Dogleg, FM, AM, M, Discrete Saw, Smooth Saw, Triangle, Square, Trapezoid, Tilt
+
+Sine, Bounce, Resonance, Sequence, Hold, User 1 – 32 (when User Bank is selected), Library 1 – 8 (when the
+Library file is read)
+
+Standard
+
+Smooth Saw
+
+Sigmoid
+
+Triangle
+
+Threshold
+
+Square
+
+Bell
+
+Trapezoid
+
+Dogleg
+
+Tilt Sine
+
+FM
+
+AM
+
+M
+
+Bounce
+
+Resonance
+
+Sequence
+
+Discrete Saw
+
+Hold
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+90
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Polarity (Curve Polarity)
+Determines the Curve Polarity of the Curve type set in “Curve Type.”
+Settings: Uni, Bi
+
+Uni: Unipolar changes only in a positive direction or in a negative direction from a base parameter value according
+to the Curve shape.
+Bi: Bipolar changes in both of positive and negative directions from a base parameter value.
+
+Ratio (Curve Ratio)
+Determines the Curve Ratio.
+Settings: -64 – +63
+
+Param 1/Param 2 (Curve Parameter)
+Adjusts the Curve shape.
+This is not available depending on the Curve Type.
+
+Destination to Name
+Copies the Parameter name from “Destination” to “Display Name.” This is available only when “Source” is
+set to “AsgnKnob 1 – 8.”
+
+Delete
+Deletes the selected “Destination.”
+
+Edit User Curve
+Calls up the User Curve Setting display. You can select “Linear” (Curve by Linear Interpolation of eight
+coefficients) or “Step.”
+
+Curve No. (Curve Number)
+Indicates the selected Curve Number.
+Settings: 1 – 32
+
+Curve Name
+Names the selected Curve. Touching the parameter calls up the input character display.
+
+Curve Type
+Determines the Curve Type.
+Settings: Linear, Step
+
+Input
+Determines the Input level of the Curve. “Input 1” is fixed to “0.” “Input 8” is fixed to 127 when the Curve
+Type is “Linear.”
+Settings: 0 – 127
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+91
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Output
+Determines the Output level of the Curve.
+Settings: 0 – 127
+
+Receive SW (Receive Switch)
+
+From the Receive Switch display you can set how each individual Part responds to various MIDI data, such
+as Control Change and Program Change messages. When the relevant parameter is set to “ON,” the
+corresponding Part responds to the appropriate MIDI data.
+NOTE If CC (Receive Control Change) here is set to “OFF,” parameters related to Control Change are not available.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON] 
+[Mod/Control]  [Receive SW]
+
+Pgm Change (Receive Program Change)
+Determines whether Program Change messages are received or not.
+Settings: Off, On
+
+Bank Select (Receive Bank Select)
+Determines whether Bank Select MSB/LSB messages are received or not.
+This is not available when the Receive Control Change is set to Off.
+Settings: Off, On
+
+Pitch Bend (Receive Pitch Bend)
+Determines whether MIDI messages generated by using the Pitch Bend Wheel are received or not.
+Settings: Off, On
+
+After Touch (Receive After Touch)
+Determines whether After Touch messages are received or not.
+Settings: Off, On
+
+CC (Receive Control Change)
+Determines whether Control Change messages are received or not.
+Settings: Off, On
+
+Vol/Exp (Receive Volume/Expression)
+Determines whether volume messages are received or not.
+This is not available when the Receive Control Change is set to Off.
+Settings: Off, On
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+92
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Pan (Receive Pan)
+Determines whether Pan messages are received or not.
+This is not available when the Receive Control Change is set to Off.
+Settings: Off, On
+
+MW (Receive Modulation Wheel)
+Determines whether MIDI messages generated by using the Modulation Wheel are received or not.
+This is not available when the Receive Control Change is set to Off.
+Settings: Off, On
+
+Sustain (Receive Sustain)
+Determines whether Sustain messages are received or not.
+This is not available when the Receive Control Change is set to Off.
+Settings: Off, On
+
+FC1/FC2 (Receive Foot Controller)
+Determines whether MIDI messages generated by pressing the optional Foot Controller are received or
+not.
+This is not available when the Receive Control Change is set to Off.
+Settings: Off, On
+
+FS (Receive Foot Switch)
+Determines whether MIDI messages generated by pressing the optional Foot Switch are received or not.
+This is not available when the Receive Control Change is set to Off.
+Settings: Off, On
+
+A. SW1/A. SW2 (Receive Assignable Switch)
+Determines whether MIDI messages generated by pressing the [ASSIGN 1] and [ASSIGN 2] buttons are
+received or not.
+This is not available when the Receive Control Change is set to Off.
+Settings: Off, On
+
+MS Hold (Receive Motion Sequencer Hold)
+Determines whether MIDI messages generated by pressing the [MOTION SEQ HOLD] button are received
+or not.
+This is not available when the Receive Control Change is set to Off.
+Settings: Off, On
+
+MS Trigger (Receive Motion Sequencer Trigger)
+Determines whether MIDI messages generated by pressing the [MOTION SEQ TRIGGER] button are
+received or not.
+This is not available when the Receive Control Change is set to Off.
+Settings: Off, On
+
+RB (Receive Ribbon Controller)
+Determines whether MIDI messages generated by using the Ribbon Controller are received or not.
+This is not available when the Receive Control Change is set to Off.
+Settings: Off, On
+
+BC (Receive Breath Controller)
+Determines whether MIDI messages for Breath Controller are received or not.
+This is not available when the Receive Control Change is set to Off.
+Settings: Off, On
+
+A.Knob 1 – 8 (Receive Assignable Knob)
+Determines whether MIDI messages generated by using the Assignable Knobs 1 – 8 are received or not.
+This is not available when the Receive Control Change is set to Off.
+Settings: Off, On
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+93
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+Element Edit (Element)
+
+Osc/Tune (Oscillator/Tune)
+
+From the Oscillator/Tune display you can assign the waveform (or basic sound material) to each Element.
+You can set the note range for the Element (the range of notes on the keyboard over which the Element will
+sound) as well as the velocity response (the range of note velocities within which the Element will sound).
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  Element selection  [Osc/Tune]
+
+Element Switch
+
+Bank (Waveform Bank)
+Number (Waveform Number)
+Category (Waveform Category)
+Sub Category (Waveform Sub Category)
+Name (Waveform Name)
+Indicates the information of the waveform used for the selected Element. “Bank” indicates which waveform
+location (Preset, User and Library) is assigned to the Element.
+Settings: See the Data List PDF document.
+
+Element Switch
+Determines whether the currently selected Element is on or off.
+Settings: Off, On
+
+XA Control
+Determines the functioning of the Expanded Articulation (XA) feature of an Element.
+The XA feature is sophisticated tone generator system that allows you to more effectively recreate realistic
+sound and natural performance techniques. It also provides other unique modes for random and alternate
+sound changes as you play. For details on the XA feature, see the “Tone Generator Block” in the “Basic
+Structure” on page 6.
+Settings: Normal, Legato, Key Off, Cycle, Random, A.SW Off, A.SW1 On, A.SW2 On
+
+For each Element, you can set to:
+Normal: The Element sounds normally each time you play the note.
+Legato: When the Mono/Poly parameter is set to Mono, this Element will be played in place of the one which is set to
+“Normal” of the XA Control parameter when you play the keyboard in legato fashion (playing the next note of a
+single-note line or melody before releasing the previous note).
+Key Off: The Element will sound each time you release the note.
+Cycle (for multiple Elements): Each Element sounds alternately according to its numerical order. In other words,
+playing the first note will sound Element 1, the second note Element 2, and so on.
+Random (for multiple Elements): Each Element will sound randomly each time you play the note.
+
+MONTAGE Reference Manual
+
+94
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+A.SW1 On: When the [ASSIGN 1] button is turned On, the Element will sound.
+A.SW2 On: When the [ASSIGN 2] button is turned On, the Element will sound.
+A.SW Off: When both the [ASSIGN 1] and [ASSIGN 2] buttons are turned Off, the Element will sound.
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+Elem Group (Element Group)
+Determines the group for XA Control. All Elements that have the same type of XA features must have the
+same group number. This setting does not apply when the XA Control parameters of all Elements are set to
+Normal.
+Settings: 1 – 8
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+Elem Connect (Element Connection Switch)
+Determines which Insertion Effect (A or B) is used to process each individual Element. Set this to “Thru” to
+bypass the Insertion Effects for the specified element.
+Settings: Thru, InsA, InsB
+
+New Waveform
+Loads Audio data stored in the USB flash memory as “Waveform.” For details on loading, see “Load”
+(page 174).
+After the Waveform is loaded, the Edit Waveform parameter (below) will be available.
+
+Coarse (Coarse Tune)
+Determines the pitch of each Element in semitones.
+Settings: -48 – +48
+
+Fine (Fine Tune)
+Determines the fine tuning for the pitch of each Element.
+Settings: -64 – 63
+
+Pitch/Vel (Pitch Velocity Sensitivity)
+Determines how the pitch of the selected Element responds to velocity.
+Settings: -64 – 63
+
+Positive values: The harder you play the keyboard, the more the pitch rises.
+Negative values: The harder you play the keyboard, the more the pitch falls.
+0: No change in pitch.
+
+Fine/Key (Pitch Fine Key Follow Sensitivity)
+Determines the degree to which the notes (specifically, their position or octave range) affect the pitch in
+Fine Tuning.
+Settings: -64 – 63
+
+Positive values: The pitch of lower notes drops and that of higher notes rises.
+Negative values: The pitch of lower notes rises and that of higher notes drops.
+
+Random (Random Pitch Depth)
+Allows you to randomly vary the pitch of the Element for each note you play. The higher the value, the
+greater the pitch variation.
+Settings: 0 – 127
+
+Vel Cross Fade (Velocity Cross Fade)
+Determines how gradually the volume of an Oscillator decreases in proportion to the distance of Velocity
+changes outside the Velocity Limit setting.
+Settings: 0 – 127
+
+The higher the value, the more gradually the volume decreases.
+0: No sound
+
+Tempo Sync (Key On Delay Tempo Sync Switch)
+Determines whether or not “Key On Delay” (below) is synchronized to the tempo.
+Settings: Off, On
+
+Length (Key On Delay Time Length)
+Determines the time (or elapsed delay) between the moment you press a note on the keyboard and the
+point at which the sound is actually played. You can set different delay times for each Element. This is not
+available when “Key On Delay Tempo Sync” is set to on.
+Settings: 0 – 127
+
+MONTAGE Reference Manual
+
+95
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Length (Key On Delay Note Length)
+Determines the timing of “Key On Delay” when “Key On Delay Tempo Sync” is set to on.
+Settings: 1/16, 1/8 Tri. (eighth-note triplets), 1/16 Dot. (dotted sixteenth notes), 1/8, 1/4 Tri. (quarter-note triplets), 1/8 Dot.
+(dotted eighth notes), 1/4, 1/2 Tri. (half-note triplets), 1/4 Dot. (dotted quarter notes), 1/2, Whole Tri. (whole-note
+triplets), 1/2 Dot. (dotted half notes), 1/4 x 4 (quarter-note quadruplets; four quarter notes to the beat), 1/4 x 5
+(quarter-note quintuplets; five quarter notes to the beat), 1/4 x 6 (quarter-note sextuplets; six quarter notes to the
+beat), 1/4 x 7 (quarter-note septuplets; seven quarter notes to the beat), 1/4 x 8 (quarter-note octuplets; eight quarter
+notes to the beat)
+
+Velocity Limit
+Determines the minimum and maximum values of the velocity range within which each Element will
+respond. Each Element will only sound for notes played within its specified velocity range. If you first
+specify the maximum value and then the minimum value, for example “93 to 34,” then the Velocity range
+covers both “1 to 34” and “93 to 127.”
+Settings: 1 – 127
+
+Note Limit
+Determines the lowest and highest notes of the keyboard range for each Element. Each Element will only
+sound for notes played within its specified range. If you first specify the highest note and then the lowest
+note, for example “C5 to C4,” then the note range covers both “C-2 to C4” and “C5 to G8.”
+Settings: C -2 – G8
+
+Pitch/Key (Pitch Key Follow Sensitivity)
+Determines the sensitivity of the Key Follow effect (the pitch interval of adjacent notes), assuming the pitch
+of the Center Key (below) as standard.
+Settings: -200% – +0% – +200%
+
++100% (the normal setting): Adjacent notes are pitched one semitone apart.
+0%: All notes have the same pitch as the Center Key.
+Negative values: The settings are reversed.
+
+Center Key (Pitch Key Follow Sensitivity Center Key)
+Determines the central note or pitch for the Key Follow effect on pitch.
+Settings: C -2 – G8
+
+Edit Waveform
+Calls up the Waveform Edit display.
+From this display you can set parameters related to Key Banks consisting of the Waveform.
+
+(cid:129) Key Bank
+
+A Key Bank is digital audio data, made by directly recording a signal, such as that of vocals or
+electric guitar, to this instrument.
+Throughout this manual, the words “Key Bank” and “Wave” are sometimes used interchangeably;
+however, you should be careful to distinguish between “Key Bank” (raw audio data) and “Waveform”
+(collected audio data used to make up a Part).
+
+(cid:129) Key Bank and Waveform
+
+Key Banks are assigned and stored to Waveforms on the MONTAGE.
+Each of the Waveforms can contain multiple Key Banks. To assign these Key Banks to a different
+space or container, you can set the note limit and velocity limit for each Key Bank. With this setting,
+the different Key Bank is played back depending on the pressed note and its velocity.
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+Velocity
+
+127
+
+40
+
+Waveform
+
+Key
+Bank 1
+
+Key Bank 2 Key Bank 4
+
+Waveform
+
+Key Bank 3 Key Bank 5
+
+D#2
+
+A#2
+
+G#3
+
+F4
+
+Key Number
+(Note Number)
+
+MONTAGE Reference Manual
+
+96
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+(cid:129) Part and Waveform
+
+Normal Part (AWM2) Edit
+
+You can play the Waveform by assigning it to a Part then playing the keyboard with that Part. You can
+assign the Waveform to an Element of the Part in the Element Edit for the Normal Part (AWM2) Edit
+(page 94) and the Key Edit for the Drum Part Edit (page 126).
+
+Common
+
+Part Settings
+
+Number of Key Banks Waveform Total Size
+
+Note Limit and Velocity Limit for each Key Bank
+
+Waveform
+Indicates the selected Waveform.
+
+Category (Waveform Main Category)
+Sub Category (Waveform Sub Category)
+Determines the Main category and the Sub category for the selected Waveform.
+Settings: See the Data List PDF document.
+
+Name (Waveform Name)
+Determines the selected Waveform. Waveform names can contain up to 20 characters. Touching the
+parameter calls up the input character display.
+
+Number of Keybank (Number of Key Bank)
+Indicates the number of Key Banks in the selected Waveform.
+
+Waveform Total Size
+Indicates the total data size of the selected Waveform.
+
+Keybank (Key Bank)
+Indicates the selected Key Bank.
+
+Size (Key Bank Size)
+Indicates the data size of the selected Key Bank.
+
+Channel (Key Bank Channel)
+Indicates the Channel (Stereo or Mono) of the selected Key Bank.
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+Velocity Limit
+Determines the minimum and maximum values of the velocity range within which the selected Key Bank
+will respond.
+Settings: 1 – 127
+
+Note Limit
+Determines the lowest and highest notes of the keyboard range for the selected Key Bank.
+Settings: 1 – 127
+
+MONTAGE Reference Manual
+
+97
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Volume
+Determines the output volume of the selected Key Bank.
+Settings: 0 – 255
+
+Pan
+Determines the stereo pan position of the selected Key Bank.
+Settings: L63 – C – R63
+
+Tune Coarse (Coarse Tune)
+Determines the pitch of the selected Key Bank in semitones.
+Settings: -64 – +63
+
+Tune Fine (Fine Tune)
+Determines the fine tuning for the pitch of the selected Key Bank.
+Settings: -64 – +63
+
+Delete Keybank (Delete Key Bank)
+Deletes the selected Key Bank.
+
+Add Keybank (Add Key Bank)
+Adds new Key Bank to the selected Waveform.
+
+Pitch EG
+
+From the Pitch EG display you can make all time and level settings for the Pitch EG, which determine how
+the pitch of the sound changes over time for Oscillators. These can be used to control the change in pitch
+from the moment a note is pressed on the keyboard to the moment the sound stops.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  Element selection  [Pitch EG]
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+The full names of the available parameters are shown in the chart below, as they appear in the display.
+
+Hold
+
+Hold Time
+
+Hold Level
+
+Time
+
+Level
+
+Settings: Time: 0 – 127
+
+Level: -128 – +127
+
+Attack
+
+Decay1
+
+Decay2
+
+Release
+
+Attack Time
+
+Decay1 Time
+
+Decay2 Time
+
+Release Time
+
+Attack Level
+
+Decay1 Level
+
+Decay2 Level
+
+Release Level
+
+MONTAGE Reference Manual
+
+98
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Time/Key (PEG Time Key Follow Sensitivity)
+Determines the degree to which the notes (specifically, their position or octave range) affect the Pitch EG
+times. The Center Key (next parameter) is used as the basic pitch for this parameter.
+Settings: -64 – +63
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+Positive values: High notes result in a high PEG transition speed while low notes result in a slow speed.
+Negative values: High notes result in a slow PEG transition speed while low notes result in a high speed.
+ 0: The PEG transition speed does not change, regardless of the played note.
+
+Center Key (PEG Time Key Follow Sensitivity Center Key)
+Determines how the PEG transition time (speed) responds to Velocity, or to the strength with which the key
+is pressed. When the Center Key note is played, the PEG behaves according to its actual settings.
+Settings: C-2 – G8
+
+Time/Vel (PEG Time Velocity Sensitivity)
+Segment (PEG Time Velocity Sensitivity Segment)
+Determines the velocity sensitivity of the PEG’s Time parameters. Select the Segment, and then set its
+“Time/Vel” parameter.
+Settings: Time/Vel: -64 – +63
+
+Positive values: High Velocities result in a fast PEG transition speed while low Velocities result in a slow speed.
+Negative values: High Velocities result in a slow PEG transition speed while low Velocities result in a fast speed.
+0: The PEG transition speed does not change, regardless of the Velocity.
+Settings: Segment: Attack, Atk+Dcy (Attack+Decay), Decay, Atk+Rls (Attack+Release), All
+
+Attack: Time/Vel parameter affects Attack Time.
+Atk+Dcy: Time/Vel Value affects Attack/Decay1 Time.
+Decay: Time/Vel parameter affects Decay Time
+Atk+Rls: Time/Vel Value affects Attack/Release Time.
+All: Time/Vel affects all PEG Time parameters.
+
+PEG Depth
+Determines the pitch range for Pitch EG.
+Settings: -64 – +63
+
+Depth/Vel (PEG Depth Velocity Sensitivity)
+Curve (PEG Depth Velocity Sensitivity Curve)
+Determines how the pitch range will be generated according to the Velocity (strength) with which you play
+notes on the keyboard. The Curve parameter lets you select from five different preset velocity curves
+(graphically indicated in the display) that determine how velocity affects the Pitch EG Depth. In the
+illustrations below, the vertical axis indicates Pitch Change and the horizontal axis indicates Velocity.
+Settings: Depth/Vel: -64 – +63
+
+Positive values: High Velocities cause the pitch range to expand and low Velocities cause it to contract.
+Negative values: High Velocities cause the pitch range to contract and low Velocities cause it to expand.
+0: The pitch envelope does not change, regardless of the Velocity.
+
+Settings: Curve: 0 – 4
+
+0
+
+1
+
+2
+
+3
+
+4
+
+NOTE For details on PEG, see the Synthesizer Parameter Manual PDF document.
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+99
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Filter
+
+Type
+
+From the Type display you can make comprehensive settings for the Filter unit. The available parameters
+differ depending on which Filter type is selected here.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  Element selection  [Filter]  [Type]
+
+Filter Type
+Determines the Filter Type for the current Element. Basically, there are four different filters: LPF (Low Pass
+Filter), HPF (High Pass Filter), BPF (Band Pass Filter) and BEF (Band Elimination Filter). For details on
+settings, see the Synthesizer Parameter Manual PDF document.
+Settings: LPF24D, LPF24A, LPF18, LPF18s, LPF12+HPF12, LPF6+HPF12, HPF24D, HPF12, BPF12D, BPFw, BPF6, BEF12,
+
+BEF6, DualLPF, DualHPF, DualBPF, DualBEF, LPF12+BPF6, Thru
+
+LPF
+
+Gain
+
+Gain
+
+Resonance
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+Frequencies that are
+“passed” by the filter
+
+Cutoff
+Frequency
+
+Frequency
+
+Cutoff
+Frequency
+
+Frequency
+
+All Element
+
+Osc
+
+Balance
+
+LPF24D: A dynamic -24 dB/oct Low-Pass Filter with a characteristic digital sound. Compared to the LPF24A type,
+this filter can produce a more pronounced Resonance effect.
+
+Gain
+
+Resonance
+
+Frequencies that are “passed” by the filter
+
+Frequency
+
+LPF24A: A digital dynamic Low-Pass Filter with characteristics similar to a 4-pole analog synthesizer filter.
+LPF18: 3-pole -18 dB/oct Low-Pass Filter.
+LPF18s: 3-pole -18 dB/oct Low-Pass Filter. This filter has a smoother cutoff slope than the LPF18 type.
+
+MONTAGE Reference Manual
+
+100
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+HPF
+
+Gain
+
+Frequencies that are “passed” by the filter
+
+Resonance
+
+Frequency
+
+Cutoff Frequency
+
+LPF12+HPF12: A combination of a -12 dB/oct Low-Pass Filter and a -12 dB/oct High-Pass Filter connected in serial.
+When this Filter Type is selected, HPF Cutoff and HPF Key Follow Sensitivity can be set
+LPF6+HPF12: A combination of a -6 dB/oct Low-Pass Filter and a -12 dB/oct High-Pass Filter connected in serial.
+When this Filter Type is selected, HPF Cutoff and HPF Key Follow Sensitivity can be set.
+HPF24D: A dynamic -24 dB/oct High-Pass Filter with a characteristic digital sound. This filter can produce a
+pronounced Resonance effect.
+
+Gain
+
+Resonance
+
+Frequencies that are “passed”
+by the filter
+
+Frequency
+
+HPF12: -12 dB/oct dynamic High-Pass Filter.
+
+BPF
+
+Gain
+
+Frequencies that are “passed” by the filter
+
+Center Frequency
+
+Frequency
+
+BPF12D: The combination of a -12 dB/oct HPF and LPF with a characteristic digital sound.
+
+Gain
+
+Resonance
+
+Frequencies that are “passed” by the filter
+
+Frequency
+
+BPFw: A -12 dB/oct BPF that combines HPF and LPF filters to allow wider bandwidth settings.
+
+Gain
+
+Width
+
+Frequencies that are “passed” by the filter
+
+Frequency
+
+BPF6: The combination of a -6 dB/oct HPF and LPF.
+
+Gain
+
+Resonance
+
+Frequencies that are “passed” by the filter
+
+Frequency
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+101
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+BEF
+
+Gain
+
+Frequencies that are “passed” by the filter
+
+Center Frequency
+
+Frequency
+
+BEF12: -12 dB/oct Band-Eliminate Filter.
+BEF6: -6 dB/oct Band-Eliminate Filter.
+
+DualLPF: Two -12 dB/oct Low-Pass Filters connected in parallel. You can edit the distance between the two Cutoff
+Frequencies.
+
+Gain
+
+Distance
+
+Lower Cutoff Frequency is set directly on the display
+(and Higher Cutoff Frequency is automatically set)
+
+Frequency
+
+DualHPF: Two -12 dB/oct High-Pass Filters connected in parallel.
+DualBPF: Two -6 dB/oct Band-Pass Filters connected in parallel.
+DualBEF: Two -6 dB/oct Band-Eliminate Filters connected in serial.
+
+Gain
+
+Distance
+
+Lower Cutoff Frequency is set directly on the display
+(and Higher Cutoff Frequency is automatically set)
+
+Frequency
+
+LPF12+BPF6: A combination of a -12 dB/oct Low-Pass Filter and a -6 dB/oct Band-Pass Filter connected in
+parallel. You can edit the distance between the two Cutoff Frequencies.
+
+Gain
+
+Distance
+
+Frequency
+
+Lower Cutoff Frequency is set directly on the display
+(and Higher Cutoff Frequency is automatically set)
+
+Cutoff (Cutoff Frequency)
+Determines the cutoff frequency for the Filter. This is used as the basic frequency for the selected Filter
+Type.
+Settings: 0 – 255
+
+Cutoff/Vel (Cutoff Velocity Sensitivity)
+Determines how the Cutoff Frequency responds to Velocity, or the strength with which you play notes.
+Settings: -64 – +63
+
+Positive values: The more strongly you play the keyboard, the more the Cutoff Frequency rises.
+Negative values: The more softly you play the keyboard, the more the Cutoff Frequency rises.
+0: The Cutoff Frequency does not change, regardless of the Velocity.
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+102
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Resonance
+Width
+This parameter’s function varies according to the selected Filter Type. If the selected filter is an LPF, HPF,
+BPF (excluding BPFw), or BEF, this parameter is used to set the Resonance. For the BPFw, it is used to
+adjust the frequency bandwidth. This parameter is used to set the amount of Resonance (harmonic
+emphasis) applied to the signal at the cutoff frequency. This can be used in combination with the “Cutoff”
+parameter to add further character to the sound. For the BPFw, this parameter is used to adjust the width
+of the band of signal frequencies passed by the filter.
+This parameter is not displayed depending on the selected Filter Types.
+Settings: 0 – 127
+
+Cutoff/Key (Cutoff Key Follow Sensitivity)
+Determines the degree to which the notes (specifically, their position or octave range) affect the Cutoff
+Frequency (above). The Center Key (next parameter) is used as the basic Cutoff Frequency for this
+parameter.
+Settings: - 200% – +200%
+
+Positive values: The Cutoff Frequency drops for lower notes and rises for higher notes.
+Negative values: The Cutoff Frequency rises for lower notes and drops for higher notes.
+
+Center Key (Cutoff Key Follow Sensitivity Center Key)
+This indicates that the central note for “Cutoff/Key” above is C3. Keep in mind that this is for display
+purposes only; the value cannot be changed.
+
+Gain
+Sets the Gain (the amount of boost applied to the signal sent to the Filter Unit).
+
+ In case of the Filter Type with “Distance” and “Res/Vel” parameters
+
+Distance
+Determines the distance between the Cutoff Frequencies for the Dual Filter types and the LPF12+BPF6
+filter. This parameter is not displayed depending on the selected Filter Type.
+Settings: -128 – +127
+
+Res/Vel (Resonance Velocity Sensitivity)
+Determines the degree to which Resonance responds to Velocity, or the strength with which you play
+notes. This parameter is not displayed depending on the selected Filter Type.
+Settings: -64 – +63
+
+Positive values: The higher the Velocity, the greater the Resonance.
+Negative values: The lower the Velocity, the greater the Resonance.
+0: No change of the Resonance value.
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+103
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+ In case of the Filter Type with “HPF Cutoff” and “HPF Cutoff/Key” parameters
+
+Normal Part (AWM2) Edit
+
+HPF Cutoff (High Pass Filter Cutoff Frequency)
+Determines the central frequency for the Key Follow parameter (below) of the HPF. This parameter is
+available only when one of the filter types “LPF12+HPF12” or “LPF6+HPF12” is selected.
+Settings: 0 – 255
+
+HPF Cutoff/Key (High Pass Filter Cutoff Key Follow Sensitivity)
+Determines the degree to which the notes (specifically, their position or Octave Range) affect the Cutoff
+Frequency of the HPF. This parameter is available only when one of the filter types “LPF12+HPF12” or
+“LPF6+HPF12” is selected.
+Settings: - 200% – +200%
+
+Positive values: The Cutoff Frequency drops for lower notes and rises for higher notes.
+Negative values: The Cutoff Frequency rises for lower notes and drops for higher notes.
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+104
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Filter EG
+
+From the Filter EG display you can make all time and level settings for the Filter EG, which determine how
+the sound changes over time for Elements. These can be used to control the change the sound from the
+moment a note is pressed on the keyboard to the moment the sound stops.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  Element selection  [Filter]  [Filter EG]
+
+The full names of the available parameters are shown in the chart below, as they appear in the display.
+
+Hold
+
+Hold Time
+
+Hold Level
+
+Time
+
+Level
+
+Settings: Time: 0 – 127
+
+Level: -128 – +127
+
+Attack
+
+Decay1
+
+Decay2
+
+Release
+
+Attack Time
+
+Decay1 Time
+
+Decay2 Time
+
+Release Time
+
+Attack Level
+
+Decay1 Level
+
+Decay2 Level
+
+Release Level
+
+Time/Key (FEG Time Key Follow Sensitivity)
+Determines the degree to which the notes (specifically, their position or octave range) affect the Filter EG
+Times. The basic speed of change for the FEG is at the note specified in Center Key (below).
+Settings: -64 – +63
+
+Positive values: High notes result in a high FEG transition speed while low notes result in a slow speed.
+Negative values: High notes result in a slow FEG transition speed while low notes result in a high speed.
+0: The FEG transition speed does not change, regardless of the played note.
+
+Center Key (FEG Time Key Follow Sensitivity Center Key)
+Determines the central note for the “Time/Key” parameter above.
+Settings: C-2 – G8
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+105
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Time/Vel (FEG Time Velocity Sensitivity)
+Segment (FEG Time Velocity Sensitivity Segment)
+Determines how the FEG transition time (speed) responds to Velocity, or the strength with which the key is
+pressed. Select the “Segment,” and then set its “Time/Vel” parameter.
+Settings: Time/Vel: -64 – +63
+
+Positive values: High Velocities result in a fast FEG transition speed while low Velocities result in a slow speed.
+Negative values: High Velocities result in a slow FEG transition speed while low Velocities result in a fast speed.
+0: The pitch transition speed does not change, regardless of the Velocity.
+
+Settings: Segment: Attack, Atk+Dcy (Attack+Decay), Decay, Atk+Rls (Attack+Release), All
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Attack: Time/Vel parameter affects Attack time.
+Atk+Dcy: Time/Vel Value affects Attack/Decay1 time.
+Decay: Time/Vel parameter affects Decay Time.
+Atk+Rls: Time/Vel Value affects Attack/Release time.
+All: Time/Vel affects all FEG Time parameters.
+
+FEG Depth
+Determines the Cutoff Frequency range for Filter EG.
+Settings: -64 – +63
+
+Depth/Vel (FEG Depth Velocity Sensitivity)
+Curve (FEG Depth Velocity Sensitivity Curve)
+Determines how the range of the Cutoff Frequency responds to Velocity (strength) with which you play
+notes on the keyboard. The Curve parameter lets you select from five different preset velocity curves
+(graphically indicated in the display) that determine how velocity affects the Filter EG Depth. In the
+illustrations below, the vertical axis indicates Cutoff Frequency Change and the horizontal axis indicates
+Velocity.
+Settings: Depth/Vel: -64 – +63
+Settings: Curve: 0 – 4
+
+0
+
+1
+
+2
+
+3
+
+4
+
+NOTE For details on FEG, see the Synthesizer Parameter Manual PDF document.
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+106
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Scale (Filter Scale)
+
+From the Filter Scale display you can set parameters related to Filter Scale for Elements.
+“Filter Scale” controls the Filter Cutoff Frequency according to the positions of the notes on the keyboard.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  Element selection  [Filter]  [Scale]
+
+Break Point 1 – 4
+Determines the four Break Points by specifying the respective note numbers.
+Settings: C -2 – G8
+NOTE Break Points 1 to 4 will be automatically be arranged in ascending order across the keyboard.
+
+Cutoff Offset 1 – 4
+Determines the offset value to the Cutoff Frequency at each Break Point.
+Settings: -128 – +127
+NOTE Regardless of the size of these Offsets, the minimum and maximum Cutoff limits (values of 0 and 127,
+
+respectively) cannot be exceeded.
+
+NOTE Any note played below the Break Point 1 note results in the Break Point 1 Level setting. Likewise, any note
+
+played above the Break Point 4 note results in the Break Point 4 Level setting.
+
+NOTE For information on setting examples for Filter Scaling, see the Synthesizer Parameter Manual PDF document.
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+107
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+Amplitude
+
+Level/Pan
+
+From the Level/Pan display you can make Level and Pan settings for each individual Element.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  Element selection  [Amplitude]  [Level/Pan]
+
+Level
+Determines the output level of the Element.
+Settings: 0 – 127
+
+Level/Vel (Level Velocity Sensitivity)
+Offset (Level Velocity Sensitivity Offset)
+Curve (Level Velocity Sensitivity Curve)
+Determines how the actual Velocity will be generated according to the Velocity (strength) with which you
+play notes on the keyboard. The Offset parameter raises or lowers the level specified by the “Level/Vel.”
+If the result is higher than 127, the velocity is set to 127. The Curve parameter lets you select from five
+different preset velocity curves (graphically indicated in the display) that determine how velocity affects the
+actual Velocity. In the illustrations below, the vertical axis indicates the actual resulting Velocity and the
+horizontal axis indicates Velocity with which you play notes.
+Settings: Level/Vel: -64 – +63
+
+Positive values: The more strongly you play the keyboard, the more the output rises.
+Negative values: The more softly you play the keyboard, the more the output rises.
+0: The output level does not change.
+
+Settings: Offset: 0 – 127
+
+Level Velocity Sensitivity Offset = 0
+
+Level Velocity Sensitivity Offset = 64
+
+Level Velocity Sensitivity Offset = 96
+
+Y
+127
+
+A
+
+B
+
+C
+
+Y
+
+127
+
+A
+
+B
+
+C
+
+Y
+
+127
+
+A
+
+B
+
+C
+
+0
+
+64
+
+X
+
+127
+
+0
+
+64
+
+X
+
+127
+
+0
+
+64
+
+X
+
+127
+
+A: Level Velocity Sensitivity = 0
+B: Level Velocity Sensitivity = 32
+C: Level Velocity Sensitivity = 64
+X: Velocity with which you play a note
+Y: Actual resulting velocity (affecting the tone generator)
+
+MONTAGE Reference Manual
+
+108
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Settings: Curve: 0 – 4
+0
+
+1
+
+2
+
+3
+
+4
+
+Pan (Element Pan)
+Determines the stereo Pan position for the selected Element.
+Settings: L63 – C (center) – R63
+
+Alternate Pan
+Determines the amount by which the sound is panned alternately left and right for each note you press.
+The Pan setting (above) is used as the basic Pan position.
+Settings: L64 – C – R63
+
+Random Pan
+Determines the amount by which the sound of the selected Element is panned randomly left and right for
+each note you press. The Pan setting (above) is used as the Center Pan position.
+Settings: 0 – 127
+
+Scaling Pan
+Determines the degree to which the notes (specifically, their position or octave range) affect the Pan
+position, left and right, of the selected Element. At note C3, the main Pan setting (above) is used for the
+basic Pan position.
+Settings: -64 – +0 – +63
+
+Positive values: Moves the pan position to the left for lower notes and to the right for higher notes.
+Negative values: Moves the pan position to the right for lower notes and to the left for higher notes.
+
+Level/Key (Level Key Follow Sensitivity)
+Determines the degree to which the notes (specifically, their position or octave range) affect the volume of
+the selected Element. A Center Key setting of C3 is used as the basic setting.
+Settings: -64 – +0 – +63
+
+Positive values: Lowers the output level for lower notes and raises it for higher notes.
+Negative values: Raises the output level for lower notes and lowers it for higher notes.
+
+Center Key (Level Key Follow Sensitivity Center Key)
+This indicates that the central note for “Level/Key” above is C3. Keep in mind that this is for display
+purposes only; the value cannot be changed.
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+109
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Amp EG (Amplitude EG)
+
+From the Amplitude EG display you can make all the time and level settings for the Amplitude EG, which
+determine how the volume of the sound changes over time. Using the AEG, you can control the transition
+in volume from the moment the sound starts is to the moment the sound stops.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  Element selection  [Amplitude]  [Amp EG]
+
+The full names of the available parameters are shown in the chart below, as they appear in the display.
+
+Initial
+
+Attack
+
+Decay1
+
+Decay2
+
+Release
+
+–
+
+Attack Time
+
+Decay1 Time
+
+Decay2 Time
+
+Release Time
+
+Initial Level
+
+Attack Level
+
+Decay1 Level
+
+Decay2 Level
+
+–
+
+Time
+
+Level
+
+Settings: Time: 0 – 127
+Level: 0 – 127
+
+Time/Key (AEG Time Key Follow Sensitivity)
+Determines the degree to which the notes (specifically, their position or octave range) affect the Amplitude
+EG Times. The Center Key parameter (below) is used as the basic amplitude for this parameter.
+Settings: -64 – +63
+
+Positive values: High notes result in a fast Amplitude EG transition speed while low notes result in a slow speed.
+Negative values: High notes result in a slow Amplitude EG transition speed while low notes result in a fast speed.
+0: The Amplitude EG transition speed does not change, regardless of the played note.
+
+Center Key (AEG Time Key Follow Sensitivity Center Key)
+Determines the central note for the “Time/Key” parameter above. When the Center Key note is played, the
+AEG behaves according to its actual settings.
+Settings: C-2 – G8
+
+Release Adj (AEG Time Key Follow Sensitivity Center Key Release Adjustment)
+Determines the sensitivity of AEG Time Key Follow Sensitivity to AEG Release. The lower the value, the
+lower the sensitivity.
+Settings: 0 – 127
+
+127: Sets the AEG Time Key Follow Sensitivity to the value of Decay 1 or Decay 2.
+0: Produces no effect in the AEG Time Key Follow Sensitivity.
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+110
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Time/Vel (AEG Time Velocity Sensitivity)
+Segment (AEG Time Velocity Sensitivity Segment)
+Determines how the AEG transition time (speed) responds to Velocity, or the strength with which the key is
+pressed. Select the “Segment,” and then set its “Time/Vel” parameter.
+Settings: Time/Vel: -64 – +63
+
+Positive values: High Velocities result in a fast AEG transition speed while low Velocities result in a slow speed.
+Negative values: High Velocities result in a slow AEG transition speed while low Velocities result in a fast speed.
+0: The amplitude transition speed does not change, regardless of the Velocity.
+
+Settings: Segment: Attack, Atk+Dcy (Attack+Decay), Decay, Atk+Rls (Attack+Release), All
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Attack: Time/Vel parameter affects Attack Time.
+Atk+Dcy: Time/Vel Value affects Attack/Decay1 Time.
+Decay: Time/Vel parameter affects Decay Time.
+Atk+Rls: Time/Vel Value affects Attack/Release Time.
+All: Time/Vel affects all AEG Time parameters.
+
+Half Damper (Half Damper Switch)
+When the Half Damper Switch is set to on, you can produce a “half-pedal” effect just as on a real acoustic
+piano by using the optional FC3 Foot Controller connected to the FOOT SWITCH [SUSTAIN] jack on the
+rear panel.
+Settings: off, on
+
+Time (Half Damper Time)
+Determines how quickly the sound decays to silence after the key is released while holding down the Foot
+Controller FC3 with the Half Damper Switch parameter turned on. This is not available when the Half
+Damper Switch is set to off.
+Settings: 0 – 127
+NOTE For details on AEG, see the Synthesizer Parameter Manual PDF document.
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+111
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Scale (Amplitude Scale)
+
+From the Amplitude Scale display you can make Amplitude Scale settings for each Element.
+Amplitude Scale function controls the Amplitude output level according to the positions of the notes on the
+keyboard.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  Element selection  [Amplitude]  [Scale]
+
+Break Point 1 – 4
+Determines the four Amplitude Scale Break Points by specifying their respective note numbers.
+Settings: C -2 – G8
+NOTE Break Points 1 to 4 will be automatically be arranged in ascending order across the keyboard.
+
+Level Offset 1 – 4
+Determines the offset value of the level of each Amplitude Scale Break Point.
+Settings: -128 – +127
+NOTE For details on setting examples of the Amplitude Scaling, see the Synthesizer Parameter Manual PDF
+
+document.
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+112
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+Element LFO
+
+From the Element LFO display you can make LFO related setting for each Element.
+The Low-Frequency Oscillator (LFO) unit of the Element generates a low frequency signal. The signal from
+the LFO can be used to modulate the pitch, filter, and amplitude.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  Element selection  [Element LFO]
+
+LFO Wave
+Selects the LFO waveform that is used to vary the sound.
+Settings: Saw, Triangle, Square
+
+Saw (Sawtooth wave)
+
+Triangle (Triangle wave)
+
+Square (Square wave)
+
+Speed (LFO Speed)
+Adjusts the speed (frequency) of LFO variation. The larger the setting, the faster the speed.
+Settings: 0 – 63
+
+Key On Reset (LFO Key On Reset)
+Determines whether or not the LFO is reset each time a note is played.
+Settings: Off, On
+
+Off
+
+On
+
+Time
+
+Time
+
+Key on
+
+Key on
+
+Delay (LFO Delay Time)
+Determines the delay time between the moment that a Note On message is received and the moment the
+LFO comes into effect.
+Settings: 0 – 127
+
+Fade In (LFO Fade In Time)
+Determines the amount of time for the LFO effect to fade in (after the “Delay” time has elapsed).
+Settings: 0 – 127
+
+MONTAGE Reference Manual
+
+113
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Pitch Mod (LFO Pitch Modulation Depth)
+Determines the amount (depth) by which the LFO waveform varies (modulates) the pitch of the sound.
+Settings: 0 – 127
+
+Filter Mod (LFO Filter Modulation Depth)
+Determines the amount (depth) by which the LFO waveform varies (modulates) the Filter Cutoff frequency.
+Settings: 0 – 127
+
+Amp Mod (LFO Amplitude Modulation Depth)
+Determines the amount (depth) by which the LFO waveform varies (modulates) the amplitude or volume of
+the sound.
+Settings: 0 – 127
+
+Element EQ
+
+From the Element EQ display you can make EQ related settings for each Element.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  Element selection  [Element EQ]
+
+EQ Type (Element EQ Type)
+Determines the Equalizer Type.
+Settings: 2-band, P.EQ (Parametric EQ), Boost6 (boost 6dB), Boost12 (boost 12dB), Boost18 (boost 18dB), Thru
+
+2-band: This is a “shelving” equalizer, which combines separate high and low frequency bands.
+P.EQ: The Parametric EQ is used to attenuate or boost signal levels (gain) around the Frequency.
+Boost6, Boost12, Boost18: These can be used to boost the level of the entire signal by 6dB, 12dB and 18dB,
+respectively
+Thru: This setting bypasses the equalizers leaving the entire signal unaffected.
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+114
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+ When “EQ Type” is set to “2-band”
+
+Gain
+
++
+
+0
+
+–
+
+Low Freq
+Settings: 50.1Hz – 2.00kHz
+
+High Freq
+Settings: 139.7Hz – 12.9kHz
+
+Frequency
+
+Low Gain
+Settings: -12dB – +12dB
+
+High Gain
+Settings: -12dB – +12dB
+
+EQ Low Gain (Element EQ Low Gain)
+Determines the level gain of the Low band.
+Settings: -12dB – +12dB
+
+EQ Hi Gain (Element EQ High Gain)
+Determines the level gain of the High band.
+Settings: -12dB – +12dB
+
+EQ Low Freq (Element EQ Low Frequency)
+Determines the frequency for the Low band.
+Settings: 50.1Hz – 2.00kHz
+
+EQ Hi Freq (Element EQ High Frequency)
+Determines the frequency for the High band.
+Settings: 139.7Hz – 12.9kHz
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+115
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+ When “EQ Type” is set to “P.EQ”
+
+Gain
+
++
+
+0
+
+–
+
+Q
+Settings: 0.7 – 10.3
+
+Frequency
+
+Gain
+Settings: -12dB – +12dB
+
+Freq
+Settings: 139.7Hz – 12.9kHz
+
+EQ Gain (Element EQ Gain)
+Determines the level gain of the frequency set in “EQ Freq.”
+Settings: -12dB – +12dB
+
+EQ Freq (Element EQ Frequency)
+Determines the frequency to be attenuated/boosted.
+Settings: 139.7Hz – 12.9kHz
+
+EQ Q (Element EQ Q)
+This varies the signal level at the Frequency setting to create various frequency curve characteristics.
+Settings: 0.7 – 10.3
+NOTE For details on EQ structure, see the Synthesizer Parameter Manual PDF document.
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+MONTAGE Reference Manual
+
+116
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Element All (All Element)
+
+Osc (Oscillator)
+
+From the Oscillator display you can set Oscillator-related parameters for the eight Elements.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  [All]  [Osc]
+
+SW (Element Switch)
+Determines whether each Element is active or not.
+Settings: Off, On
+
+XA Control
+Determines the functioning of the Expanded Articulation (XA) feature of an Element.
+The XA feature is sophisticated tone generator system that allows you to more effectively recreate realistic
+sound and natural performance techniques. It also provides other unique modes for random and alternate
+sound changes as you play. For details on the XA feature, see the “Tone Generator Block” in the “Basic
+Structure” on page 6.
+Settings: Normal, Legato, Key Off, Cycle, Random, A.SW1 On (Assignable Switch 1 ON), A.SW2 On (Assignable Switch 2
+
+ON), A.SW Off (Assignable Switch 1 OFF)
+Normal: The Element sounds normally each time you play the note.
+Legato: When the Mono/Poly parameter is set to Mono, this Element will be played in place of the one which is set to
+“Normal” of the XA Control parameter when you play the keyboard in legato fashion (playing the next note of a
+single-note line or melody before releasing the previous note).
+Key Off: The Element will sound each time you release the note.
+Cycle: Each Element sounds alternately according to its numerical order. In other words, playing the first note will
+sound Element 1, the second note Element 2, and so on.
+Random: Each Element will sound randomly each time you play the note.
+A.SW1 On: When the [ASSIGN 1] button is turned On, the Element will sound.
+A.SW2 On: When the [ASSIGN 2] button is turned On, the Element will sound.
+A.SW Off: When both of the [ASSIGN 1] and [ASSIGN 2] buttons are turned Off, the Element will sound.
+
+Group (Element Group)
+Determines the group for XA Control. All Elements that have the same type of XA features must have the
+same group number. This setting does not apply when the XA Control parameters of all Elements are set to
+Normal.
+Settings: 1 – 8
+
+Waveform (Waveform Name)
+Indicates the Waveform Name for each Element.
+Settings: See the Data List PDF document.
+
+MONTAGE Reference Manual
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+117
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Velocity Limit
+Determines the minimum and maximum values of the velocity range within which each Element will
+respond. Each Element will only sound for notes played within its specified velocity range. If you first
+specify the maximum value and then the minimum value, for example “93 to 34,” then the Velocity range
+covers both “1 to 34” and “93 to 127.”
+Settings: 1 – 127
+
+Note Limit
+Determines the lowest and highest notes of the keyboard range for each Element. Each Element will only
+sound for notes played within its specified range. If you first specify the highest note and then the lowest
+note, for example “C5 to C4,” then the note range covers both “C-2 to C4” and “C5 to G8.”
+Settings: C -2 – G8
+
+Balance
+
+From the Balance display you can set parameters related to Level, Pitch, and Pan for the eight Elements.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  [All]  [Balance]
+
+SW (Element Switch)
+Determines whether each Element is active or not.
+Settings: Off, On
+
+Coarse (Coarse Tune)
+Determines the pitch of each Element in semitones.
+Settings: -48 – +48
+
+Fine (Fine Tune)
+Determines the fine tuning for the pitch of each Element.
+Settings: -64 – 63
+
+Cutoff (Cutoff Frequency)
+Determines the Cutoff Frequency for each Element.
+Settings: 0 – 255
+
+Pan (Element Pan)
+Determines the stereo pan position for each Element.
+Settings: L63 (far left) – C (center) – R63 (far right)
+
+Level
+Determines the level of each Element.
+Settings: 0 – 127
+
+MONTAGE Reference Manual
+
+Normal Part (AWM2) Edit
+
+Common
+
+Part Settings
+
+General
+
+Pitch
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+Control Assign
+
+Receive SW
+
+Element
+
+Osc / Tune
+
+Pitch EG
+
+Filter
+
+Type
+
+Filter EG
+
+Scale
+
+Amplitude
+
+Level / Pan
+
+Amp EG
+
+Scale
+
+Element LFO
+
+Element EQ
+
+All Element
+
+Osc
+
+Balance
+
+118
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Drum Part Edit
+
+Each Drum Part can consist of up to 73 Drum Keys, assigned to notes spread across the keyboard (C0 to
+C6). There are two types of Drum Part Edit displays: Key Common Edit display, for editing the settings that
+apply to all Drum keys; and Key Edit display, for editing individual keys. This section explains the
+parameters for Key Common Edit and Key Edit.
+
+Key Common Edit (Common)
+
+Part Settings
+
+General
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON] 
+[Part Settings]  [General]
+
+Drum Part Edit
+
+Common
+
+Part Settings
+
+General
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Control Assign
+
+Receive SW
+
+Key
+
+Osc / Tune
+
+Filter
+
+Level / Pan
+
+Element EQ
+
+Part Category Main (Part Main Category)
+Part Category Sub (Part Sub Category)
+Determines the Main category and the Sub category for the selected Part.
+Settings: See the Data List PDF document.
+
+Part Name
+Determines the Part name of the selected Part. Part names can contain up to 20 characters. Touching the
+parameter calls up the input character display.
+
+Volume (Part Volume)
+Determines the output level of the selected Part.
+Settings: 0 – 127
+
+Pan
+Determines the stereo pan position of the selected Part.
+Settings: L63 – C – R63
+
+Dry Level
+Determines the dry sound level (not effect applied) of the selected Part. This is available only when “Part
+Output” is set to “MainL&R” or “Drum.”
+Settings: 0 – 127
+
+MONTAGE Reference Manual
+
+119
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Drum Part Edit
+
+Common
+
+Part Settings
+
+General
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Control Assign
+
+Receive SW
+
+Key
+
+Osc / Tune
+
+Filter
+
+Level / Pan
+
+Element EQ
+
+Var Send (Variation Send)
+Determines the level of the selected Part that is sent to the Variation effect. This is available only when “Part
+Output” is set to “MainL&R” or “Drum.”
+Settings: 0 – 127
+
+Rev Send (Reverb Send)
+Determines the level of the selected Part that is sent to the Reverb effect. This is available only when “Part
+Output” is set to “MainL&R” or “Drum.”
+Settings: 0 – 127
+
+Part Output (Part Output Select)
+Determines which audio output is used for the selected Part.
+Settings: MainL&R, AsgnL&R, USB1&2…USB29&30, AsgnL, AsgnR, USB1 – 30, Off, Drum
+MainL&R: Outputs in stereo (two channels) to the OUTPUT [L/MONO]/[R] jacks.
+AsgnL&R: Outputs in stereo (two channels) to the ASSIGNABLE OUTPUT [L]/[R] jacks.
+USB1&2…USB29&30: Outputs in stereo (Channels 1&2 – 29&30) to the [USB TO HOST] terminal.
+AsgnL: Outputs in mono (one channel) to the ASSIGNABLE OUTPUT [L] jack.
+AsgnR: Outputs in mono (one channel) to the ASSIGNABLE OUTPUT [R] jack.
+USB1 – 30: Outputs in mono (Channels 1 – 30) to the [USB TO HOST] terminal.
+Off: No audio signal for the Part is output.
+Drum: “Drum Key Out” is displayed to determine the specific output for each Drum Key.
+
+Note Shift
+Determines the pitch (key transpose) setting for each Part in semitones.
+Settings: -24 – +0 – +24
+
+Detune
+Determines the pitch settings of the selected Part in 0.1 Hz increments.
+Settings: -12.8Hz – +0.0Hz – +12.7Hz
+
+Pitch Bend / (Pitch Bend Range Upper/Lower)
+Determines the maximum Pitch Bend Range in semitones.
+Settings: -48 – +0 – +24
+
+Arp Play Only (Arpeggio Play Only)
+Determines whether or not the current Part plays only the note events of the Arpeggio playback. When this
+parameter is set to on, only the note events of the Arpeggio playback affect the tone generator block.
+Settings: Off, On
+
+Element Pan (Element Pan Switch)
+Determines whether the individual pan settings for each Key Part (made via [EDIT]  Part selection 
+Drum Key selection  [Level/Pan]  “Pan”) are applied or not. When this is set to “off,” the pan position
+for the each Key is set to center in the Part.
+Settings: Off, On
+
+Velocity Limit
+Determines the minimum and maximum values of the velocity range within which each Part will respond.
+Settings: 1 – 127
+
+Note Limit
+Determines the lowest and highest notes of the keyboard range for each Part.
+Settings: C -2 – G8
+
+MONTAGE Reference Manual
+
+120
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Velocity Depth (Velocity Sensitivity Depth)
+Determines the degree to which the resulting volume of the tone generator responds to your playing
+strength. The higher the value, the more the volume changes in response to your playing strength (as
+shown below).
+Settings: 0 – 127
+
+Drum Part Edit
+
+Common
+
+Part Settings
+
+General
+
+When Offset (below) is set to 64:
+
+127
+
+Actual resulting
+velocity
+(affecting the
+tone generator)
+
+0
+
+Depth=127
+
+Depth=64
+
+Depth=32
+
+Depth=0
+
+127
+
+Velocity with which you play a note
+
+Velocity Offset (Velocity Sensitivity Offset)
+Determines the amount by which played velocities are adjusted for the actual resulting velocity effect. This
+lets you raise or lower all velocities based on this setting value—allowing you to automatically compensate
+for playing too strongly or too softly.
+Settings: 0 – 127
+
+When Depth (above) = 64
+and Offset = 32
+
+When Depth (above) = 64
+and Offset = 64
+
+When Depth (above) = 64
+and Offset = 96
+
+127
+
+Actual
+resulting
+velocity
+(affecting
+the tone
+generator)
+
+127
+Actual
+resulting
+velocity
+(affecting
+the tone
+generator)
+
+127
+
+Actual
+resulting
+velocity
+(affecting
+the tone
+generator)
+
+0
+
+64
+
+127
+
+Velocity with which you play a note
+
+Zone Settings
+
+0
+
+64
+Velocity with which you play a note
+
+127
+
+0
+
+64
+Velocity with which you play a note
+
+127
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Control Assign
+
+Receive SW
+
+Key
+
+Osc / Tune
+
+Filter
+
+Level / Pan
+
+Element EQ
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 63).
+
+Zone Transmit
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 65).
+
+MONTAGE Reference Manual
+
+121
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Drum Part Edit
+
+Common
+
+Part Settings
+
+General
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Control Assign
+
+Receive SW
+
+Key
+
+Osc / Tune
+
+Filter
+
+Level / Pan
+
+Element EQ
+
+Effect
+
+Routing
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON]  [Effect] 
+[Routing]
+
+Drum Key Connection Switch
+
+Insertion FX Switch
+
+Insertion FX Switch
+
+Drum Key Connection Switch
+Determines which Insertion Effect (A or B) is used to process each individual Drum Key, and which is
+bypassed (Thru).
+When the “Keyboard Select” is on, you can select Keys by playing the notes on the keyboard.
+Settings: Thru, InsA (Insertion Effect A), InsB (Insertion Effect B)
+
+Insertion FX Switch
+Determines whether or not Insertion Effect A / Insertion Effect B is active or not.
+Settings: Off, On
+
+Category (Effect Category)
+Type (Effect Type)
+Determines the category and type for the selected effect.
+Settings: For details on the editable Effect categories and types, see the Data List PDF document. Also, for details on the
+
+description for each Effect type, see the Synthesizer Parameter Manual PDF document.
+
+Preset
+Allows you to call up pre-programmed settings for each Effect type, designed to be used for specific
+applications and situations.
+Settings:  For a list of all Preset Performances, see the Data List PDF document.
+
+Side Chain/Modulator (Side Chain/Modulator Part)
+Determine the Part used for the Side Chain/Modulator. This is not available depending on the selected
+Effect Type. For details on the Side Chain/Modulator, see the Routing display (page 67) of the Normal Part
+(AWM2).
+Settings: Part 1 – 16, A/D, Master, Off
+
+Ins Connect (Insertion Connection Type)
+Determines the effect routing for Insertion Effects A and B.
+Settings: Parallel, Ins AB, Ins BA
+
+MONTAGE Reference Manual
+
+122
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+RevSend (Reverb Send)
+VarSend (Variation Send)
+Determines the Send level of the signal sent from Insertion Effect A/B (or the bypassed signal) to the
+Reverb/Variation effect. This is active only when the Part Output/Drum Key Output is set to “MainL&R.”
+Settings: 0 – 127
+
+Part Output (Part Output Select)
+Determines the specific output for the audio signal.
+Settings: MainL&R, AsgnL&R, USB1&2…USB29&30, AsgnL, AsgnR, USB1 – 30, Off, Drum
+MainL&R: Outputs in stereo (two channels) to the OUTPUT [L/MONO]/[R] jacks.
+AsgnL&R: Outputs in stereo (two channels) to the ASSIGNABLE OUTPUT [L]/[R] jacks.
+USB1&2…USB29&30: Outputs in stereo (Channels 1&2 – 29&30) to the [USB TO HOST] terminal.
+AsgnL: Outputs in mono (one channel) to the ASSIGNABLE OUTPUT [L] jack.
+AsgnR: Outputs in mono (one channel) to the ASSIGNABLE OUTPUT [R] jack.
+USB1 – 30: Outputs in mono (Channels 1 – 30) to the [USB TO HOST] terminal.
+Off: No audio signal for the Part is output.
+Drum: “Drum Key Out” is displayed to determine the specific output for each Drum Key.
+
+Envelope Follower
+Calls up the Envelope Follower Setting display.
+Refer to the Routing display (page 68) for Normal Parts (AWM2).
+
+Drum Part Edit
+
+Common
+
+Part Settings
+
+General
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Control Assign
+
+Receive SW
+
+Key
+
+Osc / Tune
+
+Filter
+
+Level / Pan
+
+Element EQ
+
+InsRev (Insertion Reverb Send)
+InsVar (Insertion Variation Send)
+Determines the Send level for the entire Drum Part (all keys), sent from Insertion Effect A/B to the Reverb/
+Variation effect.
+This is active only when the Drum Key Connection Switch is set to “InsA” or “InsB” and the Part Output/
+Drum Key Output is set to “MainL&R.”
+Settings: 0 – 127
+
+MONTAGE Reference Manual
+
+123
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Drum Part Edit
+
+Common
+
+Part Settings
+
+General
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Control Assign
+
+Receive SW
+
+Key
+
+Osc / Tune
+
+Filter
+
+Level / Pan
+
+Element EQ
+
+KeyRev (Drum Key Reverb Send)
+KeyVar (Drum Key Variation Send)
+Determines the Send level for each Drum Key, sent from Insertion Effect A/B to the Reverb/Variation effect.
+This is active only when the Drum Key Connection Switch is set to “Thru” and the Part Output/Drum Key
+Output is set to “MainL&R.”
+Settings: 0 – 127
+
+Drum Key Out (Drum Key Output Select)
+Determines the specific output for the individual Drum Key.
+This is displayed only when the Part Output is set to “Drum.”
+Settings: MainL&R, AsgnL&R, USB1&2…USB29&30, AsgnL, AsgnR, USB1 – 30
+
+MainL&R: Outputs in stereo (two channels) to the OUTPUT [L/MONO]/[R] jacks.
+AsgnL&R: Outputs in stereo (two channels) to the ASSIGNABLE OUTPUT [L]/[R] jacks.
+USB1&2…USB29&30: Outputs in stereo (Channels 1&2 – 29&30) to the [USB TO HOST] terminal.
+AsgnL: Outputs in mono (one channel) to the ASSIGNABLE OUTPUT [L] jack.
+AsgnR: Outputs in mono (one channel) to the ASSIGNABLE OUTPUT [R] jack.
+USB1 – 30: Outputs in mono (Channels 1 – 30) to the [USB TO HOST] terminal.
+
+NOTE When the Drum Key Connection Switch is set to “InsA” or “InsB,” this parameter is fixed to “MainL&R.”
+
+MONTAGE Reference Manual
+
+124
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Ins A (Insertion Effect A)
+Ins B (Insertion Effect B)
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 69).
+
+EQ (Part Equalizer)
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 70).
+
+Arpeggio
+
+Common
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 73).
+
+Individual
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 76).
+
+Advanced
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 77), except for the
+additional parameter below.
+
+Fixed SD/BD
+When this parameter is set to On, C1 will be used as the note of the Bass Drum and D1 will be used as the
+note of the Snare Drum in Arpeggio playback.
+Settings: Off, On
+
+Drum Part Edit
+
+Common
+
+Part Settings
+
+General
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Control Assign
+
+Receive SW
+
+Key
+
+Osc / Tune
+
+Filter
+
+Level / Pan
+
+Element EQ
+
+Motion Seq (Motion Sequencer)
+
+Common
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 78).
+
+Lane
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 81).
+
+Mod/Control (Modulation/Control)
+
+Control Assign
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 89), except for the
+different setting values in the Destination parameter. For the setting value for “Destination,” see the “Control
+List” in the Data List PDF document.
+
+Receive SW (Receive Switch)
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 92).
+
+MONTAGE Reference Manual
+
+125
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Drum Part Edit
+
+Common
+
+Part Settings
+
+General
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Control Assign
+
+Receive SW
+
+Key
+
+Osc / Tune
+
+Filter
+
+Level / Pan
+
+Element EQ
+
+Key Edit (Key)
+
+Osc/Tune (Oscillator/Tune)
+
+From the Oscillator/Tune display you can set Oscillator-related parameters for each Key of the Drum Part.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  Key selection  [Osc/Tune]
+
+Drum Key Switch
+
+Bank (Waveform Bank)
+Number (Waveform Number)
+Category (Waveform Category)
+Sub Category (Waveform Sub Category)
+Name (Waveform Name)
+Indicates the information of the waveform used for the selected Drum Key. “Bank” indicates which
+waveform location (Preset, User and Library) is assigned to the Key.
+Settings: Refer to the Data List PDF document.
+
+Drum Key Switch
+Determines whether the currently selected Drum Key is used or not.
+Settings: Off, On
+
+Assign Mode (Key Assign Mode)
+Determines the playing method when the same notes are received continuously, and without
+corresponding note off messages.
+Settings: Single, Multi
+
+Single: Double or repeated playback of the same note is not possible. The first note will be stopped, then the next
+note will be sounded.
+Multi: All notes are sounded simultaneously. This allows playback of the same note when it is played multiple times
+in succession (especially for tambourine and cymbal sounds that you would want to ring out to their full decay).
+
+Connect (Drum Key Connection Switch)
+Determines which Insertion Effect (A or B) is used to process each individual Drum Key. The Insertion
+Effect is bypassed if “Thru” is selected. This parameter is same as the “Connect” parameter in the
+“Routing” display of Effect settings in Key Common Edit. Making a setting here automatically changes the
+setting of that parameter as well.
+Settings: Thru, InsA (Insertion Effect A), InsB (Insertion Effect B)
+
+MONTAGE Reference Manual
+
+126
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+New Waveform
+Loads Audio data stored in the USB flash memory as “Waveform.” For details on loading, see “Load”
+(page 174).
+After the Waveform is loaded, the Edit Waveform parameter will be available. For details on “Edit
+Waveform,” see page 96.
+
+Drum Part Edit
+
+Common
+
+Part Settings
+
+General
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Control Assign
+
+Receive SW
+
+Key
+
+Osc / Tune
+
+Filter
+
+Level / Pan
+
+Element EQ
+
+Coarse (Coarse Tune)
+Determines the pitch of each Drum Key Wave in semitones.
+Settings: -48 – +48
+
+Fine (Fine Tune)
+Determines the fine tuning for the pitch of each Drum Key Wave.
+Settings: -64 – 63
+
+Pitch/Vel (Pitch Velocity Sensitivity)
+Determines how the pitch of the selected Drum key responds to velocity.
+Settings: -64 – 63
+
+Positive values: The harder you play the keyboard, the more the pitch rises.
+Negative values: The harder you play the keyboard, the more the pitch falls.
+0: No change in pitch.
+
+Rcv Note Off (Receive Note Off)
+Select whether MIDI Note Off messages are received by each Drum Key.
+Settings: off, on
+
+Group (Alternate Group)
+Set the Alternate Group to which the key is assigned. The Parts to which the same number is assigned
+here cannot sound simultaneously. This setting helps to reproduce the sounds of a real drum kit, in which
+some drum sounds cannot physically be played simultaneously, such as open and closed hi-hats.
+Settings: off, 1 – 127
+
+KeyRev (Drum Key Reverb Send)
+KeyVar (Drum Key Variation Send)
+Determines the level of the Drum key sound (the bypassed signal) that is sent to Reverb/Variation effect.
+This is not available depending on the setting of the Drum Key Connection Switch.
+Settings: 0 – 127
+
+Drum Key Out (Drum Key Output Select)
+Determines the specific output for the individual Drum Key.
+This is not available depending on the settings of Drum Key Connection Switch or Part Output.
+Settings: MainL&R, AsgnL&R, USB1&2…USB29&30, AsgnL, AsgnR, USB1 – 30
+
+MainL&R: Outputs in stereo (two channels) to the OUTPUT [L/MONO]/[R] jacks.
+AsgnL&R: Outputs in stereo (two channels) to the ASSIGNABLE OUTPUT [L]/[R] jacks.
+USB1&2…USB29&30: Outputs in stereo (Channels 1&2 – 29&30) to the [USB TO HOST] terminal.
+AsgnL: Outputs in mono (one channel) to the ASSIGNABLE OUTPUT [L] jack.
+AsgnR: Outputs in mono (one channel) to the ASSIGNABLE OUTPUT [R] jack.
+USB1 – 30: Outputs in mono (Channels 1 – 30) to the [USB TO HOST] terminal.
+
+Keyboard Select (Keyboard Select Switch)
+Determines whether or not the Keyboard Select setting is active or not. When this is set to on, you can
+select Drum Keys by playing the notes on the keyboard.
+Settings: Off, On
+
+Drum Key
+Indicates the selected Drum key.
+Settings: C0 – C6
+
+MONTAGE Reference Manual
+
+127
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Drum Part Edit
+
+Common
+
+Part Settings
+
+General
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Control Assign
+
+Receive SW
+
+Key
+
+Osc / Tune
+
+Filter
+
+Level / Pan
+
+Element EQ
+
+Filter
+
+From the Filter display you can apply filter settings to the Drum Part. These let you apply a low pass filter
+and high pass filter to each individual Drum key.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  Key selection  [Filter]
+
+Cutoff (Low Pass Filter Cutoff Frequency)
+Use this parameter to set the cutoff frequency for the low-pass filter.
+Settings: 0 – 255
+
+Cutoff/Vel (Low Pass Filter Cutoff Velocity Sensitivity)
+Set the velocity sensitivity of the Low Pass Filter Cutoff frequency. Positive settings will cause the Cutoff
+Frequency to rise the harder you play the keyboard. A negative setting will have the opposite effect.
+Settings: -64 – +63
+
+Resonance (Low Pass Filter Resonance)
+Determines the amount of Resonance (harmonic emphasis) applied to the signal at the Cutoff Frequency.
+Settings: 0 – 127
+
+HPF Cutoff (High Pass Filter Cutoff Frequency)
+Determines the Cutoff frequency of the High Pass Filter.
+Settings: 0 – 255
+
+MONTAGE Reference Manual
+
+128
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Drum Part Edit
+
+Common
+
+Part Settings
+
+General
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Control Assign
+
+Receive SW
+
+Key
+
+Osc / Tune
+
+Filter
+
+Level / Pan
+
+Element EQ
+
+Level/Pan
+
+From the Level/Pan display you can make Level and Pan settings for each Drum Key.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  Key selection  [Level/Pan]
+
+The full names of the available parameters are shown in the chart below, as they appear in the display.
+
+Attack
+
+Decay1
+
+Decay2
+
+Attack Time
+
+Decay1 Time
+
+Decay2 Time
+
+–
+
+Decay1 Level
+
+–
+
+Time
+
+Level
+
+Settings: Time: 0 – 127, Hold (only for Decay2)
+
+Level: 0 – 127
+
+Decay2 Time = 0 – 126
+Attack level
+
+Level
+
+Decay2 Time = Hold
+
+Attack level
+
+Level
+
+Decay1 level
+
+Decay1 level
+
+Attach
+time
+
+Decay1
+time
+
+Decay2
+time
+
+Time
+
+Attach
+time
+
+Decay1
+time
+
+Decay2
+time
+
+Time
+
+Key on
+
+Key on
+
+Level
+Determines the output level of the Drum Key. This lets you make detailed balance adjustments among the
+various sounds of the Drum Key.
+Settings: 0 – 127
+
+Level/Vel (Level Velocity Sensitivity)
+Determines how the output level of the Drum Key responds to Velocity.
+Settings: -64 – +63
+
+Positive values: The more strongly you play the keyboard, the more the output rises.
+Negative values: The more softly you play the keyboard, the more the output rises.
+0: The output level does not change.
+
+Pan
+Sets the pan position (stereo position) of each Drum Key. This will also be used as the basic Pan position
+for the Alternate and Random settings.
+Settings: L63 (far left) – C (center) – R63 (far right)
+
+MONTAGE Reference Manual
+
+129
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Alternate Pan
+Determines the amount by which the sound of the selected Drum key is panned alternately left and right
+for each note you press. The Pan setting (above) is used as the basic Pan position.
+Settings: L64 – C – R63
+
+Random Pan
+Determines the amount by which the sound of the selected Drum Key is panned randomly left and right for
+each note you press. The Pan setting (above) is used as the Center Pan position.
+Settings: 0 – 127
+
+Element EQ
+
+Same as the Element Edit parameters for Normal Parts (AWM2) (page 114).
+
+Drum Part Edit
+
+Common
+
+Part Settings
+
+General
+
+Zone Settings
+
+Zone Transmit
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Control Assign
+
+Receive SW
+
+Key
+
+Osc / Tune
+
+Filter
+
+Level / Pan
+
+Element EQ
+
+MONTAGE Reference Manual
+
+130
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Normal Part (FM-X) Edit
+
+Common
+
+Part Settings
+
+General
+
+Algorithm
+
+Zone Settings
+
+Zone Transmit
+
+Pitch / Filter
+
+Pitch
+
+PEG/Scale
+
+Filter Type
+
+Filter EG
+
+Filter Scale
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+2nd LFO
+
+Control Assign
+
+Receive SW
+
+Operator
+
+Form / Freq
+
+Level
+
+Normal Part (FM-X) Edit
+
+A Normal Part (FM-X) can consist of up to eight Operators. There are two types of Normal Part (FM-X) Edit
+displays: Operator Common Edit display, for editing settings common to all eight Operators; and Operator
+Edit display, for editing individual Operators.
+
+Operator Common Edit (Common)
+
+Part Settings
+
+General
+
+From the General display you can set various parameters such as Part Name, Volume, and Pan.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON] 
+[Part Settings]  [General]
+
+Most parameters are the same as parameters on the Element Common Edit display for Normal Parts
+(AWM2) (page 58) except the following additional parameters as bellows.
+
+Random Pan
+Determines the amount by which the sound of the selected Operator is panned randomly left and right for
+each note you press. The Pan setting is used as the Center Pan position.
+Settings: 0 – 127
+
+Alternate Pan
+Determines the amount by which the sound of the selected Operator is panned alternately left and right for
+each note you press. The Pan setting is used as the basic Pan position.
+Settings: L64 – C – R63
+
+Scaling Pan
+Determines the degree to which the notes (specifically, their position or octave range) affect the Pan
+position, left and right, of the selected Operator. At note C3, the main Pan setting is used for the basic Pan
+position. Positive settings will cause the Pan position to be set left when you play in the lower range on the
+keyboard and to be set right when you play in the higher range on the keyboard. A negative setting will
+have the opposite effect.
+Settings: -64 – +0 – +63
+
+MONTAGE Reference Manual
+
+131
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+KeyOnDly Sync (Key On Delay Tempo Sync Switch)
+Determines whether or not “Key On Delay Time Length” is synchronized to the tempo.
+Settings: Off, On
+
+Delay Length (Key On Delay Time Length)
+Determines the time (or elapsed delay) between the moment you press a note on the keyboard and the
+point at which the sound is actually played. You can set different delay times for each Operator. This is not
+available when “KeyOnDly Sync” is set to on.
+Settings: 0 – 127
+
+Delay Length (Key On Delay Note Length)
+Determines the timing of “Key On Delay” when “KeyOnDly Sync” is set to on.
+Settings: 1/16, 1/8 Tri. (eighth-note triplets), 1/16 Dot. (dotted sixteenth notes), 1/8, 1/4 Tri. (quarter-note triplets), 1/8 Dot.
+(dotted eighth notes), 1/4, 1/2 Tri. (half-note triplets), 1/4 Dot. (dotted quarter notes), 1/2, Whole Tri. (whole-note
+triplets), 1/2 Dot. (dotted half notes), 1/4 x 4 (quarter-note quadruplets; four quarter notes to the beat), 1/4 x 5
+(quarter-note quintuplets; five quarter notes to the beat), 1/4 x 6 (quarter-note sextuplets; six quarter notes to the
+beat), 1/4 x 7 (quarter-note septuplets; seven quarter notes to the beat), 1/4 x 8 (quarter-note octuplets; eight quarter
+notes to the beat)
+
+Algorithm
+
+From the Algorithm display you can specify the Algorithm, which determines the arrangement of the
+Operators and how the FM sound is generated.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON] 
+[Part Settings]  [Algorithm]
+
+Normal Part (FM-X) Edit
+
+Common
+
+Part Settings
+
+General
+
+Algorithm
+
+Zone Settings
+
+Zone Transmit
+
+Pitch / Filter
+
+Pitch
+
+PEG/Scale
+
+Filter Type
+
+Filter EG
+
+Filter Scale
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+2nd LFO
+
+Control Assign
+
+Receive SW
+
+Operator
+
+Form / Freq
+
+Level
+
+Algorithm (Algorithm Number)
+Changes Algorithms.
+Settings: See the Data List PDF document.
+
+Feedback (Feedback Level)
+Waveforms can be changed by feeding some of the signal generated by an operator back through that
+operator. This allows you to set the feedback level.
+Settings: 0 – 7
+
+MONTAGE Reference Manual
+
+132
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Algorithm Search
+Calls up the Algorithm Search display. From this display you can search for desired Algorithms by filtering
+the number of Carriers, or the maximum length of the serial connection of Operators.
+
+Algorithm list
+
+Chain
+Filters the Algorithms by the maximum length of serial connection of Operators.
+Settings: 1 – 8
+
+Carrier
+Filters the Algorithms by the number of Carriers.
+Settings: 1 – 8
+
+Zone Settings
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 63).
+
+Zone Transmit
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 65).
+
+Normal Part (FM-X) Edit
+
+Common
+
+Part Settings
+
+General
+
+Algorithm
+
+Zone Settings
+
+Zone Transmit
+
+Pitch / Filter
+
+Pitch
+
+PEG/Scale
+
+Filter Type
+
+Filter EG
+
+Filter Scale
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+2nd LFO
+
+Control Assign
+
+Receive SW
+
+Operator
+
+Form / Freq
+
+Level
+
+MONTAGE Reference Manual
+
+133
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Normal Part (FM-X) Edit
+
+Common
+
+Part Settings
+
+General
+
+Algorithm
+
+Zone Settings
+
+Zone Transmit
+
+Pitch / Filter
+
+Pitch
+
+PEG/Scale
+
+Filter Type
+
+Filter EG
+
+Filter Scale
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+2nd LFO
+
+Control Assign
+
+Receive SW
+
+Operator
+
+Form / Freq
+
+Level
+
+Pitch/Filter
+
+Pitch
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 60), except that the
+Legato Slope parameter is not available.
+
+PEG/Scale (Pitch EG/Scale)
+
+From the Pitch EG/Scale display you can make all time and level settings for the Pitch EG, which determine
+how the pitch of the sound changes over time, and the Scale for Parts.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON] 
+[Pitch/Filter]  [PEG/Scale]
+
+The full names of the available parameters are shown in the chart below, as they appear in the display.
+
+Initial
+
+Attack
+
+Decay1
+
+Decay2
+
+Release
+
+–
+
+Attack Time
+
+Decay1 Time
+
+Decay2 Time
+
+Release Time
+
+Hold Level
+
+Attack Level
+
+Decay1 Level
+
+Decay2 Level
+
+Release Level
+
+Time
+
+Level
+
+Settings: Time: 0 – 99
+
+Level: -50 – +50
+
+PEG Depth
+Determines the pitch range for Pitch EG.
+Settings: 8 oct, 2 oct, 1 oct, 0.5 oct
+
+Depth/Vel (PEG Depth Velocity Sensitivity)
+Determines how the pitch range will be generated according to the Velocity (strength) with which you play
+notes on the keyboard.
+Settings: 0 – 7
+
+Time/Key (PEG Time Key Follow Sensitivity)
+Determines the degree to which the notes (specifically, their position or octave range) affect the Pitch EG
+Times. The Center Key (C3) is used as the basic pitch for this parameter.
+Settings: 0 – 7
+
+Positive values: High notes result in a high PEG transition speed while low notes result in a slow speed.
+0: The PEG transition speed does not change, regardless of the played note.
+
+MONTAGE Reference Manual
+
+134
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Pitch/Key (Pitch Key Follow Sensitivity)
+Determines the sensitivity of the Key Follow effect (the pitch interval of adjacent notes), assuming the pitch
+of the Center Key (below) as standard.
+Settings: -200% – +0% – +200%
+
++100% (the normal setting): Adjacent notes are pitched one semitone apart.
+0%: All notes have the same pitch as the Center Key.
+Negative values: The settings are reversed.
+
+Center Key (Pitch Key Follow Sensitivity Center Key)
+Determines the central note or pitch for the Key Follow effect on pitch.
+Settings: C -2 – G8
+
+Pitch/Vel (Pitch Velocity Sensitivity)
+Determines how the pitch responds to velocity.
+Settings: -64 – 63
+
+Positive values: The harder you play the keyboard, the more the pitch rises.
+Negative values: The harder you play the keyboard, the more the pitch falls.
+0: No change in pitch.
+
+Random Pitch (Random Pitch Depth)
+Allows you to randomly vary the pitch for each note played.
+Settings: 0 – 127
+
+NOTE For details on PEG, see the Synthesizer Parameter Manual PDF document.
+
+Filter Type
+
+Same as the Element Edit parameters for Normal Parts (AWM2) (page 100).
+
+Filter EG
+
+Same as the Element Edit parameters for Normal Parts (AWM2) (page 105).
+
+Filter Scale
+
+Same as the Element Edit parameters for Normal Parts (AWM2) (page 107).
+
+Normal Part (FM-X) Edit
+
+Common
+
+Part Settings
+
+General
+
+Algorithm
+
+Zone Settings
+
+Zone Transmit
+
+Pitch / Filter
+
+Pitch
+
+PEG/Scale
+
+Filter Type
+
+Filter EG
+
+Filter Scale
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+2nd LFO
+
+Control Assign
+
+Receive SW
+
+Operator
+
+Form / Freq
+
+Level
+
+MONTAGE Reference Manual
+
+135
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Normal Part (FM-X) Edit
+
+Common
+
+Part Settings
+
+General
+
+Algorithm
+
+Zone Settings
+
+Zone Transmit
+
+Pitch / Filter
+
+Pitch
+
+PEG/Scale
+
+Filter Type
+
+Filter EG
+
+Filter Scale
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+2nd LFO
+
+Control Assign
+
+Receive SW
+
+Operator
+
+Form / Freq
+
+Level
+
+Effect
+
+Routing
+
+From the Routing display you can determine the Effect connections for Parts.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON]  [Effect] 
+[Routing]
+
+Insertion FX Switch
+
+Insertion FX Switch
+
+Insertion FX Switch
+Determines whether the Insertion Effect A/B is active or not.
+Settings: Off, On
+
+Category (Effect Category)
+Type (Effect Type)
+Determines the category and type for the selected Effect.
+Settings: For details on the editable Effect categories and types, see the Data List PDF document. Also, for details on the
+
+description for each Effect type, see the Synthesizer Parameter Manual PDF document.
+
+Preset
+Allows you to call up pre-programmed settings for each Effect type, designed to be used for specific
+applications and situations.
+Settings: For a list of all Preset Effects, see the Data List PDF document.
+
+Side Chain/Modulator (Side Chain/Modulator Part)
+Determines the Part used for the Side Chain/Modulator. This is not active depending on Effect Types.
+For details on the Side Chain/Modulator, see the Routing display (page 67) of the Normal Part (AWM2).
+Settings: Part 1 – 16, A/D, Master, Off
+
+Ins Connect (Insertion Connection Type)
+Determines the effect routing for Insertion Effects A and B. The setting changes are shown on the diagram
+in the display, giving you a clear picture of how the signal is routed. For details, see the section “Effect
+connection” (page 19) of the “Basic Structure.”
+Settings: Parallel, Ins AB, Ins BA
+
+Rev Send (Reverb Send)
+Determines the Send level of the signal sent from Insertion Effect A/B to the Reverb effect.
+Settings: 0 – 127
+
+MONTAGE Reference Manual
+
+136
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Normal Part (FM-X) Edit
+
+Common
+
+Part Settings
+
+General
+
+Algorithm
+
+Zone Settings
+
+Zone Transmit
+
+Pitch / Filter
+
+Pitch
+
+PEG/Scale
+
+Filter Type
+
+Filter EG
+
+Filter Scale
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+2nd LFO
+
+Control Assign
+
+Receive SW
+
+Operator
+
+Form / Freq
+
+Level
+
+Var Send (Variation Send)
+Determines the Send level of the signal sent from Insertion Effect A/B to the Variation effect.
+Settings: 0 – 127
+
+Part Output (Part Output Select)
+Determines the specific audio output.
+Settings: MainL&R, AsgnL&R, USB Stereo, AsgnL, AsgnR, USB1 – 30, Off
+
+MainL&R: Outputs in stereo (two channels) to the OUTPUT [L/MONO]/[R] jacks.
+AsgnL&R: Outputs in stereo (two channels) to the ASSIGNABLE OUTPUT [L]/[R] jacks.
+USB1&2…USB29&30: Outputs in stereo (Channels 1&2 – 29&30) to the [USB TO HOST] terminal.
+AsgnL: Outputs in mono (one channel) to the ASSIGNABLE OUTPUT [L] jack.
+AsgnR: Outputs in mono (one channel) to the ASSIGNABLE OUTPUT [R] jack.
+USB1 – 30: Outputs in mono (Channels 1 – 30) to the [USB TO HOST] terminal.
+Off: No audio signal for the Part is output.
+
+Ins A (Insertion Effect A)
+Ins B (Insertion Effect B)
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 69).
+
+EQ (Part Equalizer)
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 70).
+
+Arpeggio
+
+Common
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 73).
+
+Individual
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 76).
+
+Advanced
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 77).
+
+Motion Seq (Motion Sequencer)
+
+Common
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 78).
+
+Lane
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 81).
+
+MONTAGE Reference Manual
+
+137
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Normal Part (FM-X) Edit
+
+Common
+
+Part Settings
+
+General
+
+Algorithm
+
+Zone Settings
+
+Zone Transmit
+
+Pitch / Filter
+
+Pitch
+
+PEG/Scale
+
+Filter Type
+
+Filter EG
+
+Filter Scale
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+2nd LFO
+
+Control Assign
+
+Receive SW
+
+Operator
+
+Form / Freq
+
+Level
+
+Mod/Control (Modulation/Control)
+
+Part LFO
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 85), except that the
+setting values of the Destination parameter differ and that “Element Phase Offset (LFO Element Phase
+Offset)” is not available. For details on the setting values, see the Data List PDF document.
+
+2nd LFO
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON] 
+[Mod/Control]  [2nd LFO]
+
+Pitch Modulation Operator Depth Ratio
+(2nd LFO Pitch Modulation Operator Depth Ratio)
+
+Amplitude Modulation Operator Depth Ratio
+(2nd LFO Amplitude Modulation Operator Depth Ratio)
+
+LFO Wave (2nd LFO Waveform)
+Selects the 2nd LFO waveform.
+Settings: Triangle, Saw Down, Saw Up, Square, Sine, S/H
+NOTE When “Sine” is selected, two waves will be shown in the diagram on the display because of the phase shift of
+
+the Amplitude Modulation wave.
+
+Key On Reset (2nd LFO Key On Reset)
+Determines whether or not the 2nd LFO is reset each time a note is pressed.
+Settings: Off, On
+
+Speed (2nd LFO Speed)
+Adjusts the speed (frequency) of the 2nd LFO variation.
+Settings: 0 – 99
+
+Phase (2nd LFO Phase)
+Determines the starting phase point for the 2nd LFO Wave when it is reset.
+Settings: 0°, 90°, 180°, 270°
+
+Delay (2nd LFO Delay Time)
+Determines the delay time between the moment you press a key on the keyboard and the moment the 2nd
+LFO comes into effect.
+Settings: 0 – 99
+
+MONTAGE Reference Manual
+
+138
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Pitch Modulation (2nd LFO Pitch Modulation Depth)
+Determines the amount (depth) by which the 2nd LFO waveform varies (modulates) the pitch of the sound.
+Settings: 0 – 99
+
+Amplitude Modulation (2nd LFO Amplitude Modulation Depth)
+Determines the amount (depth) by which the 2nd LFO waveform varies (modulates) the amplitude or
+volume of the sound.
+Settings: 0 – 99
+
+Filter Modulation (2nd LFO Filter Modulation Depth)
+Determines the amount (depth) by which the 2nd LFO waveform varies (modulates) the Filter Cutoff
+frequency.
+Settings: 0 – 99
+
+Pitch Modulation Operator Depth Ratio
+(2nd LFO Pitch Modulation Operator Depth Ratio)
+Adjusts the amount (depth) which is determined in the “2nd LFO Pitch Modulation Depth” for each
+Operator.
+Settings: 0 – 7
+
+Amplitude Modulation Operator Depth Ratio
+(2nd LFO Amplitude Modulation Operator Depth Ratio)
+Adjusts the amount (depth) which is determined in the “2nd LFO Amplitude Modulation Depth” for each
+Operator.
+Settings: 0 – 7
+
+Control Assign
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  ELEMENT/OPERATOR [COMMON] 
+[Mod/Control]  [Control Assign]
+
+Normal Part (FM-X) Edit
+
+Common
+
+Part Settings
+
+General
+
+Algorithm
+
+Zone Settings
+
+Zone Transmit
+
+Pitch / Filter
+
+Pitch
+
+PEG/Scale
+
+Filter Type
+
+Filter EG
+
+Filter Scale
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+2nd LFO
+
+Control Assign
+
+Receive SW
+
+Operator
+
+Form / Freq
+
+Level
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 89), except for the
+different setting values in the Destination parameter. For details on the setting value, see the Data List PDF
+document.
+Also the following parameter is shown on this display.
+
+Operator SW (Operator Switch)
+Selects whether the controller will affect each individual Operator (On) or not (Off). This is available only
+when an Operator-related parameter is set in “Destination.”
+Settings: Off, On
+
+MONTAGE Reference Manual
+
+139
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Normal Part (FM-X) Edit
+
+Common
+
+Part Settings
+
+General
+
+Algorithm
+
+Zone Settings
+
+Zone Transmit
+
+Pitch / Filter
+
+Pitch
+
+PEG/Scale
+
+Filter Type
+
+Filter EG
+
+Filter Scale
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+2nd LFO
+
+Control Assign
+
+Receive SW
+
+Operator
+
+Form / Freq
+
+Level
+
+Operator Rate
+Determines the sensitivity of the Controller in changing the parameter set in “Destination” for each
+Operator.
+This is available only when “Destination” is set to “OP Freq” or “OP AEG Offset.”
+Settings: Off, On
+
+SW/Rate (Operator Switch/Operator Rate Switch)
+Switches displays between “Operator Switch” and “Operator Rate.”
+This is available only when “Destination” is set to “OP Freq” or “OP AEG Offset.”
+Settings: Off, On
+
+Receive SW (Receive Switch)
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 92).
+
+MONTAGE Reference Manual
+
+140
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Operator Edit (Operator)
+
+Form/Freq (Form/Frequency)
+
+From the Form/Frequency display you can make all the waveform and frequency settings for Operators.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  Operator selection  [Form/Freq]
+
+The full names of the available parameters are shown in the chart below, as they appear in the display.
+
+Initial
+
+Attack
+
+Decay
+
+–
+
+Attack Time
+
+Decay Time
+
+Initial Level
+
+Attack Level
+
+–
+
+Time
+
+Level
+
+Settings: Time: 0 – 99
+
+Level: -50 – +50
+
+Spectral (Spectral Form)
+Determines the “spectral form” of the selected Operator.
+Settings: Sine, All 1, All 2, Odd 1, Odd 2, Res 1, Res 2
+
+Skirt (Spectral Skirt)
+Determines the spread of the “skirt” at the bottom of the formant harmonics curve. Higher values produce
+a wider skirt and smaller values produce a narrower skirt. This is not available when “Spectral” is set to
+“Sine.”
+Settings: 0 – 7
+
+Resonance (Spectral Resonance)
+Determines the degree to which velocity affects the Resonance of the Spectral Form. The center frequency
+moves to higher frequencies, letting you create a special resonance in the sound. This is active only when
+“Spectral” is set to “Res 1” or “Res 2.”
+Settings: 0 – 99
+
+Normal Part (FM-X) Edit
+
+Common
+
+Part Settings
+
+General
+
+Algorithm
+
+Zone Settings
+
+Zone Transmit
+
+Pitch / Filter
+
+Pitch
+
+PEG/Scale
+
+Filter Type
+
+Filter EG
+
+Filter Scale
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+2nd LFO
+
+Control Assign
+
+Receive SW
+
+Operator
+
+Form / Freq
+
+Level
+
+MONTAGE Reference Manual
+
+141
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Normal Part (FM-X) Edit
+
+Common
+
+Part Settings
+
+General
+
+Algorithm
+
+Zone Settings
+
+Zone Transmit
+
+Pitch / Filter
+
+Pitch
+
+PEG/Scale
+
+Filter Type
+
+Filter EG
+
+Filter Scale
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+2nd LFO
+
+Control Assign
+
+Receive SW
+
+Operator
+
+Form / Freq
+
+Level
+
+Basic waveforms used as Operators contain harmonics, with the exception of “Sine.” A sine wave contains
+its fundamental frequency with no additional harmonics. Therefore, when “Form” is set to any waveform
+other than “Sine”, you can adjust harmonics and the peak of each formant, depending on the Waveform
+Type by determining the related parameters. Below are the basic waveforms and the characteristic
+parameters.
+
+Level
+
+Skirt
+
+Level
+
+Skirt
+
+Center Frequency
+(F.Coarse & Freq Fine)
+
+Frequency
+(Hz)
+
+Center Frequency
+(F.Coarse & Freq Fine)
+
+Frequency
+(Hz)
+
+Level
+
+Skirt
+
+Level
+
+Skirt
+
+Center Frequency
+(F.Coarse & Freq Fine)
+
+Frequency
+(Hz)
+
+Center Frequency
+(F.Coarse & Freq Fine)
+
+Frequency
+(Hz)
+
+The larger the “Skirt” value, the more harmonics the wave contains.
+
+Skirt
+
+Resonance of
+Center Frequency
+
+Level
+
+Skirt
+
+Resonance of
+Center Frequency
+
+Level
+
+Center Frequency
+(F.Coarse & Freq Fine)
+
+Frequency
+(Hz)
+
+Center Frequency
+(F.Coarse & Freq Fine)
+
+Frequency
+(Hz)
+
+The larger “Resonance” value, the higher frequency the center frequency is moved.
+- Resonance=0: The Center frequency is the basic wave
+- Resonance=99: The Center frequency is the 100th harmonic
+
+Key On Reset (Oscillator Key On Reset)
+Determines whether or not the oscillation of the Operator is reset each time a note is pressed.
+Settings: Off, On
+
+Pitch/Vel (Pitch Velocity Sensitivity)
+Determines how the pitch of the selected Operator responds to velocity. This is available only when “Freq
+Mode” is set to “Fixed.”
+Settings: -7 – +7
+
+Positive values: The harder you play the keyboard, the more the pitch rises.
+Negative values: The harder you play the keyboard, the more the pitch falls.
+0: No change in pitch.
+
+Freq Mode (Oscillator Frequency Mode)
+Determines the settings for the Output Pitch of the Operator.
+Settings: Ratio, Fixed
+
+Ratio: Determines the Output Pitch by detecting the note you play on the keyboard.
+Fixed: Specifies the Pitch by setting “Coarse” and “Fine.”
+
+MONTAGE Reference Manual
+
+142
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Coarse (Coarse Tune)
+Determines the pitch of each Operator.
+Settings: When “Freq Mode” is set to “Ratio”: 0 – 31
+When “Freq Mode” is set to “Fixed”: 0 – 21
+
+Fine (Fine Tune)
+Determines the fine tuning for the pitch of each Operator.
+Settings: When “Freq Mode” is set to “Ratio”: 0 – 99
+
+When “Freq Mode” is set to “Fixed”: 0 – 127
+
+Detune
+Sets the Output Pitch of the Operator slightly higher or lower.
+Even if the same parameter value is set for both “Coarse Tune” and “Fine Tune,” the Detune lets you
+slightly raise or lower the pitch of each Operator, allowing you to add an extra dimension to the sound and
+enhance the spatial characteristics.
+Settings: -15 – +15
+
+Pitch/Key (Pitch Key Follow Sensitivity)
+Determines the sensitivity of the Key Follow effect (the degree depending on their position or octave
+range). This is available only when “Freq Mode” is set to “Fixed.”
+Settings: 0 – 99
+
+0: All notes are the same pitch specified by Coarse and Fine.
+99: Adjacent notes are pitched one semitone apart.
+
+Level
+
+From the Level display you can make all the volume settings for the Operator.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  Part selection  Operator selection  [Level]
+
+Normal Part (FM-X) Edit
+
+Common
+
+Part Settings
+
+General
+
+Algorithm
+
+Zone Settings
+
+Zone Transmit
+
+Pitch / Filter
+
+Pitch
+
+PEG/Scale
+
+Filter Type
+
+Filter EG
+
+Filter Scale
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+2nd LFO
+
+Control Assign
+
+Receive SW
+
+Operator
+
+Form / Freq
+
+Level
+
+The full names of the available parameters are shown in the chart below, as they appear in the display.
+
+Time
+
+Level
+
+Hold
+
+Hold Time
+
+–
+
+Settings: Time: 0 – 99
+Level: 0 – 99
+
+Attack
+
+Attack Time
+
+Attack Level
+
+Decay1
+
+Decay2
+
+Release
+
+Decay1 Time
+
+Decay2 Time
+
+Release Time
+
+Decay1 Level
+
+Decay2 Level
+
+Release (Hold) Level
+
+MONTAGE Reference Manual
+
+143
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Normal Part (FM-X) Edit
+
+Common
+
+Part Settings
+
+General
+
+Algorithm
+
+Zone Settings
+
+Zone Transmit
+
+Pitch / Filter
+
+Pitch
+
+PEG/Scale
+
+Filter Type
+
+Filter EG
+
+Filter Scale
+
+Effect
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Arpeggio
+
+Common
+
+Individual
+
+Advanced
+
+Motion Seq
+
+Common
+
+Lane
+
+Mod / Control
+
+Part LFO
+
+2nd LFO
+
+Control Assign
+
+Receive SW
+
+Operator
+
+Form / Freq
+
+Level
+
+Level (Operator Level)
+Determines the output level of the Operator.
+Settings: 0 – 99
+
+Level/Vel (Level Velocity Sensitivity)
+Determines how the output level of the Operator responds to Velocity.
+Settings: -7 – +7
+
+Positive values: The more strongly you play the keyboard, the more the output rises.
+Negative values: The more softly you play the keyboard, the more the output rises.
+0: The output level does not change.
+
+Time/Key (AEG Time Key Follow Sensitivity)
+Determines the degree to which the notes (specifically, their position or octave range) affect the Amplitude
+EG Times.
+Settings: 0 – 7
+
+Positive values: High notes result in a fast Amplitude EG transition speed while low notes result in a slow speed.
+0: The Amplitude EG transition speed does not change, regardless of the played note.
+
+Break Point
+Determines the Amplitude Scale Break Points by specifying their respective note numbers.
+Settings: A-1 – C8
+
+Curve Lo (Low Curve)
+Curve Hi (High Curve)
+Determines the curve for Amplitude scaling.
+Settings: -Linear, -Exp, +Exp, +Linear
+
+Lvl/Key Lo (Low Depth)
+Lvl/Key Hi (High Depth)
+Determines the curve degree of the curve (above).
+Settings: 0 – 99
+
+The keyboard is divided in two at the break point.
+The high-pitch side at the right is set by using the R Depth and the R Curve; the low-pitch side at the left is
+set by using the L Depth and the L Curve as described below.
+
+Output Level
+
++
+
++exp
+
++linear
+
++linear
+
++exp
+
+Low Curve
+
+Low Depth
+
+High Curve
+
+Key
+
+High Depth
+
+-exp
+
+-linear
+
+-linear
+
+-exp
+
+-
+
+Break Point Output Level
+
+The Output level of the Key set as the Break Point depends on the Operator Level setting. For the Keys in
+the left side of the Break Point, the Output level is adjusted based on the curve which is determined by the
+Low Curve and Low Depth. For the Keys in the right side of the Break Point, the Output level is adjusted
+based on the curve which is determined by the High Curve and High Depth. The Output level changes in
+an exponential fashion from the Break Point on the Exp type curve and the Output level changes in a linear
+fashion from the Break Point in the Linear type curve. In either case, the farther away from the Break Point
+the key is, the greater the Output level changes for the key.
+
+MONTAGE Reference Manual
+
+144
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Common/Audio Edit (Common/Audio)
+
+Common/Audio Edit
+
+Common/Audio
+
+A Performance consists up to 16 Parts. You can set the parameters related to the entire Performance and
+the Audio Parts in the Common/Audio Edit display.
+
+General
+
+From the General display you can set various parameters for the Performance.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  PART [COMMON]  [General]
+
+General
+
+Audio In
+
+Mixing
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Motion Seq
+
+Common
+
+Lane
+
+Control
+
+Control Assign
+
+Control Number
+
+Effect
+
+Routing
+
+Variation
+
+Reverb
+
+Master FX
+
+Master EQ
+
+Performance Name
+Determines the selected Performance name. Performance names can contain up to 20 characters.
+Touching the parameter calls up the input character display.
+
+Motion Control Flag
+Determines whether or not to add the “Motion Control” attribute to the selected Performance. When this is
+set to on, the “MC” icon is displayed in the Performance Play display (page 26). The Performance can be
+filtered as “MC” in the Performance Category Search display (page 161).
+Settings: Off, On
+
+Tg Flag (Tone Generator Flag)
+Determines the attribute by the Tone Generator of the selected Performance. The name icon of the
+selected Tone Generator is displayed in the Performance Play display (page 26). The Performance can be
+filtered as “AWM2/FM/FM-X+AWM2” in the Performance Category Search display (page 161).
+Settings: AWM2, FM-X, AWM2+FM-X
+
+Volume (Performance Volume)
+Determines the output volume of the selected Performance.
+Settings: 0 – 127
+
+Pan
+Determines the stereo pan position of the selected Performance.
+Settings: L63 – C – R63
+
+Var Return (Variation Return)
+Determines the return level of the Variation effect.
+Settings: 0 – 127
+
+MONTAGE Reference Manual
+
+145
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Common/Audio Edit
+
+Common/Audio
+
+General
+
+Audio In
+
+Mixing
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Motion Seq
+
+Common
+
+Lane
+
+Control
+
+Control Assign
+
+Control Number
+
+Effect
+
+Routing
+
+Variation
+
+Reverb
+
+Master FX
+
+Master EQ
+
+Rev Return (Reverb Return)
+Determines the return level of the Reverb effect.
+Settings: 0 – 127
+
+Audition Phrase Number
+Determines the Audition Phrase Number. You can hear a sample of the selected Performance sounds that
+is called “Audition phrase.” The best matching Audition Phrase is assigned to each Preset Performance in
+advance.
+Settings: 1 – 850
+
+Note Shift (Audition Phrase Note Shift)
+Determines the pitch (key transpose) setting for the Audition Phrase in semitones.
+Settings: -24semi – +24semi
+
+Velocity Shift (Audition Phrase Velocity Shift)
+Determines the velocity of the Audition Phrase.
+Settings: -63 – +63
+
+Portamento Master SW (Portamento Master Switch)
+Determines whether Portamento is applied to the Part or not when the “Portamento Part SW” is set to on for
+the Part.
+Settings: Off, On
+
+Portamento Time
+Determines the pitch transition time or rate when Portamento is applied.
+Settings: -64 – +63
+
+RB Mode (Ribbon Controller Mode)
+Determines how the Ribbon Controller responds when released.
+Settings: Hold, Reset
+
+Hold: When set to Hold, releasing your finger from the Ribbon Controller maintains the value at the last point of
+contact.
+Reset: When set to Reset, releasing your finger from the Ribbon Controller automatically returns the value to the
+center.
+
+Assign 1 Mode/Assign 2 Mode (Assignable Switch 1 Mode/Assignable Switch 2 Mode)
+Determines whether the [ASSIGN 1] and [ASSIGN 2] buttons functions as a latch type or momentary type.
+Settings: Latch, Momentary
+
+Latch: When set to “Latch,” pressing the button alternates the status between on and off.
+Momentary: When set to “Momentary,” pressing/holding the button turns on and releasing the button turns off.
+
+MS Hold Mode (Motion Sequencer Hold Mode)
+Determines how the [MOTION SEQ HOLD] button responds when pressed.
+Settings: Latch, Momentary
+
+Latch: When set to “Latch,” pressing the button alternates the status between on and off.
+Momentary: When set to “Momentary,” pressing/holding the button turns on and releasing the button turns off.
+
+MONTAGE Reference Manual
+
+146
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Audio In
+
+Mixing
+
+From the Mixing display you can adjust the volume settings of the Audio Part (the input signal from the A/D
+INPUT [L/MONO]/[R] jacks) and the Digital Part (the input signal from the [USB TO HOST] terminal*).
+* Only the sound of the Port which, among all Device Ports, is set to “Digital L/R.”
+
+Operation
+
+[PERFORMANCE]  [EDIT]  PART [COMMON]  [Audio In]  [Mixing]
+
+Common/Audio Edit
+
+Common/Audio
+
+General
+
+Audio In
+
+Mixing
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Motion Seq
+
+Common
+
+Lane
+
+Control
+
+Control Assign
+
+Control Number
+
+Effect
+
+Routing
+
+Variation
+
+Reverb
+
+Master FX
+
+Master EQ
+
+A/D In Input Mode/Digital In Input Mode (A/D Part Input Mode/Digital Part Input Mode)
+Determines the signal configuration for the A/D Part/Digital Part, or how the signal or signals are routed
+(stereo or mono).
+Settings: L Mono, R Mono, L+R Mono, Stereo
+
+L Mono: Only the L channel is used.
+R Mono: Only the R channel is used.
+L+R Mono: The L and R channels are mixed and processed in mono.
+Stereo: Both the L and R channels are used.
+
+NOTE The sound input only from the [L/MONO] channel is processed in mono.
+
+Volume (A/D Part Volume/Digital Part Volume)
+Determines the output level of the A/D Part/Digital Part.
+Settings: 0 – 127
+
+Pan (A/D Part Pan/Digital Part Pan)
+Determines the stereo pan position of the A/D Part/Digital Part.
+Settings: L63 – C – R63
+
+Dry Level (A/D Part Dry Level/Digital Part Dry Level)
+Determines the level of the A/D Part/Digital Part which has not been processed with the System Effect. This
+is available only when “Part Output” is set to “MainL&R.”
+Settings: 0 – 127
+
+Var Send (A/D Part Variation Send / Digital Part Variation Send)
+Determines the Send level of the Audio Part/Digital Part signal sent to the Variation effect. This is available
+only when “Part Output” is set to “MainL&R.”
+Settings: 0 – 127
+
+MONTAGE Reference Manual
+
+147
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Rev Send (A/D Part Reverb Send/Digital Part Reverb Send)
+Determines the Send level of the Audio Part/Digital Part signal sent to the Reverb effect. This is available
+only when “Part Output” is set to “MainL&R.”
+Settings: 0 – 127
+
+Output Select (A/D Part Part Output Select/Digital Part Part Output Select)
+Determines the specific output(s) for the individual A/D Part/Digital Part signal.
+Settings: MainL&R, AsgnL&R, USB1&2…USB29&30, AsgnL, AsgnR, USB1 – 30, Off
+
+MainL&R: Outputs in stereo (two channels) to the OUTPUT [L/MONO]/[R] jacks.
+AsgnL&R: Outputs in stereo (two channels) to the ASSIGNABLE OUTPUT [L]/[R] jacks.
+USB1&2…USB29&30: Outputs in stereo (Channels 1&2 – 29&30) to the [USB TO HOST] terminal.
+AsgnL: Outputs in mono (one channel) to the ASSIGNABLE OUTPUT [L] jack.
+AsgnR: Outputs in mono (one channel) to the ASSIGNABLE OUTPUT [R] jack.
+USB1 – 30: Outputs in mono (Channels 1 – 30) to the [USB TO HOST] terminal.
+Off: No audio signal for the Part is output.
+
+Routing
+
+From the Routing display you can determine the Effect connections for the A/D Part.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  PART [COMMON]  [Audio In]  [Routing]
+
+Insertion FX Switch
+
+Common/Audio Edit
+
+Common/Audio
+
+General
+
+Audio In
+
+Mixing
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Motion Seq
+
+Common
+
+Lane
+
+Control
+
+Control Assign
+
+Control Number
+
+Effect
+
+Routing
+
+Variation
+
+Reverb
+
+Master FX
+
+Master EQ
+
+Insertion FX Switch
+
+Insertion FX Switch (Insertion Effect Switch)
+Determines whether the Insertion Effect A/B is active or not.
+Settings: Off, On
+
+Category (Effect Category)
+Type (Effect Type)
+Determines the category and type for the selected Effect.
+Settings: For details on the editable Effect categories and types, see the Data List PDF document. Also, for details on the
+
+description for each Effect type, see the Synthesizer Parameter Manual PDF document.
+
+Preset
+Allows you to call up pre-programmed settings for each Effect type, designed to be used for specific
+applications and situations. You can change how the sound is affected by the selected pre-programmed
+settings.
+Settings: For a list of all Preset Effects, see the Data List PDF document.
+
+MONTAGE Reference Manual
+
+148
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Common/Audio Edit
+
+Common/Audio
+
+General
+
+Audio In
+
+Mixing
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Motion Seq
+
+Common
+
+Lane
+
+Control
+
+Control Assign
+
+Control Number
+
+Effect
+
+Routing
+
+Variation
+
+Reverb
+
+Master FX
+
+Master EQ
+
+Side Chain/Modulator (Side Chain/Modulator Part)
+Determines the Part used for the Side Chain/Modulator.
+This is not available depending on the Effect Type.
+For details on the Side Chain/Modulator, see the Routing display of the Normal Part (AWM2) (page 67).
+Settings: Part 1 – 16, A/D, Master, Off
+
+Ins Connect (Insertion Connection Type)
+Determines the effect routing for Insertion Effects A and B. The setting changes are shown on the diagram
+in the display, giving you a clear picture of how the signal is routed. For details, see the section “Effect
+connection” (page 19) of the “Basic Structure.”
+Settings: Ins AB, Ins BA
+
+Rev Send (Reverb Send)
+Determines the Send level of the signal sent from Insertion Effect A/B (or the bypassed signal) to the
+Reverb effect. This is available only when “Part Output” is set to “MainL&R.”
+Settings: 0 – 127
+
+Var Send (Variation Send)
+Determines the Send level of the signal sent from Insertion Effect A/B (or the bypassed signal) to the
+Variation effect. This is available only when “Part Output” is set to “MainL&R.”
+Settings: 0 – 127
+
+Envelope Follower
+Calls up the Envelope Follower setting display. For details, see the Routing display (page 68) of Normal
+Part (AWM2) Edit. This is available only when “Part Output” is set to “MainL&R.”
+
+Output Select (Part Output Select)
+Determines specific audio output.
+Settings: MainL&R, AsgnL&R, USB1&2…USB29&30, AsgnL, AsgnR, USB1 – 30, Off
+
+MainL&R: Outputs in stereo (two channels) to the OUTPUT [L/MONO]/[R] jacks.
+AsgnL&R: Outputs in stereo (two channels) to the ASSIGNABLE OUTPUT [L]/[R] jacks.
+USB1&2…USB29&30: Outputs in stereo (Channels 1&2 – 29&30) to the [USB TO HOST] terminal.
+AsgnL: Outputs in mono (one channel) to the ASSIGNABLE OUTPUT [L] jack.
+AsgnR: Outputs in mono (one channel) to the ASSIGNABLE OUTPUT [R] jack.
+USB1 – 30: Outputs in mono (Channels 1 – 30) to the [USB TO HOST] terminal.
+Off: No audio signal for the Part is output.
+
+Ins A (Insertion Effect A)
+Ins B (Insertion Effect B)
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 69).
+
+EQ (Equalizer)
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 70) except that “3-band
+EQ” is inactive.
+
+MONTAGE Reference Manual
+
+149
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Motion Seq (Motion Sequencer)
+
+Common
+
+From the Common display you can set the parameters related to Motion Sequencer commonly used for all
+Parts in Common/Audio Part.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  PART [COMMON]  [Motion Seq]  [Common]
+
+Common/Audio Edit
+
+Common/Audio
+
+General
+
+Audio In
+
+Mixing
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Motion Seq
+
+Common
+
+Lane
+
+Control
+
+Control Assign
+
+Control Number
+
+Effect
+
+Routing
+
+Variation
+
+Reverb
+
+Master FX
+
+Master EQ
+
+Common Clock Swing (Common Swing)
+Determines the Swing of the Arpeggio/Motion Sequencer for the entire Performance. This is the offset
+value for the Swing of the Arpeggio/Motion Sequencer for each Part.
+Settings: -120 – +120
+
+Common Clock Unit (Common Unit Multiply)
+Adjusts the Arpeggio/Motion Sequencer playback time for the entire Performance.
+This parameter is applied to the Part when the Unit Multiply parameter for the Part is set to “Common.”
+By using this parameter, you can create a different Arpeggio/Motion Sequencer type from the original one.
+Settings: 50% – 400%
+
+200%: The playback time will be doubled and the tempo is halved.
+100%: The normal playback time.
+50%: The playback time will be halved and the tempo doubled.
+
+Common Arp Gate Time (Common Arpeggio Gate Time)
+Determines the Gate Time Rate (length) of the Arpeggio for the entire Performance. This is the offset value
+for the Gate Time Rate of the Arpeggio for each Part.
+Settings: -100 – +100
+
+Common Arp Velocity (Common Arpeggio Velocity Rate)
+Determines the Velocity Rate of the Arpeggio for the entire Performance. This is the offset value for the
+Velocity Rate of the Arpeggio for each Part.
+Settings: -100 – +100
+
+Common Motion Seq Amplitude (Common Motion Sequencer Amplitude)
+Determines the Amplitude of the Motion Sequencer for the entire Performance. “Amplitude” determines
+how the entire Motion Sequence changes.
+This is the offset value for the Part Motion Seq Amplitude, which is also the offset value for the Lane
+Amplitude. This results in that both of the Common and Part MS Amplitudes offset the Amplitude setting in
+the Lane (only when “MS FX” is set to on for the Lane).
+Settings: -64 – +63
+
+MONTAGE Reference Manual
+
+150
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Common/Audio Edit
+
+Common/Audio
+
+General
+
+Audio In
+
+Mixing
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Motion Seq
+
+Common
+
+Lane
+
+Control
+
+Control Assign
+
+Control Number
+
+Effect
+
+Routing
+
+Variation
+
+Reverb
+
+Master FX
+
+Master EQ
+
+Common Motion Seq Shape (Common Motion Sequencer Pulse Shape)
+Determines the Pulse Shape of the Motion Sequencer for the entire Performance. This changes the step
+curve shape of the sequence.
+This is the offset value for the Part Motion Seq Pulse Shape, which is also the offset value for the Lane
+Pulse Shape. This results in that both of the Common and Part MS Pulse Shapes offset the Pulse Shape
+setting for the parameter in the Lane (only when “MS FX” is set to on for the Lane and “Control” is set to on
+for the parameter).
+Settings: -100 – +100
+
+Common Motion Seq Smooth (Common Motion Sequencer Smoothness)
+Determines the Smoothness of the Motion Sequencer for the entire Performance. “Smoothness” is the
+degree to which the time of the Motion Sequence is smoothly changed.
+This is the offset value for the Part Motion Seq Smoothness, which is also the offset value for the Lane
+Smoothness. This results in that both of the Common and Part MS Smoothnesses offset the Smoothness
+setting for the parameter in the Lane (only when “MS FX” is set to on for the Lane).
+Settings: -64 – +63
+
+Common Motion Seq Random (Common Motion Sequencer Random)
+Determines the Random of the Motion Sequencer for the entire Performance. “Random” is the degree to
+which the Step Value of the Sequence is randomly changed.
+This is the offset value for the Part Motion Seq Random when “MS FX” is set to on for the Lane.
+Settings: -64 – +63
+
+Random (A/D Part Motion Sequencer Random)
+Determines the degree of random change in the Step Value of the Motion Sequence for the A/D Part is. For
+details about “Random,” see “Quick Edit” on page 32.
+Settings: 0 – 127
+
+Sync Part (Motion Sequencer Sync Part)
+Determines the Part for synchronizing to the Motion Sequencer. The Motion Sequencer is synchronized to
+the Note On setting and the Arp/Motion Seq Grid setting of the specified Part.
+Settings: Part 1 – Part 16
+
+Arp/MS Grid (Arpeggio/Motion Sequencer Grid)
+Determines the type of note that serves as the basis for the Quantize or Swing. The parameter value is
+displayed in clocks. For Motion Sequencer, this parameter value is one step length. This setting is applied
+to the Part which is selected as the Sync Part (above).
+Settings: 60 (32nd note), 80 (16th note triplet), 120 (16th note), 160 (8th note triplet), 240 (8th note), 320 (1/4 note triplet),
+
+480 (1/4 note)
+
+Lane
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 81).
+
+MONTAGE Reference Manual
+
+151
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Control
+
+Control Assign
+
+Operation
+
+[PERFORMANCE]  [EDIT]  PART [COMMON]  [Control]  [Control Assign]
+
+Common/Audio Edit
+
+Common/Audio
+
+General
+
+Audio In
+
+Mixing
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Motion Seq
+
+Common
+
+Lane
+
+Control
+
+Control Assign
+
+Control Number
+
+Effect
+
+Routing
+
+Variation
+
+Reverb
+
+Master FX
+
+Master EQ
+
+Same as the Element Common Edit parameters for Normal Parts (AWM2) (page 89), except for the
+following parameters.
+
+Destination
+When “Source” is set to “AsgnKnob 1 – 8,” “Part 1 – 16 Assign 1 – 8” are added as this parameter values.
+In this case, “Curve Type” and “Curve Ratio” are not selectable.
+Settings: See the “Control List” in the Data List PDF document.
+
+Source
+When “Destination” is set to “Part 1 – 16 Assign 1 – 8,” only “AsgnKnob 1 – 8” can be set for this parameter.
+Settings: AsgnKnob 1 – 8, MS Lane 1 – 4, EnvFollow 1 – 16, EnvFollowAD, EnvFollowMst
+
+MONTAGE Reference Manual
+
+152
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Control Number
+
+Determines the MIDI Control Change numbers common for the entire system. You can use the Knobs on
+the front panel and external controllers by assigning appropriate MIDI Control Change numbers.
+NOTE External controllers include external sequencers and external MIDI controllers.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  PART [COMMON]  [Control]  [Control Number]
+
+Common/Audio Edit
+
+Common/Audio
+
+General
+
+Audio In
+
+Mixing
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Motion Seq
+
+Common
+
+Lane
+
+Control
+
+Control Assign
+
+Control Number
+
+Effect
+
+Routing
+
+Variation
+
+Reverb
+
+Master FX
+
+Master EQ
+
+Ribbon Ctrl (Ribbon Controller Control Number)
+Determines the Control Change Number generated by using the Ribbon Controller.
+Even when the instrument receives MIDI message with the same Control Change Number specified here
+from the external equipment, the instrument assumes that the message is generated by operating the
+Ribbon Controller.
+Settings: Off, 1 – 95
+
+Breath Ctrl (Breath Controller Control Number)
+Determines the Control Change Number received from the external equipment such as a Breath Controller.
+Even when the instrument receives MIDI message with the same Control Change Number specified here
+from the external equipment, the instrument assumes that the message is generated by operating the
+Breath Controller.
+Settings: Off, 1 – 95
+
+Foot Ctrl 1/Foot Ctrl 2
+(Foot Controller 1 Control Number/Foot Controller 2 Control Number)
+Determines the Control Change Number generated by using a Foot Controller connected to the FOOT
+CONTROLLER [1] /[2] jack.
+Even when the instrument receives MIDI messages with the same Control Change Number specified here
+from the external equipment, the instrument assumes that the message is generated by operating the Foot
+Controller.
+Settings: Off, 1 – 95, Super Knob
+
+Assign SW 1/Assign SW 2
+(Assignable Switch 1 Control Number/Assignable Switch 2 Control Number)
+Determines the Control Change Number generated by using the [ASSIGN 1]/[ASSIGN 2] button
+(Assignable Switch 1/2).
+Even when the instrument receives MIDI messages with the same Control Change Number specified here
+from the external equipment, the instrument assumes that the message is generated by operating the
+[ASSIGN 1]/[ASSIGN 2] button (Assignable Switch 1/2.)
+Settings: Off, 1 – 95
+
+MONTAGE Reference Manual
+
+153
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+MS Hold (Motion Sequencer Hold Control Number)
+Determines the Control Change Number generated by using the [MOTION SEQ HOLD] (Motion
+Sequencer Hold) button.
+Even when the instrument receives MIDI messages with the same Control Change Number specified here
+from the external equipment, the instrument assumes that the message is generated by operating the
+[MOTION SEQ HOLD] (Motion Sequencer Hold) button.
+Settings: Off, 1 – 95
+
+MS Trigger (Motion Sequencer Trigger Control Number)
+Determines the Control Change Number generated by using the [MOTION SEQ TRIGGER] (Motion
+Sequencer Trigger) button.
+Even when the instrument receives MIDI messages with the same Control Change Number specified here
+from the external equipment, the instrument assumes that the message is generated by operating the
+[MOTION SEQ TRIGGER] (Motion Sequencer Trigger) button.
+Settings: Off, 1 – 95
+
+Assign Knob 1 – 8 (Assignable Knob 1 – 8 Control Number)
+Determines the Control Change Number generated by using the Assignable Knob 1 – 8.
+Even when the instrument receives MIDI messages with the same Control Change Number specified here
+from the external equipment, the instrument assumes that the message is generated by operating the
+Assignable Knob 1 – 8.
+Settings: Off, 1 – 95
+
+Effect
+
+Routing
+
+From this display you can determine the System Effect and Master Effect connections that commonly
+affect all Parts.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  PART [COMMON]  [Effect]  [Routing]
+
+Reverb Switch
+
+Variation Switch
+
+Common/Audio Edit
+
+Common/Audio
+
+General
+
+Audio In
+
+Mixing
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Motion Seq
+
+Common
+
+Lane
+
+Control
+
+Control Assign
+
+Control Number
+
+Effect
+
+Routing
+
+Variation
+
+Reverb
+
+Master FX
+
+Master EQ
+
+Master Effect Switch
+
+Variation/Reverb/Master Effect Switch
+Determines whether Variation/Reverb/Master Effect is active or not.
+Settings: Off, On
+
+MONTAGE Reference Manual
+
+154
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Category (Variation/Reverb/Master Effect Category)
+Type (Variation/Reverb/Master Effect Type)
+Determines the category and type for the selected effect.
+Settings: For details on the editable Effect categories and types, see the Data List PDF document. Also, for details on the
+
+description for each Effect type, see the Synthesizer Parameter Manual PDF document.
+
+Preset (Variation/Reverb/Master Effect Preset)
+Allows you to call up pre-programmed settings for each Variation/Reverb/Master Effect type, designed to
+be used for specific applications and situations.
+Settings: For a list of all Preset Effect Types, see the Data List PDF document.
+
+Side Chain/Modulator (Variation/Master Effect Side Chain/Modulator Part)
+Determines the Part used for Side Chain/Modulator for Variation/Master Effect.
+This is not available when you select the same Part or “Master” as the Modulator Part.
+Settings: Part 1 – 16, A/D, Master, Off
+
+Var Return (Variation Return)
+Rev Return (Reverb Return)
+Determines the return level of the Variation/Reverb effect.
+Settings: 0 – 127
+
+Var Pan (Variation Pan)
+Rev Pan (Reverb Pan)
+Determines the pan position of the Variation/Reverb effect.
+Settings: L63 (far left) – C (center) – R63 (far right)
+
+Var to Rev (Variation to Reverb)
+Determines the Send level of the signal sent from the Variation Effect to the Reverb Effect.
+Settings: 0 – 127
+
+Master EQ (Master Equalizer Switch)
+Determines whether the Master EQ is active or not.
+Settings: Off, On
+
+Envelope Follower
+Calls up the Envelope Follower setting display. See the Routing display (page 67) for the Normal Part
+(AWM2).
+
+Common/Audio Edit
+
+Common/Audio
+
+General
+
+Audio In
+
+Mixing
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Motion Seq
+
+Common
+
+Lane
+
+Control
+
+Control Assign
+
+Control Number
+
+Effect
+
+Routing
+
+Variation
+
+Reverb
+
+Master FX
+
+Master EQ
+
+MONTAGE Reference Manual
+
+155
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Variation
+
+From this display you can determine the detailed settings of the Variation effect.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  PART [COMMON]  [Effect]  [Variation]
+
+Variation Switch
+
+Effect Parameter
+
+Common/Audio Edit
+
+Common/Audio
+
+General
+
+Audio In
+
+Mixing
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Motion Seq
+
+Common
+
+Lane
+
+Control
+
+Control Assign
+
+Control Number
+
+Effect
+
+Routing
+
+Variation
+
+Reverb
+
+Master FX
+
+Master EQ
+
+Variation Switch
+Determines whether the Variation effect is active or not.
+Settings: Off, On
+
+Category (Variation Category)
+Type (Variation Type)
+Determines the category and type for the selected effect.
+Settings: For details on the editable Effect categories and types, see the Data List PDF document. Also, for details on the
+
+description for each Effect type, see the Synthesizer Parameter Manual PDF document.
+
+Preset (Variation Preset)
+Allows you to call up pre-programmed settings for each Effect type, designed to be used for specific
+applications and situations.
+Settings: For a list of all Preset Effect Types, see the Data List PDF document.
+
+Side Chain/Modulator (Variation Effect Side Chain/Modulator Part)
+Determines the Part used for Side Chain/Modulator for Variation Effect.
+This is not available when you select the same Part or “Master” as the Modulator Part.
+Settings: Part 1 – 16, A/D, Master, Off
+
+Effect Parameter
+Editable parameters differ depending on the selected Effect Types. For details on the editable Effect
+parameters for each Effect Type, see the Data List PDF document. Also, for details on the description for
+each Effect parameter, see the Synthesizer Parameter Manual PDF document.
+
+MONTAGE Reference Manual
+
+156
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Reverb
+
+From this display you can determine the detailed settings of the Reverb effect.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  PART [COMMON]  [Effect]  [Reverb]
+
+Reverb Switch
+
+Common/Audio Edit
+
+Common/Audio
+
+General
+
+Audio In
+
+Mixing
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Motion Seq
+
+Common
+
+Lane
+
+Control
+
+Control Assign
+
+Control Number
+
+Effect
+
+Routing
+
+Variation
+
+Reverb
+
+Master FX
+
+Master EQ
+
+Reverb Switch
+Determines whether the Reverb effect is active or not.
+Settings: Off, On
+
+Effect Parameter
+
+Category (Reverb Category)
+Type (Reverb Type)
+Determines the category and type for the selected effect.
+Settings: For details on the editable Effect categories and types, see the Data List PDF document. Also, for details on the
+
+description for each Effect type, see the Synthesizer Parameter Manual PDF document.
+
+Preset (Reverb Preset)
+Allows you to call up pre-programmed settings for each Effect type, designed to be used for specific
+applications and situations.
+Settings: For a list of all Preset Effect Types, see the Data List PDF document.
+
+Effect Parameter
+Editable parameters differ depending on the selected Effect Types. For details on the editable Effect
+parameters for each Effect Type, see the Data List PDF document. Also, for details on the description for
+each Effect parameter, see the Synthesizer Parameter Manual PDF document.
+
+MONTAGE Reference Manual
+
+157
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Master FX (Master Effect)
+
+From this display you can determine the detailed settings of the Master Effect.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  PART [COMMON]  [Effect]  [Master FX]
+
+Master Effect Switch
+
+Common/Audio Edit
+
+Common/Audio
+
+General
+
+Audio In
+
+Mixing
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Motion Seq
+
+Common
+
+Lane
+
+Control
+
+Control Assign
+
+Control Number
+
+Effect
+
+Routing
+
+Variation
+
+Reverb
+
+Master FX
+
+Master EQ
+
+Master Effect Switch
+Determines whether the Master Effect is active or not.
+Settings: Off, On
+
+Effect Parameter
+
+Category (Master Effect Category)
+Type (Master Effect Type)
+Determines the category and type for the selected effect.
+Settings: For details on the editable Effect categories and types, see the Data List PDF document. Also, for details on the
+
+description for each Effect type, see the Synthesizer Parameter Manual PDF document.
+
+Preset (Master Effect Preset)
+Allows you to call up pre-programmed settings for each Effect type, designed to be used for specific
+applications and situations.
+Settings: For a list of all Preset Effect Types, see the Data List PDF document.
+
+Side Chain/Modulator (Master Effect Side Chain/Modulator Part)
+Determines the Part used for Side Chain/Modulator for Master Effect.
+This is not available when you select the same Part or “Master” as the Modulator Part.
+Settings: Part 1 – 16, A/D, Master, Off
+
+Effect Parameter
+Editable parameters differ depending on the selected Effect Types. For details on the editable Effect
+parameters for each Effect Type, see the Data List PDF document. Also, for details on the description for
+each Effect parameter, see the Synthesizer Parameter Manual PDF document.
+
+MONTAGE Reference Manual
+
+158
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Master EQ (Master Equalizer)
+
+From this display you can set parameters related to the Master EQ.
+
+Operation
+
+[PERFORMANCE]  [EDIT]  PART [COMMON]  [Effect]  [Master EQ]
+
+Master EQ Switch
+
+Common/Audio Edit
+
+Common/Audio
+
+General
+
+Audio In
+
+Mixing
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Motion Seq
+
+Common
+
+Lane
+
+Control
+
+Control Assign
+
+Control Number
+
+Effect
+
+Routing
+
+Variation
+
+Reverb
+
+Master FX
+
+Master EQ
+
+Low Shape
+
+High Shape
+
+Master EQ Switch
+Determines whether the Master EQ is active or not.
+Settings: Off, On
+
+Low Gain (Master EQ Low Gain)
+Determines the level gain of the Master EQ Low band.
+Settings: -12dB – +12dB
+
+Lo Mid Gain (Master EQ Low Mid Gain)
+Determines the level gain of the Master EQ Low Mid band.
+Settings: -12dB – +12dB
+
+Mid Gain (Master EQ Mid Gain)
+Determines the level gain of the Master EQ Mid band.
+Settings: -12dB – +12dB
+
+Hi Mid Gain (Master EQ High Mid Gain)
+Determines the level gain of the Master EQ High Mid band.
+Settings: -12dB – +12dB
+
+High Gain (Master EQ High Gain)
+Determines the level gain of the Master EQ High band.
+Settings: -12dB – +12dB
+
+Low Freq (Master EQ Low Frequency)
+Determines the frequency for the Master Low band.
+Settings: 32Hz – 2.0kHz
+
+Lo Mid Freq (Master EQ Low Mid Frequency)
+Determines the frequency for the Master Low Mid band.
+Settings: 100Hz – 10kHz
+
+MONTAGE Reference Manual
+
+159
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Normal Part (AWM2)
+
+Drum Part
+
+Normal Part (FM-X)
+
+Common/Audio
+
+Common/Audio Edit
+
+Common/Audio
+
+General
+
+Audio In
+
+Mixing
+
+Routing
+
+Ins A
+
+Ins B
+
+EQ
+
+Motion Seq
+
+Common
+
+Lane
+
+Control
+
+Control Assign
+
+Control Number
+
+Effect
+
+Routing
+
+Variation
+
+Reverb
+
+Master FX
+
+Master EQ
+
+Mid Freq (Master EQ Mid Frequency)
+Determines the frequency for the Master Mid band.
+Settings: 100Hz – 10kHz
+
+Hi Mid Freq (Master EQ High Mid Frequency)
+Determines the frequency for the Master High Mid band.
+Settings: 100Hz – 10kHz
+
+High Freq (Master EQ High Frequency)
+Determines the frequency for the Master High band.
+Settings: 500Hz – 16kHz
+
+Low Q (Master EQ Low Q)
+Determines the EQ bandwidth of the Master Low band. This is available only when the Master EQ Low
+Shape (below) is set to “Peak.”
+Settings: 0.1 – 12.0
+
+Lo Mid Q (Master EQ Low Mid Q)
+Determines the EQ bandwidth of the Master Low Mid band.
+Settings: 0.1 – 12.0
+
+Mid Q (Master EQ Mid Q)
+Determines the EQ bandwidth of the Master Mid band.
+Settings: 0.1 – 12.0
+
+Hi Mid Q (Master EQ High Mid Q)
+Determines the EQ bandwidth of the Master High Mid band.
+Settings: 0.1 – 12.0
+
+High Q (Master EQ High Q)
+Determines the EQ bandwidth of the Master High band. This is available only when the Master EQ High
+Shape (below) is set to “Peak.”
+Settings: 0.1 – 12.0
+
+Low Shape (Master EQ Low Shape)
+High Shape (Master EQ High Shape)
+Determines whether the equalizer type used is Shelving or Peaking. The Peaking type attenuates/boosts
+the signal at the specified Frequency setting, whereas the Shelving type attenuates/boosts the signal at
+frequencies above or below the specified Frequency setting. This parameter is available only for the LOW
+and HIGH frequency bands.
+Settings: Shelf (Shelving Type), Peak (Peaking Type)
+
+MONTAGE Reference Manual
+
+160
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Category Search
+
+The Performances/Arpeggios/Waveforms are conveniently divided into specific Categories. The
+categories are divided based on the general instrument type or sound characteristics. The Category
+Search function gives you quick access to the sounds you want.
+
+Search
+
+Performance Category
+
+Arp Category
+
+Waveform
+
+Performance Category Search
+From the Performance Category Search display you can search and select the Performance.
+
+ In case of Performance Category Search
+
+Operation
+
+[PERFORMANCE]  [CATEGORY] (Performance Category Search)
+or
+Touch the Performance Name  Select [Search] from the displayed menu
+
+Name Search
+
+Performance list
+
+Bank (Performance Bank Select)
+Filters the Performance List by Bank.
+Settings: All, Preset, User, Library Name (when the Library file is read)
+
+Attribute (Performance Attribute)
+Filters the Performance List by Attribute (page 145). This is not available for Part Category Search.
+Settings: All, AWM2, FM, FM-X+AWM2, MC, SSS, Single, Multi
+
+Name Search (Performance Name Search)
+Searches the Performance by inputting a part of the Performance Name.
+Settings: See the Data List PDF document.
+
+Main (Performance Main Category)
+Settings: See the Data List PDF document.
+
+Sub (Performance Sub Category)
+Settings:  See the Data List PDF document.
+
+Audition (Audition Switch)
+Determines whether the Audition phrase is played back or not. This is not available when “Audition Lock”
+(page 171) is set to on in the Utility display.
+Settings: Off, On
+
+MONTAGE Reference Manual
+
+161
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Sort (Sort Order)
+Determines the Sort Order of the Performance List.
+Settings: Default, Name, Date
+
+Name: Sorts by name. When the lower arrow is displayed, the List is arranged in ascending order (A to Z). When the
+upper arrow is displayed, the List is arranged in descending order.
+Date: Sorts in order of storing. When the lower arrow is displayed, the List is arranged in descending order (newer to
+older). When the upper arrow is displayed, the List is arranged in ascending order.
+
+Search
+
+Performance Category
+
+Arp Category
+
+Waveform
+
+ In case of Part Category Search
+
+Operation
+
+[PERFORMANCE]  Part selection  [SHIFT]+[CATEGORY] (Part Category Search)
+(When the Part to which any sounds are assigned is selected) Touch the Part Name  Select [Search]
+from the displayed menu
+or
+(When the Part to which no sound is assigned is selected) Touch “+” icon
+
+Solo (Solo Switch)
+Determines the Solo function is active (On) or not (Off.) When this is set to on and any sound is assigned to
+the Part, only the Part will be sounded.
+Settings: Off, On
+
+Param. with Part (Parameter with Part)
+Determines whether or not to read and use the parameter values for the next Performance. When the set of
+parameters is set to off, the current setting values are continuously used even when the next Performance
+is selected.
+The “Zone” parameter is available only when “Zone Master” (page 171) is set to on in the Utility display.
+Settings: Arp/MS, Scene, Zone
+
+MONTAGE Reference Manual
+
+162
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Arpeggio Category Search (Arp Category Search)
+From the Arpeggio Category Search display you can search and select Arpeggio Types.
+
+Operation
+
+Arpeggio related display  Part selection  [CATEGORY]
+
+Search
+
+Performance Category
+
+Arp Category
+
+Waveform
+
+Name Search
+
+Arpeggio Type list
+
+Bank (Arpeggio Bank Select)
+Filters the Arpeggio List by Bank.
+Settings: All, Preset, User, Library Name (when the Library file is read)
+
+Name Search (Arpeggio Name Search)
+Searches for an Arpeggio by inputting a part of the Arpeggio Name.
+Settings: See the Data List PDF document.
+
+Main (Arpeggio Category)
+Settings: See the Arpeggio Category List (page 11).
+
+Sub (Arpeggio Sub Category)
+Settings: See the Arpeggio Sub Category List (page 11).
+
+Sort (Sort Order)
+Determines the Sort Order of the Arpeggio Type List.
+Settings: Default, Name, Date
+
+Name: Sorts by name. When the lower arrow is displayed, the List is arranged in ascending order (A to Z). When the
+upper arrow is displayed, the List is arranged in descending order.
+Date: Sorts in order of loading. When the lower arrow is displayed, the List is arranged in descending order (newer
+to older). When the upper arrow is displayed, the List is arranged in ascending order.
+
+MONTAGE Reference Manual
+
+163
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Waveform Category Search (Waveform Search)
+From the Waveform Category Search display you can search and select the Waveforms.
+
+Operation Waveform related display  Part selection  Waveform selection  [CATEGORY]
+
+Search
+
+Performance Category
+
+Arp Category
+
+Waveform
+
+Name Search
+
+Waveform list
+
+Bank (Waveform Bank Select)
+Filters the Waveform List by Bank.
+Settings: All, Preset, User, Library Name (when the Library file is read)
+
+Name Search (Waveform Name Search)
+Searches for a Waveform by inputting a part of the Waveform Name.
+Settings: See the Data List PDF document.
+
+Main (Waveform Category)
+Settings: See the Data List PDF document.
+
+Sub (Waveform Sub Category)
+Settings: See the Data List PDF document.
+
+Sort (Sort Order)
+Determines the Sort Order of the Waveform List.
+Settings: Default, Name, Date
+
+Name: Sorts by name. When the lower arrow is displayed, the List is arranged in ascending order (A to Z). When the
+upper arrow is displayed, the List is arranged in descending order.
+Date: Sorts in order of storing. When the lower arrow is displayed, the List is arranged in descending order (newer to
+older). When the upper arrow is displayed, the List is arranged in ascending order.
+
+MONTAGE Reference Manual
+
+164
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Utility
+
+The Utility display has four tabs; the Setting tab, the Contents tab, the Tempo Settings tab, and the Effect
+Switch tab. You can make various settings for the entire system.
+
+Settings
+
+Sound
+
+From the Sound display you can make overall settings for the sounds output from the instrument.
+
+Operation
+
+[UTILITY]  [Settings]  [Sound]
+
+Uitlity
+
+Settings
+
+Sound
+
+Quick Setup
+
+Audio I/O
+
+MIDI I/O
+
+Advanced
+
+System
+
+## Contents
+- Load
+- Store / Save
+- Data Utility
+- Tempo Settings
+- Effect Switch
+- Tone Generator Volume
+- Determines the overall volume of the instrument.
+- Settings: 0 – 127
+- Tone Generator Note Shift
+- Determines the amount (in semitones) by which the pitch of all notes is shifted.
+- Settings: -24semi – +24semi
+- Tone Generator Tune
+- Determines the fine tuning of the instrument’s overall sound (in 0.1 cent steps).
+- Settings: -102.4 – +102.3
+- Sustain Pedal (Footswitch Sustain Pedal Select)
+- Selects the Footswitch type connected to the FOOT SWITCH [SUSTAIN] jack on the rear panel.
+- (cid:129) When the FC3 or FC3A is used:
+- When you connect an optional FC3 or FC3A (equipped with the half-damper feature) for producing
+- the special “half-damper” effect (as on a real acoustic piano), set this parameter to “FC3A (Half on).”
+- If you don’t need the half-damper feature or want to disable it while still using an FC3 or FC3A, set
+- this parameter to “FC3A (Half off).”
+- (cid:129) When the FC4, FC4A, or FC5 is used:
+- Select “FC4A/FC5.” The FC4, FC4A, and FC5 are not equipped with the half-damper feature.
+- Settings: FC3A (Half On), FC3A (Half Off), FC4A/FC5
+- NOTE Note that this setting is not necessary when controlling the half-damper feature via Control Change messages
+- from an external MIDI device to the instrument.
+- MONTAGE Reference Manual (p. 165)
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Keyboard Octave Shift
+Determines the amount in octaves by which the range of the keyboard is shifted up or down. This
+parameter is linked with the OCTAVE [-]/[+] buttons on the panel.
+Settings: -3 – +3
+
+Uitlity
+
+Settings
+
+Sound
+
+Quick Setup
+
+Audio I/O
+
+MIDI I/O
+
+Advanced
+
+System
+
+## Contents
+- Load
+- Store / Save
+- Data Utility
+- Tempo Settings
+- Effect Switch
+- Keyboard Transpose
+- This parameter is used to transpose the current zone in units of one semitone.
+- Settings: -11semi – +11semi
+- NOTE If you transpose beyond the note range limits (C -2 – G8), notes in the adjacent octaves will be used.
+- Keyboard Velocity Curve
+- These five curves determine how the actual velocity will be generated and transmitted according to the
+- velocity (strength) with which you play notes on the keyboard. The graph shown in the display indicates
+- the velocity response curve. (The horizontal line represents the received velocity values (strength of your
+- playing), while the vertical line represents the actual velocity values transmitted to the internal/external
+- tone generators.)
+- Settings: Normal, Soft, Hard, Wide, Fixed
+- Normal: This linear “curve” produces one-to-one correspondence between the strength of your keyboard playing
+- (velocity) and the actual sound change.
+- Soft: This curve provides increased response, especially for lower velocities.
+- Hard: This curve provides increased response, especially for higher velocities.
+- Wide: This curve accentuates your playing strength by producing lower velocities in response to softer playing and
+- louder velocities in response to harder playing. As such, you can use this setting to expand your dynamic range.
+- Fixed: This setting produces the same amount of sound change (set in Keyboard Fixed Velocity below), no matter
+- what your playing strength. The velocity of the notes you play are fixed at the value set here.
+- Keyboard Fixed Velocity
+- The Fixed curve can be used to send a fixed velocity to the tone generator regardless of how hard or soft
+- you play the keyboard. This parameter is only available if you select the “Fixed” Keyboard Velocity Curve
+- above.
+- Settings: 1 – 127
+- Quick Setup
+- Using Quick Setup can instantly call up appropriate sequencer-related panel settings by selecting
+- convenient preset setups, allowing you to simultaneously and instantly set a variety of important
+- sequencer-related parameters.
+- Operation
+- [UTILITY]  [Settings]  [Quick Setup], [SHIFT] + [UTILITY], or
+- Touch the QUICK SETUP icon
+- QUICK SETUP icon
+- MONTAGE Reference Manual (p. 166)
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Audio Signal Flow
+Indicates the Audio signal connections. The connections will change depending on the status of the [USB
+TO HOST] terminal and the general settings of the instrument.
+
+Uitlity
+
+Settings
+
+Sound
+
+Quick Setup
+
+Audio I/O
+
+MIDI I/O
+
+Advanced
+
+System
+
+## Contents
+- Load
+- Store / Save
+- Data Utility
+- Tempo Settings
+- Effect Switch
+- MIDI Signal Flow
+- Indicates the MIDI signal connections. The connections will change depending on the general settings of
+- the instrument.
+- Quick Setup
+- Determines the Quick Setups.
+- Settings: Standalone, 1 – 3
+- The parameters for Quick Setups are as follows.
+- Audio Settings
+- MIDI Settings
+- A/D Input Gain
+- Main L&R Gain
+- Assign L&R Gain
+- USB Main L&R Gain
+- USB 1-30 Gain
+- Direct Monitor Switch
+- MIDI In/Out
+- Local Control
+- Arp MIDI Out
+- MIDI Sync
+- Clock Out
+- Receive/Transmit Sequencer Control
+- Controller Reset
+- FS CC Number
+- Part Output Settings
+- Part 1-16 Output Select
+- A/D In Output Select
+- Digital In Output Select
+- For details about parameters related to Audio Settings, see “Audio I/O” (page 168). For details about
+- parameters related to MIDI Settings, see “MIDI I/O” (page 169).
+- The default settings for Quick Setups are as follows.
+-  Standalone
+- Use this setting when this instrument is to be used alone or as the master clock source for other
+- equipment.
+- Local Control
+- Direct Monitor
+- Output Select
+- Arp MIDI Out
+- On
+- On
+- Main L&R
+- Off
+-  MIDI Rec on DAW
+- Use this setting when recording this instrument’s performance (not including Arpeggio data) to the
+- DAW software.
+- Local Control
+- Direct Monitor
+- Output Select
+- Arp MIDI Out
+- Off
+- On
+- Main L&R
+- Off
+-  Arp Rec on DAW
+- Use this setting when recording this instrument’s performance including Arpeggio data to the DAW
+- software.
+- Local Control
+- Direct Monitor
+- Output Select
+- Arp MIDI Out
+- Off
+- On
+- Main L&R
+- On
+- MONTAGE Reference Manual (p. 167)
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+ Audio Rec on DAW
+Use this setting when recording the signals from the tone generator and the A/D INPUT [L/MONO]/[R]
+jacks separately to DAW software, and playing the signals from the OUTPUT [L/MONO]/[R] jacks
+directly.
+
+Uitlity
+
+Settings
+
+Sound
+
+Local Control
+
+Direct Monitor
+
+Output Select
+
+Arp MIDI Out
+
+On
+
+Off
+
+Depends on the Part
+
+Off
+
+Store Current Settings
+Stores the edited settings as 1 – 3 of “QuickSetup.”
+
+Audio I/O
+
+From the Audio I/O display you can set the parameters related to Audio Input and Output.
+
+Operation
+
+[UTILITY]  [Settings]  [Audio I/O]
+
+Quick Setup
+
+Audio I/O
+
+MIDI I/O
+
+Advanced
+
+System
+
+## Contents
+- Load
+- Store / Save
+- Data Utility
+- Tempo Settings
+- Effect Switch
+- A/D Input (A/D Input Gain)
+- When using the A/D INPUT [L/MONO]/[R] jacks, this determines the input source, microphone (Mic) or
+- Line.
+- Settings: Mic, Line
+- Mic: Intended for low output equipment, such as a microphone.
+- Line: Intended for high output equipment, such as a keyboard, synthesizer, or CD player.
+- NOTE A guitar or bass having active pickups can be directly connected. However, when using passive pickups,
+- connect the instrument via an effect device.
+- Audio I/O Mode
+- Determines the Output mode of the Audio signal input from the [USB TO HOST] terminal. To activate this
+- setting, the instrument needs to be rebooted.
+- Settings: 16 Stereo/44.1kHz, 4 Stereo/44.1-192kHz
+- 16 Stereo/44.1kHz: Audio data sending capability for the instrument is a maximum 32 channels (16 stereo
+- channels) at a sampling frequency of 44.1 kHz.
+- 4 Stereo/44.1-192kHz: Audio data sending capability for the instrument is a maximum 8 channels (4 stereo
+- channels) for a sampling frequency of 44.1 kHz to 192 kHz.
+- NOTE When “4 Stereo/44.1-192kHz” is selected, available frequencies are only 44.1 kHz, 48 kHz, 96 kHz, and
+- 192 kHz.
+- Main L&R (Main L&R Output Gain)
+- Determines the output gain of the OUTPUT (BALANCED) [L/MONO]/[R] jacks.
+- Settings: -6dB, +0dB, +6dB, +12dB
+- MONTAGE Reference Manual (p. 168)
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Assign L&R (Assign L&R Output Gain)
+Determines the output gain of the ASSIGNABLE OUTPUT (BALANCED) [L]/[R] jacks.
+Settings: -6dB, +0dB, +6dB, +12dB
+
+USB Main (USB Main L&R Output Gain)
+Determines the output gain of the Main L&R channel of the [USB TO HOST] terminal.
+Settings: -6dB, +0dB, +6dB, +12dB
+
+USB 1-30 (USB 1 – 30 Output Gain)
+Determines the output gain of 1 – 30 channels of the [USB TO HOST] terminal.
+Settings: -6dB, +0dB, +6dB, +12dB
+
+Direct Monitor (Direct Monitor Switch)
+Determines whether or not the audio signal which is output to the external device via the “Main L&R (USB
+Out)” or “USB 1-30” channels also sounds from this instrument (Direct Monitoring). When this is set to “on,”
+the audio signal which is output via the “Main L&R (USB Out)” or “USB 1-30” channels is also output to the
+OUTPUT (BALANCED) [L/MONO]/[R] jacks and [PHONES] jack. When the external device is not
+connected via USB cable, the Direct Monitor Switch is automatically turned on.
+Settings: Off, On
+
+Uitlity
+
+Settings
+
+Sound
+
+Quick Setup
+
+Audio I/O
+
+MIDI I/O
+
+Advanced
+
+System
+
+## Contents
+- Load
+- Store / Save
+- Data Utility
+- Tempo Settings
+- Effect Switch
+- MIDI I/O
+- From the MIDI I/O display you can set parameters related to MIDI Input and Output.
+- Operation
+- [UTILITY]  [Settings]  [MIDI I/O]
+- MIDI IN/OUT
+- Determines which physical output/input terminal(s) will be used for transmitting/receiving MIDI data.
+- Settings: MIDI, USB
+- NOTE The two types of terminals above cannot be used at the same time. Only one of them can be used to transmit/
+- receive MIDI data.
+- Local Control
+- This determines whether or not the tone generator of the instrument responds to your keyboard playing.
+- Normally, this should be set to “on” — since you’ll want to hear the sound of the instrument as you play it.
+- Even if this is set to “off,” the data will be transmitted via MIDI. Also, the internal tone generator block will
+- respond to messages received via MIDI.
+- Settings: Off, On
+- MONTAGE Reference Manual (p. 169)
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Uitlity
+
+Settings
+
+Sound
+
+Quick Setup
+
+Audio I/O
+
+MIDI I/O
+
+Advanced
+
+System
+
+## Contents
+- Load
+- Store / Save
+- Data Utility
+- Tempo Settings
+- Effect Switch
+- Arp MIDI Out (Arpeggio MIDI Out)
+- Determines whether to output MIDI data of Arpeggio playback or not.
+- Settings: Off, On
+- MIDI Sync
+- You can set various parameters related to MIDI clock and synchronization here.
+- Determines whether Arpeggio/Motion Sequencer/Song playback will be synchronized to the instrument’s
+- internal clock, an external MIDI clock, or the Audio signal input from the A/D INPUT [L/MONO]/[R] jacks.
+- Settings: Internal, MIDI, A/D In
+- Internal: Synchronization to internal clock. You can use this setting when this tone generator is to be used alone or
+- as the master clock source for other equipment.
+- MIDI: Synchronization to a MIDI clock received from an external MIDI instrument via MIDI. Use this setting when the
+- external sequencer is to be used as master.
+- A/D In: Synchronization to the tempo of the Audio signal received via the A/D INPUT [L/MONO]/[R] jacks.
+- Clock Out
+- Determines whether MIDI clock messages will be transmitted via MIDI or not.
+- Settings: Off, On
+- Receive (Receive Sequencer Control)
+- Determines whether the Sequencer Control signals – start and stop of Song – will be received via MIDI or
+- not.
+- Settings: Off, On
+- Transmit (Transmit Sequencer Control)
+- Determines whether the Sequencer Control signals – start and stop of Song – will be transmitted to MIDI or
+- not.
+- Settings: Off, On
+- Controller Reset
+- Determines the status of the controllers (Modulation Wheel, Aftertouch, Foot Controller, Breath Controller,
+- Knobs, etc.) when switching between Performances. When this is set to “Hold,” the controllers are kept at
+- the current setting. When this is set to “Reset,” the controllers are reset to the default states (below).
+- Settings: Hold, Reset
+- If you select “reset,” the controllers will be reset to the following states/positions:
+- Pitch Bend
+- Modulation Wheel
+- Aftertouch
+- Foot Controller
+- Footswitch
+- Ribbon Controller
+- Breath Controller
+- Expression
+- Assignable Switches 1 and 2
+- Motion Sequencer Hold
+- Each Lane of Motion Sequencer
+- Center
+- Minimum
+- Minimum
+- Maximum
+- Off
+- Center
+- Maximum
+- Maximum
+- Off
+- Off
+- 0 (minimum) when Lane Motion Sequencer
+- Polarity is set to “Unipolar”
+- 64 (center) when Lane Motion Sequencer
+- Polarity is set to “Bipolar”
+- FS Assign (Footswitch Assign Control Number)
+- Determines the Control Change number generated by using the Footswitch connected to the FOOT
+- SWITCH [ASSIGNABLE] jack. Even when the instrument receives MIDI message with the same Control
+- Change Number specified here from the external equipment, the instrument assumes that the message is
+- generated by using the Footswitch.
+- Settings: Off, 1 – 95, Arp SW, MS SW, Play/Stop, Live Set+, Live Set-, Oct Reset
+- MONTAGE Reference Manual (p. 170)
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Advanced
+
+From the Advanced display you can set the advanced parameters.
+
+Operation
+
+[UTILITY]  [Settings]  [Advanced]
+
+Uitlity
+
+Settings
+
+Sound
+
+Quick Setup
+
+Audio I/O
+
+MIDI I/O
+
+Advanced
+
+System
+
+## Contents
+- Load
+- Store / Save
+- Data Utility
+- Tempo Settings
+- Effect Switch
+- Zone Master (Zone Master Switch)
+- Determines whether the Zone function is used (on) or not (off).
+- Settings: Off, On
+- Audition Lock
+- Determines whether the Audition Lock is active or not. When this is set to On, the Audition function is not
+- available.
+- Settings: Off, On
+- Device Number
+- Determines the MIDI Device Number. This number must match the Device Number of the external MIDI
+- device when transmitting/receiving bulk data, parameter changes or other System Exclusive messages.
+- Settings: 1 – 16, All, Off
+- Bank Select
+- This switch enables or disables Bank Select messages, both in transmission and reception. When this is
+- set to “on,” this synthesizer responds to incoming Bank Select messages.
+- Settings: Off, On
+- Pgm Change (Program Change)
+- This switch enables or disables Program Change messages, both in transmission and reception. When
+- this is set to “on,” this synthesizer responds to incoming Program Change messages.
+- Settings: Off, On
+- Receive Bulk
+- Determines whether or not Bulk Dump data can be received.
+- Settings: Protect (not received), On (received)
+- Bulk Interval
+- Determines the interval time of the Bulk Dump transmission when a Bulk Dump Request is received.
+- Settings: 0ms – 900ms
+- MONTAGE Reference Manual (p. 171)
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Event Chase (Song Event Chase)
+Event Chase allows you to specify which non-note data types are properly recognized during fast-forward
+and rewind operations. Setting this to a specific event ensures the playback integrity of the event, even
+when fast forwarding or rewinding.
+Settings: Off, PC (Program Change), PC+PB+Ctrl (Program Change+Pitch Bend+Control Change)
+
+Init On Boot (Initialize User Data on Boot-up)
+Determines whether the User Data is initialized (On) or not (Off) when the power of the instrument is turned
+on.
+Settings: Off, On
+
+Initialize Advanced Settings
+Initializes the system settings edited in the Advanced display.
+
+NOTICE
+When the Initialize operation is executed, the target data and system settings you edited will be erased. Make
+sure you are not overwriting any important data. Be sure to save all important data to your USB flash memory
+device before executing this procedure.
+
+Uitlity
+
+Settings
+
+Sound
+
+Quick Setup
+
+Audio I/O
+
+MIDI I/O
+
+Advanced
+
+System
+
+## Contents
+- Load
+- Store / Save
+- Data Utility
+- Tempo Settings
+- Effect Switch
+- System
+- From the System display you can make global system settings for the instrument.
+- Operation
+- [UTILITY]  [Settings]  [System]
+- Power on Mode
+- Determines the start-up display (which is automatically called up when power is turned on).
+- Settings: Perform, Live Set
+- Auto Power Off
+- To prevent unnecessary power consumption, this instrument features an Auto Power Off function that
+- automatically turns the power off if the instrument is not operated for a specified period of time. This
+- parameter determines the amount of time that elapses before the power is automatically turned off.
+- Settings: Off, 5, 10, 15, 30, 60, 120min
+- Animation (Animation Switch)
+- Determines whether the animation of screen transition is turned on or off.
+- Settings: Off, On
+- MONTAGE Reference Manual (p. 172)
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Blur (Blur Switch)
+When any display is selected, the display previously selected is blurred. This parameter determines
+whether the Blur function is turned on or off.
+Settings: Off, On
+
+Uitlity
+
+Settings
+
+Sound
+
+Quick Setup
+
+Audio I/O
+
+MIDI I/O
+
+Advanced
+
+System
+
+## Contents
+- Load
+- Store / Save
+- Data Utility
+- Tempo Settings
+- Effect Switch
+- Beep (Beep Switch)
+- Determines whether the beep sound (that confirms operations, menu/parameter selection, etc.) is turned
+- on or off.
+- Settings: Off, On
+- Knob Flash (Super Knob LED Switch)
+- Determines whether the flashing function of the Super Knob is turned on or off.
+- Settings: Off, On
+- KnobBrightness (Knob Brightness)
+- Controls the brightness of the lighting of the Super Knob.
+- Settings: 0 – 128
+- Half Glow (LED Half Glow Brightness)
+- Controls the dimming of the button lamps.
+- Settings: Off, 1/4, 1/2
+- Calibrate Touch Panel
+- Calls up the Calibration display for the Touch Panel. Calibration of the touch panel may be necessary if the
+- touch panel does not respond correctly.
+- Initialize All Settings
+- Initializes all system settings you created on the Utility display.
+- Initialize User Data
+- Initializes User data (Performance, Motion Sequence, and Live Set) in the specified area of the User
+- memory and system settings you created on the Utility display.
+- Initialize All Data
+- Initializes all User data in the User memory and all system settings you created on the Utility display.
+- NOTICE
+- When the Initialize operation is executed, all target data and system settings you created will be erased. Make
+- sure you are not overwriting any important data. Be sure to save all important data to your USB flash memory
+- device before executing this procedure.
+- MONTAGE Reference Manual (p. 173)
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+## Contents
+- Load
+- From the Load display you can load files and data.
+- Operation
+- [UTILITY]  [Contents]  [Load]
+- Parent Folder Name  Current Folder Name
+- Free Storage
+- Uitlity
+- Settings
+- Sound
+- Quick Setup
+- Audio I/O
+- MIDI I/O
+- Advanced
+- System
+## Contents
+- Load
+- Store / Save
+- Data Utility
+- Tempo Settings
+- Effect Switch
+- Folder/File select
+- Content Type
+- Among the various types of data saved in a single file on a USB flash memory or this instrument, you can
+- load all of them to this synthesizer at once or only a specific, desired type of data. This parameter
+- determines which specific type of data will be loaded from a single file. The editable parameters differ
+- depending on how you arrive at this display.
+- Settings: The file types which can be loaded as follows.
+- File Types
+- Device Type Extension Description
+- User File
+- File
+- .X7U
+- Library File
+- File
+- .X7L
+- Files of the “User File” type saved to USB flash memory
+- can be loaded and restored to the dedicated area in the
+- User Memory of the instrument (page 22).
+- User File Type data is as follows.
+- Performance
+- Arpeggio
+- Motion Sequence
+- Curve
+- Live Set (all User Banks; User 1–8)
+- Micro Tuning
+- Waveform
+- Utility settings
+- Quick Setup
+- Files of the “Library File” type saved to USB flash memory
+- can be loaded and restored to the dedicated area in the
+- User Memory of the instrument (page 22).
+- Library File Type data is as follows.
+- Performance
+- Arpeggio
+- Motion Sequence
+- Curve
+- Live Set (only one Bank; contents of User 1 Bank when
+- saved)
+- Micro Tuning
+- Waveform
+- MONTAGE Reference Manual (p. 174)
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+File Types
+
+Device Type Extension Description
+
+Song&Perf
+
+Internal data
+
+Song
+
+Internal data
+
+.mid File
+
+.wav File
+
+Audio File*
+
+File
+
+File
+
+File
+
+.MID
+
+.WAV
+
+.WAV
+.AIF
+
+Motion Seq*
+
+Internal data
+
+A specified Song in a file that is saved to the dedicated
+area in the User Memory as a “Song” type can be
+individually selected and loaded (played back) to the
+instrument. Both of MIDI sequence and Performance data
+can be loaded.
+
+A specified Song in a file that is saved to the dedicated
+area in the User Memory as a “Song” type can be
+individually selected and loaded (played back) to the
+instrument. Only MIDI sequence data can be loaded.
+
+Standard MIDI File (SMF in format 0, 1) data that is saved
+to USB flash memory can be loaded and played back.
+
+Audio data (Wave File) that is saved to USB flash memory
+can be loaded and played back.
+
+Audio data (Wave File and AIFF File) that is saved to USB
+flash memory can be loaded and as “Waveform.”
+Example: [PERFORMANCE]  [EDIT]  Part selection 
+Element selection  [Osc/Tune]  “New Waveform”
+
+A specified Sequence data in a file that is saved to the
+dedicated area in the User Memory as an “Motion Seq”
+type can be individually selected and loaded to the
+instrument.
+Example: [PERFORMANCE]  [EDIT]  Part selection 
+ELEMENT/OPERATOR [COMMON]  [Motion Seq] 
+[Lane]  “Load Sequence”
+
+Uitlity
+
+Settings
+
+Sound
+
+Quick Setup
+
+Audio I/O
+
+MIDI I/O
+
+Advanced
+
+System
+
+## Contents
+- Load
+- Store / Save
+- Data Utility
+- Tempo Settings
+- Effect Switch
+- NOTE Files with an asterisk (*) are not displayed when you call up this display from the Utility display.
+- Parent Folder Name
+- Current Folder Name
+- Indicates the Parent Folder name and the current selected Folder Name. Once you touch the Parent Folder
+- Name, the Folder becomes the currently selected folder.
+- Free Storage
+- Indicates the free space and the full space of the selected storage area.
+- This parameter differs depending on the Content Type.
+- Folder/File Select
+- Indicates Folders/Files in the selected Folder.
+- Sort (Sort Order)
+- Determines the Sort Order of the Files in “File Select.”
+- Settings: Name, Size, Date, Number
+- Name: Sorts by name. When the lower arrow is displayed, the List is arranged in ascending order (A to Z). When the
+- upper arrow is displayed, the List is arranged in descending order.
+- Size: Sorts in order of data size. When the lower arrow is displayed, the List is arranged in ascending order (small to
+- big.) When the upper arrow is displayed, the List is arranged in opposite order. This is not available for “Motion Seq,”
+- “Song,” and “Song&Perf” type Files.
+- Date: Sorts in order of storing. When the lower arrow is displayed, the List is arranged in descending order (newer to
+- older). When the upper arrow is displayed, the List is arranged in ascending order. This is available only for “Motion
+- Seq,” “Song,” and “Song&Perf” type Files.
+- Number: Sorts in order of Content Number. This is available only for “Song” and “Song&Perf” type Files.
+- Page (Page Select)
+- When Files in “File Select” are displayed in multiple pages, you will need to use this button to scroll through
+- the pages.
+- Job (Job Switch)
+- Determines whether the Job function is active (On) or not (Off.) When this parameter is turned on, touching
+- the File/Folder/Content in “File Select” calls up the menu to select “Rename” or “Delete.”
+- Touching the currently connected USB device calls up the menu to select “Format.”
+- Settings: Off, On
+- MONTAGE Reference Manual (p. 175)
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Compatible with the MOTIF XF6/MOTIF XF7/MOTIF XF8 data
+The following data can be loaded to MONTAGE6/MONTAGE7/MONTAGE8 among all MOTIF XF6/MOTIF
+XF7/MOTIF XF8 data. Please note that the data is loaded as “User File” or “Library File.”
+Also you can switch the Content Type between User file and Library file.
+
+Uitlity
+
+Settings
+
+Sound
+
+File Type on MOTIF XF
+
+Extension on MOTIF XF
+
+## Contents
+- All
+- AllVoice (All Voice)
+- AllArp (All Arpeggio)
+- AllWaveform (All Waveform)
+- .X3A
+- .X3V
+- .X3G
+- .X3W
+- User Voice, User Arpeggio, User Waveform
+- User Voice, User Waveform
+- User Arpeggio
+- User Waveform
+- Store/Save
+- From the Store/Save display you can store Files and data.
+- Operation
+- [UTILITY]  [Contents]  [Store / Save] or
+- Press the [STORE] button
+- Parent Folder Name  Current Folder Name
+- Free Storage
+- Quick Setup
+- Audio I/O
+- MIDI I/O
+- Advanced
+- System
+## Contents
+- Load
+- Store / Save
+- Data Utility
+- Tempo Settings
+- Effect Switch
+- File select
+- Content Type
+- You can store all data or the specified data to the instrument or USB flash memory. This parameter
+- determines which specific data will be stored/saved.
+- The editable setting value differs depending on how you arrive at this display.
+- Settings: The Content Types which can be stored/saved are as follows.
+- File Types
+- Device Type Extension
+- Description
+- Performance
+- Internal data
+- Data can be stored to the dedicated area in the User
+- Memory as a “Performance” (page 22).
+- MONTAGE Reference Manual (p. 176)
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Uitlity
+
+Settings
+
+Sound
+
+Quick Setup
+
+Audio I/O
+
+MIDI I/O
+
+Advanced
+
+System
+
+## Contents
+- Load
+- Store / Save
+- Data Utility
+- Tempo Settings
+- Effect Switch
+- File Types
+- Device Type Extension
+- Description
+- User File
+- File
+- .X7U
+- Library File
+- File
+- .X7L
+- .mid File
+- File
+- .MID
+- Motion Seq*
+- Internal data
+- Data that is stored to the dedicated area in the User
+- Memory can be saved to USB flash memory.
+- Data saved as “User File” is as follows.
+- Performance
+- Arpeggio
+- Motion Sequence
+- Curve
+- Live Set (all User Banks; User 1–8)
+- Micro Tuning
+- Waveform
+- Utility Settings
+- Quick Setup
+- Data that is stored to the dedicated area in the User
+- Memory can be saved to USB flash memory.
+- Data saved as “Library File” is as follows.
+- Performance
+- Arpeggio
+- Motion Sequence
+- Curve
+- Live Set (User1 Bank only)
+- Micro Tuning
+- Waveform
+- MIDI data that is stored to the dedicated area in the
+- User Memory (page 22) can be saved as a Standard
+- MIDI File (SMF only in format 0) to USB flash memory.
+- Data can be stored as “Motion Seq” to the dedicated
+- area in the User Memory.
+- Example: [PERFORMANCE]  [EDIT]  Part selection
+-  ELEMENT/OPERATOR [COMMON]  [Motion Seq]
+-  [Lane]  “Edit Sequence” to call up “Motion
+- Sequence Edit”  “Store Sequence”
+- NOTE Files with an asterisk (*) are not displayed when you call up this display from the Utility display.
+- Parent Folder Name
+- Current Folder Name
+- Indicates the parent folder name and the current selected folder name. Once you touch the Parent Folder
+- Name, the Folder becomes the currently selected folder.
+- Free Storage
+- Indicates the free space and the full space of the selected storage area. This parameter differs depending
+- on the Content Type.
+- Folder/File Select
+- Indicates folders/files in the selected folder.
+- Sort (Sort Order)
+- Determines the sort order of the files in “File Select.”
+- Settings: Name, Size, Date
+- Name: Sorts by name. When the lower arrow is displayed, the List is arranged in ascending order (A to Z). When the
+- upper arrow is displayed, the list is arranged in descending order.
+- Size: Sorts in order of data size. When the lower arrow is displayed, the List is arranged in ascending order (small to
+- big.) When the upper arrow is displayed, the List is arranged in opposite order. This is not available for
+- “Performance” and “Motion Seq” type files.
+- Date: Sorts in order of storing. When the lower arrow is displayed, the List is arranged in descending order (newer to
+- older). When the upper arrow is displayed, the List is arranged in ascending order. This is available only for
+- “Performance” and “Motion Seq” type files.
+- Page (Page Select)
+- When files in “File Select” are displayed in multiple pages, you will need to use this button to scroll through
+- the pages.
+- MONTAGE Reference Manual (p. 177)
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Job (Job Switch)
+Determines whether the Job function is active (On) or not (Off.) When this parameter is turned on, touching
+the File/Folder/Content in “File Select” calls up the menu to select “Rename” or “Delete.”
+Touching the currently connected USB device calls up the menu to select “Format.”
+Also you can create a new folder when storing a file.
+Settings: Off, On
+
+Data Utility
+
+From the Data Utility display you can control Files and data in the User Memory.
+
+Operation
+
+[UTILITY]  [Contents]  [Data Utility]
+
+ Folder List
+
+Current Folder Name
+
+Uitlity
+
+Settings
+
+Sound
+
+Quick Setup
+
+Audio I/O
+
+MIDI I/O
+
+Advanced
+
+System
+
+## Contents
+- Load
+- Store / Save
+- Data Utility
+- Tempo Settings
+- Effect Switch
+- Current Folder Name
+- Indicates the Current Folder Name.
+- Folder select
+- Job (Job Switch)
+- Determines whether the Job function is active (On) or not (Off). This parameter is available only for the
+- “Waveform” folder on this display. When the parameter is turned on, touching “Waveform” folder calls
+- up the menu to select “Optimize.”
+- Settings: Off, On
+- Folder Select
+- Indicates the Content Types in the User Memory as folders. Touching the Folder opens it.
+- Arp (Arpeggio)
+- Library
+- Live Set
+- Motion Seq
+- Performance
+- Song
+- Waveform
+- Page (Page Select)
+- When folders in “Folder Select” are displayed in multiple pages, you will need to use this button to
+- scroll through the pages.
+- MONTAGE Reference Manual (p. 178)
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+ When the selected Folder is opened
+
+Parent Folder Name Current Folder Name
+
+Free Storage
+
+Uitlity
+
+Settings
+
+Sound
+
+Quick Setup
+
+Audio I/O
+
+MIDI I/O
+
+Advanced
+
+System
+
+## Contents
+- Load
+- Store / Save
+- Data Utility
+- Tempo Settings
+- Effect Switch
+- File Select
+- Parent Folder Name
+- Current Folder Name
+- Indicates the parent folder name and the current selected folder name. Touching the parent folder name
+- returns to the folder list view.
+- Free Storage
+- Indicates the free space and the full space of the selected storage area. This parameter differs depending
+- on the Content Type.
+- File Select
+- Indicates Files in the selected Folder. The Job function is always available in this display. Touching the File/
+- Content in “File Select” calls up the menu to select “Rename” or “Delete.” (“Rename” is not available for
+- the Files in “Library” type Folder.)
+- Sort (Sort Order)
+- Determines the Sort Order of the Files in “File Select.”
+- Settings: Name, Size, Date, Number
+- Name: Sorts by name. When the lower arrow is displayed, the List is arranged in ascending order (A to Z). When the
+- upper arrow is displayed, the List is arranged in descending order.
+- Size: Sorts in order of data size. When the lower arrow is displayed, the List is arranged in ascending order (small to
+- large). When the upper arrow is displayed, the List is arranged in opposite order. This is available only for “Library”
+- type Contents.
+- Date: Sorts in order of storing. When the lower arrow is displayed, the List is arranged in descending order (newer to
+- older). When the upper arrow is displayed, the List is arranged in ascending order. This is not available for “Arp” and
+- “Library” type Contents.
+- Number: Sorts in order of Content Number. This is available only for “Arp,” “Song,” and “Waveform” type Contents.
+- Page (Page Select)
+- When Files in “File Select” are displayed in multiple pages, you will need to use this button to scroll through
+- the pages.
+- MONTAGE Reference Manual (p. 179)
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Tempo Settings
+
+From the Tempo Settings display you can set parameters related to Tempo and Synchronization.
+
+Operation
+
+[UTILITY]  [Tempo Settings], [SHIFT] + [ENTER], or
+Touch the TEMPO SETTING icon
+
+TEMPO SETTING icon
+
+Uitlity
+
+Settings
+
+Sound
+
+Quick Setup
+
+Audio I/O
+
+MIDI I/O
+
+Advanced
+
+System
+
+## Contents
+- Load
+- Store / Save
+- Data Utility
+- Tempo Settings
+- Effect Switch
+- Tempo
+- Determines the Performance tempo. This parameter is not available when the “MIDI Sync” is set to “MIDI”
+- or “A/D In” and the instrument is synchronized to an external device (“EX. Tempo” is displayed instead of
+- the setting value.)
+- Settings: 5 – 300
+- Knob Flash (Super Knob LED Switch)
+- Determines whether the flashing of the Super Knob is turned on or off.
+- Settings: Off, On
+- Tap Tempo
+- Allows you to tap the desired tempo by touching this parameter or by moving the cursor to this parameter
+- and pressing (tapping) the [ENTER] button on the panel.
+- This parameter is not displayed when the “MIDI Sync” is set to “MIDI” and the instrument is synchronized
+- to an external device.
+- NOTE When “MIDI Sync” is set to “A/D In,” the tempo search starts by touching this parameter.
+- MIDI Sync
+- Determines parameters related to MIDI clock and synchronization.
+- Determines whether Arpeggio/Motion Sequencer/Song playback will be synchronized to the instrument’s
+- internal clock, an external MIDI clock, or the Audio signal input from the A/D INPUT [L/MONO]/[R] jacks.
+- Settings: Internal, MIDI, A/D In
+- Internal: Synchronization to internal clock. You can use this setting when this tone generator is to be used alone or
+- as the master clock source for other equipment.
+- MIDI: Synchronization to a MIDI clock received from an external MIDI instrument via MIDI. Use this setting when the
+- external sequencer is to be used as master.
+- A/D In: Synchronization to the tempo of the Audio signal received via the A/D INPUT [L/MONO]/[R] jacks.
+- Clock Out
+- Determines whether MIDI clock messages will be transmitted or not.
+- Settings: Off, On
+- MONTAGE Reference Manual (p. 180)
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Mode (Click Mode)
+Determines the click sound (metronome) that is used during recording or playback.
+Settings: Off, Rec, Rec/Play, Always
+
+Off: The click will not sound.
+Rec: The click will sound during Song recording only.
+Rec/Play: The click will sound during Song recording and playback.
+Always: The click will always sound.
+
+Precount (Click Pre-count)
+Determines the number of count-in measures provided before recording actually starts after pressing the
+[R] (Play) button while the Song recording.
+Settings: Off (Recording starts as soon as the [R] (Play) button is pressed), 1meas – 8meas
+NOTE Since the click sound is created with the internal tone generator, using click playback affects the overall
+
+polyphony of the instrument.
+
+Volume (Click Volume)
+Determines the click sound volume.
+Settings: 0 – 127
+
+Uitlity
+
+Settings
+
+Sound
+
+Quick Setup
+
+Audio I/O
+
+MIDI I/O
+
+Advanced
+
+System
+
+## Contents
+- Load
+- Store / Save
+- Data Utility
+- Tempo Settings
+- Effect Switch
+- Beat (Click Beat)
+- Determines which beats the metronome click will sound.
+- Settings: 1/16 (16th notes), 1/8 (8th notes), 1/4 (quarter notes), 1/2 (half notes), Whole (whole notes)
+- Type (Click Type)
+- Determines the click sound type.
+- Settings: 1 – 10
+- Sync Quantize (Sync Quantize Value)
+- Determines the actual timing at which the next Arpeggio playback starts when you trigger it while the
+- Arpeggio of multiple Parts is played back. When set to “off,” the next Arpeggio starts as soon as you
+- trigger it. The displayed number indicates the resolution in clocks.
+- Settings: Off, 60 (32nd note), 80 (16th note triplet), 120 (16th note), 160 (8th note triplet), 240 (8th note), 320 (1/4 note triplet),
+- 480 (1/4 note)
+- Click Out (Click Output Select)
+- Determines the specified output for the “Click.”
+- Settings: MainL&R, AsgnL&R, USB1&2…USB29&30, AsgnL, AsgnR, USB1…USB30
+- MainL&R: Outputs in stereo (two channels) to the OUTPUT [L/MONO]/[R] jacks.
+- AsgnL&R: Outputs in stereo (two channels) to the ASSIGNABLE OUTPUT [L]/[R] jacks.
+- USB1&2…USB29&30: Outputs in stereo (Channels 1&2 – 29&30) to the [USB TO HOST] terminal.
+- AsgnL: Outputs in mono (one channel) to the ASSIGNABLE OUTPUT [L] jack.
+- AsgnR: Outputs in mono (one channel) to the ASSIGNABLE OUTPUT [R] jack.
+- USB1 – 30: Outputs in mono (Channels 1 – 30) to the [USB TO HOST] terminal.
+- MONTAGE Reference Manual (p. 181)
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Effect Switch
+
+From the Effect Switch display you can make Effect Bypass settings. None of the settings made on this
+display will be stored. When the instrument is restarted, the parameter values are also initialized.
+
+Operation
+
+[UTILITY]  [Effect Switch] or
+Touch the EFFECT icon
+
+EFFECT icon
+
+Uitlity
+
+Settings
+
+Sound
+
+Quick Setup
+
+Audio I/O
+
+MIDI I/O
+
+Advanced
+
+System
+
+## Contents
+- Load
+- Store / Save
+- Data Utility
+- Tempo Settings
+- Effect Switch
+- Insertion FX (Insertion Effect Switch)
+- Determines whether the Insertion Effect is active or not.
+- Settings: Off, On
+- System FX (System Effect Switch)
+- Determines whether the System Effect is active or not.
+- Settings: Off, On
+- Master FX (Master Effect Switch)
+- Determines whether the Master Effect is active or not.
+- Settings: Off, On
+- MONTAGE Reference Manual (p. 182)
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Live Set
+
+Live Set is a list in which Performances can be freely arranged. Up to 16 Performances can be selected
+from the Preset Live Sets and arranged over a single page—making it easy to call up and play your
+favorite Performances. For basic instructions on Live Set, see the Owner’s Manual.
+
+Live Set
+
+Live Set
+
+Edit
+
+Register
+
+Live Set
+From the Live Set display you can call up the registered Performances.
+
+Operation
+
+Press the [LIVE SET] button, or
+Touch the LIVE SET icon
+
+Performance List
+
+LIVE SET icon
+
+Current Performance Name
+
+Current Slot Name
+
+Performance Attribute
+
+Bank (Live Set Bank Select)
+Determines the Live Set Bank.
+Settings: Preset, User 1 – 8 (default), Library Name (when the Library file is read)
+
+Page (Live Set Page Select)
+Determines the Live Set Page.
+Settings: Live Set page 1 – 16 (default)
+
+Performance List
+Indicates the Performances registered in the selected Live Set.
+
+Category Search
+Calls up the Performance Category Search display (page 161).
+
+Current Performance Name
+Indicates the selected Performance Name registered in the selected slot.
+
+Current Slot Name
+Indicates the selected Slot Name.
+
+Performance Attribute
+Indicates the Performance Attribute registered in the selected Slot.
+
+MONTAGE Reference Manual
+
+183
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Live Set Edit (Edit)
+From the Live Set Edit display you can edit the Live Sets (User Bank only).
+
+Operation
+
+[LIVE SET]  User Bank selection  [EDIT]
+
+ When the Slot to which a Performance has been registered is selected
+
+Performance List
+
+Live Set
+
+Live Set
+
+Edit
+
+Register
+
+Bank (Live Set Bank Name)
+Enters the desired name for the selected Live Set Bank. The names can contain up to 20 characters.
+Touching the parameter calls up the input character display.
+
+Page (Live Set Page Name)
+Enters the desired name of the selected Live Set Page. The names can contain up to 20 characters.
+Touching the parameter calls up the input character display.
+
+Done
+Touching this parameter finishes the Live Set Editing and returns to the Live Set display.
+
+Performance List
+Indicates the Performances registered in the selected Live Set.
+
+Delete
+Deletes the Performance from the selected Slot.
+
+Slot Name
+Enters the desired name of the selected Slot. The names can contain up to 20 characters. Touching the
+parameter calls up the input character display.
+
+Performance (Performance Name)
+Indicates the Performance Name in the selected Slot.
+
+Color
+Determines the Color of the selected Slot.
+Settings: Black, Red, Yellow, Green, Blue, Azure, Pink, Orange, Purple, Sakura, Cream, Lime, Aqua, Beige, Mint, Lilac
+
+Volume
+Determines the volume of the Performance in the selected Slot.
+
+MONTAGE Reference Manual
+
+184
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Swap (Swap Switch)
+Determines whether the Swap function is turned on or off. You can switch settings between Slots. For
+instructions on the Swap function, see the Owner’s Manual.
+Settings: Off, On
+
+Copy (Copy Switch)
+Determines whether the Copy function is turned on or off. You can copy the setting to another Slot.
+Settings: Off, On
+
+Live Set
+
+Live Set
+
+Edit
+
+Register
+
+ When an empty Slot is selected
+
+Add
+Touching this button allows you to register the selected Performance in the Slot.
+
+MONTAGE Reference Manual
+
+185
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Live Set Register (Register)
+From the Live Set Register display you can register Performances to the Live Set. For basic instructions on
+Live Set Registering, see the Owner’s Manual.
+
+Operation
+
+[SHIFT] + [LIVE SET] (from any operation displays, other than Live Set)
+
+Slot Select
+
+Live Set
+
+Live Set
+
+Edit
+
+Register
+
+Bank (Live Set Bank Select)
+Determines the Live Set Bank for registering Performances. Preset Bank and Library Bank cannot be
+selected for this parameter.
+Settings: User 1 – 8 (default)
+
+Page (Live Set Page Select)
+Determines the Live Set Page for registering Performances.
+Settings: Live Set Page 1 – 16 (default)
+
+Slot Select
+Determines the Slot for registering Performance. When the Slot containing the Performance is selected
+and press the [ENTER] button (or touch the Slot again on the display), the Performance in the slot is
+replaced with the currently selected Performance.
+Settings: Slot 1 – 16
+
+MONTAGE Reference Manual
+
+186
+
+---
+
+Reference
+
+Performance
+
+Edit
+
+Search
+
+Utility
+
+Live Set
+
+Connecting an iPhone or iPad
+
+iPhone/iPad connection
+
+NOTE In order to eliminate the risk of noise from other communication when using this instrument with an iPad or
+
+iPhone app, be sure to turn on Airplane Mode and then turn on Wi-Fi.
+
+NOTICE
+Be sure to place your iPad or iPhone on a stable surface to prevent it from falling over and being damaged.
+
+Apps compatible with the MONTAGE provide many more convenient, enjoyable ways to use this musical
+instrument.
+For details on how to connect the devices, refer to the “iPhone/iPad Connection Manual,” which is
+available from the Yamaha web site.
+NOTE For audio signal transfer, refer to the connection using Lightning to USB Camera Adapter.
+
+Details of compatible smart devices and apps can be found on the following page from the Yamaha web
+site.
+http://www.yamaha.com/kbdapps/
+
+MONTAGE Reference Manual
+
+Yamaha Web Site (English only)
+http://www.yamahasynth.com/
+
+Yamaha Downloads
+http://download.yamaha.com/
+
+© 2016 Yamaha Corporation
+Published 06/2022 MW-B0
+
+187
+
+---

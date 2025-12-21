@@ -53,6 +53,7 @@ def get_patches(
     category: str | None = None,
     search: str | None = None,
     sound_type: SoundType | None = None,
+    all_sounds: bool = False,
     limit: int = 50,
     offset: int = 0
 ) -> tuple[list[Patch], int]:
@@ -69,8 +70,8 @@ def get_patches(
     if category:
         filtered = [p for p in filtered if p.category.lower() == category.lower()]
 
-    # Filter by sound type (recommended categories)
-    if sound_type and sound_type in SOUND_TYPE_CATEGORIES:
+    # Filter by sound type (recommended categories) unless showing all sounds
+    if not all_sounds and sound_type and sound_type in SOUND_TYPE_CATEGORIES:
         recommended = SOUND_TYPE_CATEGORIES[sound_type]
         filtered = [p for p in filtered if p.category in recommended]
 

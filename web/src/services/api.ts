@@ -79,7 +79,13 @@ export async function exportAudio(): Promise<{ data: string; filename: string }>
 
 export async function fetchPatches(
   soundType: SoundType,
-  params: { search?: string; category?: string; limit?: number; offset?: number } = {}
+  params: {
+    search?: string
+    category?: string
+    limit?: number
+    offset?: number
+    allSounds?: boolean
+  } = {}
 ): Promise<{ patches: Patch[]; total: number; categories: PatchCategory[] }> {
   const url = new URL(`${API_URL}/api/patches`, window.location.origin)
   url.searchParams.set('sound_type', soundType)
@@ -87,6 +93,7 @@ export async function fetchPatches(
   if (params.category) url.searchParams.set('category', params.category)
   if (typeof params.limit === 'number') url.searchParams.set('limit', String(params.limit))
   if (typeof params.offset === 'number') url.searchParams.set('offset', String(params.offset))
+  if (params.allSounds) url.searchParams.set('all_sounds', 'true')
   return requestJson(url.toString())
 }
 

@@ -10,11 +10,18 @@ export function useAudioStream(wsUrl: string) {
   const audioContextRef = useRef<AudioContext | null>(null)
   const workletNodeRef = useRef<AudioWorkletNode | null>(null)
   const wsRef = useRef<WebSocket | null>(null)
+  const rtcWsRef = useRef<WebSocket | null>(null)
+  const rtcPcRef = useRef<RTCPeerConnection | null>(null)
+  const rtcAudioElRef = useRef<HTMLAudioElement | null>(null)
+  const rtcSourceNodeRef = useRef<MediaStreamAudioSourceNode | null>(null)
+  const rtcStatsTimerRef = useRef<number | null>(null)
+  const transportRef = useRef<'webrtc' | 'ws' | null>(null)
   const isStreamingRef = useRef(false)
   const audioConfigRef = useRef<{ sampleRate: number; channels: number } | null>(null)
   const lastStatusLogMsRef = useRef(0)
   const lastUnderrunsRef = useRef(0)
   const initialTargetBufferMs = IS_IOS ? 260 : 180
+  const iceServersRef = useRef<RTCIceServer[] | null>(null)
 
   const initAudioContext = useCallback(async () => {
     if (!audioContextRef.current) {
@@ -43,6 +50,26 @@ export function useAudioStream(wsUrl: string) {
     }
     return ctx
   }, [initAudioContext])
+
+  const loadIceServers = useCallback(() => {
+    if (iceServersRef.current) return iceServersRef.current
+    const raw = import.meta.env.VITE_ICE_SERVERS
+    if (!raw) {
+      iceServersRef.current = [{ urls: ['stun:stun.l.google.com:19302'] }]
+      return iceServersRef.current
+    }
+    try {
+      const parsed = JSON.parse(raw)
+      if (Array.isArray(parsed)) {
+        iceServersRef.current = parsed
+      } else {
+        iceServersRef.current = []
+      }
+    } catch {
+      iceServersRef.current = []
+    }
+    return iceServersRef.current
+  }, [])
 
   const initAudioWorklet = useCallback(async (audioContext: AudioContext) => {
     if (workletNodeRef.current) {
@@ -95,7 +122,7 @@ export function useAudioStream(wsUrl: string) {
     }
   }, [])
 
-  const startStreaming = useCallback(async () => {
+  const startStreamingWebSocket = useCallback(async () => {
     if (isStreamingRef.current) return
 
     try {
@@ -170,6 +197,7 @@ export function useAudioStream(wsUrl: string) {
       }
 
       wsRef.current = ws
+      isStreamingRef.current = true
     } catch (error) {
       console.error('Failed to start audio streaming:', error)
       isStreamingRef.current = false
@@ -181,7 +209,7 @@ export function useAudioStream(wsUrl: string) {
     }
   }, [ensureAudioUnlocked, initAudioWorklet, wsUrl, initialTargetBufferMs])
 
-  const stopStreaming = useCallback(() => {
+  const stopStreamingWebSocket = useCallback(() => {
     if (wsRef.current) {
       wsRef.current.close()
       wsRef.current = null
@@ -194,6 +222,175 @@ export function useAudioStream(wsUrl: string) {
     isStreamingRef.current = false
     audioConfigRef.current = null
   }, [])
+
+  const stopStreamingWebRtc = useCallback(() => {
+    if (rtcStatsTimerRef.current) {
+      window.clearInterval(rtcStatsTimerRef.current)
+      rtcStatsTimerRef.current = null
+    }
+    if (rtcSourceNodeRef.current) {
+      try {
+        rtcSourceNodeRef.current.disconnect()
+      } catch {
+        // Ignore disconnect errors
+      }
+      rtcSourceNodeRef.current = null
+    }
+    if (rtcAudioElRef.current) {
+      rtcAudioElRef.current.pause()
+      rtcAudioElRef.current.srcObject = null
+    }
+    if (rtcWsRef.current) {
+      rtcWsRef.current.close()
+      rtcWsRef.current = null
+    }
+    if (rtcPcRef.current) {
+      rtcPcRef.current.close()
+      rtcPcRef.current = null
+    }
+    isStreamingRef.current = false
+  }, [])
+
+  const startStreamingWebRtc = useCallback(async () => {
+    if (!('RTCPeerConnection' in window)) {
+      throw new Error('WebRTC not supported')
+    }
+
+    const iceServers = loadIceServers()
+    const pc = new RTCPeerConnection({ iceServers })
+    rtcPcRef.current = pc
+    pc.addTransceiver('audio', { direction: 'recvonly' })
+
+    const signalWs = new WebSocket(`${wsUrl}/ws/rtc`)
+    rtcWsRef.current = signalWs
+
+    const waitForOpen = new Promise<void>((resolve, reject) => {
+      const timeout = window.setTimeout(() => reject(new Error('WebRTC signaling timeout')), 5000)
+      signalWs.onopen = () => {
+        window.clearTimeout(timeout)
+        resolve()
+      }
+      signalWs.onerror = () => {
+        window.clearTimeout(timeout)
+        reject(new Error('WebRTC signaling error'))
+      }
+    })
+
+    const trackReady = new Promise<void>((resolve, reject) => {
+      const timeout = window.setTimeout(() => reject(new Error('WebRTC track timeout')), 8000)
+      pc.ontrack = async (event) => {
+        window.clearTimeout(timeout)
+        const stream = event.streams?.[0] ?? new MediaStream([event.track])
+        try {
+          const audioEl = rtcAudioElRef.current ?? new Audio()
+          audioEl.autoplay = true
+          audioEl.playsInline = true
+          audioEl.srcObject = stream
+          rtcAudioElRef.current = audioEl
+          try {
+            await audioEl.play()
+          } catch (e) {
+            console.warn('Audio element play failed, trying AudioContext:', e)
+            const ctx = await ensureAudioUnlocked()
+            const source = ctx.createMediaStreamSource(stream)
+            source.connect(ctx.destination)
+            rtcSourceNodeRef.current = source
+          }
+        } catch (e) {
+          console.warn('Failed to attach WebRTC audio:', e)
+        }
+        resolve()
+      }
+      pc.onconnectionstatechange = () => {
+        if (pc.connectionState === 'failed' || pc.connectionState === 'disconnected') {
+          window.clearTimeout(timeout)
+          reject(new Error(`WebRTC connection ${pc.connectionState}`))
+        }
+      }
+    })
+
+    pc.onicecandidate = (event) => {
+      if (!event.candidate || !signalWs || signalWs.readyState !== WebSocket.OPEN) return
+      signalWs.send(JSON.stringify({
+        type: 'candidate',
+        candidate: event.candidate.candidate,
+        sdpMid: event.candidate.sdpMid,
+        sdpMLineIndex: event.candidate.sdpMLineIndex,
+      }))
+    }
+
+    signalWs.onmessage = async (event) => {
+      try {
+        const msg = JSON.parse(event.data)
+        if (msg.type === 'answer' && msg.sdp) {
+          await pc.setRemoteDescription({ type: 'answer', sdp: msg.sdp })
+        } else if (msg.type === 'candidate' && msg.candidate) {
+          await pc.addIceCandidate({
+            candidate: msg.candidate,
+            sdpMid: msg.sdpMid ?? null,
+            sdpMLineIndex: msg.sdpMLineIndex ?? null,
+          })
+        } else if (msg.type === 'error') {
+          console.warn('WebRTC error:', msg.reason)
+        }
+      } catch (e) {
+        console.warn('Failed to handle WebRTC signaling message:', e)
+      }
+    }
+
+    await waitForOpen
+    const offer = await pc.createOffer()
+    await pc.setLocalDescription(offer)
+    signalWs.send(JSON.stringify({ type: 'offer', sdp: offer.sdp }))
+
+    await trackReady
+    isStreamingRef.current = true
+
+    rtcStatsTimerRef.current = window.setInterval(async () => {
+      if (!rtcPcRef.current) return
+      try {
+        const stats = await rtcPcRef.current.getStats()
+        stats.forEach((report) => {
+          if (report.type === 'inbound-rtp' && report.kind === 'audio') {
+            const loss = report.packetsLost ?? 0
+            const jitter = report.jitter ?? 0
+            if (loss > 0) {
+              console.warn(`[WebRTC] audio loss=${loss} jitter=${jitter}`)
+            }
+          }
+        })
+      } catch {
+        // Ignore stats errors
+      }
+    }, 4000)
+  }, [ensureAudioUnlocked, loadIceServers, wsUrl])
+
+  const startStreaming = useCallback(async () => {
+    if (transportRef.current) return
+    try {
+      await startStreamingWebRtc()
+      transportRef.current = 'webrtc'
+      return
+    } catch (error) {
+      console.warn('WebRTC stream failed, falling back to WebSocket:', error)
+      stopStreamingWebRtc()
+    }
+
+    await startStreamingWebSocket()
+    transportRef.current = 'ws'
+  }, [startStreamingWebRtc, startStreamingWebSocket, stopStreamingWebRtc])
+
+  const stopStreaming = useCallback(() => {
+    if (transportRef.current === 'webrtc') {
+      stopStreamingWebRtc()
+    } else if (transportRef.current === 'ws') {
+      stopStreamingWebSocket()
+    } else {
+      stopStreamingWebRtc()
+      stopStreamingWebSocket()
+    }
+    transportRef.current = null
+  }, [stopStreamingWebRtc, stopStreamingWebSocket])
 
   useEffect(() => {
     const handler = () => {

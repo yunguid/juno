@@ -1,14 +1,39 @@
 """FastAPI backend for Juno"""
 import asyncio
-import json
 import base64
+import json
 import os
 import sys
 import threading
+from fractions import Fraction
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import numpy as np
+
+try:
+    from aiortc import (
+        MediaStreamTrack,
+        RTCPeerConnection,
+        RTCSessionDescription,
+        RTCIceCandidate,
+        RTCConfiguration,
+        RTCIceServer,
+    )
+    import av
+    AIORTC_AVAILABLE = True
+    AIORTC_IMPORT_ERROR = ""
+except Exception as e:
+    MediaStreamTrack = None
+    RTCPeerConnection = None
+    RTCSessionDescription = None
+    RTCIceCandidate = None
+    RTCConfiguration = None
+    RTCIceServer = None
+    av = None
+    AIORTC_AVAILABLE = False
+    AIORTC_IMPORT_ERROR = str(e)
 
 from .models import Sample, Layer, SoundType, GenerateRequest, LayerEditRequest, AddLayerRequest, StartSessionRequest, GenerateLayerRequest, SelectPatchRequest, Patch, SaveToLibraryRequest, LibrarySample, LibraryListResponse, SaveToLibraryResponse
 from .player import get_player
@@ -26,6 +51,99 @@ log = get_logger("app")
 # Store current sample in memory (would use DB in production)
 current_sample: Sample | None = None
 connected_clients: list[WebSocket] = []
+rtc_peers: set = set()
+
+
+def _parse_ice_servers(raw: str | None):
+    if not raw:
+        return None
+    try:
+        data = json.loads(raw)
+    except Exception:
+        log.warning("Invalid JUNO_RTC_ICE_SERVERS JSON")
+        return None
+    if not isinstance(data, list):
+        return None
+    servers = []
+    for item in data:
+        if not isinstance(item, dict):
+            continue
+        urls = item.get("urls")
+        if not urls:
+            continue
+        username = item.get("username")
+        credential = item.get("credential")
+        servers.append(RTCIceServer(urls=urls, username=username, credential=credential))
+    return servers or None
+
+
+if AIORTC_AVAILABLE:
+    class JunoAudioTrack(MediaStreamTrack):
+        kind = "audio"
+
+        def __init__(self, audio_capture, loop: asyncio.AbstractEventLoop):
+            super().__init__()
+            self._audio = audio_capture
+            self._loop = loop
+            self._queue: asyncio.Queue[bytes] = asyncio.Queue(maxsize=8)
+            self._channels = max(1, int(self._audio.config.output_channels or 2))
+            self._sample_rate = int(self._audio.config.sample_rate or 48000)
+            self._timestamp = 0
+            self._time_base = Fraction(1, self._sample_rate)
+            self._callback = None
+
+            def _enqueue(data: bytes):
+                if self._queue.full():
+                    try:
+                        self._queue.get_nowait()
+                    except asyncio.QueueEmpty:
+                        return
+                try:
+                    self._queue.put_nowait(data)
+                except asyncio.QueueFull:
+                    pass
+
+            def _callback(data: bytes):
+                try:
+                    self._loop.call_soon_threadsafe(_enqueue, data)
+                except RuntimeError:
+                    pass
+
+            self._callback = _callback
+            self._audio.add_callback(self._callback)
+
+        async def recv(self):
+            while True:
+                data = await self._queue.get()
+                if not data:
+                    continue
+                samples = len(data) // (2 * self._channels)
+                if samples <= 0:
+                    continue
+                audio = np.frombuffer(data, dtype=np.int16)
+                if self._channels > 1:
+                    audio = audio.reshape(-1, self._channels)
+                else:
+                    audio = audio.reshape(-1, 1)
+
+                layout = "stereo" if self._channels == 2 else "mono"
+                frame = av.AudioFrame.from_ndarray(audio, format="s16", layout=layout)
+                frame.sample_rate = self._sample_rate
+                frame.pts = self._timestamp
+                frame.time_base = self._time_base
+                self._timestamp += samples
+                return frame
+
+        def stop(self):
+            if self._callback:
+                try:
+                    self._audio.remove_callback(self._callback)
+                except Exception:
+                    pass
+                self._callback = None
+            super().stop()
+else:
+    JunoAudioTrack = None
 
 # Track current patch selections per channel
 current_patches: dict[str, Patch] = {}  # {"bass": Patch, "pad": Patch, "lead": Patch}
@@ -690,11 +808,12 @@ async def api_get_patches(
     category: str | None = None,
     search: str | None = None,
     sound_type: str | None = None,
+    all_sounds: bool = False,
     limit: int = 50,
     offset: int = 0
 ):
     """Get available patches with optional filtering"""
-    log.debug(f"Get patches: category={category}, search={search}, sound_type={sound_type}")
+    log.debug(f"Get patches: category={category}, search={search}, sound_type={sound_type}, all_sounds={all_sounds}")
 
     # Convert sound_type string to enum if provided
     sound_type_enum = None
@@ -708,6 +827,7 @@ async def api_get_patches(
         category=category,
         search=search,
         sound_type=sound_type_enum,
+        all_sounds=all_sounds,
         limit=limit,
         offset=offset
     )
@@ -1000,3 +1120,98 @@ async def audio_websocket(websocket: WebSocket):
             except Exception:
                 pass
         audio.remove_callback(audio_callback)
+
+
+@app.websocket("/ws/rtc")
+async def rtc_websocket(websocket: WebSocket):
+    """WebRTC signaling endpoint for audio streaming."""
+    await websocket.accept()
+
+    if not AIORTC_AVAILABLE:
+        await websocket.send_json({"type": "error", "reason": f"aiortc unavailable: {AIORTC_IMPORT_ERROR}"})
+        await websocket.close()
+        return
+
+    if os.getenv("JUNO_RTC_ENABLED", "1").strip() not in ("1", "true", "True"):
+        await websocket.send_json({"type": "error", "reason": "WebRTC disabled on server"})
+        await websocket.close()
+        return
+
+    ice_servers = _parse_ice_servers(os.getenv("JUNO_RTC_ICE_SERVERS"))
+    config = RTCConfiguration(iceServers=ice_servers) if ice_servers else None
+    pc = RTCPeerConnection(configuration=config) if config else RTCPeerConnection()
+    rtc_peers.add(pc)
+    audio = get_audio_capture()
+    loop = asyncio.get_running_loop()
+    track = JunoAudioTrack(audio, loop)
+
+    if not audio.is_capturing():
+        if audio.start():
+            log.info("Audio capture started for WebRTC")
+        else:
+            log.warning("Failed to start audio capture for WebRTC")
+
+    pc.addTrack(track)
+
+    @pc.on("icecandidate")
+    async def on_icecandidate(candidate):
+        if candidate is None:
+            return
+        try:
+            await websocket.send_json({
+                "type": "candidate",
+                "candidate": candidate.to_sdp(),
+                "sdpMid": candidate.sdpMid,
+                "sdpMLineIndex": candidate.sdpMLineIndex,
+            })
+        except Exception:
+            pass
+
+    try:
+        while True:
+            msg = await websocket.receive_json()
+            if not isinstance(msg, dict):
+                continue
+
+            msg_type = msg.get("type")
+            if msg_type == "offer":
+                sdp = msg.get("sdp")
+                if not sdp:
+                    continue
+                offer = RTCSessionDescription(sdp=sdp, type="offer")
+                await pc.setRemoteDescription(offer)
+                answer = await pc.createAnswer()
+                await pc.setLocalDescription(answer)
+                await websocket.send_json({
+                    "type": "answer",
+                    "sdp": pc.localDescription.sdp,
+                })
+            elif msg_type == "candidate":
+                candidate_sdp = msg.get("candidate")
+                if not candidate_sdp:
+                    continue
+                candidate = RTCIceCandidate(
+                    sdpMid=msg.get("sdpMid"),
+                    sdpMLineIndex=msg.get("sdpMLineIndex"),
+                    candidate=candidate_sdp,
+                )
+                try:
+                    await pc.addIceCandidate(candidate)
+                except Exception:
+                    pass
+            elif msg_type == "close":
+                break
+    except WebSocketDisconnect:
+        pass
+    except Exception as e:
+        log.warning(f"WebRTC signaling error: {e}")
+    finally:
+        try:
+            await pc.close()
+        except Exception:
+            pass
+        rtc_peers.discard(pc)
+        try:
+            track.stop()
+        except Exception:
+            pass

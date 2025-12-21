@@ -26,6 +26,16 @@ Run the backend (serves the built frontend from `web/dist`):
 python -m server.app
 ```
 
+## Dev mode (auto-reload backend + frontend)
+
+```bash
+./dev.sh
+```
+
+Notes:
+- Uses `uvicorn --reload` for the backend and Vite HMR for the frontend.
+- If you use a virtualenv, make sure dependencies are installed in `venv/` (or activate it before running).
+
 ## Key flows
 
 ### 1) Generate and play
