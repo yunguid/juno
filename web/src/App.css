@@ -1054,6 +1054,18 @@ header h1 {
   color: #fff;
 }
 
+.sound-picker-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.sound-picker-toggle input {
+  accent-color: rgba(88, 120, 255, 0.85);
+}
+
 .sound-picker-list {
   overflow-y: auto;
   padding: 0.5rem;

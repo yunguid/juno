@@ -235,8 +235,8 @@ class AudioConfig:
     sample_rate: int = 44100
     capture_channels: int = 8
     output_channels: int = 2
-    chunk_frames: int = 2048  # Default chunk size (~46ms at 44100Hz); lower latency than 4096.
-    max_backlog_chunks: int = 6  # Preserve continuity; higher means smoother but adds latency.
+    chunk_frames: int = 1024  # ~23ms at 44100Hz for lower latency
+    max_backlog_chunks: int = 4  # Fewer chunks = lower latency, slight jitter risk
 
     def __post_init__(self) -> None:
         env_chunk = _env_int("JUNO_AUDIO_CHUNK_FRAMES")

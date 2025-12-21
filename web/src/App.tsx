@@ -211,10 +211,17 @@ interface Patch {
   id: string
   name: string
   category: string
+  sub_category?: string | null
   bank_msb: number
   bank_lsb: number
   program: number
   tags: string[]
+}
+
+interface PatchCategory {
+  id: string
+  name: string
+  count: number
 }
 
 interface Sample {
@@ -273,7 +280,19 @@ function App() {
   const [improving, setImproving] = useState(false)
   const [showSoundPicker, setShowSoundPicker] = useState<'bass' | 'pad' | 'lead' | null>(null)
   const [patches, setPatches] = useState<Patch[]>([])
+  const [patchTotal, setPatchTotal] = useState<number | null>(null)
+  const [patchCategories, setPatchCategories] = useState<PatchCategory[]>([])
+  const [patchSubcategories, setPatchSubcategories] = useState<string[]>([])
+  const [patchSearch, setPatchSearch] = useState('')
+  const [patchCategory, setPatchCategory] = useState('')
+  const [patchSubCategory, setPatchSubCategory] = useState('')
+  const [patchOffset, setPatchOffset] = useState(0)
+  const [patchLoading, setPatchLoading] = useState(false)
+  const [focusedPatchIndex, setFocusedPatchIndex] = useState(-1)
+  const [showAllSounds, setShowAllSounds] = useState(true)
+  const patchLimit = 60
   const [currentSounds, setCurrentSounds] = useState<Record<string, Patch | null>>({ bass: null, pad: null, lead: null })
+  const soundPickerListRef = useRef<HTMLDivElement | null>(null)
   const wsRef = useRef<WebSocket | null>(null)
   
   // Audio streaming for real-time playback from Montage
@@ -480,20 +499,54 @@ function App() {
   const getLayer = (sound: string) => sample?.layers.find(l => l.sound === sound)
 
   // Sound selection functions
-  const fetchPatches = useCallback(async (soundType: string) => {
+  const fetchPatches = useCallback(async (soundType: string, append = false, offsetOverride?: number) => {
     try {
-      const res = await fetch(`${API_URL}/api/patches?sound_type=${soundType}`)
+      setPatchLoading(true)
+      const offset = typeof offsetOverride === 'number' ? offsetOverride : append ? patchOffset : 0
+      const params = new URLSearchParams({ sound_type: soundType })
+      if (patchSearch.trim()) params.set('search', patchSearch.trim())
+      if (patchCategory) params.set('category', patchCategory)
+      if (patchSubCategory) params.set('sub_category', patchSubCategory)
+      if (showAllSounds) params.set('all_sounds', 'true')
+      params.set('limit', String(patchLimit))
+      params.set('offset', String(offset))
+      const res = await fetch(`${API_URL}/api/patches?${params.toString()}`)
       const data = await res.json()
-      setPatches(data.patches)
+      setPatchCategories(data.categories || [])
+      setPatchSubcategories(data.subcategories || [])
+      setPatchTotal(data.total ?? null)
+      setPatches(prev => (append ? [...prev, ...data.patches] : data.patches))
     } catch (e) {
       console.error('Failed to fetch patches:', e)
+    } finally {
+      setPatchLoading(false)
     }
-  }, [])
+  }, [patchCategory, patchOffset, patchSearch, patchSubCategory, showAllSounds])
 
   const openSoundPicker = useCallback((soundType: 'bass' | 'pad' | 'lead') => {
     setShowSoundPicker(soundType)
-    fetchPatches(soundType)
-  }, [fetchPatches])
+    setPatchSearch('')
+    setPatchCategory('')
+    setPatchSubCategory('')
+    setPatchOffset(0)
+  }, [])
+
+  useEffect(() => {
+    if (!showSoundPicker) return
+    const timeout = setTimeout(() => {
+      setPatchOffset(0)
+      setFocusedPatchIndex(-1)
+      fetchPatches(showSoundPicker, false)
+    }, 200)
+    return () => clearTimeout(timeout)
+  }, [fetchPatches, showSoundPicker, patchSearch, patchCategory, patchSubCategory, showAllSounds])
+
+  const loadMorePatches = useCallback(() => {
+    if (!showSoundPicker || patchLoading) return
+    const nextOffset = patchOffset + patchLimit
+    setPatchOffset(nextOffset)
+    fetchPatches(showSoundPicker, true, nextOffset)
+  }, [fetchPatches, patchLimit, patchLoading, patchOffset, showSoundPicker])
 
   const selectPatch = async (patch: Patch) => {
     if (!showSoundPicker) return
@@ -820,19 +873,96 @@ function App() {
         <div className="sound-picker-overlay" onClick={() => setShowSoundPicker(null)}>
           <div className="sound-picker" onClick={e => e.stopPropagation()}>
             <div className="sound-picker-header">
-              <span>{showSoundPicker.toUpperCase()} Sound</span>
+              <div className="sound-picker-title">
+                <span>{showSoundPicker.toUpperCase()} Sound</span>
+                <span className="sound-picker-count">
+                  {patchTotal ? `${patches.length} of ${patchTotal}` : `${patches.length} sounds`}
+                </span>
+              </div>
               <button onClick={() => setShowSoundPicker(null)}>×</button>
             </div>
-            <div className="sound-picker-list">
+            <div className="sound-picker-controls">
+              <div className="sound-picker-search">
+                <span className="sound-picker-icon">🔎</span>
+                <input
+                  type="text"
+                  placeholder="Search by name, category, or vibe"
+                  value={patchSearch}
+                  onChange={(e) => setPatchSearch(e.target.value)}
+                />
+                {patchSearch && (
+                  <button className="sound-picker-clear" onClick={() => setPatchSearch('')}>×</button>
+                )}
+              </div>
+              <div className="sound-picker-filters">
+                <select
+                  value={patchCategory}
+                  onChange={(e) => {
+                    setPatchCategory(e.target.value)
+                    setPatchSubCategory('')
+                  }}
+                >
+                  <option value="">All Categories</option>
+                  {patchCategories.map(cat => (
+                    <option key={cat.id} value={cat.name}>{cat.name}</option>
+                  ))}
+                </select>
+                <select
+                  value={patchSubCategory}
+                  onChange={(e) => setPatchSubCategory(e.target.value)}
+                  disabled={!patchSubcategories.length}
+                >
+                  <option value="">All Subcategories</option>
+                  {patchSubcategories.map(sub => (
+                    <option key={sub} value={sub}>{sub}</option>
+                  ))}
+                </select>
+                <button
+                  className="sound-picker-reset"
+                  onClick={() => {
+                    setPatchSearch('')
+                    setPatchCategory('')
+                    setPatchSubCategory('')
+                    setShowAllSounds(true)
+                  }}
+                >
+                  Reset
+                </button>
+              </div>
+              <label className="sound-picker-toggle">
+                <input
+                  type="checkbox"
+                  checked={showAllSounds}
+                  onChange={(e) => setShowAllSounds(e.target.checked)}
+                />
+                Show all categories
+              </label>
+            </div>
+            <div className="sound-picker-list" ref={soundPickerListRef}>
+              {patches.length === 0 && !patchLoading && (
+                <div className="sound-picker-empty">No sounds found. Try a broader search.</div>
+              )}
               {patches.map(patch => (
                 <button
                   key={patch.id}
                   className={`sound-option ${currentSounds[showSoundPicker]?.id === patch.id ? 'selected' : ''}`}
                   onClick={() => selectPatch(patch)}
                 >
-                  {patch.name}
+                  <span className="sound-option-name">{patch.name}</span>
+                  <span className="sound-option-meta">
+                    {patch.category}{patch.sub_category ? ` - ${patch.sub_category}` : ''}
+                  </span>
                 </button>
               ))}
+            </div>
+            <div className="sound-picker-footer">
+              <button
+                className="sound-picker-load"
+                onClick={loadMorePatches}
+                disabled={patchLoading || (patchTotal !== null && patches.length >= patchTotal)}
+              >
+                {patchLoading ? 'Loading...' : patchTotal !== null && patches.length >= patchTotal ? 'All loaded' : 'Load more'}
+              </button>
             </div>
           </div>
         </div>

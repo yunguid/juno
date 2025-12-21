@@ -82,15 +82,17 @@ export async function fetchPatches(
   params: {
     search?: string
     category?: string
+    subCategory?: string
     limit?: number
     offset?: number
     allSounds?: boolean
   } = {}
-): Promise<{ patches: Patch[]; total: number; categories: PatchCategory[] }> {
+): Promise<{ patches: Patch[]; total: number; categories: PatchCategory[]; subcategories: string[] }> {
   const url = new URL(`${API_URL}/api/patches`, window.location.origin)
   url.searchParams.set('sound_type', soundType)
   if (params.search) url.searchParams.set('search', params.search)
   if (params.category) url.searchParams.set('category', params.category)
+  if (params.subCategory) url.searchParams.set('sub_category', params.subCategory)
   if (typeof params.limit === 'number') url.searchParams.set('limit', String(params.limit))
   if (typeof params.offset === 'number') url.searchParams.set('offset', String(params.offset))
   if (params.allSounds) url.searchParams.set('all_sounds', 'true')

@@ -17,12 +17,12 @@ class PCMProcessor extends AudioWorkletProcessor {
     this.sampleRate = 44100;
     this.channels = 2;
 
-    // Adaptive buffering
+    // Adaptive buffering - tuned for low latency with WebRTC/WebSocket
     this.started = false; // prebuffer gate
-    this.minTargetMs = 100;
-    this.maxTargetMs = 600;
-    this.targetBufferMs = 200;
-    this.maxExtraBufferMs = 300; // drop beyond target + extra to cap latency
+    this.minTargetMs = 60;   // Lower floor for faster recovery
+    this.maxTargetMs = 400;  // Lower ceiling to cap worst-case latency
+    this.targetBufferMs = 120; // Start with tighter buffer
+    this.maxExtraBufferMs = 150; // Drop sooner to prevent runaway lag
     
     // Underrun handling
     this.underrunCount = 0;
@@ -158,7 +158,8 @@ class PCMProcessor extends AudioWorkletProcessor {
       // Underrun - output silence with smooth fade to avoid clicks
       this.underrunCount++;
       this.lastUnderrunFrame = this.frameCount;
-      this.targetBufferMs = this._clampTargetMs(this.targetBufferMs * 1.35);
+      // Less aggressive buffer increase on underrun (was 1.35)
+      this.targetBufferMs = this._clampTargetMs(this.targetBufferMs * 1.2);
       this.started = false;
       
       const availableFrames = Math.floor(this.availableSamples / this.channels);
@@ -231,12 +232,13 @@ class PCMProcessor extends AudioWorkletProcessor {
         droppedSamples: this.droppedSamples,
         started: this.started
       });
+      // Faster recovery when stable - reduce buffer more aggressively
       if (
-        secondsSinceUnderrun > 15 &&
+        secondsSinceUnderrun > 8 &&
         this.targetBufferMs > this.minTargetMs &&
-        (this.frameCount - this.lastTargetDecreaseFrame) > (this.sampleRate * 2)
+        (this.frameCount - this.lastTargetDecreaseFrame) > (this.sampleRate * 1.5)
       ) {
-        this.targetBufferMs = this._clampTargetMs(this.targetBufferMs - 10);
+        this.targetBufferMs = this._clampTargetMs(this.targetBufferMs - 15);
         this.lastTargetDecreaseFrame = this.frameCount;
       }
       this.framesUntilStatus = this.statusIntervalFrames;

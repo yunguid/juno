@@ -9,6 +9,7 @@ class Patch(BaseModel):
     id: str                 # Unique identifier (e.g., "preset-063-000-001")
     name: str               # Display name (e.g., "Warm Pad")
     category: str           # Category (e.g., "Pad", "Synth Lead", "Synth Bass")
+    sub_category: str | None = None  # Sub-category (e.g., "Acoustic")
     bank_msb: int           # Bank Select MSB (0-127)
     bank_lsb: int           # Bank Select LSB (0-127)
     program: int            # Program Change number (0-127)

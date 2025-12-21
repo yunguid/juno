@@ -41,7 +41,7 @@ from .llm import generate_sample, edit_layer, add_layer, generate_single_layer, 
 from .llm_providers import get_config, set_config, Provider, DEFAULT_MODELS, AVAILABLE_MODELS
 from .audio import get_audio_capture
 from .export import sample_to_midi_file
-from .patches import get_patches, get_patch_by_id, get_categories
+from .patches import get_patches, get_patch_by_id, get_categories, get_subcategories
 from .logger import setup_logging, get_logger
 
 # Set up logging
@@ -79,29 +79,39 @@ def _parse_ice_servers(raw: str | None):
 
 if AIORTC_AVAILABLE:
     class JunoAudioTrack(MediaStreamTrack):
+        """WebRTC audio track that streams audio from MONTAGE capture.
+        
+        Optimized for low-latency streaming with adaptive queue management.
+        """
         kind = "audio"
 
         def __init__(self, audio_capture, loop: asyncio.AbstractEventLoop):
             super().__init__()
             self._audio = audio_capture
             self._loop = loop
-            self._queue: asyncio.Queue[bytes] = asyncio.Queue(maxsize=8)
+            # Larger queue for burst handling, but we'll drop old frames aggressively
+            self._queue: asyncio.Queue[bytes] = asyncio.Queue(maxsize=16)
             self._channels = max(1, int(self._audio.config.output_channels or 2))
             self._sample_rate = int(self._audio.config.sample_rate or 48000)
             self._timestamp = 0
             self._time_base = Fraction(1, self._sample_rate)
             self._callback = None
+            self._dropped_frames = 0
+            self._total_frames = 0
 
             def _enqueue(data: bytes):
-                if self._queue.full():
+                # Drop oldest frames if queue is getting full (keep latency bounded)
+                while self._queue.qsize() >= 12:  # Keep ~4 frames of headroom
                     try:
                         self._queue.get_nowait()
+                        self._dropped_frames += 1
                     except asyncio.QueueEmpty:
-                        return
+                        break
                 try:
                     self._queue.put_nowait(data)
+                    self._total_frames += 1
                 except asyncio.QueueFull:
-                    pass
+                    self._dropped_frames += 1
 
             def _callback(data: bytes):
                 try:
@@ -114,12 +124,28 @@ if AIORTC_AVAILABLE:
 
         async def recv(self):
             while True:
-                data = await self._queue.get()
+                try:
+                    # Use timeout to detect stalls
+                    data = await asyncio.wait_for(self._queue.get(), timeout=0.5)
+                except asyncio.TimeoutError:
+                    # Return silence frame to keep connection alive
+                    samples = self._sample_rate // 20  # 50ms of silence
+                    silence = np.zeros((samples, self._channels), dtype=np.int16)
+                    layout = "stereo" if self._channels == 2 else "mono"
+                    frame = av.AudioFrame.from_ndarray(silence, format="s16", layout=layout)
+                    frame.sample_rate = self._sample_rate
+                    frame.pts = self._timestamp
+                    frame.time_base = self._time_base
+                    self._timestamp += samples
+                    return frame
+
                 if not data:
                     continue
+                    
                 samples = len(data) // (2 * self._channels)
                 if samples <= 0:
                     continue
+                    
                 audio = np.frombuffer(data, dtype=np.int16)
                 if self._channels > 1:
                     audio = audio.reshape(-1, self._channels)
@@ -132,6 +158,13 @@ if AIORTC_AVAILABLE:
                 frame.pts = self._timestamp
                 frame.time_base = self._time_base
                 self._timestamp += samples
+                
+                # Log stats periodically
+                if self._total_frames > 0 and self._total_frames % 500 == 0:
+                    drop_rate = (self._dropped_frames / self._total_frames) * 100
+                    if drop_rate > 1:
+                        log.warning(f"[WebRTC] Frame drop rate: {drop_rate:.1f}% ({self._dropped_frames}/{self._total_frames})")
+                
                 return frame
 
         def stop(self):
@@ -806,6 +839,7 @@ async def api_improve_layers(request: ImproveRequest):
 @app.get("/api/patches")
 async def api_get_patches(
     category: str | None = None,
+    sub_category: str | None = None,
     search: str | None = None,
     sound_type: str | None = None,
     all_sounds: bool = False,
@@ -825,6 +859,7 @@ async def api_get_patches(
 
     patches, total = get_patches(
         category=category,
+        sub_category=sub_category,
         search=search,
         sound_type=sound_type_enum,
         all_sounds=all_sounds,
@@ -833,11 +868,13 @@ async def api_get_patches(
     )
 
     categories = get_categories()
+    subcategories = get_subcategories(category=category)
 
     return {
         "patches": [p.model_dump() for p in patches],
         "total": total,
-        "categories": [c.model_dump() for c in categories]
+        "categories": [c.model_dump() for c in categories],
+        "subcategories": subcategories
     }
 
 

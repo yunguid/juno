@@ -8,9 +8,9 @@ log = get_logger("patches")
 
 # Category recommendations by sound type
 SOUND_TYPE_CATEGORIES = {
-    SoundType.BASS: ["Synth Bass", "Acoustic Bass"],
-    SoundType.PAD: ["Pad", "Strings", "Brass", "Choir"],
-    SoundType.LEAD: ["Synth Lead", "Keys", "Organ", "Pluck"],
+    SoundType.BASS: ["Bass"],
+    SoundType.PAD: ["Pad/Choir", "Strings", "Syn Comp"],
+    SoundType.LEAD: ["Syn Lead", "Keyboard", "Organ", "Guitar", "Woodwind", "Brass", "Ethnic"],
 }
 
 # Cache for loaded patches
@@ -51,6 +51,7 @@ def load_patches() -> None:
 
 def get_patches(
     category: str | None = None,
+    sub_category: str | None = None,
     search: str | None = None,
     sound_type: SoundType | None = None,
     all_sounds: bool = False,
@@ -70,6 +71,13 @@ def get_patches(
     if category:
         filtered = [p for p in filtered if p.category.lower() == category.lower()]
 
+    # Filter by sub category
+    if sub_category:
+        filtered = [
+            p for p in filtered
+            if p.sub_category and p.sub_category.lower() == sub_category.lower()
+        ]
+
     # Filter by sound type (recommended categories) unless showing all sounds
     if not all_sounds and sound_type and sound_type in SOUND_TYPE_CATEGORIES:
         recommended = SOUND_TYPE_CATEGORIES[sound_type]
@@ -82,6 +90,7 @@ def get_patches(
             p for p in filtered
             if search_lower in p.name.lower()
             or search_lower in p.category.lower()
+            or (p.sub_category and search_lower in p.sub_category.lower())
             or any(search_lower in tag.lower() for tag in p.tags)
         ]
 
@@ -119,6 +128,20 @@ def get_categories() -> list[PatchCategory]:
         PatchCategory(id=c.id, name=c.name, count=category_counts.get(c.id, 0))
         for c in _categories
     ]
+
+
+def get_subcategories(category: str | None = None) -> list[str]:
+    """Get sub categories, optionally filtered by main category."""
+    if not _patches:
+        load_patches()
+
+    subs = set()
+    for patch in _patches:
+        if category and patch.category.lower() != category.lower():
+            continue
+        if patch.sub_category:
+            subs.add(patch.sub_category)
+    return sorted(subs)
 
 
 # Load patches on module import

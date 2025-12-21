@@ -26,6 +26,7 @@ export interface Patch {
   id: string
   name: string
   category: string
+  sub_category?: string | null
   bank_msb: number
   bank_lsb: number
   program: number
