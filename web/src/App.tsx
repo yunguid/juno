@@ -1,273 +1,48 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import './App.css'
+import { KEYS, STEPS } from './constants'
+import { WS_URL } from './config'
+import { useAudioStream } from './hooks/useAudioStream'
+import type { LLMConfig, Patch, PatchCategory, Sample, SoundType, Step } from './types'
+import {
+  exportAudio as exportAudioFile,
+  exportMidi as exportMidiFile,
+  fetchLlmConfig,
+  fetchPatches as fetchPatchesFromApi,
+  generateLayer as generateLayerFromApi,
+  getCurrentSounds,
+  improveLayers as improveLayersFromApi,
+  playSample,
+  selectPatch as selectPatchFromApi,
+  startSession as startSessionFromApi,
+  stopSample,
+  updateLlmConfig as updateLlmConfigFromApi,
+} from './services/api'
 
-// Audio streaming hook with AudioWorklet for smooth PCM playback
-function useAudioStream(wsUrl: string) {
-  const audioContextRef = useRef<AudioContext | null>(null)
-  const workletNodeRef = useRef<AudioWorkletNode | null>(null)
-  const wsRef = useRef<WebSocket | null>(null)
-  const isStreamingRef = useRef(false)
-  const audioConfigRef = useRef<{ sampleRate: number; channels: number } | null>(null)
-  const workletReadyRef = useRef(false)
-  const lastStatusLogMsRef = useRef(0)
-  const lastUnderrunsRef = useRef(0)
-  const initialTargetBufferMs = 120
-
-  const initAudioContext = useCallback(async () => {
-    if (!audioContextRef.current) {
-      audioContextRef.current = new AudioContext({ sampleRate: 44100, latencyHint: 'interactive' })
-      console.log('AudioContext created, state:', audioContextRef.current.state)
-    }
-    if (audioContextRef.current.state === 'suspended') {
-      console.log('Resuming AudioContext...')
-      await audioContextRef.current.resume()
-      console.log('AudioContext resumed, state:', audioContextRef.current.state)
-    }
-    return audioContextRef.current
-  }, [])
-
-  const initAudioWorklet = useCallback(async (audioContext: AudioContext) => {
-    if (workletNodeRef.current) {
-      return workletNodeRef.current
-    }
-
-    try {
-      // Load AudioWorklet processor
-      await audioContext.audioWorklet.addModule('/audio-processor.js')
-      console.log('AudioWorklet module loaded')
-
-      // Create AudioWorkletNode
-      const workletNode = new AudioWorkletNode(audioContext, 'pcm-processor', {
-        numberOfInputs: 0,
-        numberOfOutputs: 1,
-        outputChannelCount: [2], // Stereo output
-      })
-
-      // Handle status messages from worklet
-      workletNode.port.onmessage = (event) => {
-        const { type, bufferMs, targetMs, underruns, droppedSamples } = event.data
-        if (type === 'status') {
-          const now = performance.now()
-          const shouldLog = underruns > lastUnderrunsRef.current || now - lastStatusLogMsRef.current > 2000
-          if (shouldLog) {
-            lastStatusLogMsRef.current = now
-            lastUnderrunsRef.current = underruns
-
-            const targetStr = typeof targetMs === 'number' ? ` (target ${targetMs.toFixed(0)}ms)` : ''
-            const droppedStr = typeof droppedSamples === 'number' && droppedSamples > 0 ? ` dropped=${droppedSamples}` : ''
-            if (underruns > 0) {
-              console.warn(`[AudioStream] Buffer: ${bufferMs.toFixed(0)}ms${targetStr}, underruns=${underruns}${droppedStr}`)
-            } else {
-              console.log(`[AudioStream] Buffer: ${bufferMs.toFixed(0)}ms${targetStr}${droppedStr}`)
-            }
-          }
-
-          // Feed buffer status back to server for backpressure.
-          const ws = wsRef.current
-          if (ws && ws.readyState === WebSocket.OPEN && typeof bufferMs === 'number') {
-            ws.send(JSON.stringify({ type: 'buffer_status', buffer_ms: bufferMs, target_ms: targetMs, underruns }))
-          }
-        }
-      }
-
-      // Connect to audio output
-      workletNode.connect(audioContext.destination)
-      workletNodeRef.current = workletNode
-      workletReadyRef.current = true
-      console.log('AudioWorklet node created and connected')
-
-      return workletNodeRef.current
-    } catch (error) {
-      console.error('Failed to initialize AudioWorklet:', error)
-      throw error
-    }
-  }, [])
-
-  const startStreaming = useCallback(async () => {
-    if (isStreamingRef.current) return
-    
-    try {
-      const audioContext = await initAudioContext()
-      await initAudioWorklet(audioContext)
-      
-      isStreamingRef.current = true
-      audioConfigRef.current = null
-
-      const ws = new WebSocket(`${wsUrl}/ws/audio`)
-      ws.binaryType = 'arraybuffer'
-      
-      // Wait for WebSocket to connect
-      await new Promise<void>((resolve, reject) => {
-        ws.onopen = () => {
-          console.log('Audio stream connected')
-          resolve()
-        }
-        ws.onerror = (err) => {
-          console.error('Audio stream connection error:', err)
-          reject(err)
-        }
-        setTimeout(() => reject(new Error('Audio stream connection timeout')), 5000)
-      })
-
-      ws.onmessage = (event) => {
-        if (typeof event.data === 'string') {
-          // JSON config message
-          const config = JSON.parse(event.data)
-          if (config.type === 'audio_config') {
-            audioConfigRef.current = {
-              sampleRate: config.sample_rate,
-              channels: config.channels
-            }
-            console.log('Audio config:', audioConfigRef.current)
-            
-            // Send config to worklet
-            if (workletNodeRef.current) {
-              workletNodeRef.current.port.postMessage({
-                type: 'config',
-                data: {
-                  sampleRate: config.sample_rate,
-                  channels: config.channels,
-                  targetBufferMs: initialTargetBufferMs,
-                }
-              })
-            }
-          }
-        } else {
-          // Binary PCM data - send directly to worklet
-          if (workletNodeRef.current && audioConfigRef.current) {
-            workletNodeRef.current.port.postMessage({
-              type: 'pcm',
-              data: event.data
-            }, [event.data])
-          }
-        }
-      }
-
-      ws.onclose = () => {
-        console.log('Audio stream disconnected')
-        isStreamingRef.current = false
-        
-        // Reset worklet buffer
-        if (workletNodeRef.current) {
-          workletNodeRef.current.port.postMessage({ type: 'reset' })
-        }
-      }
-
-      wsRef.current = ws
-    } catch (error) {
-      console.error('Failed to start audio streaming:', error)
-      isStreamingRef.current = false
-      throw error
-    }
-  }, [wsUrl, initAudioContext, initAudioWorklet])
-
-  const stopStreaming = useCallback(() => {
-    if (wsRef.current) {
-      wsRef.current.close()
-      wsRef.current = null
-    }
-    
-    // Reset worklet buffer
-    if (workletNodeRef.current) {
-      workletNodeRef.current.port.postMessage({ type: 'reset' })
-    }
-    
-    isStreamingRef.current = false
-    audioConfigRef.current = null
-  }, [])
-
-  // Cleanup on unmount
-  useEffect(() => {
-    return () => {
-      stopStreaming()
-      if (audioContextRef.current) {
-        audioContextRef.current.close()
-      }
-    }
-  }, [stopStreaming])
-
-  return { startStreaming, stopStreaming }
+// #region agent log
+const clientDbg = (
+  hypothesisId: string,
+  location: string,
+  message: string,
+  data: Record<string, unknown> = {},
+  runId: string = 'run1'
+) => {
+  if (!import.meta.env.PROD) return
+  fetch('/api/_client_log', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      sessionId: 'debug-session',
+      runId,
+      hypothesisId,
+      location,
+      message,
+      data,
+      timestamp: Date.now(),
+    }),
+  }).catch(() => {})
 }
-
-interface Note {
-  pitch: string | string[]
-  start: number
-  duration: number
-  velocity: number
-}
-
-interface Layer {
-  id: string
-  name: string
-  sound: 'bass' | 'pad' | 'lead'
-  notes: Note[]
-  muted: boolean
-  volume: number
-  patch_id?: string
-  patch_name?: string
-}
-
-interface Patch {
-  id: string
-  name: string
-  category: string
-  bank_msb: number
-  bank_lsb: number
-  program: number
-  tags: string[]
-}
-
-interface Sample {
-  id: string
-  name: string
-  prompt: string
-  key: string
-  bpm: number
-  bars: number
-  layers: Layer[]
-}
-
-interface LibrarySample {
-  id: string
-  name: string
-  prompt: string | null
-  key: string | null
-  bpm: number | null
-  bars: number | null
-  duration_seconds: number | null
-  audio_url: string
-  layers: { sound: string; name: string; patch_name?: string }[] | null
-  created_at: string
-}
-
-interface LLMConfig {
-  provider: string
-  model: string
-  available_providers: string[]
-  available_models: Record<string, string[]>
-  default_models: Record<string, string>
-}
-
-type Step = 'setup' | 'pad' | 'lead' | 'bass' | 'complete'
-
-const STEPS: { id: Step; label: string; sound?: 'pad' | 'lead' | 'bass' }[] = [
-  { id: 'setup', label: '1. Describe' },
-  { id: 'pad', label: '2. Chords', sound: 'pad' },
-  { id: 'lead', label: '3. Melody', sound: 'lead' },
-  { id: 'bass', label: '4. Bass', sound: 'bass' },
-  { id: 'complete', label: '5. Export' },
-]
-
-const KEYS = [
-  'C major', 'C minor', 'D major', 'D minor',
-  'E major', 'E minor', 'F major', 'F minor',
-  'G major', 'G minor', 'A major', 'A minor',
-  'Bb major', 'Bb minor', 'Eb major', 'Eb minor',
-]
-
-// Use relative URLs when served from same origin (Pi), otherwise use env vars
-const API_URL = import.meta.env.VITE_API_URL || ''
-const WS_URL = import.meta.env.VITE_WS_URL || `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}`
+// #endregion agent log
 
 function App() {
   const [step, setStep] = useState<Step>('setup')
@@ -282,11 +57,22 @@ function App() {
   const [error, setError] = useState<string | null>(null)
   const [showSettings, setShowSettings] = useState(false)
   const [llmConfig, setLlmConfig] = useState<LLMConfig | null>(null)
-  const [feedback, setFeedback] = useState<Record<string, string>>({ pad: '', lead: '', bass: '' })
+  const [feedback, setFeedback] = useState<Record<SoundType, string>>({ pad: '', lead: '', bass: '' })
   const [improving, setImproving] = useState(false)
-  const [showSoundPicker, setShowSoundPicker] = useState<'bass' | 'pad' | 'lead' | null>(null)
+  const [showSoundPicker, setShowSoundPicker] = useState<SoundType | null>(null)
   const [patches, setPatches] = useState<Patch[]>([])
-  const [currentSounds, setCurrentSounds] = useState<Record<string, Patch | null>>({ bass: null, pad: null, lead: null })
+  const [patchTotal, setPatchTotal] = useState<number | null>(null)
+  const [patchCategories, setPatchCategories] = useState<PatchCategory[]>([])
+  const [patchSearch, setPatchSearch] = useState('')
+  const [patchCategory, setPatchCategory] = useState('')
+  const [patchOffset, setPatchOffset] = useState(0)
+  const [patchLoading, setPatchLoading] = useState(false)
+  const patchLimit = 60
+  const [currentSounds, setCurrentSounds] = useState<Record<SoundType, Patch | null>>({
+    bass: null,
+    pad: null,
+    lead: null,
+  })
   const wsRef = useRef<WebSocket | null>(null)
   
   // Audio streaming for real-time playback from Montage
@@ -294,23 +80,15 @@ function App() {
 
   // Fetch LLM config on mount
   useEffect(() => {
-    fetch(`${API_URL}/api/llm/config`)
-      .then(res => res.json())
+    fetchLlmConfig()
       .then(setLlmConfig)
       .catch(console.error)
   }, [])
 
   const updateLlmConfig = async (provider?: string, model?: string) => {
     try {
-      const res = await fetch(`${API_URL}/api/llm/config`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ provider, model })
-      })
-      if (res.ok) {
-        const updated = await fetch(`${API_URL}/api/llm/config`).then(r => r.json())
-        setLlmConfig(updated)
-      }
+      const updated = await updateLlmConfigFromApi(provider, model)
+      setLlmConfig(updated)
     } catch (e) {
       console.error('Failed to update LLM config:', e)
     }
@@ -329,6 +107,7 @@ function App() {
         setLoading(false)
       } else if (data.type === 'playback_started') {
         setPlaying(true)
+        startStreaming().catch((e) => console.warn('Audio streaming unavailable:', e))
       } else if (data.type === 'playback_complete' || data.type === 'playback_stopped') {
         setPlaying(false)
         // Stop audio streaming when playback ends
@@ -346,21 +125,15 @@ function App() {
       wsRef.current = null
       ws.close()
     }
-  }, [stopStreaming])
+  }, [startStreaming, stopStreaming])
 
   const startSession = async () => {
     if (!prompt.trim()) return
     setLoading(true)
     setError(null)
     try {
-      const res = await fetch(`${API_URL}/api/session/start`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt, key, bpm, bars })
-      })
-      if (!res.ok) throw new Error((await res.json()).detail)
-      const data = await res.json()
-      setSample(data.sample)
+      const newSample = await startSessionFromApi(prompt, key, bpm, bars)
+      setSample(newSample)
       setStep('pad')
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : 'Failed to start')
@@ -369,7 +142,7 @@ function App() {
     }
   }
 
-  const generateLayer = async (sound: 'pad' | 'lead' | 'bass', isRedo = false) => {
+  const generateLayer = async (sound: SoundType, isRedo = false) => {
     // Stop playback first if regenerating
     if (isRedo && playing) {
       await stop()
@@ -377,14 +150,8 @@ function App() {
     setLoading(true)
     setError(null)
     try {
-      const res = await fetch(`${API_URL}/api/session/generate-layer`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ sound })
-      })
-      if (!res.ok) throw new Error((await res.json()).detail)
-      const data = await res.json()
-      setSample(data.sample)
+      const updatedSample = await generateLayerFromApi(sound)
+      setSample(updatedSample)
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : 'Generation failed')
     } finally {
@@ -392,15 +159,16 @@ function App() {
     }
   }
 
-  const play = async (layers?: string[]) => {
+  const play = async (layers?: SoundType[]) => {
+    // #region agent log
+    clientDbg('C0', 'web/src/App.tsx:play', 'play_clicked', { layers: layers ?? null })
+    // #endregion agent log
+
+    // Start audio streaming (best-effort; don't block MIDI playback if streaming fails)
+    startStreaming().catch((e) => console.warn('Audio streaming unavailable:', e))
+
     try {
-      // Initialize audio context and start streaming before sending play request
-      await startStreaming()
-      await fetch(`${API_URL}/api/play`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(layers || null)
-      })
+      await playSample(layers)
     } catch (e) {
       console.error('Play failed:', e)
       stopStreaming()
@@ -409,7 +177,7 @@ function App() {
 
   const stop = async () => {
     try {
-      await fetch(`${API_URL}/api/stop`, { method: 'POST' })
+      await stopSample()
       stopStreaming()
     } catch (e) {
       console.error('Stop failed:', e)
@@ -418,8 +186,7 @@ function App() {
 
   const exportMidi = async () => {
     try {
-      const res = await fetch(`${API_URL}/api/export`)
-      const data = await res.json()
+      const data = await exportMidiFile()
       const bytes = atob(data.data)
       const buffer = new Uint8Array(bytes.length)
       for (let i = 0; i < bytes.length; i++) buffer[i] = bytes.charCodeAt(i)
@@ -441,9 +208,7 @@ function App() {
     setExporting(true)
     setError(null)
     try {
-      const res = await fetch(`${API_URL}/api/export/audio`)
-      if (!res.ok) throw new Error((await res.json()).detail)
-      const data = await res.json()
+      const data = await exportAudioFile()
       const bytes = atob(data.data)
       const buffer = new Uint8Array(bytes.length)
       for (let i = 0; i < bytes.length; i++) buffer[i] = bytes.charCodeAt(i)
@@ -475,14 +240,8 @@ function App() {
     setImproving(true)
     setError(null)
     try {
-      const res = await fetch(`${API_URL}/api/session/improve`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ feedback })
-      })
-      if (!res.ok) throw new Error((await res.json()).detail)
-      const data = await res.json()
-      setSample(data.sample)
+      const updatedSample = await improveLayersFromApi(feedback)
+      setSample(updatedSample)
       setFeedback({ pad: '', lead: '', bass: '' }) // Clear feedback after success
     } catch (e) {
       console.error('Improve failed:', e)
@@ -492,32 +251,40 @@ function App() {
     }
   }
 
-  const getLayer = (sound: string) => sample?.layers.find(l => l.sound === sound)
+  const getLayer = (sound: SoundType) => sample?.layers.find(l => l.sound === sound)
 
   // Sound selection functions
-  const fetchPatches = useCallback(async (soundType: string) => {
+  const fetchPatches = useCallback(async (soundType: SoundType, append = false, offsetOverride?: number) => {
     try {
-      const res = await fetch(`${API_URL}/api/patches?sound_type=${soundType}`)
-      const data = await res.json()
-      setPatches(data.patches)
+      setPatchLoading(true)
+      const offset = typeof offsetOverride === 'number' ? offsetOverride : append ? patchOffset : 0
+      const data = await fetchPatchesFromApi(soundType, {
+        search: patchSearch.trim() || undefined,
+        category: patchCategory || undefined,
+        limit: patchLimit,
+        offset,
+      })
+      setPatchCategories(data.categories)
+      setPatchTotal(data.total)
+      setPatches(prev => (append ? [...prev, ...data.patches] : data.patches))
     } catch (e) {
       console.error('Failed to fetch patches:', e)
+    } finally {
+      setPatchLoading(false)
     }
-  }, [])
+  }, [patchCategory, patchOffset, patchSearch])
 
-  const openSoundPicker = useCallback((soundType: 'bass' | 'pad' | 'lead') => {
+  const openSoundPicker = useCallback((soundType: SoundType) => {
     setShowSoundPicker(soundType)
-    fetchPatches(soundType)
-  }, [fetchPatches])
+    setPatchSearch('')
+    setPatchCategory('')
+    setPatchOffset(0)
+  }, [])
 
   const selectPatch = async (patch: Patch) => {
     if (!showSoundPicker) return
     try {
-      await fetch(`${API_URL}/api/sound/${showSoundPicker}/select`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ patch_id: patch.id })
-      })
+      await selectPatchFromApi(showSoundPicker, patch.id)
       setCurrentSounds(prev => ({ ...prev, [showSoundPicker]: patch }))
       setShowSoundPicker(null)
     } catch (e) {
@@ -525,11 +292,26 @@ function App() {
     }
   }
 
+  useEffect(() => {
+    if (!showSoundPicker) return
+    const timeout = setTimeout(() => {
+      setPatchOffset(0)
+      fetchPatches(showSoundPicker, false)
+    }, 200)
+    return () => clearTimeout(timeout)
+  }, [fetchPatches, showSoundPicker, patchSearch, patchCategory])
+
+  const loadMorePatches = useCallback(() => {
+    if (!showSoundPicker || patchLoading) return
+    const nextOffset = patchOffset + patchLimit
+    setPatchOffset(nextOffset)
+    fetchPatches(showSoundPicker, true, nextOffset)
+  }, [fetchPatches, patchLimit, patchLoading, patchOffset, showSoundPicker])
+
   // Fetch current sounds on mount
   useEffect(() => {
-    fetch(`${API_URL}/api/sounds/current`)
-      .then(res => res.json())
-      .then(data => setCurrentSounds({ bass: data.bass, pad: data.pad, lead: data.lead }))
+    getCurrentSounds()
+      .then((data) => setCurrentSounds({ bass: data.bass, pad: data.pad, lead: data.lead }))
       .catch(console.error)
   }, [])
 
@@ -835,20 +617,85 @@ function App() {
         <div className="sound-picker-overlay" onClick={() => setShowSoundPicker(null)}>
           <div className="sound-picker" onClick={e => e.stopPropagation()}>
             <div className="sound-picker-header">
-              <span>{showSoundPicker.toUpperCase()} Sound</span>
+              <div className="sound-picker-title">
+                <span>{showSoundPicker.toUpperCase()} Sound</span>
+                <span className="sound-picker-count">
+                  {patches.length} / {patchTotal ?? '…'}
+                </span>
+              </div>
               <button onClick={() => setShowSoundPicker(null)}>×</button>
             </div>
+            <div className="sound-picker-controls">
+              <div className="sound-picker-search">
+                <span className="sound-picker-icon">⌕</span>
+                <input
+                  type="text"
+                  placeholder="Search sounds…"
+                  value={patchSearch}
+                  onChange={(e) => setPatchSearch(e.target.value)}
+                />
+                {patchSearch && (
+                  <button
+                    className="sound-picker-clear"
+                    onClick={() => setPatchSearch('')}
+                    aria-label="Clear search"
+                  >
+                    ×
+                  </button>
+                )}
+              </div>
+              <div className="sound-picker-filters">
+                <select
+                  value={patchCategory}
+                  onChange={(e) => setPatchCategory(e.target.value)}
+                >
+                  <option value="">All categories</option>
+                  {patchCategories.map((cat) => (
+                    <option key={cat.id} value={cat.name}>
+                      {cat.name} ({cat.count})
+                    </option>
+                  ))}
+                </select>
+                <button
+                  className="sound-picker-reset"
+                  onClick={() => {
+                    setPatchSearch('')
+                    setPatchCategory('')
+                  }}
+                >
+                  Reset
+                </button>
+              </div>
+            </div>
             <div className="sound-picker-list">
+              {patchLoading && patches.length === 0 && (
+                <div className="sound-picker-empty">Loading sounds…</div>
+              )}
+              {!patchLoading && patches.length === 0 && (
+                <div className="sound-picker-empty">No matches. Try another search.</div>
+              )}
               {patches.map(patch => (
                 <button
                   key={patch.id}
                   className={`sound-option ${currentSounds[showSoundPicker]?.id === patch.id ? 'selected' : ''}`}
                   onClick={() => selectPatch(patch)}
                 >
-                  {patch.name}
+                  <span className="sound-option-name">{patch.name}</span>
+                  <span className="sound-option-meta">{patch.category}</span>
                 </button>
               ))}
             </div>
+            {patches.length < patchTotal && (
+              <div className="sound-picker-footer">
+                <button
+                  className="sound-picker-load"
+                  onClick={loadMorePatches}
+                  disabled={patchLoading}
+                >
+                  {patchLoading ? 'Loading…' : 'Load more'}
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}
